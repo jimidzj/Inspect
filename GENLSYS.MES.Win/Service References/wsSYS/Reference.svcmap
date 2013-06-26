@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="efb14b12-5c36-45c0-bb7d-0b95d4b9f4b4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/wsSYS.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsSYS.xsd" MetadataType="Schema" ID="ac9b2d8f-dd59-4084-a8e8-f68d91789e90" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd0" />
+    <MetadataFile FileName="wsSYS1.xsd" MetadataType="Schema" ID="665a5c92-a178-4ad9-a653-21e1954befad" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd6" />
+    <MetadataFile FileName="wsSYS2.xsd" MetadataType="Schema" ID="fcc4d630-dc93-42fd-a684-bbe87458a8a3" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd2" />
+    <MetadataFile FileName="wsSYS3.xsd" MetadataType="Schema" ID="7010cddb-9ba3-4a5e-9ef2-f6a8cb82a75a" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd4" />
+    <MetadataFile FileName="wsSYS4.xsd" MetadataType="Schema" ID="21441cfb-2b05-433a-95e0-c52a7d9638b5" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd1" />
+    <MetadataFile FileName="wsSYS.disco" MetadataType="Disco" ID="8def4abb-6fe2-4145-abc7-be12d65baafc" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?disco" />
+    <MetadataFile FileName="wsSYS.wsdl" MetadataType="Wsdl" ID="62a46efe-7087-41ee-a42b-f4776a56e329" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?wsdl" />
+    <MetadataFile FileName="wsSYS5.xsd" MetadataType="Schema" ID="8435be5d-0060-4ee7-ac1a-eced5e461f79" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd3" />
+    <MetadataFile FileName="wsSYS6.xsd" MetadataType="Schema" ID="53c29d95-b707-4a3c-9cbf-06965b46279e" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd5" />
+    <MetadataFile FileName="wsSYS81.xsd" MetadataType="Schema" ID="1670229c-b1d7-44c3-900e-e1bb1a7605b2" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd8" />
+    <MetadataFile FileName="wsSYS7.xsd" MetadataType="Schema" ID="4fe33b04-f543-4082-8129-675e14828123" SourceId="1" SourceUrl="http://localhost:1111/wsSYS.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

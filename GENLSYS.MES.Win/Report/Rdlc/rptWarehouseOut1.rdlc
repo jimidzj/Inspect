@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="GENLSYSMESWinReportDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>b2ae7471-a271-4e2e-b31e-693453fd522d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsHeader">
+      <Fields>
+        <Field Name="factory">
+          <DataField>factory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="shippeddate">
+          <DataField>shippeddate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="shippingno">
+          <DataField>shippingno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="customername">
+          <DataField>customername</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cartonqty">
+          <DataField>cartonqty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>GENLSYSMESWinReportDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>GENLSYS.MES.Win.Report.DataSet</rd:DataSetName>
+        <rd:TableName>clsWarehouseInHeader</rd:TableName>
+        <rd:ObjectDataSourceType>GENLSYS.MES.Win.Report.DataSet.clsWarehouseInHeader, GENLSYS.MES.Win, Version=2.4.7.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="dsDetail">
+      <Fields>
+        <Field Name="custorderno">
+          <DataField>custorderno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="styleno">
+          <DataField>styleno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="stylecartonqty">
+          <DataField>stylecartonqty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="pairqty">
+          <DataField>pairqty</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Remark">
+          <DataField>Remark</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>GENLSYSMESWinReportDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>GENLSYS.MES.Win.Report.DataSet</rd:DataSetName>
+        <rd:TableName>clsWarehouseInHeader</rd:TableName>
+        <rd:ObjectDataSourceType>GENLSYS.MES.Win.Report.DataSet.clsWarehouseInHeader, GENLSYS.MES.Win, Version=2.4.7.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.22807in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.18217in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.63008in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.67175in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.87463in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>订单号</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>款号</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox18">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>件数</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox20">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>双数</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox22">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>备注</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox22</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="custorderno">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!custorderno.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>custorderno</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="styleno">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!styleno.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>styleno</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="stylecartonqty">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!stylecartonqty.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>stylecartonqty</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="pairqty">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!pairqty.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>pairqty</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Remark">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Remark</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox36">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>合计</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox36</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox37">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>-</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox37</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox38">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!cartonqty.Value, "dsHeader")</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="pairqty1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!pairqty.Value)</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>pairqty1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox40</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember>
+              <Group Name="Group1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!custorderno.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!custorderno.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+            <TablixMember />
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>dsDetail</DataSetName>
+        <Top>0.17639cm</Top>
+        <Left>0.0297cm</Left>
+        <Height>1.8cm</Height>
+        <Width>16.73022cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>收货人签字（盖章）:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox41</rd:DefaultName>
+        <Top>2.1196cm</Top>
+        <Left>0.04868cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.93288cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox42">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>出货人签字（盖章）:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox41</rd:DefaultName>
+        <Top>2.1196cm</Top>
+        <Left>9.43677cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.27445cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>1.13228in</Height>
+    <Style />
+  </Body>
+  <Width>6.63473in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.34308cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>hexiang_logo</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.09525cm</Top>
+          <Left>0.127cm</Left>
+          <Height>1.5cm</Height>
+          <Width>1.5cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>上海和香服饰整理有限公司</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox6</rd:DefaultName>
+          <Top>0.22691cm</Top>
+          <Left>1.70609cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.7225cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>出　库　单</Value>
+                  <Style>
+                    <FontSize>20pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.254cm</Top>
+          <Left>6.67751cm</Left>
+          <Height>0.89041cm</Height>
+          <Width>4.48438cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>第一联 存根联</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Top>0.22691cm</Top>
+          <Left>12.48311cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.87583cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox9">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>单号:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.66914cm</Top>
+          <Left>12.48311cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.62688cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!shippingno.Value, "dsHeader")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>0.66914cm</Top>
+          <Left>13.4397cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.3202cm</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox8">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>SHANGHAI WAKO CO.,LTD</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox8</rd:DefaultName>
+          <Top>0.65405cm</Top>
+          <Left>1.70609cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.7225cm</Width>
+          <ZIndex>6</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>客户:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>0.15875cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.41322cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox17">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!customername.Value, "dsHeader")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox17</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>1.66165cm</Left>
+          <Height>0.6cm</Height>
+          <Width>3.36805cm</Width>
+          <ZIndex>8</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox11">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>工厂名:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>5.28644cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.41322cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!factory.Value, "dsHeader")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox12</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>6.99501cm</Left>
+          <Height>0.6cm</Height>
+          <Width>5.54546cm</Width>
+          <ZIndex>10</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox13">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>出库日期:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>12.48311cm</Left>
+          <Height>0.6cm</Height>
+          <Width>1.82266cm</Width>
+          <ZIndex>11</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!shippeddate.Value, "dsHeader")</Value>
+                  <Style>
+                    <Format>yyyy-M-d</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox14</rd:DefaultName>
+          <Top>1.74308cm</Top>
+          <Left>14.48216cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.27775cm</Width>
+          <ZIndex>12</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <VerticalAlign>Middle</VerticalAlign>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="hexiang_logo">
+      <MIMEType>image/bmp</MIMEType>
+      <ImageData>Qk2yKQAAAAAAADYAAAAoAAAAOwAAADsAAAABABgAAAAAAHwpAAAAAAAAAAAAAAAAAAAAAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////v///////////v///v///v///v///v/////+/////////////////////////////////v///v///////////v///////////////////////////////////////v///////////v///v//////////////////////////////////////////////////////////////AAAA/////////////////////////////////v///v/+/v////////////7//v/+/v/////////////+///////+///////+/v///v///////v/////+///+/v///v///////////v/////+/////v///v/////////+/v/+/v/+////////////////////////////////////////////////////////////////////AAAA///////////////////////////+///+///+/v/+/////v///v/////+/v/+///////////+/v///////////v///////////////v/////+///+//////7//////v///v///////v///////////v////////7+/v/+//////7/////////////////////////////////////
+////////////////////////////AAAA/////////////////////////v/+/v/+//7//v////////////////////7//v/////////////////+/v///////////////////v/+/v///v///////////////////////////////////////////////v//////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////v//////////9/j9/f3+/////v///v//+vr9+fr9///+/////v//+fn8+Pn9///+/////////v/+////9/n9+fn9/v//9/z5+Pz5/v7/////////8fL96uv7/Pz+/v/+////////////8/T98/P9////////////////////////////////////////////////////////AAAA/////////////////////////////v///v//////trvyQkrcgYXp+fr+////7u/8XGLhUlne5Ob6////////qazuREvd4OP5////////////2Nn4SE/cnqDv/v/7htSoitWr9vz5////x8n2KC3bVl3j8PH8////////z9H3a3DkMz3bMzzdcHPn1tf2////////////////////////////////////////////////AAAA///////////////////////////////////+////bHHmAAHVJSvc5OX7////yMv1DRfYAQvXsLPw////////v8P0CxXYho7r+fn+9fb++fr/en7pBxDYuLn3/f/4bcqXacqX+v/38PD+O0TgDxbYvsH1////////xsj3HSbZJC7YiI7khYzlISvYIyvbztH3/////////////v//////////////////////////////AAAA////////
+////////////////////////////9/f9Rk3fHyjaHybYu7/0////lJXuIivbIivZbXPn/////////Pz/VlzjEh/WMjzcKjPcNjzdFx/ZQErg+fj/+P74dM2bbtCY+/74gIHuAAXVkpfu/////////P3+SlLhCRTWu7/r///1///0srjpAw/WXmXl+/z+////////////////////////////////////////AAAA/////////////////////////////v//////zs/3KTHbh43rSVHggIXr////UFnjUFnjd33oOUHf9/f9////////lJnuCBLWTlfehIvkUFfeBhDWiIzr////9Pv3cs2afdqeq7jqERXbWWHk+/z/////////2tv4HijaOULc6+7v9/ny9/jx6OnvNT7bHSfa5uX6/////v///v//////////////////////////////AAAA////////////////////////////////////m6HvEhzX0dH3bnPoRkzh9Pf+NT/fg4frtbbzJi/cz9D2////////3N76GCHafIHk///1en/jCRTYzM/3////8/v2d9OaX7yVJDXTLTPf5uj7/////v//////zMv2GB/ZTlPf8fPx8/Xz8/Xx7e/wREzgExvZ1tj1////////////////////////////////////////AAAA////////////////////////////////////cXnpFiDZ8fD8oabuN0HetLryLjfcsbLz3+D6HCbal5vu////////////U1nkND3b19rvNj3dRUzh9vf9////8/r3ddCZccyaWGjdIibezMz2////////////3N36HijaPkbc7O7w9/jx8/fy6OvxOEHeGiPa4eL4/////v//////////////////////////////////AAAA////////////////////////////////8/T9RkziNkDe/fz/
+3t73MTrdOUHdLDPb3t/6+/z+KjTca3Hn////////////pqnyFB7YcnriERvWkpXt////////9Pr3cs2aeNeb5u/1Q0XkKjHc4OL6////////+vr+QEjfERvXyc7s///z///zwsbqDRbWT1Ti+fj+/////////v//////////////////////////////AAAA////////////////////////////////0NT4CxHZaHDl////+/r/PUXfAADUOkPe+fr+////UlvkLjff6+v7////////5OX7LTfeAAjWHynb0NL4////////8/r2aMmSYMeQ/v/31tX7FB7ZOz/e5uX7////////sbX0CxTXN0HbpajopajnMzrbCxTXtbjz/////////////v//////////////////////////////AAAA////////////////////////////////wsTzOUDbr7Lx////////k5jrOj7ajJPr////////p6ruRkzd2Nv4/////v//////kJTrNTfYeX/o/f3/////////9vz5nt25n927+P36////s7XzSkzfqazw/f3+////////qa7wPkfgJC7aJS7aRUvgtLby/////v/+/v///v///v//////////////////////////////AAAA////////////////////////////////9/b87O74+vr9////////+fn86+z4+/v+/v/+////+/z96+v5+Pn+/////v//////+Pn96uz49fb7///+////////////7vrz7Pr0/////v//////+vz+9PT9/f7/////////////8vP82Nr319n39PX8/////v//////////////////////////////////////////////AAAA//////////////////////////////////////////////7//v//////////////////////////////////////
+///+//////////////////////7/////7fjyccyaZsqS4PPr///////+/////////v///////////////////////////////v//////////////////////////////////////////////////AAAA/////////////////////////////v///v///v////7//////////////////////v///v7//v///v///////////v/////////+/////v///v//////////qOHBUsKEUMKCjNeu/P/+/////v///////v7/////////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////v/////////////////////////////////////////////////+/////v//////////////////////0e7dXsaOVsSIXMWKUsOFnt678/r2////////////////////////+fz68vr27vny5/fv4/bs4PTp3vPo3/Xq5fbt6vjx9fv4////////////////////////AAAA/////////////////////////////////////v///f///v///////////////////////////v///////v//////////////////////////////z+7eZsmRU8OFYciQXMaLW8WLVMOEfdGhsOTHx+zXyuvYuebQp+DAmNm0htOpeNCfbc2XY8iQXMaLWcWKW8SKW8WIX8eLacuWe9GioN661fDj////////////////AAAA/////////////////////////////////v///v///v///////v///////////////////v/////////////////+////////////////8/r2rePFVsSHWcWJruTFds6c
+V8WHXsaLXMWLUsOGU8SEVcWFVMOFUMKCT8GCU8OGXsiMZ8mSc8+cg9Omkdevldmyj9islNmyjtevd8+fYMiNTcF/VsOInd278/z1////////AAAA////////////////////////////////////////////////////////////////////////////////////////////////4/bstObKc86dRr58a8yXz+7e1fPhW8aLWsWKXcWLWsaKWMWIftGjqOPCot+9ruPFwurV1PHj5vft8fn1+P37/f7+///////////+////////+/386fbwvObPcc6aRr59lduz+v37////AAAA/////////////////////////////////P796Pjwze3cv+fSv+jRxevX0+/g4fXp5vXs5PLq5ffs3vXpzu7cvejQpOC/gdOmYsiQTMCBZciRpt/A7Pnw////jdevUcCFVsSIXMaMW8aKVMOFZcqSruTG/v7+////////////////////////////////////////////////////////////6/rydM+cU8KF4fTq////AAAA////////////////////////5/fusOPHetCgW8eMU8KHUMGCT8KBUMODVsSHWcSJWsSKW8WKWsWKWsWKVsOIV8SIXseLZcmRhdOpvujQ7fnx////////2/PmW8aLb8uYh9WrWcaJk9izfNGiS8B/UsODec+fyOvY+/78/////////////////v///////v///////////////////v//////////rOHDTMCA2vPl////AAAA/////v//////////8/v2pt/BYMeOTcCBbsyZj9ivod+9q+PEq+PEot++m9u5nNy5m925mty3mdu3ot+8ruPHv+nT2vHj8fr1////////////////////n967RL57pd+/5vftV8SHk9mx6PjvjNauU8KFTMCAV8WJitesyuza
++v77/////////////////////v///////v//////////////////i9WsUMKC3/To////AAAA/////v//////4vbre9CgSsB+gNKlyu3Z7fj0/////////////////////////////////////////////////////////////////////v//////3/XpXceLXMWM3vTp////ds+eV8SH4fXq+v38uObMbsyYU8KDSL98WsSKgdKkuejN5vbt+/38/////////////////////////////f7+suXITL9/htOo+v37////AAAA////////7/r0c8+bTMGAr+LG+/78/////////////////////////////////////////////////////////////////////v//////////////mNu1Rb96lNmz////////peC+SL5+m9y6////////6/fyqeDDcs6aUcKCSMB9U8KDZsmRi9atr+PHzO3d5PTr6PXu5/ft5PbtzO3ck9iyTsB/acqU4PTq////////AAAA////////n9+7R799qeHC/////////v/////+/////v//////////////////////////////////////+/382PLl5PXs/////////v//////1PDiVcOIW8aK3PPm////////yu3aUMGBY8mR4PXr////////////7PnyvujRi9etYsePU8SETMB/Sb99VsOFasmVccybc82bbMuXUcOETsCAf9Gl3/Tn////////////AAAA////8Pn1aMqUbcyX9v35//////////////////7//////////v//////////////////////+P36xerWmNu2tOXK8/z3/////v////7/9v35fdKkRr56o9+9////////////5/buasuWSsCAnt26///////+///+////////+/794vXsvOjRltu1eNCfZcqRTcKAT8GBUcODb86X
+peC/x+vZ9fz5/////v/+////////AAAA////4vTqV8SHmty3/////////v///////////v///////////////////////////f/9wurTgdGkhNOm0PDd/////////v//////////rOTESb19b82Y7vnz/////v///////f39j9ewSb99ZsqS4/bs////////////////////////////////+P353vPoseTJc86dT8CAcMuZ3vTo/////////////////v//////AAAA////4vXqVsSJltu1/////////////v//////////////////////////+v37x+3YedGgacuVrePG9/z4////////////////////2PPlXMaMU8GEx+3Y/////////////v//////seXJU8KFT8GAnN25/////////v//////////////////////////////////7fnzp+C/UcGDYceP1fDh////////////////////AAAA////8/v3a8uYZsqV8fn1////////////////////////////+P36yO3Yf9GiVsKHj9iw5vft/////////v7//v/+////////8Pr1ds6fSL57nt25///////////+////////////3vToY8qRU8OEXMWL1vHi/////v//////////////////////////////////////////w+vVUMGEZMmQ4/Xs/////v///v//////AAAA////////p+HARL58lNqy8Pr1/v//////+/799fz33fLmsOPGftKjTcGBYcmOxevV/////////////////v//////////+f79kNmyRb16e9Gh8/v3/////////v///v///////////f/9f9OlVcKGUsOGf9Kk9fz4/////////////////////////////f///v/////+////////uOjOSL99jdew+v37////////////AAAA////////
+8/z3gtOnR759bMyWidetitesftGlbcqWYcePV8SHRb18eNGf4Pbp/////////////////v//////////////ruTGScF/ZsmS4PXq/////////////v///////v//////////tOXMVMOFWcWJT8GCrOHF/////////////////////////////v///////////////////f/+iNSqVMKG2/Hl/////v//////AAAA/////v//////8Pr1o9y/a8uVWcSJWsWJZMmRcc2bXMeNTsCAhNOm7Pny/////////v///////v//////////////uOfNUMGDWMWIyu3b///////+/////////////////v///v//////5vfuYciPXcaMXcaLWsWK0vDf/////////////////////////v///////v//////////////wenUS79/ueXL////////////AAAA////////////////////7fjy4fPp3/Pn6PfvwerUVcSHdc2d8Pr0///////+/////v//////////////////vunSVMOGT8GBteXL/////////v///v//////8vv23PLk//////7+////+/38iNWqXMaLpt/BXMaLasqV5/jv/////v///////////////////////v///v///v//////zu7cUMGCqd/B////////////AAAA////////////////////////////////////lNm0UcKF0vDg/////v///v7///7//////////////v//subHV8WHTL+ApeG//////////////v//////////z+7cs+LI/////v//////////suTJS79/s+XMwOjRSb98d9Cf7fry/////////v///////////////v//////////////uObNSb9+vejR////////////AAAA////////////////////////////////8fr1dM2aY8mP9/z5
+/////v///v//////////////7vv0m927VMOFSMB9k9qy+/79/////v/+/v//////////////m923qOHC/////v//////////1/LkWcSId86e+/38qODCRr16dtCf5Pbs/////////v//////////////////////7vrybsyYX8eN5Pbt////////////AAAA////////////////////////////////+fz6hdSpTcGAu+fP////////////////9Pv3x+vXds+eUcKFT8GAgtOm8/z3/////v/+/v///////v//////8fr0cc2ZtubL////////////////9/35eM+eV8OH2/Lm////o9+8R797aMqUyOvZ+//8////////////////////4PToe9GiRb97sOPG////////////////AAAA/////////////////////////////v//////ze7cVsOIVMSHj9mwuObNvOfPo9+/etCgVMOFVsOGU8KEbc2Z5vfu/////v///f///v///v//////////xevXX8eM1PDg/////v////7/////////lNmzRr19rePH////////suTKWMSHTsGDidesv+nR1fHj1vHjv+nTmtu1YMaMSb5+oN67+/77/////////v//////AAAA////////////////////////////////////////yu3Zcc2aUMGDUsKEVcOFU8ODacmTgdGmW8WMWsWJz+7e/////v///////////////v//////////mNy3W8SK5/bv/////////f///v//////uOXMS8B/kdix/f7+////////1/LkhdSpVMKGTsGBV8WIWcaITsGBTMCBbcyYv+jR/P3+/////////v///v//////AAAA///////////////////////////////+/v///v//////8vz2zO3bsuTJteXLzu/b9Pv5reLFTsF/pN6/////////
+/f///v////////7/////////7/n1bsyYb8yY9f36/////////v//////////0+/gWsSIc86Z7vnz/////////////f/90u/eod++jdati9ermty4wOjU8vv2////////////////////////////AAAA////////////////////////////////////////////////////////////////7fnyaMmUZ8qR7/rz/////////v//////////////////////yOzYSsCAldq0////////////////////////5/XtYsiOWsWL3vPo////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////v///v///////////v///v/////+////////u+fPS79+qeHD/////////v7////+/////////v///////f/+h9WqScCApN69/////////v//////////////8/r3bsyYUcKE0u7e/////v///////////////////////////////v//////////////////////////////////AAAA//////////////////////////////////////7//////////v///v/////////+nt25UcKD3fPn/////v/////////+/v///v///v//////y+3aWMSJU8KFpeC+/////////////////v//////+P35eM+eUcKDxOrU/////////////v///v///////////////////v///v//////////////////////////////AAAA/////////////////////////////////////////////v///f///////////P7+jdavWcWK5/jv/////v///v///v//////////////8Pv0d8+eTcF/VcOFpuDB////
+/////////////v//////+P37eNGgUcKDvOjP/////////////////////////v///v//////////////////////////////////////////AAAA/////////////////////////////////////////////////////////////v/+mdu3U8KF3/To//////////7//v//////////+/79kNmxS7+AetCfWMSJnt28/////////f/+/v///v//////8/r3cM2ZUcKDxevW////////////////////////////////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////////uefMSL99q+LD////////////////////8/z4mNu2Rr16kNmx3fPnZsmRf9Ok/f///////v///v/+/v/+////5PXsYciOVsSH2PHj////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////////f//////////6Pjwa8uWV8SGu+jQ8fr1/f3/7vnzy+zZfNChRL16gtSo8vv1/f/+ftKhXcaN7fry////////////////////tebKTcCCdM6d8fr1////////////////////////////////////////////////////////////////////////AAAA//////////////////////////////////////////////////////7//f7//v//////0O7dXseNTcGAdc2diNOqcM6aTcCCU8OFm9q38vv3////////quDDSL5+rOLF////////////////4vbrasyVSr19r+TJ////////
+////////////////////////////////////////////////////////////////////AAAA///////////////////////////////////////////////////////+/v//////////////3vPplNq0ZcmSXseNasuVldq00/Df////////////////6PfwaMqSV8OHvOjQ5vfw4/TrvObPasuWR758h9Wp9vz6////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////v///v///////////v//////////////8vz27Pny9Pr2/////////////v///////v//////z+7dYciPSr9+W8aMWsWIS8B/WMWJmdu47vvz////////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////v///f/+////3vPon927g9Smh9WppN/A1vLj////////////////////////////////////////////////////////////////////////////////////////AAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+v38/P79/////////////v///////v//////////////////////////////////////////////
+////////////////////////////AAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////v//////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////v///////////////v///v/+////////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////v///////////v///////////////////////v7/////////////////////////////////////////////////////////////////////////AAAA/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////v//////////////////////////////////////////////////////////////////////////////AAAA////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAA</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>54ca2675-7275-414f-b4f7-384bd3a48289</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

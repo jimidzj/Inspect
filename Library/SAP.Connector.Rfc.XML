@@ -1,0 +1,1550 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SAP.Connector.Rfc</name>
+    </assembly>
+    <members>
+        <member name="T:SAP.Connector.Rfc.EDI_DC_BLOCK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DC_BLOCK.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DC_BLOCKList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.CreateNewRow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.Add(SAP.Connector.Rfc.EDI_DC_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>    
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.Insert(System.Int32,SAP.Connector.Rfc.EDI_DC_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.IndexOf(SAP.Connector.Rfc.EDI_DC_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.Contains(SAP.Connector.Rfc.EDI_DC_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>    
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.Remove(SAP.Connector.Rfc.EDI_DC_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC_BLOCKList.CopyTo(SAP.Connector.Rfc.EDI_DC_BLOCK[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>    
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DC_BLOCKList.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DC40_BLOCK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DC40_BLOCK.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DC40_BLOCKList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.CreateNewRow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.Add(SAP.Connector.Rfc.EDI_DC40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.Insert(System.Int32,SAP.Connector.Rfc.EDI_DC40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.IndexOf(SAP.Connector.Rfc.EDI_DC40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.Contains(SAP.Connector.Rfc.EDI_DC40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.Remove(SAP.Connector.Rfc.EDI_DC40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DC40_BLOCKList.CopyTo(SAP.Connector.Rfc.EDI_DC40_BLOCK[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DC40_BLOCKList.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD_BLOCK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD_BLOCK.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD_BLOCKList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.CreateNewRow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.Add(SAP.Connector.Rfc.EDI_DD_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.Insert(System.Int32,SAP.Connector.Rfc.EDI_DD_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.IndexOf(SAP.Connector.Rfc.EDI_DD_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.Contains(SAP.Connector.Rfc.EDI_DD_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.Remove(SAP.Connector.Rfc.EDI_DD_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD_BLOCKList.CopyTo(SAP.Connector.Rfc.EDI_DD_BLOCK[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD_BLOCKList.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD40">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Segnam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Mandt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Docnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Segnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Psgnum">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Hlevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40.Sdata">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD40List">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.CreateNewRow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.Add(SAP.Connector.Rfc.EDI_DD40)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.Insert(System.Int32,SAP.Connector.Rfc.EDI_DD40)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.IndexOf(SAP.Connector.Rfc.EDI_DD40)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.Contains(SAP.Connector.Rfc.EDI_DD40)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.Remove(SAP.Connector.Rfc.EDI_DD40)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40List.CopyTo(SAP.Connector.Rfc.EDI_DD40[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40List.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD40_BLOCK">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40_BLOCK.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.EDI_DD40_BLOCKList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.GetElementType">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.CreateNewRow">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.Add(SAP.Connector.Rfc.EDI_DD40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.Insert(System.Int32,SAP.Connector.Rfc.EDI_DD40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.IndexOf(SAP.Connector.Rfc.EDI_DD40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.Contains(SAP.Connector.Rfc.EDI_DD40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.Remove(SAP.Connector.Rfc.EDI_DD40_BLOCK)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.EDI_DD40_BLOCKList.CopyTo(SAP.Connector.Rfc.EDI_DD40_BLOCK[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:SAP.Connector.Rfc.EDI_DD40_BLOCKList.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPIDocSender">
+            <summary>
+            Sends text based IDoc over tRfc
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocSender.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocSender.#ctor(System.String)">
+            <summary>
+            construct a SAPIDocSender instance using a connection string
+            </summary>
+            <param name="ConnectionString">Connection string to be used to connect to the IDoc receiver,
+            very often, it is a SAP R/3 server 
+            </param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocSender.SubmitIDoc(System.IO.TextReader,SAP.Connector.RfcTID)">
+            <summary>
+            Sends IDocs from a stream  
+            </summary>
+            <param name="iDoc"></param>
+            <param name="tid"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocSender.SubmitIDoc(System.String,SAP.Connector.RfcTID)">
+            <summary>
+            Sends Idocs stored in a disk file
+            </summary>
+            <param name="iDocPath">Path of the IDOC file</param>
+            <param name="tid"></param>
+        </member>
+        <member name="T:SAP.Connector.SAPIDocReceiver">
+            <summary>
+            Receives IDocs sent over tRfc
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPServer">
+            <summary>
+            Base class for RFC server
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String)">
+            <summary>
+            This constructor creates an new instatance with a connection string
+            </summary>
+            <param name="connectionString">Connection string used to register the RFC server at the SAP gateway</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            This constructor creates an new instatance with a connection string
+            </summary>
+            <param name="programId">Identifer of the registered RFC server instance at SAP gateway</param>
+            <param name="gwhost">Host name of the SAP Gateway</param>
+            <param name="sapgwxx">Service name of the SAP gateway, where xx is usually the system number of the SAP application server</param>
+            <param name="codepage">Specifies the code page (such as unicode or ascii) that the server is running in. The default is 1100.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String,SAP.Connector.SAPServerHost)">
+            <summary>
+            This constructor creates an new instatance with a connection string
+            </summary>
+            <param name="connectionString">Connection string used to register the RFC server at the SAP gateway</param>
+            <param name="host">A SAPServerHost object that hosts the new SAPServer instance</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String[])">
+            <summary>
+            This constructor creates an new instatance with an array of parameters
+            </summary>
+            <param name="args">An array of parameters used to connect an RFC server to SAP gateway</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String[],SAP.Connector.SAPServerHost)">
+            <summary>
+            This constructor creates an new instatance with an array of parameters
+            </summary>
+            <param name="args">An array of parameters used to register the RFC server at SAP gateway</param>
+            <param name="host">A SAPServerHost object that hosts the new SAPServer instance</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.#ctor(System.String,System.String,System.String,System.String,SAP.Connector.SAPServerHost)">
+            <summary>
+            This constructor creates an new instatance with a connection string
+            </summary>
+            <param name="programId">Identifer of the registered RFC server instance at SAP gateway</param>
+            <param name="gwhost">Host name of the SAP Gateway</param>
+            <param name="sapgwxx">Service name of the SAP gateway, where xx is usually the system number of the SAP application server</param>
+            <param name="codepage">Specify SAP codepage 4103 or 4102 to run the RFC server in unicode mode.</param>
+            <param name="host">A SAPServerHost object that hosts the new SAPServer instance</param>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.Start">
+            <summary>
+            Call this method to start the RFC server instance
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.Stop">
+            <summary>
+            Call this method to stop the RFC server instance
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.Pause">
+            <summary>
+            Call this method to pause the RFC server instance
+            </summary>summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.Continue">
+            <summary>
+            Call this method to resume the paused RFC server instance
+            </summary>summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.Run">
+            <summary>
+            Thread star delegate for the RFC server instance
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.CheckTransaction(SAP.Connector.RfcTID)">
+            <summary>
+            Callback method to be overrided by the derived class. The method should check if this tid
+            has already been stored. If this tid is a new tid, save this tid, return 0; If this tid has
+            already been stored, return 1. Inthe case of error, return -1.
+            </summary>
+            <param name="tid">transaction ID</param>
+            <returns>0: OK to begin to process the tRfc call identified by this tid;
+                     1: the tRfc call identified by this tid has already been processed successfully;
+                     -1: error.
+            </returns>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.CommitTransaction(SAP.Connector.RfcTID)">
+            <summary>
+            Callback method to be overrided by the derived class. This method should commit the changes made by the 
+            CheckTransaction and the tRfc method itself.
+            </summary>
+            <param name="tid"></param>
+            <returns>0 for success, 1 for error</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.RollbackTransaction(SAP.Connector.RfcTID)">
+             <summary>
+             Callback method to be overrided by the derived class. This method should rollback the changes made by the 
+             CheckTransaction and the tRfc method itself.
+            </summary>
+            <param name="tid"></param>
+             <returns>0 for success, 1 for error</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPServer.ConfirmTransaction(SAP.Connector.RfcTID)">
+             <summary>
+             Callback method to be overrided by the derived class. This method just need to remove the tid from the TID store.
+            </summary>
+            <param name="tid"></param>
+             <returns>0 for success, 1 for error</returns>
+        </member>
+        <member name="F:SAP.Connector.SAPServer.conn">
+            <summary>
+            A RFC connection bound to this RFC server instance
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.Connection">
+            <summary>
+            RFC connection to the SAP gateway
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.ProgramID">
+            <summary>
+            ProgramID used by SAP gateway to identify this SAPServer instance. This ID is not unoque
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.SAPGatewayHost">
+            <summary>
+            Host name of the SAP gateway. on which this SAPServer instance is registed.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.SAPGatewayService">
+            <summary>
+            Serveice name of the the SAP gateway, on which this SAPServer instance is registed.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.Codepage">
+            <summary>
+            If the SAPServer instance runs in unicode.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.IsWorking">
+            <summary>
+            If this SAPServer instance is working or waiting for request.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.COMApartmentModel">
+            <summary>
+            Indicates the COM apartment model of the worker thread created by a SAPServer instance.
+            The default value of this property is Unknown. In a COM interop situation, it can be
+            set to MTA or STA according to the threading model of the involved COM components, but
+            only before starting the worker thread by calling method Start.   
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.ServerStatus">
+            <summary>
+            Indicates the status of this SAPServer instance.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPServer.CurrentRfcTID">
+            <summary>
+            The transaction ID of the current TRfc call. 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.#ctor(System.String)">
+            <summary>
+            construct a SAPIDocServer instance using a connection string
+            </summary>
+            <param name="ConnectionString">connection string used to connect to SAP gateway</param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.#ctor(System.String,SAP.Connector.SAPServerHost)">
+            <summary>
+            construct a SAPIDocReceiver instance and add this instance to the given SAPServerHost 
+            </summary>
+            <param name="ConnectionString">connection string to be used to connect to SAP gateway</param>
+            <param name="host">A container to host the new instance </param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.#ctor(System.String[])">
+            <summary>
+            Constructs a SAPIDocReceiver instance using the command line arguments 
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.#ctor(System.String[],SAP.Connector.SAPServerHost)">
+            <summary>
+            Constructs a SAPIDocReceiver instance using the command line arguments and adds newly constructed
+            instance to the given host 
+            </summary>
+            <param name="args"></param>
+            <param name="host"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.TRfcInBoundIDocProcess(SAP.Connector.Rfc.EDI_DC_BLOCKList,SAP.Connector.Rfc.EDI_DD_BLOCKList)">
+            <summary>
+            Builtin proxy method. Normally you should not call it directly.
+            </summary>
+            <param name="iDocControl"></param>
+            <param name="iDocData"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPIDocReceiver.TRfcIDocInBoundAsynchronous(SAP.Connector.Rfc.EDI_DC40_BLOCKList,SAP.Connector.Rfc.EDI_DD40_BLOCKList)">
+            <summary>
+            Builtin proxy method. Normally you should not call it directly.
+            </summary>
+            <param name="iDocControlRec40"></param>
+            <param name="iDocDataRec40"></param>
+        </member>
+        <member name="E:SAP.Connector.SAPIDocReceiver.BeginReceive">
+            <summary>
+            Happens before the actual receive of an IDOC. 
+            </summary>
+            <remarks>
+            The handler must assign a valid
+            <see cref="T:System.IO.TextWriter"/> to <c>writeTo.<see cref="F:SAP.Connector.SAPIdocReceiver.ReceiveEventArgs.WriteTo"/></c>.
+            </remarks>
+        </member>
+        <member name="E:SAP.Connector.SAPIDocReceiver.EndReceive">
+            <summary>
+            Happens after the whole IDOC has been received. 
+            </summary>
+            <remarks>
+            The handler should close the
+            writer in <c>writeTo.<see cref="F:SAP.Connector.SAPIdocReceiver.ReceiveEventArgs.WriteTo"/></c>.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.SAPIDocReceiver.ReceiveEventArgs">
+            <summary>
+            Contains arguments that you receive from the the eventd in 
+            <see cref="T:SAP.Connector.SAPIDocReceiver"/>. 
+            </summary>
+            <remarks>
+            The class contains the field <see cref="F:SAP.Connector.SAPIDocReceiver.ReceiveEventArgs.WriteTo"/> that is the
+            <see cref="T:System.IO.TextWriter"/> that <see cref="T:SAP.Connector.SAPIDocReceiver"/> uses
+            to write its received data to.
+            </remarks>
+        </member>
+        <member name="F:SAP.Connector.SAPIDocReceiver.ReceiveEventArgs.WriteTo">
+            <summary>
+            The <see cref="T:System.IO.TextWriter"/> where the IDocReceiver
+            should write its data to.
+            </summary>
+            <remarks>
+            The handler of the <see cref="E:SAP.Connector.SAPIDocReceiver.BeginReceive"/> must set this field
+            to a valid <see cref="T:System.IO.TextWriter"/>.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.SAPIDocReceiver.ReceiveEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="E:SAP.Connector.SAPIDocReceiver.BeginReceive"/> and  <see cref="E:SAP.Connector.SAPIDocReceiver.EndReceive"/> events of a <see cref="T:SAP.Connector.SAPIDocReceiver"/>.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcMarshal">
+            <summary>
+               This class implements methods marshaling data between managed code and
+               native RFC library.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcMarshal.RfcFieldToNetField(System.Byte[],System.Int32,SAP.Connector.RFCTYPE,System.Text.Encoding,System.Int32,System.Int32)">
+            <summary>
+             Marshals a unmanaged RFC struct field to its corresponding managed class property.
+             <para>This unsafe method is for internal use only.</para>
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcMarshal.NetFieldToRfcField(System.Object,SAP.Connector.RFCTYPE,System.Text.Encoding,System.Byte[],System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+             Marshals a managed class property to its corresponding unmanaged RFC struct field.
+             This unsafe method is for internal use only
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcMarshal.RfcScalarParamToNetScalarParam(SAP.Connector.SAPConnection,System.Type,System.String,System.IntPtr,SAP.Connector.RFCTYPE,System.Int32@,System.Int32)">
+            <summary>
+             Marshals an unmanaged RFC scalar parameter to its corresponding managed data type.
+             This unsafe method is for internal use only
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcMarshal.NetScalarParamToRfcScalarParam(System.Object,System.Type,System.String,SAP.Connector.SAPConnection,SAP.Connector.RFCTYPE,System.Int32@,System.Int32,System.IntPtr)">
+            <summary>
+             Marshals an managed simple data type to its corresponding unmanaged RFC scalar parameter.
+             This unsafe method is for internal use only
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_RC">
+            <summary>
+               RFC return code 
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_OK">
+            <summary>RFC call succeded </summary>		
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_FAILURE">
+            <summary>RFC call failed </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_EXCEPTION">
+            <summary>RFC exception raised</summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_SYS_EXCEPTION">
+            <summary>System exception raised </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_CALL">
+            <summary>RFC call is in progress </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_public_COM">
+            <summary>Garbage </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_CLOSED">
+            <summary>RFC connection closed </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_RETRY">
+            <summary>No RFC request</summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_NO_TID">
+            <summary> Invalid TID </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_EXECUTED">
+            <summary>RFC fuction is already exceuted</summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_SYNCHRONIZE">
+            <summary>RFC Synchronnize </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_MEMORY_INSUFFICIENT">
+            <summary>Insufficient memory </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_VERSION_MISMATCH">
+            <summary>Version mismatch </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_NOT_FOUND">
+            <summary>RFC function not found </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_CALL_NOT_SUPPORTED">
+            <summary>RFC call not supported </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_NOT_OWNER">
+            <summary>RFC not owner </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_NOT_INITIALIZED">
+            <summary>RFC not initialized </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_SYSTEM_CALLED">
+            <summary>System function called </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_INVALID_HANDLE">
+            <summary>Invalid RFC handle </summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_INVALID_PARAMETER">
+            <summary>Invalid parameter</summary>
+        </member>
+        <member name="F:SAP.Connector.Rfc.RFC_RC.RFC_CANCELED">
+            <summary>RFC call cancled </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_XSTRING">
+            <summary>
+               RFC binary string 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_ATTRIBUTES">
+            <summary>
+              RFC Connection Attribute struct  
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_PARAMETER">
+            <summary>
+              RFC PARAMETER struct  
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_TABLE">
+            <summary>
+              RFC TABLE struct  
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_TYPE_ELEMENT">
+            <summary>
+              RFC TYPE_ELEMENT struct  
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RFC_UNICODE_TYPE_ELEMENT">
+            <summary>
+              RFC RFC_UNICODE_TYPE_ELEMENT struct  
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi">
+            <summary>
+              All required RFC APIs are wrapped in this class.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi.RFC_ONCALL">
+            <summary>
+            delegate for Rfc server function
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi.RFC_ON_CHECK_TID">
+            <summary>
+            delegate for tRfc checkTID
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi.RFC_ON_COMMIT">
+            <summary>
+            delegate for tRfc commit
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi.RFC_ON_ROLLBACK">
+            <summary>
+            delegate for tRfc rollback
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcApi.RFC_ON_CONFIRM_TID">
+            <summary>
+            delegate for tRfc confirmTID
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcTIDUtil">
+            <summary>
+            Internal.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcTIDUtil.GuidToTid(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcTIDUtil.CreateNewTid">
+            <summary>
+            Internal.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcTIDUtil.TidToGuid(System.Byte[])">
+            <summary>
+            Internal.
+            </summary>
+            <param name="tid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcTIDUtil.PtrToTid(System.IntPtr)">
+            <summary>
+            Construct a new instance of the RfcTID class using the unmanaged TID pointer.
+            </summary>
+            <param name="pTID">An unmanaged pointer pointing to the unmanaged TID buffer.</param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcTIDUtil.TidToString(System.Byte[])">
+            <summary>
+            Returns a string representation of the TID contained in this instance of the RfcTID class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcAttributeUtil.GetRfcFieldAttribute(SAP.Connector.SAPConnection,System.Reflection.MemberInfo)">
+            <summary>
+               Static method to get the RFC attributes of a field.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcAttributeUtil.GetRfcParameterAttribute(SAP.Connector.SAPConnection,System.Reflection.ParameterInfo)">
+            <summary>
+               static method to read RFC attributes of a parameter.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcAttributeUtil.GetRfcStructureAttribute(SAP.Connector.SAPConnection,System.Type)">
+            <summary>
+               static method to read the RFC attributes of a SAPStructure derived class.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcAttributeUtil.GetRfcMethodAttribute(SAP.Connector.SAPConnection,System.Reflection.MemberInfo)">
+            <summary>
+               static method to read RFC attributes of a method.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcInvokeDelegate">
+            <summary>
+            Delegate used to invoke the RFC functions/methods asynchronously
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcClient">
+            <summary>
+            Base class for all generated RfcClient proxy classes. This class implements the
+            RFC proxy functionality. 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.#ctor(System.String)">
+            <summary>
+            Construct a new RfcClient instance with the given connection string. With this 
+            connection string, a RFC connection will be established before a method call is made. 
+            </summary>
+            <param name="ConnectionString"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.#ctor(SAP.Connector.Destination)">
+            <summary>
+            Construct a new RfcClient instance with the given Destination object. With the parameters 
+            contained in the Destination object, a RFC connection will be established before a method
+            call is made. 
+            </summary>
+            <param name="destination"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.RfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[])">
+            <summary>
+            Internal.
+            </summary>
+            <param name="proxy"></param>
+            <param name="method"></param>
+            <param name="methodParamsIn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.BeginRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],System.AsyncCallback,System.Object)">
+            <summary>
+            Internal.
+            </summary>
+            <param name="proxy"></param>
+            <param name="method"></param>
+            <param name="methodParamsIn"></param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.EndRfcInvoke(SAP.Connector.SAPClient,System.IAsyncResult)">
+            <summary>
+            Internal
+            </summary>
+            <param name="proxy"></param>
+            <param name="ar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.tRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],SAP.Connector.RfcTID)">
+            <summary>
+            Invoke a SAP transational RFC call
+            </summary>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="tid">A 24 char long string used to uniquelly identify the call  </param>
+            <param name="proxy"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.qRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],SAP.Connector.RfcQueueItem)">
+            <summary>
+            Invoke a SAP queued RFC call
+            </summary>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="qItem">A instance of the class RfcQueueItem with initialized QueueName, QueueIndex and TID </param>
+            <param name="proxy"></param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcClient.ConfirmTID(SAP.Connector.SAPClient,SAP.Connector.RfcTID)">
+            <summary>
+            Call this method after a successful tRfc or qRfc call
+            </summary>
+            <param name="tid"></param>
+            <param name="proxy"></param>
+        </member>
+        <member name="T:SAP.Connector.Rfc.PerformanceData">
+            <summary>
+            Represents the RFC perfromance data associated with a SAPConnection.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.PerformanceData.SetValues(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Set performance data of the last method call
+            </summary>
+            <param name="method">Proxy method name</param>
+            <param name="rfm">Associated RFC function module name</param>
+            <param name="bytesSent">Number of bytes sent by the last call</param>
+            <param name="bytesReceived">Number of bytes received by the last call</param>
+            <param name="methodTime">Execution time in milisecond</param>
+            <param name="rfcTime">RFC time in minisecond</param>
+        </member>
+        <member name="M:SAP.Connector.Rfc.PerformanceData.Clear">
+            <summary>
+            Reset the performance data for reuse later.  
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.LastCalledMethod">
+            <summary>
+            The last called proxy method call
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.LastCalledRFM">
+            <summary>
+            The RFC function module associated with the last called proxy method 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.BytesSent">
+            <summary>
+            The number of bytes sent by the last call
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.BytesReceived">
+            <summary>
+            The number of bytes returned by the last call
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.MethodExecutionTime">
+            <summary>
+            The execution time in milisecond taken by the last method call
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.RfcTime">
+            <summary>
+            The time in milisecond taken by the native RFC call
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.TotalBytesSent">
+            <summary>
+            Total bytes sent over the associated connection
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.TotalBytesReceived">
+            <summary>
+            Total bytes received over the assoiated connection
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.TotalMethodExecutionTime">
+            <summary>
+            Total execution time taken by the method calls over the assciated connection 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.PerformanceData.TotalRfcTime">
+            <summary>
+            Total time in milisencond taken by the RFC calls over the associated connection
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcStructInfo">
+            <summary>
+            A class used to cache the metadata of a RFC structure
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.RfcStructureUtil">
+            <summary>
+            Summary description for RfcStructureUtil.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.GetRfcStructureInfo(SAP.Connector.SAPConnection,System.Type)">
+            <summary>
+            Installs the RFC structure type represented by the .NET type <paramref name="t"/>.
+            </summary>
+            <param name="conn">A SAPConnection object represents the current RFC connection</param>
+            <param name="t">Type of the SAPStrucre derived class</param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.GetITabFromArray(SAP.Connector.SAPConnection,System.Object,System.Type,SAP.Connector.Rfc.RfcStructInfo)">
+            <summary>
+            Converts a .NET array of type <paramref name="t"/> to a RFC internal table.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.GetITabFromList(SAP.Connector.SAPConnection,System.Object,System.Type,SAP.Connector.Rfc.RfcStructInfo,System.Int32)">
+            <summary>
+            Converts a .NET list of type <paramref name="t"/> to a RFC internal table.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.CreateITab(SAP.Connector.SAPConnection,System.Type,SAP.Connector.Rfc.RfcStructInfo)">
+            <summary>
+            Creates a empty RFC intrenal table base on .NET type <paramref name="t"/>.
+            <returns>the handle of the RFC internal table</returns>
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.FillListWithITab(SAP.Connector.SAPConnection,System.Object,System.Int32,System.Type,SAP.Connector.Rfc.RfcStructInfo)">
+            <summary>
+            Converts the RFC intrenal table <paramref name="itab"/> to an .NET list whos element
+            has type of <paramref name="t"/>.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.FromRfcStructure(System.Byte[],System.Type,System.Text.Encoding,System.Reflection.PropertyInfo[],SAP.Connector.Rfc.RfcStructInfo)">
+            <summary>
+            Converts a RFC structure specified by <paramref name="src"/> to an .NET object
+            of type <paramref name="t"/>.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.RfcFieldsToNetSubSructure(System.Byte[],System.Type,System.Text.Encoding,System.Reflection.PropertyInfo[],SAP.Connector.Rfc.RFC_TYPE_ELEMENT[],System.Int32@)">
+            <summary>
+            Converts RFC fields to corresponding .NET sub-structure.
+            </summary>
+            <param name="src"></param>
+            <param name="t"></param>
+            <param name="encoding"></param>
+            <param name="propinfos"></param>
+            <param name="rfcelms"></param>
+            <param name="j"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.ToRfcStructure(System.Object,System.Byte[],System.Type,System.Text.Encoding,System.Boolean,System.Reflection.PropertyInfo[],SAP.Connector.Rfc.RfcStructInfo)">
+            <summary>
+            Converts .NET object <paramref name="obj"/> of type <paramref name="t"/> to an
+            RFC structure.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Rfc.RfcStructureUtil.NetSubStructToRfcFields(System.Object,System.Type,System.Text.Encoding,System.Byte[],System.Int32,System.Reflection.PropertyInfo[],SAP.Connector.Rfc.RFC_TYPE_ELEMENT[],System.Int32@)">
+            <summary>
+            Converts a .NET sub-structure to corresponding flat RFC fields
+            </summary>
+            <param name="obj"></param>
+            <param name="t"></param>
+            <param name="encoding"></param>
+            <param name="dest"></param>
+            <param name="charSize"></param>
+            <param name="propinfos"></param>
+            <param name="rfcelms"></param>
+            <param name="j"></param>
+        </member>
+        <member name="T:SAP.Connector.SAPConnection">
+            <summary>
+            Represents an RFC connection to a SAP application server
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.#ctor">
+            <summary>
+            Construct a new instance of the SAPConnection class with a given connection string.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.#ctor(System.String)">
+            <summary>
+            Construct a new instance of the SAPConnection class with a given connection string.
+            </summary>
+            <param name="connString"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.#ctor(SAP.Connector.IDestination)">
+            <summary>
+            Initializes a new SAPConnection that is linked with the given Destination.
+            Note that the <see cref="P:ConnectionString"/> is not set during initialization but
+            on the call to <see cref="M:Open"/>
+            </summary>
+            <param name="dest"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Construct a new instance of the SAPConnection class used by a RFC server.
+            </summary>
+            <param name="programId">Identifer of the registered RFC server instance at SAP gateway</param>
+            <param name="gwhost">Host name of the SAP Gateway</param>
+            <param name="sapgwxx">Service name of the SAP gateway, where xx is usually the system number of the SAP application server</param>
+            <param name="codepage">SAP codepage used by the RFC server</param>
+            <param name="connString">other parameters for a started RFC server</param>
+            
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.OpenResources">
+            <summary>
+            Open a RFC connection with the property settings specified by <paramref name="ConnectionString"/>.
+            <returns>a RFC handle identifying the connection.</returns>
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.Accept">
+            <summary>
+            Register RFC server connection with the property settings specified by <paramref name="ConnectionString"/>.
+            <returns>a RFC handle identifying the connection.</returns>
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.CloseResources">
+            <summary>
+            Closes the RFC connection.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.PrepareForPooling">
+            <summary>
+            Clear the connection to be reused later.
+            This method is used by connection pooling.
+            </summary>
+            <returns>The the representation of the connection that
+            should go back into the pool. The function returns null,
+            if the Connection is in a state that is shouldn't
+            go into the pool. The default implementations returns "this".</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPConnection.GetSAPSSOTicket(System.String,System.Int32)">
+            <summary>
+            Gets SAP SSO or SAP SSO2 ticket for the user specified in <paramref name="connString"/> 
+            </summary>
+            <param name="connString">A connection string used to connect to the target SAP ssytem</param>
+            <param name="version">1 or 2 to indicate the requested SAP SSO ticket version.</param>
+            <returns>A base64-encoded SAP SSO ticket. This ticket can re-used to open a new RFC 
+            connection to the same SAP system without having to provide user credential.</returns>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.IsOpen">
+            <summary>
+            Checks if the the connection is open.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.ConnectionString">
+            <summary>
+            Gets or sets the string used to open a RFC connection to a SAP application server.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.RfcHandle">
+            <summary>
+            Gets the RFC handle returned by calling <paramref name="Open"/> or <paramref name="Accept"/>.
+            The setter is for internal special use only.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.SystemID">
+            <summary>
+            Gets the system ID of the connected SAP system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.ApplicationServer">
+            <summary>
+            Gets the host name of the connected SAP application server.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.SystemNumber">
+            <summary>
+            Gets the system number of the connected SAP system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.PartnerCodepage">
+            <summary>
+            Gets the codepage used by the connected SAP system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.OwnCodepage">
+            <summary>
+            Gets the codepage used by the local system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.SystemRelease">
+            <summary>
+            Gets the system release of the target SAP system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.KernelRelease">
+            <summary>
+            Gets the software release of the target SAP system.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.CodepageEncoding">
+            <summary>
+            Gets or sets encoding should be used to convert the codepages.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.ShouldValidateRfcStructure">
+            <summary>
+            This property is for internal use only
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.RfcErrInfo">
+            <summary>
+            Gets the last RFC error with this connection.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPConnection.Performance">
+            <summary>
+            Gets the performance counters of this connection. 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPServerStatus">
+            <summary>
+            Status of a SAPServer
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.StartPending">
+            The server is going to be started
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.Running">
+            The server is running
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.StopPending">
+             The server is going to be stopped
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.Stopped">
+            the server is stopped
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.PausePending">
+            <summary>
+            the server is going to be paused
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.Paused">
+            <summary>
+            ther server is paused
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPServerStatus.ContinuePending">
+            <summary>
+            ther server is going to be resumed
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.ActionOnServerException">
+            <summary>
+            Possible return values for method ISAPServerHost.OnSAPServerException   
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.ActionOnServerException.Terminate">
+            <summary>
+            Terminate the RFC server thread when a exception thrown 
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.ActionOnServerException.Reconnect">
+            <summary>
+            Re-connect to the SAP gateway when a exception thrown
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.ActionOnServerException.AutoReconnect">
+            <summary>
+            Re-connect to the SAP gateway automatically when a exception thrown
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPServerHost">
+            <summary>
+            Container to host one or more SAPServer instances
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.#ctor">
+            <summary>
+            default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.OnServerException(SAP.Connector.SAPServer,System.Exception)">
+            <summary>
+            Exception handler called when a hosted SAPServer instance throws an exception. The default
+            handler returns ActionOnServerException.Terminate and will cuause the SAPServer instance stop to run.
+            </summary>
+            <param name="server">the SAPServer instance that throws the exception.</param>
+            <param name="e">The exception thrown by the the SAPServer instance</param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.Add(SAP.Connector.SAPServer)">
+            <summary>
+            Add a new SAPServer to the container
+            </summary>
+            <param name="server"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.Start">
+            <summary>
+            Start all SAPServer instances hosted in it. 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.Stop">
+            <summary>
+            Stop all SAPServer instances hosted in it.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.Pause">
+            <summary>
+            Pause all SAPServer instances hosted in it. 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.Continue">
+            <summary>
+            Resume all SAPServer instances hosted in it.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.RemoveSAPServer(SAP.Connector.SAPServer)">
+            <summary>
+            Remove a SAPServer instance from this container
+            </summary>
+            <param name="server"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.RemoveAllSAPServers">
+            <summary>
+            Remove all SAPServer instances from this container
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPServerHost.WaitForExit(System.Int32)">
+            <summary>
+            Blocks the calling thread until all hosted SAPServer instances have terminated or the specified time elapses.
+            </summary>
+            <param name="millisecondsTimeout">The number of milliseconds to wait. 
+            </param>
+            <returns>true if all SAPServer instances have terminated; false if any of the hosted SAPServer instances is still running after
+             the amount of time specified by the millisecondsTimeout parameter has elapsed.
+            </returns>
+        </member>
+        <member name="P:SAP.Connector.SAPServerHost.ServerHostStatus">
+            <summary>
+            current status of the SAPServer instance
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Rfc.X030L">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Tabname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Dbase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Uuid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Crstamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Abstamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Dystamp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Fldcnt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Tablen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Keycnt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Keylen">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Clpos">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Tabtype">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Tabform">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Refname">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Flagbyte">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Exrout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Flag3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Flag4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Flag5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Flag6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Bufstate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Bufparm">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Align">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Pointerlg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Unicodelg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Compcnt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Rfc.X030L.Leafcnt">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

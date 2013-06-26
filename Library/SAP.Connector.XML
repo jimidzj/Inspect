@@ -1,0 +1,3698 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SAP.Connector</name>
+    </assembly>
+    <members>
+        <member name="T:SAP.Connector.RfcFieldAttribute">
+            <summary>
+            Used internally by NCo to mark a field or property a field as part of an ABAP stucture.
+            </summary>
+            <remarks>
+              <para>
+                This class implements customer attribute class RfcFieldAttribute 
+                which describes the fields inside a class which represents an ABAP structure.  
+              </para>
+              <para>
+                RfcFieldAttribute can only be applied to properties of a SAPStructure derived class. 
+              </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.RfcFieldAttribute.#ctor">
+            <summary>
+               Default constructor for class RfcFieldAttribute.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcFieldAttribute.#ctor(System.String,SAP.Connector.RFCTYPE,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Constructor for class RfcFieldAttribute.
+            </summary>
+            <param name="name">ABAP name</param>
+            <param name="type">ABAP or RFC type</param>
+            <param name="len">Length in bytes of the field</param>
+            <param name="len2">Length in bytes of the field for the unicode SAP system</param>
+            <param name="decs">Digits after the decimal point</param>
+            <param name="offset">Offset of the field in the ABAP structure layout</param>
+            <param name="offset2">Offset of the Offset of the field in the ABAP structure layout for the unicode SAP system</param>
+        </member>
+        <member name="M:SAP.Connector.RfcFieldAttribute.GetRfcAttribute(System.Reflection.MemberInfo)">
+            <summary>
+               Static method to get the RFC attributes of a field.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.AbapName">
+            <summary>
+               ABAP name of a field inside a ABAP structure. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.RfcType">
+            <summary>
+               RFC type of the field. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Length">
+            <summary>
+               Length in byte. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Length2">
+            <summary>
+               Length in byte for data field encoded in Unicode16. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Decimals">
+            <summary>
+               Number of digits after the decimal point. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Offset">
+            <summary>
+               Offset of a field in a natural alligned structure. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Offset2">
+            <summary>
+               Offset of a field in a natural alligned structure in which the char members are encoded using unicode16. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcFieldAttribute.Release">
+            <summary>
+               Release of the target SAP system. 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcParameterAttribute">
+            <summary>
+            Used internally by NCo to mark a parameter as a parameter of the underlying RFC enabled function.
+            </summary>
+            <remarks>
+              <para>
+                This class implements the customer attribute class RfcParameterAttribute 
+                which contains the necessary meta data for interoperating with the 
+                underlying RFC runtime. 
+              </para>
+              <para>
+                RfcParameterAttribute can only be applied to a method parameter
+              </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.RfcParameterAttribute.#ctor">
+            <summary>
+               Default constructor.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcParameterAttribute.#ctor(System.String,SAP.Connector.RFCTYPE,System.Int32,System.Int32,System.Int32,SAP.Connector.RFCINOUT)">
+            <summary>
+               Constructor for method parameter corresponding to a RFC scalar parameter.
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="len"></param>
+            <param name="len2"></param>
+            <param name="decs"></param>
+            <param name="direction"></param>
+        </member>
+        <member name="M:SAP.Connector.RfcParameterAttribute.#ctor(System.String,System.String,SAP.Connector.RFCTYPE,SAP.Connector.RFCINOUT)">
+            <summary>
+               Constructor for method parameter corresponding to a RFC structure or table parameter.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.AbapName">
+            <summary>
+               ABAP name of a method parameter. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Structure">
+            <summary>
+               ABAP type name of a table or structure parameter. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.RfcType">
+            <summary>
+               RFC type. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Length">
+            <summary>
+               Length in byte. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Length2">
+            <summary>
+               Length in byte for data field encoded in Unicode16. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Decimals">
+            <summary>
+               Number of digits after the decimal point. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Direction">
+            <summary>
+               Direction of an RFC or BAPI parameter. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Optional">
+            <summary>
+               If the specified parameter is optional. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcParameterAttribute.Release">
+            <summary>
+               Release of the target SAP system. 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcStructureAttribute">
+            <summary>
+            Used internally by NCo to mark a class to be a ABAP structure proxy.
+            </summary>
+            <remarks>
+              <para>
+                This class implements customer attribute class RfcStructureAttribute 
+                which contains the necessary meta data for interoperating with the 
+                underlying RFC runtime. 
+              </para>
+              <para>
+                RfcStructureAttribute can only be applied to a class SAPStructure derived class.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.RfcStructureAttribute.#ctor">
+            <summary>
+               Default constructor for class RfcStructureAttribute.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcStructureAttribute.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Constructor for class RfcStructureAttribute.
+            </summary>
+            <param name="name">ABAP name</param>
+            <param name="len">Length in bytes of a ABAP structure</param>
+            <param name="len2">Lenth in bytes of a ABAP structure in which the charcter fields are encoded in unicode</param>
+        </member>
+        <member name="M:SAP.Connector.RfcStructureAttribute.#ctor(System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Constructor for class RfcStructureAttribute.
+            </summary>
+            <param name="name">ABAP name</param>
+            <param name="len">Length in bytes of a ABAP structure</param>
+            <param name="len2">Length in bytes of a ABAP structure in which the charcter fields are encoded in unicode</param>
+            <param name="isRfcDeepStruct">If the structure is a deep structure that is handled by RFC as flat strucure</param>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.AbapName">
+            <summary>
+               ABAP name of a structure. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.TypeHandle">
+            <summary>
+               RFC type handle of a RFC structure. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.Length">
+            <summary>
+               Length in byte. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.Length2">
+            <summary>
+               Length in byte if the structure contains fields encoded in Unicode16. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.Release">
+            <summary>
+               Release of the target SAP system. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcStructureAttribute.IsRfcDeepStruct">
+            <summary>
+            Specifies that the struct contains other structs or tables.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcMethodAttribute">
+            <summary>
+            Used internally to mark a method to be a RFC enabled function.
+            </summary>
+            <remarks>
+              <para>
+                This class implements customer attribute class RfcMethodAttribute 
+                which contains the necessary meta data for interoperating with the 
+                underlying RFC runtime. 
+              </para>
+              <para>
+                RfcMethodAttribute can only be applied to method.
+              </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.RfcMethodAttribute.#ctor">
+            <summary>
+               Default constructor for class RfcMethodAttribute.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcMethodAttribute.#ctor(System.String)">
+            <summary>
+            Constructor for class RfcMethodAttribute.
+            </summary>
+            <param name="name">ABAP name of the remote callable function module</param>
+        </member>
+        <member name="P:SAP.Connector.RfcMethodAttribute.AbapName">
+            <summary>
+               ABAP name of a method or parameter. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcMethodAttribute.Release">
+            <summary>
+               Release of the target SAP system. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcMethodAttribute.IsTRfc">
+            <summary>
+               Indicates that this method is a TRfc implementation for Rfc function module
+               specified by AbapName. 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRETURN">
+            <summary>
+            This class represents a BAPI return parameter
+            BAPIRETURN is the base class of the BAPI error structures
+            BAPIRETURN1, BAPIRET1 and BAPIRET2
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPStructure">
+            <summary>
+            This abstract class implements some static methods to handle RFC structure
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.GetSAPFieldsSchema(System.Type)">
+            <summary>
+            A static method used get the schema of a structure.
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPStructure.owner">
+            <summary>
+            owner
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPStructure.myTableIndex">
+            <summary>
+            index
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.InitializeInTable(SAP.Connector.SAPTable,System.Int32)">
+            <summary>
+            Initializes a new row as a member of a table.
+            </summary>
+            <param name="owner">The table where the structure becomes a member of.</param>
+            <param name="index">The index in the table.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.BeginEdit">
+            <summary>
+            See <see cref="M:System.ComponentModel.IEditableObject.BeginEdit"/>.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.EndEdit">
+            <summary>
+            See <see cref="M:System.ComponentModel.IEditableObject.BeginEdit"/>.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.CancelEdit">
+            <summary>
+            See <see cref="M:System.ComponentModel.IEditableObject.CancelEdit"/>.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPStructure.OnChange">
+            <summary>
+            See <see cref="M:System.ComponentModel.IEditableObject.OnChange"/>.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPStructure.Item(System.Int32)">
+            <summary>
+            Indexer used to access the value of the field by index.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPStructure.Item(System.String)">
+            <summary>
+            Indexer used to access the value of the field by name.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Type">
+            <summary>
+            Message type: S Success, E Error, W Warning, I Info, A Abort
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Code">
+            <summary>
+            Message code
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Message">
+            <summary>
+            Message Text
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Log_No">
+            <summary>
+            Application log number This is empty if no log used.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Log_Msg_No">
+            <summary>
+            Application log: Current message number in application log 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Message_V1">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Message_V2">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Message_V3">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN.Message_V4">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRETURN1">
+            <summary>
+            BAPIRETURN1 is a BAPI error handling parameter (structure)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Type">
+            <summary>
+            Message type: S Success, E Error, W Warning, I Info, A Abort
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Id">
+            <summary>
+            Messages, Message ID
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Number">
+            <summary>
+            Messages, Message Number
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Message">
+            <summary>
+            Message Text
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Log_No">
+            <summary>
+            Application log: log number
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Log_Msg_No">
+            <summary>
+            Application log: Internal message serial number
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Message_V1">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Message_V2">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Message_V3">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURN1.Message_V4">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRET1">
+            <summary>
+            Return Parameter
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Type">
+            <summary>
+            Message type: S Success, E Error, W Warning, I Info, A Abort
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Id">
+            <summary>
+            Messages, Message ID
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Number">
+            <summary>
+            Messages, Message Number
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Message">
+            <summary>
+            Message Text
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Log_No">
+            <summary>
+            Application log: log number
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Log_Msg_No">
+            <summary>
+            Application log: Internal message serial number
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Message_V1">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary> 
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Message_V2">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Message_V3">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET1.Message_V4">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRET2">
+            <summary>
+            BAPIRET2 is a BAPI error handling parameter (structure)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Type">
+            <summary>
+            Message type: S Success, E Error, W Warning, I Info, A Abort
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Id">
+            <summary>
+            Messages, Message ID
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Number">
+            <summary>
+            Messages, Message Number
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Message">
+            <summary>
+            Message Text
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Log_No">
+            <summary>
+            Application log: log number
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Log_Msg_No">
+            <summary>
+            Application log: Internal message serial number
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Message_V1">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Message_V2">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Message_V3">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Message_V4">
+            <summary>
+            Fields for the variable texts of the message specified in fields ID and NUMBER
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Parameter">
+            <summary>
+            Parameter Name
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Row">
+            <summary>
+            Line number of the data record containing the invalid value
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.Field">
+            <summary>
+            Field containing the invalid value.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2.System">
+            <summary>
+            Logical system from which message originates
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRET2Table">
+            <summary>
+            A typed collection of BAPIRET2 elements.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPTable">
+            <summary>
+            Base class for all SAP table derived classes
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.GetElementType">
+            <summary>
+            Returns the type of the <see cref="T:SAP.Connector.SAPStructure"/> that this SAPTable consists of.
+            </summary>
+            <returns>The type of the rows of this table.</returns>
+            <remarks>
+            Proxies generated by SAP .NET Connector 1.x wizard did have a static
+            member "GetElementType". In Version 2.0, the member is change to be a
+            virtual member of the SAPTable base class. Proxies from 1.x can therefore
+            cause compiler warnings when compiled with version 2.
+            Proxies should be regenerated or changed manually by replacing "static" with "override".
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.GetElementType(System.Type)">
+            <summary>
+            Returns the type of the <see cref="T:SAP.Connector.SAPStructure"/> that the given SAPTable consists of.
+            </summary>
+            <param name="tableType">
+            A SAPTable derived class to check the element type of.
+            </param>
+            <remarks>
+            A <see cref="T:SAP.Connector.SAPStructure"/> derived type or null.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.Dispose">
+            <summary>
+            Dispose
+            </summary> 
+        </member>
+        <member name="M:SAP.Connector.SAPTable.AddNew">
+            <summary>
+            Adds a new record of the underlying type to the table.
+            <see cref="M:SAP.Connector.SAPTable.CreateNewRow"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.CreateNewRow">
+            <summary>
+            This function creates a new instance of the row type of an SAP table.
+            </summary>
+            <returns>A new row object.</returns>
+            <remarks>
+            All SAP Tables generated by the Proxy Wizard will override this method by
+            the fast an simple version "return new [StructType]()".
+            This version here is only indented for tables that don't implement this
+            override. It uses reflection to create an instance of the return type 
+            of the indexer of the SAP Table.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.AddIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Not implemented.
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.RemoveIndex(System.ComponentModel.PropertyDescriptor)">
+            <summary>
+            Not implemented.
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+            Sorts the table using the given column and order.
+            </summary>
+            <param name="property">The column property to sort.</param>
+            <param name="direction">The sort direction.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.RemoveSort">
+            <summary>
+            Declares the table as unsorted.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.Find(System.ComponentModel.PropertyDescriptor,System.Object)">
+            <summary>
+            Searches for a row with the given key in the table. The table is implicitely 
+            sorted (if not already done).
+            </summary>
+            <param name="property">The column of key.</param>
+            <param name="key">The search key.</param>
+            <returns>Returns the first row matching the sort or null.</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.BeginInit">
+            <summary>
+            Marks the table to be in initialization.
+            During initialization no events will be thrown.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.EndInit">
+            <summary>
+            Marks the table to be ready for use and raises the ClearComplete event.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnClearComplete">
+            <summary>
+            Raises a ListChanged event of type ListChangedType.Reset
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Raises a ListChanged event of type ListChangedType.ItemAdded
+            and initializes the new row in the table.
+            </summary>
+            <param name="index">The index of the new row.</param>
+            <param name="value">The new row.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            Raises a ListChanged event of type ListChangedType.ItemDeleted
+            </summary>
+            <param name="index">The index of the row that has been removed.</param>
+            <param name="value">The row that has been removed.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnSetComplete(System.Int32,System.Object,System.Object)">
+            <summary>
+            Raises a ListChanged event of type ListChangedType.ItemChanged
+            and initializes the new row in the table.
+            </summary>
+            <param name="index">The index of the row to be replaced.</param>
+            <param name="oldValue">The old row (that is removed).</param>
+            <param name="newValue">The new row.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnChangeComplete(System.Int32,System.Object)">
+            <summary>
+            Raises a ListChanged event of type ListChangedType.ItemChanged.
+            </summary>
+            <param name="index">The index of the changed row.</param>
+            <param name="value">The changed row.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.OnCancelComplete(System.Int32,System.Object)">
+            <summary>
+            Cancels the current edit transaction on the given row.
+            If the row is a temporary row that was going to be added to
+            the table, it will be removed.
+            </summary>
+            <param name="index">The index of the row that had been edited.</param>
+            <param name="value">The row.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.SortBy(System.String,System.String)">
+             <summary>
+             Sorts the SAP table by field name
+             </summary>
+             <param name="fieldName">
+             Field name that is used for sorting. If this parameter is null,
+              empty or invalid, the first field will be used for sorting 
+             </param>
+             <param name="direction">
+            	The direction of the sort. If this parameter is equal to "DESC",
+            	the sort will be performed in descending order. Otherwise, the sort
+            	will be performed in ascending order.   
+            </param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.FindBy(System.String,System.Object)">
+            <summary>
+            Finds the first row whose fieldName field has the value of fieldValue. 
+            </summary>
+            <param name="fieldName">Field to be compare by searching </param>
+            <param name="fieldValue">Value to be compare by searching</param>
+            <returns>A zero based index of the first matching row or a negative value
+            if now matching row is found.
+            </returns>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.ToADODataTable">
+            <summary>
+            Converts the SAP table to an ADO.NET DataTable.
+            </summary>
+            <returns>The new DataTable that is a copy of the SAP Table.</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.FromADODataTable(System.Data.DataTable)">
+            <summary>
+            Copy data from a exactly matching ADO DataTable, mostly the DataTable was 
+            originally created from a SAPTable of this type. 
+            </summary>
+            <param name="dataTable"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPTable.RefreshBindings(System.Windows.Forms.Control)">
+            <summary>
+            Refreshes the control that is bound to the SAP Table.
+            This method is normally automatically called.
+            </summary>
+            <param name="control">The control to be refreshed.</param>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.Site">
+            <summary>
+            ISite
+            </summary>
+        </member>
+        <member name="E:SAP.Connector.SAPTable.Disposed">
+            <summary>
+            EventHandler
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.AllowNew">
+            <summary>
+            Idicates whether this SAPTable and the user interface associated with it allows new rows to be added.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.AllowEdit">
+            <summary>
+            Indicates whether this SAPTable and the user interface associated with it allows edits.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.AllowRemove">
+            <summary>
+            Indicates whether this SAPTable and the user interface associated with it allows deletes.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.SupportsChangeNotification">
+            <summary>
+            Indicates whether this SAPTable will send change notifications whenever it has been changed. Turn this option on to enable automatic updates of data-bound controls.
+            </summary>
+        </member>
+        <member name="E:SAP.Connector.SAPTable.ListChanged">
+            <summary>
+            Event that is raised when something has changed in the list.
+            <seealso cref="T:System.Collections.IBindingList"/>
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.SupportsSorting">
+            <summary>
+            Returns true, meaning that SAP Tables support sorting.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.IsSorted">
+            <summary>
+            Returns if the table is currently sorted.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.SortProperty">
+            <summary>
+            Returns the column property that is used to sort the table.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.SortDirection">
+            <summary>
+            Returns the sort direction of the table.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPTable.SupportsSearching">
+            <summary>
+            Indicates whether this SAPTable will support searching.
+            Always returns true.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.GetElementType">
+            <summary>
+            Returns the element type BAPIRET2.
+            </summary>
+            <returns>The type BAPIRET2.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.CreateNewRow">
+            <summary>
+            Creates an empty new row of type BAPIRET2.
+            </summary>
+            <returns>The newBAPIRET2.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.Add(SAP.Connector.BAPIRET2)">
+            <summary>
+            Adds a BAPIRET2 to the end of the collection.
+            </summary>
+            <param name="value">The BAPIRET2 to be added to the end of the collection.</param>
+            <returns>The index of the newBAPIRET2.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.Insert(System.Int32,SAP.Connector.BAPIRET2)">
+            <summary>
+            Inserts a BAPIRET2 into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which value should be inserted.</param>
+            <param name="value">The BAPIRET2 to insert.</param>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.IndexOf(SAP.Connector.BAPIRET2)">
+            <summary>
+            Searches for the specified BAPIRET2 and returnes the zero-based index of the first occurrence in the collection.
+            </summary>
+            <param name="value">The BAPIRET2 to locate in the collection.</param>
+            <returns>The index of the object found or -1.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.Contains(SAP.Connector.BAPIRET2)">
+            <summary>
+            Determines wheter an element is in the collection.
+            </summary>
+            <param name="value">The BAPIRET2 to locate in the collection.</param>
+            <returns>True if found; else false.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.Remove(SAP.Connector.BAPIRET2)">
+            <summary>
+            Removes the first occurrence of the specified BAPIRET2 from the collection.
+            </summary>
+            <param name="value">The BAPIRET2 to remove from the collection.</param>
+        </member>
+        <member name="M:SAP.Connector.BAPIRET2Table.CopyTo(SAP.Connector.BAPIRET2[],System.Int32)">
+            <summary>
+            Copies the contents of the BAPIRET2Table to the specified one-dimensional array starting at the specified index in the target array.
+            </summary>
+            <param name="array">The one-dimensional destination array.</param>           
+            <param name="index">The zero-based index in array at which copying begins.</param>           
+        </member>
+        <member name="P:SAP.Connector.BAPIRET2Table.Item(System.Int32)">
+            <summary>
+            The indexer of the collection.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.BAPIRETURNTable">
+            <summary>
+            A typed collection of BAPIRETURN elements.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.GetElementType">
+            <summary>
+            Returns the element type BAPIRETURN.
+            </summary>
+            <returns>The type BAPIRETURN.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.CreateNewRow">
+            <summary>
+            Creates an empty new row of type BAPIRETURN.
+            </summary>
+            <returns>The new BAPIRETURN.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.Add(SAP.Connector.BAPIRETURN)">
+            <summary>
+            Adds a BAPIRETURN to the end of the collection.
+            </summary>
+            <param name="value">The BAPIRETURN to be added to the end of the collection.</param>
+            <returns>The index of the new BAPIRETURN.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.Insert(System.Int32,SAP.Connector.BAPIRETURN)">
+            <summary>
+            Inserts a BAPIRETURN into the collection at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which value should be inserted.</param>
+            <param name="value">The BAPIRETURN to insert.</param>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.IndexOf(SAP.Connector.BAPIRETURN)">
+            <summary>
+            Searches for the specified BAPIRETURN and returnes the zero-based index of the first occurrence in the collection.
+            </summary>
+            <param name="value">The BAPIRETURN to locate in the collection.</param>
+            <returns>The index of the object found or -1.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.Contains(SAP.Connector.BAPIRETURN)">
+            <summary>
+            Determines wheter an element is in the collection.
+            </summary>
+            <param name="value">The BAPIRETURN to locate in the collection.</param>
+            <returns>True if found; else false.</returns>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.Remove(SAP.Connector.BAPIRETURN)">
+            <summary>
+            Removes the first occurrence of the specified BAPIRETURN from the collection.
+            </summary>
+            <param name="value">The BAPIRETURN to remove from the collection.</param>
+        </member>
+        <member name="M:SAP.Connector.BAPIRETURNTable.CopyTo(SAP.Connector.BAPIRETURN[],System.Int32)">
+            <summary>
+            Copies the contents of the BAPIRETURNTable to the specified one-dimensional array starting at the specified index in the target array.
+            </summary>
+            <param name="array">The one-dimensional destination array.</param>           
+            <param name="index">The zero-based index in array at which copying begins.</param>           
+        </member>
+        <member name="P:SAP.Connector.BAPIRETURNTable.Item(System.Int32)">
+            <summary>
+            The indexer of the collection.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.CombinedDestination">
+            <summary>
+            Allows to switch between different contained destination types.
+            </summary>
+            <remarks>
+            <para>
+            The CombinedDestination is used internally by the NCo server explorer
+            to provide a UI where the user can switch between registering SAP systems
+            using properties from SAP Logon (SAPLoginDestination class), custom (Destination class), or 
+            any destination class written in the future that implements IDestination interface.
+            </para>
+            <para>
+            Even though this class is primarily internal, there may be certain customer implementations or 
+            products that extend NCo and require the ability to switch between 
+            the various destination classes to provide their own destination input UI.
+            </para>
+            <para>
+            The CombinedDestination is a <see cref="T:SAP.Connector.IDestinationHolder"/> implementation, 
+            that can be switched between the other Destination types. 
+            It will create its connection string using a different Destination class that is nested in the
+            Internal property.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.IDestinationHolder">
+            <summary>
+            Holds a destination.
+            This is used by <see cref="T:SAP.ConnectorCombinedDestination"/> to
+            wrap a selectable destination.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.IDestinationHolder.Internal">
+            <summary>
+            Returns a "real" destination object that is wrapped. 
+            The CombinedDestination will return the nested Destination here.
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.CombinedDestination.destination">
+            <summary>
+            internal Destination object
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.CombinedDestination.#ctor">
+            <summary>
+            A destination that wraps another destination. Which the inner destination is,
+            can be selected by the user.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.CombinedDestination.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor for ISerializable
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:SAP.Connector.CombinedDestination.Internal">
+            <summary>
+            internal Destination object
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.CombinedDestination.DestinationType">
+            <summary>
+            Type of internal Destination object. When changed, a new 
+            object will be created.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.ConfigDestination">
+            <summary>
+            Implements a Destination that get it's data from Web.config.
+            Additionally this class supports automatic single sign on with MySAPSSO2 tickets
+            or client certificate.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Destination">
+            <summary>
+            Helper class to create connection strings.
+            </summary>
+            <remarks>
+            The class Destination and all inherited classes have a set of properties
+            that can be easily set from code or at design time.
+            The values of the set properties build a connection string that can
+            be accessed using the <see cref="P:SAP.Connector.Destination.ConnectionString"/> property.
+            <p>
+            All properties have a <see cref="T:System.ComponentModel.DefaultValueAttribute"/> assigned.
+            Only if the property is different from it's default value, will it appear in the
+            connection string.
+            </p>
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.IDestination">
+            <summary>
+            Common interface for all Destination classes.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.IDestination.ConnectionString">
+            <summary>
+            The connection string that is created by the destination and would be used by a connection.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Internal.ICopyable">
+            <summary>
+            For internal use only.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Internal.ICopyable.CopyTo(System.Object)">
+            <summary>
+            Copies the current properties values to the given target object.
+            </summary>
+            <param name="target"></param>
+        </member>
+        <member name="M:SAP.Connector.Destination.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            This constructor is required to put NCo components into other components
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:SAP.Connector.Destination.#ctor">
+            <summary>
+            Constructs the destination object
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.Changing">
+            <summary>
+            Raises a change event thus forcing the recalculation of the ConnectionString.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.GetConnectionStringForRfc">
+            <summary>
+            Calculates the connection string for a RFC connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Destination.ParseConnectionStringForRfc(System.String)">
+            <summary>
+            Parses the given RFC connection string into the properties of the destination object
+            </summary>
+            <param name="connStr">The RFC connection string to parse.</param>
+        </member>
+        <member name="M:SAP.Connector.Destination.GetConnectionStringForSoap">
+            <summary>
+            Calculates the connection string (Url) for a Soap connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Destination.ParseConnectionStringForSoap(System.String)">
+            <summary>
+            Parses the given connection string (URL) into the properties of the destination object
+            </summary>
+            <param name="connStr">The RFC connection string to parse.</param>
+        </member>
+        <member name="M:SAP.Connector.Destination.ParseConnectionString(System.String)">
+            <summary>
+            Parses the given connection string (RFC or Url) into the properties of the destination object.
+            </summary>
+            <remarks>
+            The ReadOnly property is automatically set temporarily to false during parsing.
+            </remarks>
+            <param name="connStr">The RFC connection string to parse.</param>
+        </member>
+        <member name="M:SAP.Connector.Destination.Reset">
+            <summary>
+            Resets all properties that have a <see cref="T:System.ComponentModel.DefaultValueAttribute"/>
+            to there default value.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.CopyTo(System.Object)">
+            <summary>
+            Applies the current property values of this Destination to another Destination.
+            </summary>
+            <param name="target">
+            Another Destination object that should be changed.
+            </param>
+            <remarks>
+            The default implementation copies all properties with <see cref="T:SAP.Connector.Destination.SAPNameAttribute"/>
+            and those with <see cref="T:SAP.Connector.Destination.ImportantAttribute"/> (with value true).
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Destination.Type">
+            <summary>
+            RFC server type, 2/3/E: R/2 or R/3 or External System (Default: 3)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.Client">
+            <summary>
+            SAP logon client
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.Username">
+            <summary>
+            SAP logon user
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.Password">
+            <summary>
+            SAP logon password
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ConvertPasswordToUppercase">
+            <summary>
+            Specify if convert password to uppercase when logging in to SAP system
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.Language">
+            <summary>
+            SAP logon language (1-byte SAP language or 2-byte ISO language)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SAPRouterString">
+            <summary>
+            Describes the path of hosts and ports through SAP Routers to the final host.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.Trace">
+            <summary>
+            RFC trace (0/1: without/with trace, Def. 0)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.AbapDebug">
+            <summary>
+            RFC with ABAP debugger, 0/1: without/with ABAP debugger (Default: 0)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SAPGui">
+            <summary>
+            RFC with SAPGUI, 0/1/2: without/with SAPGUI/SAPGUI invisible after each RFC call (Default: 0)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.MsgServerHost">
+            <summary>
+            Host name of the Message Server (if using Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SAPSystemName">
+            <summary>
+            Name of the R/3 system (if using Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.LogonGroup">
+            <summary>
+            Name of the group of application servers (if using Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.AppServerHost">
+            <summary>
+            Host name of a specific application server (R/3, No Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SystemNumber">
+            <summary>
+            R/3 system number (R/3, No Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SNCMode">
+            <summary>
+            Working with SNC, 0/1: without/with SNC (Default: 0, s. RFC_SNC_MODE)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SNCQop">
+            <summary>
+            SNC Quality of service (Default: 8 (RFC_SNC_QOP_DEFAULT), s. RFC_SNC_QOP)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SNCMyName">
+            <summary>
+            Own SNC name if you don't want to use the default SNC name
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SNCPartnerName">
+            <summary>
+            SNC name of the SNC partner (RFC server) or SNC name of the message server (Load Balancing)
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.SNCLib">
+            <summary>
+            Path and name of the SNC-library
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.MySAP_SSO">
+            <summary>
+            SAP Cookie Version 1. Will be used instead of user and password for logon to backend
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.MySAP_SSO2">
+            <summary>
+            SAP Cookie Version 2. Will be used instead of password for logon to backend. In this case, user name is optional.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.X509Certificate">
+            <summary>
+            An X.509 certificate will be used instead of password to logon to R/3 System. In this case, user name is optional.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ExtIdentificationData">
+            <summary>
+            Contains a valid external user's ID of an external authentification system. User name is optional. External ID is to be defined in the backend (SAP-System).
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ExtIdentificationType">
+            <summary>
+            Defines the kind of external identity. Valid only with EXTIDDATA. Follow values are not allowed: ID, NT; DN, CA, X, HX.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ProfileName">
+            <summary>
+            Path to SAP Instance Profile. Only needed for Fast RFC.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ReadOnly">
+            <summary>
+            Sets all standard destination properties (those properties that have a 
+            SAPNameAttribute) to ReadOnly.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.ConnectionString">
+            <summary>
+            Returns the RFC/Soap connection string composed of the 
+            values stored so far in the object
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.UseSoap">
+            <summary>
+            Specifies whether to use Soap or RFC.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.HttpProtocoll">
+            <summary>
+            Specifies the protocoll (http or https) to be used with Soap.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.HttpPort">
+            <summary>
+            pecifies the the port to be used with Soap
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Destination.HttpPath">
+            <summary>
+            Specifies the root path for RFC calls via Soap.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Destination.SAPNameAttribute">
+            <summary>
+            Encapsulates the connection string key (like "R3NAME") for a connection string attribute
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.SAPNameAttribute.#ctor(System.String)">
+            <summary>
+            Constructs the SAPNameAttribute attribute with the given key.
+            null is regarded as wildcard (for Attribute.Match) 
+            An empty string ("")is regarded  as
+            sign that the property is a standard property of the Destination base
+            class, but is not directly appearing in the RFC conneciton string.
+            </summary>
+            <param name="SAPName"></param>
+        </member>
+        <member name="M:SAP.Connector.Destination.SAPNameAttribute.Equals(System.Object)">
+            <summary>
+            <see cref="M:System.Object.Equals"/>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Destination.SAPNameAttribute.GetHashCode">
+            <summary>
+            <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SAP.Connector.Destination.SAPNameAttribute.Name">
+            <summary>
+            connection string name
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Destination.ImportantAttribute">
+            <summary>
+            Marks a destination property as important or not.
+            </summary>
+            <remarks>
+            Only important properties are exposed by the CombinedDestination as it's properties.
+            </remarks>
+        </member>
+        <member name="F:SAP.Connector.Destination.ImportantAttribute.IsImportant">
+            <summary>
+            Indicates if a property is important or not.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.ImportantAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new ImportantAttribute.
+            </summary>
+            <param name="isImportant"></param>
+        </member>
+        <member name="M:SAP.Connector.Destination.ImportantAttribute.#ctor">
+            <summary>
+            Initializes a new ImportantAttribute with IsImportant set to true.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Destination.PositionAttribute">
+            <summary>
+            Defines the position of a Destination property in the Properties of the CombinedDestination.
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.Destination.PositionAttribute.Pos">
+            <summary>
+            The position.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.PositionAttribute.#ctor(System.Int32)">
+            <summary>
+            Initializes a PositionAttribute with the given position value.
+            </summary>
+            <param name="pos"></param>
+        </member>
+        <member name="T:SAP.Connector.Destination.Designer">
+            <summary>
+            Enables design time feature of <see cref="T:SAP.Connector.Destination"/>
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Destination.Designer.PostFilterProperties(System.Collections.IDictionary)">
+            <summary>
+            Makes all SAPName properties readonly, if the <see cref="T:SAP.Connector.Destination"/> is 
+            <see cref="P:SAP.Connector.Destination.ReadOnly"/>.
+            </summary>
+            <param name="properties"></param>
+        </member>
+        <member name="M:SAP.Connector.ConfigDestination.#ctor">
+            <summary>
+            Initializes the ConfigDestination object.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.ConfigDestination.#ctor(System.String)">
+            <summary>
+            Initializes the ConfigDestination object using the settings from WebConfig with the given key.
+            </summary>
+            <param name="destinationName">The DestinationName attribute of the entry in web.config.</param>
+            <remarks>
+            The ConfigDestination is initialized with data from WebConfig. For details see <see cref="P:SAP.Connector.Config.Destinations."/>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.ConfigDestination.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.ConfigDestination.DestinationName">
+            <summary>
+            Specifies the key for the connection settings in Web.config. 
+            </summary>
+            <remarks>
+            The ConfigDestination is initialized with data from WebConfig. For details see <see cref="P:SAP.Connector.Config.Destinations."/>
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.ConfigDestination.Page">
+            <summary>
+            The page that owns the destination.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.ConfigDestination.MySAP_SSO2">
+            <summary>
+            SAP Cookie Version 2. Will be used instead of password for logon to backend. In this case, user name is optional.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.ConfigDestination.MySAP_SSO">
+            <summary>
+            SAP Cookie Version 1. Will be used instead of user and password for logon to backend
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.ConfigDestination.X509Certificate">
+            <summary>
+            An X.509 certificate will be used instead of password to logon to R/3 System. In this case, user name is optional.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Config">
+            <summary>
+            Allows access to the settings from Web.config / app.config that are
+            relevant for SAP .NET Connector.
+            </summary>
+            <remarks>
+            The SAP .NET Connector has a bunch of settings that can be set from a <c>web.config</c> 
+            or <c>app.config</c> file. The structure of the settings correspond to properties in this
+            class and it's subclasses. Each (sub-)class corresponds with an element in the config file and
+            each property corresponds with an attribute.
+            All settings can be configured or changed programatically using <c>Config.Instance</c>.
+            The following example demostrates how the sections in the config file has to look like.
+            <code>
+              &lt;configSections&gt;
+               &lt;sectionGroup name="SAP"&gt;
+                &lt;section name="Connector" type="SAP.Connector.SectionHandler, SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23"/&gt;
+               &lt;/sectionGroup&gt;
+              &lt;/configSections&gt;
+              ...
+            	&lt;SAP&gt;
+               &lt;Connector&gt;
+              	&lt;Trace Level="Info" File="Test.trc"/&gt;
+                &lt;ConnectionPool 
+              	    MaxOpenConnections="200"
+              	    MaxCapacity="20" 
+              	    MaxIdleTime="10" 
+              	    CleanupInterval="20" /&gt;
+              	   &lt;AllowedToStart&gt;
+            	      &lt;Program Name="Test" Allowed="true"/&gt;
+            	      &lt;Program Name="Test2" Allowed="false"/&gt; 	      
+                 &lt;/AllowedToStart&gt;
+              	   &lt;Destinations Default="DIP"&gt;
+              		  &lt;Entry 
+              		    DestinationName="DIP" 
+              		    AppServerHost="iwdf9015" 
+              		    SystemNumber="00" 
+              		    Username="lig" 
+              		    Password="ides" 
+              		    Client="800"/&gt;
+             		  &lt;Entry 
+             		    DestinationName="BCE" 
+             		    AppServerHost="bcemain" 
+             		    SystemNumber="26" 
+             		    Username="rfctest" 
+             		    Password="ides" 
+             		    Client="000"/&gt;
+             		 &lt;/Destinations&gt;
+               &lt;/Connector&gt;
+            &lt;/SAP&gt;
+            </code>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Config.GetDestinationByName(System.String)">
+            <summary>
+            Searches the list of <see cref="P:SAP.Connector.Config.Destinations"/> for a 
+            <see cref="T:SAP.Connector.ConfigDestination"/> with the given name.
+            </summary>
+            <param name="name">The <see cref="P:SAP.Connector.ConfigDestination.DestinationName"/> to match.</param>
+            <returns>The matching <see cref="T:SAP.Connector.ConfigDestination"/> or null, if nothing found.</returns>
+        </member>
+        <member name="M:SAP.Connector.Config.Save">
+            <summary>
+            Saves any changes made in the Config object to the target project's config file.
+            </summary>
+            <remarks>
+            This method only has an effect if the Config instance has been acquired using
+            <see cref="M:SAP.Connector.Config.GetConfig(System.ComponentModel.IComponent)"/>.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Config.GetConfig(System.ComponentModel.IComponent)">
+            <summary>
+            Returns a <see cref="T:SAP.Connector.Config"/> instance that gets it's settings from the target project's
+            config file at design time.
+            </summary>
+            <param name="component">a control or component that is designed in the current project.</param>
+            <returns>The Config instance.</returns>
+            <remarks>
+            Like <see cref="P:SAP.Connector.Config.Instance"/>, this method returns a Config instance.
+            At runtime, both GetConfig and <see cref="P:SAP.Connector.Config.Instance"/> behave the same.
+            At designtime, however, this method tries to get the needed settings from the
+            Web.Config or App.Config of the target project.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.Trace">
+            <summary>
+            The trace settings.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.AllowedToStart">
+            <summary>
+            Specifies a list of programs that are allowed to be executed by a RFC server.
+            </summary>
+            <value>
+            Gets or sets a list of Propram settings.
+            Only programs that are specified to be allowed to be executed can be remotedly
+            started via RFC by your RFC server.
+            </value>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPool">
+            <summary>
+            Contains settings that are related to Connection creation and connection pool.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.ValidateRfcStructures">
+            <summary>
+            This property is not intended to be used outside of the SAP .NET Connector.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.Destinations">
+            <summary>
+            Contains a list of <see cref="T:SAP.Connector.ConfigDestination">ConfigDestinations</see>.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.Instance">
+            <summary>
+            As <see cref="T:SAP.Connector.Config"/> is implemented as a singleton,
+            the property returns the one and only Config instance.
+            </summary>
+            <value>
+            Gets the singleton instance of <see cref="T:SAP.Connector.Config"/>.
+            </value>
+        </member>
+        <member name="T:SAP.Connector.Config.TraceSettings">
+            <summary>
+            Contains the Trace options for the SAP .NET Connector.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.TraceSettings.Level">
+            <summary>
+            The trace level that SAP .NET Connector should use.
+            </summary>
+            <remarks>
+            The default is <see cref="F:System.Diagnostics.TraceLevel.Off"/>
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.TraceSettings.File">
+            <summary>
+            The name of the file where SAP .NET Connector should write it's trace information to.
+            </summary>
+            <remarks>
+            The default is null, meaning that NCo will write a trace file with the same 
+            name and path as the application, but with extension ".trc".
+            <para>
+            Set the property to "Console" to trace to the console.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.Config.ConnectionPoolSettings">
+            <summary>
+            Contains the Connection Pool settings that NCo should use.
+            </summary>
+            <remarks>
+            In fact, not all of the properties in this class are really related to the ConnectionPool.
+            Some of them are actually related how NCo handles connections.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.MaxOpenConnections">
+            <summary>
+            Allows to controls the maximum number of Connection objects returned from NCo.
+            </summary>
+            <value>
+            Gets or sets the maximum number of Connection objects returned by the method <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/>,
+            <see cref="M:SAP.Connector.Connection.GetNewConnection(System.String)"/>, or <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/>.
+            </value>
+            <remarks>
+            <para>
+            If the specified maximum number of connections is reached, the methods that return 
+            a connection will block. This allows to limit the load that is created by a NCo based application.
+            When a connection is disposed or returned to the pool, the internal counter is decreased
+            and a fomally blocking call will continue.
+            </para>
+            <para>
+            Note that the counter is global. Thus it's not usefull to use this feature if an application
+            has connections to different SAP systems in parallel.
+            </para>
+            <para>
+            The default value is 0 meaning that the number of parallel connections is not limited.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.MaxCapacity">
+            <summary>
+            Controls the maximum size of the connection pool.
+            </summary>
+            <value>
+            Gets or sets the maximum number of connections in the connection pool.
+            If the pool grows beyond this value the oldest (the connection with the
+            longest idle time) is closed.
+            </value>
+            <remarks>
+            The default value is 0 meaning that there is no limit of connection pool
+            size thus the connections in the pool will stay there until it's idle time
+            reaches <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.MaxIdleTime"/>.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.MaxIdleTime">
+            <summary>
+            Controls the maximum time (in seconds) that a connection is keept open when it stays in
+            the connection pool.
+            </summary>
+            <value>
+            Gets or sets the maximum idle time of a connection in the connection pool.
+            </value>
+            <remarks>
+            When a connection is returned to the connection pool 
+            (with <see cref="M:SAP.Connector.Connection.ReturnConnection(SAP.Connector.Connection)"/>
+            or disposed, when AutoPooling is enabled), it will be reset, but stay open. If it is
+            reused within the specified MaxIdleTime (because a 
+            <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/> with the same connection
+            string or destination has been called), the connection stays open. Else it will be closed
+            and removed from pool automatically.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.CleanupInterval">
+            <summary>
+            Controls the time interval (in seconds) that the cleanup thread waits beween 
+            clean ups.
+            </summary>
+            <remarks>
+            The default value is 5.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling">
+            <summary>
+            Used to control if the <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> methods
+            will automatically return connection from connection pool.
+            </summary>
+            <value>
+            If set to <c>true</c>, the the connections returned from 
+            <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/>
+            will be pooled, this means, a call to <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> 
+            is equivalent to <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/>.
+            If set to <c>false</c>, the the connections returned from <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/>
+            will be a new one, this means, a call to <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> is equivalent to
+            <see cref="M:SAP.Connector.Connection.GetNewConnection(System.String)"/>.
+            </value>
+            <remarks>
+            The default value of <c>UseAutoPooling</c> is <c>false</c>. Note that as this is a static property,
+            so changing it might affect other threads.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Config.ConnectionPoolSettings.KeepContext">
+            <summary>
+            If set to true, the User Context is not cleared when a connection is put into the connection pool.
+            </summary>
+            <value>
+            </value>
+            <remarks>
+            The default value of <c>KeepContext</c> is <c>false</c>.  If set to true, the state of an application will
+            survife when the connection becomes unused and it put into the Connection Pool. This can cause any kind
+            of unexpected behavior. It could also have security implications, because sensitive information could be
+            read when the connection is reassigned to another usage.
+            <para/>
+            Note that as this is a static property,
+            so changing it might affect other threads.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.Config.AllowedProgramSettings">
+            <summary>
+            Contains settings for external programs that are to
+            be allowed or disallowed to be executed by an RFC server.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.AllowedProgramSettings.Name">
+            <summary>
+            The name of the executable to allowed or disallowed to be executed by a
+            RFC server.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Config.AllowedProgramSettings.Allowed">
+            <summary>
+            Controls if the program specified in <see cref="P:SAP.Connector.Config.AllowedProgramSettings.Name"/> is allowed to be
+            executed by a RFC server.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SectionHandler">
+            <summary>
+            Reads and writes the SAP connector settings in Web.config or app.config.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Internal.IReadWriteConfigurationSectionHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Internal.IReadWriteConfigurationSectionHandler.Serialize(System.Object,System.Xml.XmlElement,System.Xml.XmlDocument)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="section"></param>
+            <param name="doc"></param>
+        </member>
+        <member name="M:SAP.Connector.SectionHandler.#ctor(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="rootForCreate"></param>
+        </member>
+        <member name="M:SAP.Connector.SectionHandler.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Creates the section handler object.
+            </summary>
+            <param name="parent"></param>
+            <param name="configContext"></param>
+            <param name="section"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.SectionHandler.Serialize(System.Object,System.Xml.XmlElement,System.Xml.XmlDocument)">
+            <summary>
+            
+            </summary>
+            <param name="o"></param>
+            <param name="section"></param>
+            <param name="doc"></param>
+        </member>
+        <member name="M:SAP.Connector.SectionHandler.Deserialize(System.Object,System.Xml.XmlElement)">
+            <summary>
+            Simple kind of interpretive XML deserializer.
+            </summary>
+            <param name="o"></param>
+            <param name="section"></param>
+        </member>
+        <member name="T:SAP.Connector.Internal.IExtendedConfigurationSystem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Internal.IExtendedConfigurationSystem.Init(System.ComponentModel.IComponent)">
+            <summary>
+            
+            </summary>
+            <param name="component"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Internal.IExtendedConfigurationSystem.RegisterHandler(System.String,System.Configuration.IConfigurationSectionHandler)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:SAP.Connector.Internal.IExtendedConfigurationSystem.GetConfig(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Internal.IExtendedConfigurationSystem.SetConfig(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SAP.Connector.Internal.IExtendedConfigurationSystem.Save">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Connection">
+            <summary>
+            The base class for connections used by SAPClient to connect to SAP via RFC or SOAP.
+            </summary>
+            <remarks>
+            The main child classes are <see cref="T:SAP.Connector.SoapConnection"/> and <see cref="T:SAP.Connector.SAPConnection"/>.
+            This class also provides a set of static <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> methods that
+            will return the correct connection depending on the parameters, including
+            Auto Pooling, Web Login provider and so on.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.#ctor">
+            <summary>
+            Creates a new Connection.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Connection.#ctor(SAP.Connector.IDestination)">
+            <summary>
+            Initializes a new Connection that is linked with the given Destination.
+            Note that the <see cref="P:SAP.Connector.Connection.ConnectionString"/> is not set during initialization but
+            on the call to <see cref="M:SAP.Connector.Connection.Open"/>
+            </summary>
+            <param name="dest"></param>
+        </member>
+        <member name="M:SAP.Connector.Connection.BeforeCall(SAP.Connector.SAPClient)">
+            <summary>
+            Called by the framework before each call.
+            Allows the Connection to do preparation work.
+            </summary>
+            <param name="sapclient"></param>
+            <remarks>
+            The default implementation makes sure that the connection is opened.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.Open">
+            <summary>
+            Opens the connection.
+            </summary>
+            <returns>Return 0 if failed, != 0 else.</returns>
+            <remarks>
+            This method can be called manually to open the connection. If not done,
+            it is called automatically during the first proxy method's call.
+            If <see cref="P:SAP.Connector.Config.MaxOpenConnections"/> is set to other than 0, this
+            method might block until a connection is available, e.g. another connection has been closed.
+            If the connection contains a <see cref="T:SAP.Connector.Destination"/>, the 
+            method will <see cref="P:SAP.Connector.Destination.Locked">lock</see> it.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.OpenResources">
+            <summary>
+            Allows a connection implementation to open resources like handles and so on.
+            </summary>
+            <returns>Return 0 if failed, != 0 else.</returns>
+        </member>
+        <member name="M:SAP.Connector.Connection.PrepareForPooling">
+            <summary>
+            This method clears the connection to be reused later.
+            </summary>
+            <returns>
+            The representation of the connection that
+            should go back into the connection pool. The function returns null,
+            if the Connection is in a state that shouldn't
+            be returned to the pool. The default implementations returns "this".
+            </returns>
+            <remarks>
+            The method is used by connection pooling.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.Close">
+            <summary>
+            Closes the connection. 
+            </summary>
+            <remarks>
+            In contrast to <see cref="M:SAP.Connector.Connection.Dispose"/> this method will allways close the connection.
+            It will not return it into the connection pool, even if the connection came from the pool 
+            (using <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/> or if <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling">Autopooling</see>
+            is enabled.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.CloseResources">
+            <summary>
+            Allows a connection to clean up it's resources when the connection is closed.
+            </summary>
+            <remarks>
+            The method is called by <see cref="M:SAP.Connector.Connection.Close"/> and indirectly from <see cref="M:SAP.Connector.Connection.Dispose"/>,
+            Finalize, and other methods when a connection should be really closed (and not returned to the pool).
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.Dispose">
+            <summary>
+            Disposes the connection object.
+            </summary>
+            <remarks>
+            If <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling">Autopooling</see>
+            is enabled, the method will return the <see cref="M:SAP.Connector.Connection.ReturnConnection(SAP.Connector.Connection)">return</see> the connection to the pool.
+            Else, the connection is <see cref="M:SAP.Connector.Connection.Close">closed</see>.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.Finalize">
+            <summary>
+            Destructor/Finalizer
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetNewConnection(System.String)">
+            <overloads>
+            Creates a new connection object.
+            The connection is not fetched from Pool, even if AutoPooling is enabled.
+            </overloads>
+            <summary>
+            Creates a new connection object according to the given connectionString. 
+            </summary>
+            <param name="connectionString">The string describing the connection.</param>
+            <returns>The new <see cref="T:SAP.Connector.Connection"/></returns>
+            <remarks>
+            If the given connection string is an URL, a <see cref="T:SAP.Connector.SoapConnection"/> is returned,
+            otherwise, an RFC connection (<see cref="T:SAP.Connector.SAPConnection"/>).
+            The connection is not fetched from Pool, even if AutoPooling is enabled.    
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetNewConnection(SAP.Connector.IDestination)">
+            <summary>
+            Creates a new connection from a given destination
+            If the destination is set to <see cref="P:SAP.Connector.Destination.UseSoap"/>,
+            the returned Connection is a <see cref="T:SAP.Connector.SoapConnection"/>
+            otherwise, it's an RFC connection (<see cref="T:SAP.Connector.SAPConnection"/>).
+            </summary>
+            <remarks>
+            The connection is not fetched from Pool, even if AutoPooling is enabled.
+            Note that a call to this method is not equivalent to the call GetConnection(destination.ConnectionString)).
+            This method will hold a reference to the dest and determine it's connection string on
+            the SAP.Connector.Connection.Open method. At this moment dest is set to read only.
+            Between creation of the connection and Open the properties of the 
+            attached destination can be changed, except the UseSoap property.
+            After Open, no property may be changed and thus the ConnectionString
+            has to stay constant.
+            </remarks>
+            <param name="dest">The Desitnation to be attached to the new Connection object.</param>
+            <returns>The new <see cref="T:SAP.Connector.Connection"/> inherited object.</returns>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnection(System.String)">
+            <overloads>
+            Returns a connection from the connection pool or from a new connection, depending if 
+            <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling">Autopooling</see> is enabled.
+            </overloads>
+            <summary>
+            Returns a connection object according to the given connectionString.
+            If it is a URL, a <see cref="T:SAP.Connector.SoapConnection"/> is returned,
+            else an RFC connection (<see cref="T:SAP.Connector.SAPConnection"/>) is returned.
+            </summary>
+            <param name="connectionString">The attribute/value pair string describing the connection.</param>
+            <returns>The new <see cref="T:SAP.Connector.Connection"/></returns>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnection(SAP.Connector.IDestination)">
+            <summary>
+            Returns a connection according the connection string of a given destination.
+            <seealso cref="T:SAP.Connector.Destination"/>
+            </summary>
+            <param name="dest">The destination to create a connection to.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnection(System.Web.UI.Page)">
+            <summary>
+            Returns a connection from a web-based logon.
+            </summary>
+            <param name="page">The current web page. It is used to get access to session state.</param>
+            <returns>The Connection that has been created by the SAPLogin page.</returns>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnection(System.Web.UI.Page,SAP.Connector.IDestination)">
+            <summary>
+            Returns a connection based on the given destination with MySAPSSO2
+            single sign on, when available.
+            </summary>
+            <param name="page">A page that is used to extract the MySAPSSO2 cookie from.</param>
+            <param name="destination">The destination to of the system to connect to.</param>
+            <returns>
+            The new or pooled connection, based on destination with the MySAPSSO2 ticket
+            from page assigned.
+            </returns>
+            <remarks>
+            <para>
+            The method will check the cookies in page for the MySAPSSO2 ticket. If found
+            it will assign the ticket to the <see cref="P:SAP.Connector.Destination.MySAP_SSO2"/> property
+            of destination. 
+            </para>
+            <para>
+            Then it returns a connection from pool or a new connection, depending if 
+            <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling">autopooling</see> is enabled.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.AllocReservation">
+            <summary>
+            Allocates a Connection reservation
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)">
+            <overloads>
+             Gets a connection from the pool.
+            </overloads>
+             <summary>
+             Gets a connection from the pool which was constructed with the given connection string.
+             </summary>
+             <param name="connectionString">Connection string used to construct the connection</param>
+             <returns>A SAPConnection object</returns>
+             <remarks>
+             If there is no connection avaliable in the pool, a newly constructed SAPConnection object will returned.
+             </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.GetConnectionFromPool(SAP.Connector.IDestination)">
+            <summary>
+            Gets a connection from Pool that is associated with the given Destination.
+            </summary>
+            <param name="dest">The <see cref="T:SAP.Connector.Destination"/> object that is to be associated with the new connection. </param>
+            <returns>The new or pooled connection.</returns>
+            <remarks>
+            Note that in contrast to the other overload the pool is not searched for a 
+            destination with the same connection string but with a connection that is associated
+            with the same Destination. It might happen that there is a connection in the pool
+            that has the same ConnectionString as the ConnectionString from dest.
+            This connection is not regarded as a fit, since the ConnectionString from dest
+            is allowed to change until the connection is opened.
+            Only if Destination is <see cref="P:SAP.Connector.Destination.ReadOnly"/>, and an equal ConnectionString are 
+            found is the connection regarded as a match.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.ReturnConnection(SAP.Connector.Connection)">
+            <summary>
+            Returns a SAPConnection object to the pool
+            </summary>
+            <param name="newConn">The connection object to be returned to the pool.</param>
+            <remarks>
+            As the connection pool is a collection of unused connection objects,
+            you can return any SAPConnection object that is not needed anymore,
+            even if it has not been created with <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/>.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.RemoveConnectionsFromPool(System.String)">
+            <overloads>
+            Removes the specified connection from the pool and closes the connection.
+            </overloads>
+            <summary>
+            Removes all connections that match the given connection string
+            from pool and then closes them.
+            </summary>
+            <param name="connectionString">The connection string of the connections to remove.</param>
+            <remarks>
+            This method will immediately remove and close the specified connections.
+            If this method is not called, the connections would normally be automatically 
+            closed after a period of inactivity.
+            If the no connection with the given connection string exists in the pool,
+            the method will have no effect.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.Connection.RemoveConnectionsFromPool(SAP.Connector.IDestination)">
+            <summary>
+            Removes the connections that are associated with the given destination
+            from pool and closes them.
+            </summary>
+            <param name="dest">The destination of the connections to remove.</param>
+            <remarks>
+            This method will immediately remove and close the specified connection.
+            If this method is not called, the connection would normally be automatically 
+            closed after a period of inactivity.
+            If the no connection with the given destination exists in the pool,
+            the method will do nothing.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Connection.IdleTime">
+            <summary>
+            Gets or Sets the time that a pooled connection is not used.
+            </summary>
+            <value>
+            The time in seconds that a connection is not used.
+            </value>
+            <remarks>
+            The connection pooling thread updates this property for all
+            connection that come from the pool (e.g. <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/> and
+            <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> with <see cref="P:SAP.Connector.Config.ConnectionPoolSettings.UseAutoPooling"/> enabled.
+            Whenever a connection is used, the property is automatically reset to 0.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.Connection.ConnectionString">
+            <summary>
+            The string that describes the connection. Could be a
+            RFC connection string or an URL for Soap.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Connection.IsOpen">
+            <summary>
+            Checks if the connection is open.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPConnectionPool">
+            <summary>
+            Class to implements the SAP Connection pooling features
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPConnectionPool.GetConnection(System.String)">
+            <summary>
+            Returns a connection from the pool according to the 
+            given connection string.
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+            <remarks>This method is obsolete. Use <see cref="M:SAP.Connector.Connection.GetConnectionFromPool(System.String)"/> instead.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.RfcConvert">
+            <summary>
+            Converts data types between SAP RFC types and .NET types.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcConvert.RfcDateToDateTime(System.String)">
+            <summary>
+              Converts a RFC_DATE type to a .NET DateTime . 
+              This utility function is useful in almost all situations where "date" information 
+              is exchanged between SAP applications and .net
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcConvert.DateTimeToRfcDate(System.DateTime)">
+            <summary>
+              Converts a .NET DateTime type to RFC_DATE type. 
+              This utility function is helpful in almost all situations where
+              date information is exchanged between .net and SAP applications.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcConvert.RfcTimeToTimeSpan(System.String)">
+            <summary>
+              Converts RFC_TIME type to .NET TimeSpan type 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcConvert.TimeSpanToRfcTime(System.TimeSpan)">
+            <summary>
+              Converts .NET TimeSpan type to RFC_TIME type 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcConvert.DateTimeToRfcTime(System.DateTime)">
+            <summary>
+              Converts .NET DateTime type to RFC_TIME type 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Design.SAPClientDesigner.PostFilterProperties(System.Collections.IDictionary)">
+            <summary>
+            Filter (remove) all the Soap relevant properties that are not interesting for
+            our users
+            </summary>
+            <param name="properties"></param>
+        </member>
+        <member name="T:SAP.Connector.Design.DesignTimeConnection">
+            <summary>
+            Base class for pseudo connection classes that are used at design time only
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Design.DesignTimeConnection.GetInstanceDescriptor">
+            <summary>
+            Returns an instance descriptor that serializes the required code
+            to get the needed Connection
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Design.DesignTimeConnection.CloseResources">
+            <summary>
+            Not needed
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.Design.DesignTimeConnection.Name">
+            <summary>
+            The name of the Connection in the designer
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.Design.DestinationDesignTimeConnection">
+            <summary>
+            Design Time connection for getting a connection from a Destination
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Design.DestinationDesignTimeConnection.GetInstanceDescriptor">
+            <summary>
+            Serializes "this.proxy1.Connection = SAP.Connector.Connection.GetConnection(this.destination1, this.proxy1);"
+            The proxy1 parameter is needed at run time, as it cannot be guaranteed that the destination1 is already
+            completely initialized, when this line is called. So we use the ISupportsInitialization model and
+            set the (correct) Connection at destination1.EndInit()
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.Design.LoginPageDesignTimeConnection">
+            <summary>
+            Design time connection for use with a SAP Login page /SAPLoginProvider.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Design.LoginPageDesignTimeConnection.GetInstanceDescriptor">
+            <summary>
+            Serializes "this.proxy1.Connection = SAP.Connector.Connection.GetConnection(this);"
+            (only if "this" is a page)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.Design.ConnectionConverter">
+            <summary>
+            Used to select the SAPClient.Connection in VS. It shows a drop down
+            with all available destinations, "(none)" and - if used on a System.Web.UI.Page -
+            a reference to the SAPLogin form.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.Design.ConnectionConverter.Decorate(System.Object)">
+            <summary>
+            If o is string, puts the prefix in front.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.Design.ConnectionConverter.Undecorate(System.Object)">
+            <summary>
+            If o is string and has the prefix, removes it.
+            </summary>
+            <param name="o"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.Design.SAPStructureTypeConverter">
+            <summary>
+            Cares for serializing SAPStructures correctly
+            </summary>
+            <remarks>
+            To serialize SAPTables (that are in fact collections of SAPStructure)
+            two things must be made sure:
+            <para>
+            1. The SAPTable must be serialized using the CollectionCodeDomSerializer.
+            This is guaranteed by SAPTableDesignerSerializer.
+            </para>
+            <para>
+            2. The substructure must be Code-serializable. This can be achieved with 
+            two options:
+            </para>
+            <para>
+            2.1. Implement IComponent on SAPStructure. It must be made sure that the 
+            additional fields (Site and Disposed) are note disturbing the XML serializer 
+            at runtime
+            </para>
+            <para>
+            2.2. We implement a TypeConverter that exposes InstanceDescriptors for our 
+            SAPStructures. That's what the class does. 
+            It uses two stategies: If there is only one (empty) constructor in this SAPStructure
+            class, it will use it and tell VS to set all properties serarately.
+            If threre is a second constructor meaning the user used the "Construct" feature,
+            we use this and regard it as sufficient.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.RFC_ERROR_INFO_EX">
+            <summary>
+              The RFC API throws the RFC ERROR_INFO_EX structure
+              which contains RFC error information
+              This class is used by <see cref="T:SAP.Connector.RfcException"/>
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.KEYSIZE">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.MESSAGESIZE">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.group">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.key">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.message">
+            <summary>
+            Internal
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RFC_ERROR_INFO_EX.GetErrorMessage(System.Text.Encoding,System.String)">
+            <summary>
+            Returns the error message in the given codepage.
+            </summary>
+            <param name="encoding"></param>
+            <param name="languageCode"></param>
+            <returns></returns>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_INFO_EX.sd">
+            <summary>
+            a dictionary contains the mapping between ISO-language code and Windows ANSI codepage
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcException">
+            <summary>
+            The base class for all RFC exceptions raised when RFC error occur.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcException.#ctor">
+            <summary>
+            Initializes an empty RfcException.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcException.#ctor(SAP.Connector.RFC_ERROR_INFO_EX)">
+            <summary>
+            Initializes an RfcException with the given RFC error info.
+            </summary>
+            <param name="errorInfo"></param>
+        </member>
+        <member name="M:SAP.Connector.RfcException.#ctor(SAP.Connector.RFC_ERROR_GROUP,System.String,System.String)">
+            <summary>
+            Initializes a RfcException with the given RFC error group and error code.
+            </summary>
+            <param name="errorGroup"></param>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:SAP.Connector.RfcException.#ctor(System.String)">
+            <summary>
+            Initializes an RfcException with the given print message.
+            </summary>
+            <param name="message">The exception text.</param>
+        </member>
+        <member name="M:SAP.Connector.RfcException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialies an RfcException with the given print message and inner exception.
+            </summary>
+            <param name="message">The exception text.</param>
+            <param name="exc">The inner exception.</param>
+        </member>
+        <member name="P:SAP.Connector.RfcException.ErrorGroup">
+            <summary>
+            RFC error group defined by RFC API
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcException.ErrorCode">
+            <summary>
+            RFC error code( or key) defined by RFC API
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcAbapException">
+            <summary>
+            Exception represents an application exception raised by the ABAP program.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcAbapException.#ctor(System.String)">
+            <summary>
+            Contructs a new RfcAbapException.
+            </summary>
+            <param name="abapException">The string name of the ABAP Exception.</param>
+        </member>
+        <member name="M:SAP.Connector.RfcAbapException.#ctor(System.String,System.String)">
+            <summary>
+            Contructs a new RfcAbapException. Uses a message text different from
+            the ABAP Exception string.
+            </summary>
+            <param name="errorCode">The string name of the ABAP Exception.</param>
+            <param name="message">The message text.</param>
+        </member>
+        <member name="P:SAP.Connector.RfcAbapException.AbapException">
+            <summary>
+            ABAP exception raised by the ABAP program
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcLogonException">
+            <summary>
+            Exception class represents a RFC logon error.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcLogonException.#ctor">
+            <summary>
+            Constructs a new empty RfcLogonException.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcLogonException.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new RfcLogonException with the given error code and message.
+            </summary>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:SAP.Connector.RfcCommunicationException">
+            <summary>
+            Exception class represents a RFC commnication error.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcCommunicationException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcCommunicationException.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:SAP.Connector.RfcSystemException">
+            <summary>
+            Exception class represents a RFC commnication error.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcSystemException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcSystemException.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="errorCode"></param>
+            <param name="message"></param>
+        </member>
+        <member name="T:SAP.Connector.RfcMarshalException">
+            <summary>
+            An application exception raised when a mashaling error occurs.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcMarshalException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcMarshalException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:SAP.Connector.RfcMarshalException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="T:SAP.Connector.BapiException">
+            <summary>
+            Used by the SAP .NET Connector framework when BAPIRETURN mapping
+            is enabled.
+            </summary>
+            <remarks>
+             The BapiException exception is thrown if the mapped BAPIRETURN, 
+            BAPIRETURN1, BAPIRET1, BAPIRET2, or BAPIRET2Table parameter indicated
+            an error.
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.BapiException.#ctor(SAP.Connector.BAPIRETURN)">
+            <summary>
+            Used internally by the framework to create a new BapiException.
+            </summary>
+            <param name="bapiret"></param>
+        </member>
+        <member name="P:SAP.Connector.BapiException.BapiReturn">
+            <summary>
+            The original BAPIRETURN (or inherited) parameter that was 
+            notifying the error.
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile">
+            <summary>
+            Easy to use INI-File access component
+            </summary>
+        </member>
+        <member name="F:SAP.Tools.IniFile.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Creates an INI-File component in a container.
+            Required for Windows.Forms Class Composition Designer support
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.GetPrivateProfileString(System.String,System.String,System.String,System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            See Win32 Documentation
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.GetPrivateProfileInt(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            See Win32 Documentation
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.GetPrivateProfileSection(System.String,System.Char[],System.Int32,System.String)">
+            <summary>
+            See Win32 Documentation
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.GetPrivateProfileSectionNames(System.Char[],System.Int32,System.String)">
+            <summary>
+            See Win32 Documentation
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.WritePrivateProfileString(System.String,System.String,System.String,System.String)">
+            <summary>
+            See Win32 Documentation
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.#ctor(System.String)">
+            <summary>
+            Creates an INI-File component using the given INI file
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.FileName">
+            <summary>
+            The name of the INI-File.
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Sections">
+            <summary>
+            Return a collection <see cref="T:SAP.Tools.IniFile.SectionCollection"/> of all the sections 
+            in the INI-File.
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile.Section">
+            <summary>
+            Represents a section in an INI-file. 
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="fileName"></param>
+            <param name="section"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.#ctor(System.String,System.String,System.Char[],SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType)">
+            <summary>
+            This internal constructor is used to create the Keys and Values
+            "sub collections" as a copy of the main collection
+            </summary>
+            <param name="fileName"></param>
+            <param name="section"></param>
+            <param name="retType"></param>
+            <param name="cont"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.GetString(System.String,System.String)">
+            <summary>
+            Reads the entry with the key in the ini file section. Its the same as using 
+            the indexer, but you can specify a default value.
+            </summary>
+            <param name="key"></param>
+            <param name="def">The value is returned, if the given key does not exist
+            int the INI-file section.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.GetInt(System.String,System.Int32)">
+            <summary>
+            Reads an integer
+            </summary>
+            <param name="key"></param>
+            <param name="def"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.GetInt(System.String)">
+            <summary>
+            Reads an integer
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.Add(System.String,System.String)">
+            <summary>
+            Adds a new entry to the INI file. Note: if you specify a key that already
+            exists, the existing entry will be changed.
+            </summary>
+            <param name="key"></param>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.GetEnumerator(SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType)">
+            <summary>
+            Gets the type save SectionEnumerator. You can also specify if the Current property of
+            the IDictionary interface should return keys, values or Dictionary entries.
+            </summary>
+            <param name="retType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.GetEnumerator">
+            <summary>
+            Gets the type save SectionEnumerator. 
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.CopyTo(System.Array,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.Clear">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.Remove(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.Contains(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.Item(System.String)">
+            <summary>
+            Reads the entry with the key in the ini file section.
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.IsFixedSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.IsReadOnly">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.Keys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.Values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile.Section.SectionEnumerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.SectionEnumerator.#ctor(System.Char[],SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType)">
+            <summary>
+            
+            </summary>
+            <param name="contents"></param>
+            <param name="retType"></param>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.SectionEnumerator.MoveNext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.Section.SectionEnumerator.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.SectionEnumerator.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.SectionEnumerator.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.SectionEnumerator.Entry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.Section.SectionEnumerator.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType.Keys">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType.Values">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SAP.Tools.IniFile.Section.SectionEnumerator.CurrentReturnType.DictEntry">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile.SectionCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.SectionCollection.GetEnumerator">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.SectionCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="array"></param>
+            <param name="index"></param>
+        </member>
+        <member name="P:SAP.Tools.IniFile.SectionCollection.Item(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.SectionCollection.IsSynchronized">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.SectionCollection.SyncRoot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.SectionCollection.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Tools.IniFile.SectionCollection.IniFileEnummerator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SAP.Tools.IniFile.SectionCollection.IniFileEnummerator.MoveNext">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Tools.IniFile.SectionCollection.IniFileEnummerator.Reset">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:SAP.Tools.IniFile.SectionCollection.IniFileEnummerator.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RFCTYPE">
+            <summary>
+               RFC data types 
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_CHAR">
+            <summary>RFC Char</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_DATE">
+            <summary>RFC Date</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_BCD">
+            <summary>RFC BCD</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_TIME">
+            <summary>RFC Time</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_BYTE">
+            <summary>RFC Byte</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_ITAB">
+            <summary>RFC Internal table</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_NUM">
+            <summary>RFC Numerical string</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_FLOAT">
+            <summary>RFC Float</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_INT">
+            <summary>RFC Integer</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_INT2">
+            <summary>RFC 2-Bytes integer</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_INT1">
+            <summary>RFC 1-Byte Integer</summary>	
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_DATE_1">
+            <summary>RFC Date1</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_DATE_2">
+            <summary>RFC Date2</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_NULL">
+            <summary>RFC NULL</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_WIDE_2">
+            <summary>RFC 2-Bytes Char</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_WIDE_4">
+            <summary>RFC 4-Bytes Char</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_STRUCTURE">
+            <summary>RFC Structure</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_ABAP4OBJECT">
+            <summary>RFC Object</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_IUNKNOWN">
+            <summary>RFC COM Interface</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_WSTRING">
+            <summary>RFC Wide charachter string</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_SAPAUTOMATION">
+            <summary>RFC Automation</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_STUB">
+            <summary>RFC Stub</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_WIRE_OBJECT">
+            <summary>RFC Wire Object</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_BLOB">
+            <summary>RFC Blob</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_CORBA_OBJECT">
+            <summary>RFC CORBA Object</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_PADDING">
+            <summary>RFC Padding</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_UNICODE">
+            <summary>RFC Unicode</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_XMLDATA">
+            <summary>RFC XMLData</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_STRING">
+            <summary>RFC String</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_XSTRING">
+            <summary>RFC Byte string</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCTYPE.RFCTYPE_max_value">
+            <summary>RFC number of types </summary>
+        </member>
+        <member name="T:SAP.Connector.RFC_ERROR_GROUP">
+            <summary>
+               RFC error group
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_NO_ERROR">
+            <summary>No Error</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_PROGRAM">
+            <summary>Error in RFC program</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_COMMUNICATION">
+            <summary>Error in Network and Communications</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_LOGON_FAILURE">
+            <summary>SAP logon error</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_SYSTEM_FAILURE">
+            <summary>SAP system exception raised</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_APPLICATION_EXCEPTION">
+            <summary>Called function module raised an application exception</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_RESOURCE">
+            <summary>Resource not available, e.g. memory insufficient,...)</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_PROTOCOL">
+            <summary>RFC Protocol error</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_public">
+            <summary>RFC public error</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_CANCELLED">
+            <summary>RFC Registered Server was cancelled</summary>
+        </member>
+        <member name="F:SAP.Connector.RFC_ERROR_GROUP.RFC_ERROR_BUSY">
+            <summary>System is busy, try later</summary>
+        </member>
+        <member name="T:SAP.Connector.RFCINOUT">
+            <summary>
+              RFC parameter direction 
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.RFCINOUT.IN">
+            <summary>Input parameter</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCINOUT.OUT">
+            <summary>Output parameter</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCINOUT.INOUT">
+            <summary>Reference parameter</summary>
+        </member>
+        <member name="F:SAP.Connector.RFCINOUT.RETURN">
+            <summary>Return parameter</summary>
+        </member>
+        <member name="T:SAP.Connector.IRfcClient">
+            <summary>
+            For internal use only 
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.RfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[])">
+            <summary>
+            Invoke a RFC call (synchronously).
+            </summary>
+            <param name="proxy">The proxy object.</param>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">input parameter array.</param>
+            <returns>Result parameter array.</returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.BeginRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],System.AsyncCallback,System.Object)">
+            <summary>
+            Internal.
+            </summary>
+            <param name="proxy"></param>
+            <param name="method"></param>
+            <param name="methodParamsIn"></param>
+            <param name="callback"></param>
+            <param name="asyncState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.EndRfcInvoke(SAP.Connector.SAPClient,System.IAsyncResult)">
+            <summary>
+            Internal.
+            </summary>
+            <param name="proxy"></param>
+            <param name="ar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.qRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],SAP.Connector.RfcQueueItem)">
+            <summary>
+            Invoke a SAP transational RFC call
+            </summary>
+            <param name="proxy"></param>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="qItem">A instance of the class RfcQueueItem with initialized QueueName, QueueIndex and TID </param>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.tRfcInvoke(SAP.Connector.SAPClient,System.String,System.Object[],SAP.Connector.RfcTID)">
+            <summary>
+            Invoke a SAP transational RFC call
+            </summary>
+            <param name="proxy"></param>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="tid">A 24 char long string used to uniquelly identify the call  </param>
+        </member>
+        <member name="M:SAP.Connector.IRfcClient.ConfirmTID(SAP.Connector.SAPClient,SAP.Connector.RfcTID)">
+            <summary>
+            Call this method after a successful tRfc or qRfc call
+            </summary>
+            <param name="tid"></param>
+            <param name="proxy"></param>
+        </member>
+        <member name="T:SAP.Connector.IRfcTIDUtil">
+            <summary>
+            For internal use only
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.IRfcTIDUtil.GuidToTid(System.Guid)">
+            <summary>
+            Internal
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcTIDUtil.CreateNewTid">
+            <summary>
+            Internal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcTIDUtil.TidToGuid(System.Byte[])">
+            <summary>
+            Internal
+            </summary>
+            <param name="tid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcTIDUtil.TidToString(System.Byte[])">
+            <summary>
+            Internal
+            </summary>
+            <param name="tid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.IRfcTIDUtil.PtrToTid(System.IntPtr)">
+            <summary>
+            Internal
+            </summary>
+            <param name="pTID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.SAPLoginProvider">
+            <summary>
+            Contains helper methods for Web-based SAP logon.
+            </summary>
+            <remarks>
+            <para>
+            In this release the class allows simple form based logon as well as 
+            logon based on SAP SSO2 tickets.
+            The associated connection string or <see cref="T:SAP.Connector.Destination"/> is stored in the Session state.
+            </para>
+            <para>
+            In contrast to SAP .NET Connector 1.x, this version doesn't store the connection in
+            session state, the the connection string or <see cref="T:SAP.Connector.Destination"/> that was used
+            to create the connection. Together with the Autopooling featue this has almost the 
+            same effect, but the livetime of an unused connection is controlled by the connection pool,
+            which is more reliable.
+            </para>
+            <para>
+            Note that using this class together with BAPIs that maintain state between calles
+            might cause problems, because it is not guarateed that <see cref="M:SAP.Connector.SAPLoginProvider.GetSAPConnection(System.Web.UI.Page)"/>
+            will return exactly the same connection that was created with <see cref="M:SAP.Connector.SAPLoginProvider.OpenSAPConnection(System.Web.UI.Page,System.String,System.Boolean)"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:SAP.Connector.SAPLoginProvider.SAP_CONNECTIONSTRING">
+            <summary>
+            The string key used to store the Connection String in Session state.
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPLoginProvider.SAP_DESTINATION">
+            <summary>
+            The string key used to store the Destination in Session state.
+            </summary>
+        </member>
+        <member name="F:SAP.Connector.SAPLoginProvider.SSOCOOOKIENAME">
+            <summary>
+            The name of MYSAPSSO2 cookie.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPLoginProvider.OpenSAPConnection(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            Tries to open a connection to SAP using the given connection string. 
+            </summary>
+            <param name="p">A page that can be used to use the session state from</param>
+            <param name="connstr">The connection string to be used to open the connection.</param>
+            <param name="persist">If set to true, a cookie will be set on the client with
+             the connection string encrypted. This will give a simple single-sign-on feature.</param>
+             <remarks>
+            If the function succeedes,
+            the connection string is stored in session state. 
+            In conjunction with AutoPooling, the the same or equivalent connection can be retrieved 
+            calling <see cref="M:SAP.Connector.SAPLoginProvider.GetSAPConnection(System.Web.UI.Page)"/>.
+             </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPLoginProvider.OpenSAPConnection(System.Web.UI.Page,SAP.Connector.IDestination,System.Boolean)">
+            <summary>
+            Tries to open a connection to SAP using the given destination. 
+            </summary>
+            <param name="p">A page that can be used to use the session state from</param>
+            <param name="dest">The destination be used to open the connection.</param>
+            <param name="persist">If set to true, a cookie will be set on the client with
+             the connection string encrypted. This will give a simple single-sign-on feature.</param>
+             <remarks>
+            If the function succeedes,
+            the destination is stored in session state. 
+            In conjunction with AutoPooling, the same or equivalent connection can be retrieved 
+            calling <see cref="M:SAP.Connector.SAPLoginProvider.GetSAPConnection(System.Web.UI.Page)"/>.
+             </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPLoginProvider.CloseSAPConnection(System.Web.UI.Page)">
+            <summary>
+            If there is still an open connection in the user's session state, it will be closed.
+            </summary>
+            <param name="p">A page that can be used to get the session state from.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPLoginProvider.GetSAPConnection(System.Web.UI.Page)">
+            <summary>
+            Gets a connection that is equivalent to a one stored by <see cref="M:SAP.Connector.SAPLoginProvider.OpenSAPConnection(System.Web.UI.Page,System.String,System.Boolean)"/>.
+            </summary>
+            <param name="p">A page that can be used to use the session state from.</param>
+            <returns>Returns a SAPConnection if it could be retrieved from the session
+            state or the cookie or null if not sucessful.</returns>
+            <remarks>
+            <para>
+            The functions tries to find a connection string or <see cref="T:SAP.Connector.Destination"/>
+            in the session state. If it finds one, it get a connection for it
+            using <see cref="M:SAP.Connector.Connection.GetConnection(System.String)"/> which will come from
+            connection pool, if Autopooling is enabled.
+            </para>
+            <para>
+            Else it creates a new Connection using the connection string stored in the
+            cookie on the clients machine.
+            </para>
+            <para>
+            <strong>Note: </strong> Make sure that you call <see cref="T:SAP.Connector.Connection"/>.<see cref="M:SAP.Connector.Connection.Dispose"/>
+            when you don't need the connection anymore to ensure that it is return to the connection pool.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPLoginProvider.GetSAPConnection(System.Web.UI.Page,SAP.Connector.IDestination)">
+            <summary>
+            Gets a connection based on information of MYSAPSSO2 cookie in the given page.
+            </summary>
+            <param name="p">A page that holds a MYSAPSSO2 cookie</param>
+            <param name="destination">A destination that contains all relevant logon information
+            except user name and password.</param>
+            <returns>If successfull, the function returns a new connection to the spefified system as the user specified in the MYSAPSSO2 cookie. Else it will return null.</returns>
+            <remarks>
+            The MYSAPSSO2 cookie is usually created by a SAP Enterprise Portal.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.RfcInvokeDelegate">
+            <summary>
+            Delegate used to invoke the RFC functions/methods asynchronously
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPClient">
+            <summary>
+            Base class for all generated SAPClient proxy classes. 
+            </summary>
+            <remarks>
+            <para>
+            This class inherits
+            the SOAP proxy implementation from SoapHttpClientProtocol and implements the
+            RFC proxy functionality. 
+            </para>
+            <para>
+            You can not use this class directly. Instead you inherit proxy classes from this class.
+            Normally you would not write the proxy classes by hand, but instead use the 
+            proxy generator that comes with SAP .NET Connector.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.#ctor(System.String)">
+            <summary>
+            Construct a new SAPClient instance with the given connection string. With this 
+            connection string, a RFC or a HTTP connection will be established
+            before a method call is made. 
+            </summary>
+            <param name="connectionString">Either an URL or an RFC connection string of the SAP system to connect to.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.#ctor(SAP.Connector.Destination)">
+            <summary>
+            Construct a new SAPClient instance with the given Destination object. With the parameters 
+            contained in the Destination object, a RFC connection will be established before a method
+            call is made. 
+            </summary>
+            <param name="destination">A <see cref="T:SAP.Connector.Destination"/> that points to the system to connect to.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+            Constructs a new SAPClient instance and adds it to the given container.
+            This allows automated connection mananged by VS component designer:
+            If container is disposed, it will also dispose this SAPClient instance,
+            which will dispose a contained connection if needed.
+            </summary>
+            <param name="container">The container where the new SAPClient instance is to be added.</param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.Dispose(System.Boolean)">
+            <summary>
+            Disposes the proxy. If it contains a Connection,
+            it will be disposed as well.
+            </summary>
+            <param name="disposing">True, if called via <see cref="M:System.IDisposable.Dispose"/></param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.TurnOffChangeNotification(System.Object[])">
+            <summary>
+            Internally used.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.RefreshBoundTables(System.Object[],System.Windows.Forms.Control)">
+            <summary>
+            Internally used.
+            </summary>
+            <param name="results"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.SAPInvoke(System.String,System.Object[])">
+            <summary>
+            Invoke the method specified by <paramref name='method'>method</paramref> 
+            </summary>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects contains all in and ref parameters</param>
+            <returns>An array of objects contains the results for all out and ref parameters </returns>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.BeginSAPInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)">
+            <summary>
+            Begin Starts an asynchronous invocation of the method specified by <paramref name='method'>method</paramref>
+            </summary>
+            <param name="method">Method name </param>
+            <param name="methodParamsIn">An array of objects contains all of the in and ref parameters</param>
+            <param name="callback">The delegate to call when the asynchronous method call is complete. If callback is a null reference (Nothing in Visual Basic), the delegate is not called</param>
+            <param name="asyncState">Additional information supplied by a client</param>
+            <returns>An IAsyncResult which can be passed to EndSAPInvoke to obtain the return values from the method.</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.EndSAPInvoke(System.IAsyncResult)">
+            <summary>
+            Completes asynchronous invocation of a method 
+            </summary>
+            <param name="ar">The IAsyncResult returned from BeginSAPInvoke</param>
+            <returns>An array of objects containing the return value and any by reference or out parameters for the method.</returns>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.tRfcInvoke(System.String,System.Object[],SAP.Connector.RfcTID)">
+            <summary>
+            Invokes a SAP transational RFC call
+            </summary>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="tid">A 24 char long string used to uniquelly identify the call  </param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.qRfcInvoke(System.String,System.Object[],SAP.Connector.RfcQueueItem)">
+            <summary>
+            Invoke a SAP transactional RFC call
+            </summary>
+            <param name="method">Method name</param>
+            <param name="methodParamsIn">An array of objects containing all in and ref parameters</param>
+            <param name="qItem">A instance of the class RfcQueueItem with initialized QueueName, QueueIndex and TID </param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.ConfirmTID(SAP.Connector.RfcTID)">
+            <summary>
+            Call this method after a successful tRfc or qRfc call
+            </summary>
+            <param name="tid"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.CommitWork">
+            <summary>
+            Call this method to explicitly commit the BAPI transaction. This method is required for BAPIs
+            with SAP release 4.0 or higher
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.RollbackWork">
+            <summary>
+            Call this method to rollbach the BAPI trasaction. This method works only for BAPIs
+            with SAP release 4.0 or higher
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.ActivateQueue(System.String)">
+            <summary>
+            Call this method to activate the queue processing  the BAPI trasaction. This method can be called either before or after 
+            issuing one or more qRfc calls
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.DeactivateQueue(System.String)">
+            <summary>
+            Call this method to activate the queue processing  the BAPI trasaction. This method can be called either before or after 
+            issuing one or more qRfc calls
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.Ping">
+            <summary>
+            Does a "no op" call to the SAP system. Currently the function is 
+            used internally to close Soap sessions.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClient.System#ComponentModel#IListSource#GetList">
+            <summary>
+            For a IListSource that contains multiple lists (ContainsListCollection returns true),
+            the documentation is not quite clear. The fact is that the method has to return a 
+            list with a single line(!), where the colums are used to describe the available "sub-" lists.
+            In our case this is simple, as all sub lists are exposed by generated public properties.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SAP.Connector.SAPClient.Connection">
+            <summary>
+            The <see cref="T:SAP.Connector.Connection"/> derived class that
+            is to be used to connect this SAPClient. It can be a
+            <see cref="T:SAP.Connector.SAPConnection"/> for RFC or a 
+            <see cref="T:SAP.Connector.SoapConnection"/> for Soap.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPClient.ConnectionString">
+            <summary>
+            A SAP connection string used to establish a RFC connection or URL for HTTP connection 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPClient.BapiReturn">
+            <summary>
+            If Bapiret-Exception mapping is enabled and the last
+            call did contain an exception parameter of type <see cref="T:SAP.Connector.BAPIRETURN"/> or an inherited class,
+            this property contains it's content.
+            </summary>
+            <remarks>
+            Bapiret-Exception mapping will automatically set this property,
+            if a Method has a parameter of type <see cref="T:SAP.Connector.BAPIRETURN"/> or and inherited class. If it contains 
+            an error condition, a <see cref="T:SAP.Connector.BapiException"/>
+            is thrown. If the parameter contained only information or warnings,
+            you can read them from this property.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.SAPClient.BapiRetTable">
+            <summary>
+            If Bapiret-Exception mapping is enabled and the last
+            call did contain an exception parameter of type BAPIRET2Table,
+            this property contains it's content.
+            </summary>
+            <remarks>
+            Bapiret-Exception mapping will automatically set this property,
+            if a Method has a parameter of type BAPIRET2Table. If it contains 
+            an error condition, a <see cref="T:SAP.Connector.BapiException"/>
+            is thrown. If the parameter contained only information or warnings,
+            you can read them from this property.
+            </remarks>
+        </member>
+        <member name="P:SAP.Connector.SAPClient.CallbackServer">
+            <summary>
+            An instance of a SAPServer derived class that implements RFC callback functions. Callback is supported only by RFC protocoll.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.RfcTID">
+            <summary>
+            Represents a 24 bytes long unique transaction identifier (TID) that is required by tRfc or qRfc.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.#ctor(System.Byte[])">
+            <summary>
+            Construct a new instance of the RfcTID class using the specified array of bytes.
+            </summary>
+            <param name="tid">A 24 element byte array containing values with which to initialize the RfcTID.</param>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.#ctor(System.IntPtr)">
+            <summary>
+            Construct a new instance of the RfcTID class using the unmanaged TID pointer.
+            </summary>
+            <param name="pTID">An unmanaged pointer pointing to the unmanaged TID buffer.</param>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.#ctor(System.Guid)">
+            <summary>
+            Construct a new instance of the RfcTID class by converting the specified Guid to TID.
+            </summary>
+            <param name="guid">An instance of the Guid class.</param>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.NewTID">
+            <summary>
+            Create a new instance of the RfcTID class.
+            </summary>
+            <returns>A new RfcTID object.</returns>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.ToGuid">
+            <summary>
+            Convert the TID represented by the current instance to a Guid.
+            </summary>
+            <returns>A Guid instance.</returns>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.ToString">
+            <summary>
+            Returns a string representation of the TID contained in this instance of the RfcTID class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.RfcTID.ToBytes">
+            <summary>
+            Returns a string representation of the TID contained in this instance of the RfcTID class
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.RfcQueueItem">
+            <summary>
+            Represents a queue item in the qRfc queue
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.RfcQueueItem.#ctor(System.String,System.Int32,SAP.Connector.RfcTID)">
+            <summary>
+            Construct a new instance of the class RfcQueueItem and initialize it with the given parameter. 
+            </summary>
+            <param name="name">Queue name</param>
+            <param name="index">Index or counter of the item </param>
+            <param name="tid">An instance of the class RfcTID</param>
+        </member>
+        <member name="P:SAP.Connector.RfcQueueItem.QueueName">
+            <summary>
+            Name of the queue
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcQueueItem.QueueIndex">
+            <summary>
+            Index or counter of the item within the queue
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.RfcQueueItem.TID">
+            <summary>
+            Associated TID 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPClientPseudoList">
+            <summary>
+            For SAPClient's IDataSource.GetList method it should be normally sufficient
+            to return an typed array that contains excactly one line with "this".
+            Because of a bug in BindingManangerBase.GetItemProperties(Type listType, int offset, ArrayList dataSources, ArrayList listAccessors)
+            an array is not accepted for a redirectly BindingManangers.
+            So we implement a PseudoList that exposes all of the proxy's Properties 
+            is a single line and implements ITypedList (as CollectionBase's Item property 
+            doesn't return the "real" type.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPClientPseudoList.GetItemProperties(System.Type,System.Collections.IList)">
+            <summary>
+            From CurrencyMananger.GetItemProperties,
+            the one and only really good implementation...
+            </summary>
+            <param name="list"></param>
+            <param name="listType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.SAPClientPseudoList.GetItemProperties(System.ComponentModel.PropertyDescriptor[])">
+            <summary>
+            Iterate through the listAccessors path and get the Propertie(s) along the
+            path; finally returning the final Item properties.
+            </summary>
+            <param name="listAccessors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SAP.Connector.SAPClientPseudoList.GetListName(System.ComponentModel.PropertyDescriptor[])">
+            <summary>
+            Default implementation as from BindingManagerBase
+            </summary>
+            <param name="listAccessors"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SAP.Connector.SAPLogonDestination">
+            <summary>
+            This class implements a <see cref="T:SAP.Connector.Destination">Destination</see> on base of
+            the SAPLOGON.INI file. In future it will also support LDAP queries.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPLogonDestination.#ctor(System.String)">
+            <summary>
+            Smart constructor that sets the destination to the given
+            Key- or Printname
+            </summary>
+            <param name="destinationName"></param>
+        </member>
+        <member name="M:SAP.Connector.SAPLogonDestination.#ctor">
+            <summary>
+            Initializes the SAPLogonDestination object.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPLogonDestination.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SAPLogonDestination.GetDestinationNameFromPrintName(System.String)">
+            <summary>
+            Tries to convert a PrintName (Description) to the Key name (DestinationName).
+            </summary>
+            <param name="printName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.DestinationName">
+            <summary>
+            Specifies the key to the SAPLOGON.INI. Usually it has the form Item[Nr.].
+            When presented to the user the SAPLogonDestNameTypeConverter <see cref="T:SAP.Connector.SAPLogonDestination.SAPLogonDestNameTypeConverter"/>  will 
+            convert it to the more friendly description text.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.DestinationKey">
+            <summary>
+            The key that is used inside of SAPLOGON.INI for the selected DestinationName.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.AvailableDestinations">
+            <summary>
+            Convenience Property for other classes to read all available destinations.
+            They are returned as key/value pairs by the IDictionary enumerator.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.Type">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.MsgServerHost">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.SAPSystemName">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.LogonGroup">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.AppServerHost">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.SystemNumber">
+            <summary>
+            Overload 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.SNCMode">
+            <summary>
+            Overridden
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.SNCPartnerName">
+            <summary>
+            Overridden
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPLogonDestination.SAPRouterString">
+            <summary>
+            Gets the SAP Router string for the given system, if one is defined in SAPLOGON.INI.
+            It will be automatically combined the with hostname into the connection string.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPLogonDestination.SAPLogonDestNameTypeConverter">
+            <summary>
+            TypeConverter for the DestName property. It allows to show a list of 
+            all available destinations in SAPLOGON.INI and convert between print name ("Description")
+            and key-name.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPServerBase">
+            <summary>
+            Abstract base class for <see cref="T:SAP.Connector.SAPServer"/> and thus for all
+            RFC server proxies.
+            </summary>
+            <remarks>
+            This class doesn't contain any methods or properties.
+            </remarks>
+        </member>
+        <member name="T:SAP.Connector.SoapConnection">
+            <summary>
+            Implements a kind of Connection semantics on base of the
+            connection-less Soap protocol. 
+            </summary>
+            <remarks>
+            The class simulates the behaviour of a Rfc connection. It will automatically
+            append <c>SESSION_MODE</c> parameters to the URL to
+            control the SAP server's user sessions. 
+            Additionally, it sets the Credentials property according to
+            the username/password in the URL (expecting the FTP-like
+            syntax http://username:password@server...)	or as query parameter named
+            "sap-user"/"sap-password" or "username"/"password".
+            </remarks>
+        </member>
+        <member name="M:SAP.Connector.SoapConnection.#ctor(System.String)">
+            <summary>
+            Initializes a new SoapConnection with the given
+            base URL.
+            </summary>
+            <param name="connString"></param>
+        </member>
+        <member name="M:SAP.Connector.SoapConnection.#ctor(SAP.Connector.IDestination)">
+            <summary>
+            Initializes a new SoapConnection that is linked with the given Destination.
+            Note that the <see cref="P:SAP.Connector.SoapConnection.ConnectionString"/> is not set during initialization but
+            on the call to <see cref="M:SAP.Connector.Connection.Open"/>
+            </summary>
+            <param name="dest"></param>
+        </member>
+        <member name="M:SAP.Connector.SoapConnection.#ctor">
+            <summary>
+            Initializes a new SoapConnection with an empty URL.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SoapConnection.CloseResources">
+            <summary>
+            Closes the SoapConnection session.
+            To remove SAP user context, it will send a RFC_PING RFM
+            with session_mode=2.
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.SoapConnection.BeforeCall(SAP.Connector.SAPClient)">
+            <summary>
+            Appends the session_mode parameter.
+            </summary>
+            <param name="sapclient"></param>
+        </member>
+        <member name="P:SAP.Connector.SoapConnection.ConnectionString">
+            <summary>
+            Gets and sets the ConnectionString (URL) for 
+            the SoapConnection. Setting it means to create a new 
+            session, possibly without correctly closing the old one.
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SoapConnection.IsOpen">
+            <summary>
+            Checks if the connection is open.
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.SAPField">
+            <summary>
+            A class used to describe a field in a SAPStructure derived class. A SAPStructure derived class
+            contains an array of Field objects referenced by property Fields. 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPField.FieldName">
+            <summary>
+            Name of the field 
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPField.FieldType">
+            <summary>
+            Data type of the field
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPField.AbapName">
+            <summary>
+            Corresponding ABAP name
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPField.RfcType">
+            <summary>
+            Corresponding RFC or ABAP type
+            </summary>
+        </member>
+        <member name="P:SAP.Connector.SAPField.FieldLength">
+            <summary>
+            Max. length of the field in characters for character fields, in bytes for other types 
+            </summary>
+        </member>
+        <member name="T:SAP.Connector.NCoTrace">
+            <summary>
+            This class implements the trace facility
+            </summary>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.Write(System.String,System.Object[])">
+            <summary>
+            Write trace info into the trace output
+            </summary>
+            <param name="format">Format for the output</param>
+            <param name="args">Contents to write to trace output</param>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.WriteError(System.String)">
+            <summary>
+            Write error to trace output
+            </summary>
+            <param name="error">Error text</param>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.WriteWarning(System.String)">
+            <summary>
+            Write warning to trace output
+            </summary>
+            <param name="warning">Warning message</param>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.WriteInfo(System.String,System.Object[])">
+            <summary>
+            Write more detailed info into trace output
+            </summary>
+            <param name="format">Format</param>
+            <param name="args">Contents to write to trace output</param>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.WriteVerbose(System.String,System.Object[])">
+            <summary>
+            Dump verbose data to trace output 
+            </summary>
+            <param name="format">String to format the output</param>
+            <param name="args">Contents to be writen</param>
+        </member>
+        <member name="M:SAP.Connector.NCoTrace.Cleanup">
+            <summary>
+            Cleans up the trace output
+            </summary>
+        </member>
+    </members>
+</doc>

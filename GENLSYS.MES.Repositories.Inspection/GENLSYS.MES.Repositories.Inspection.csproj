@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60D49FDD-D1DD-4220-8E6A-5B64DAEB7DB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GENLSYS.MES.Repositories.Inspection</RootNamespace>
+    <AssemblyName>GENLSYS.MES.Repositories.Inspection</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="INP\AssyBoxDal.cs" />
+    <Compile Include="INP\OtherPricingDal.cs" />
+    <Compile Include="INP\PackingRecRetrieveDal.cs" />
+    <Compile Include="INP\PODal.cs" />
+    <Compile Include="INP\OpenBoxDal.cs" />
+    <Compile Include="INP\CustOrderDal.cs" />
+    <Compile Include="INP\CustOrderHistoryDal.cs" />
+    <Compile Include="INP\IQCDal.cs" />
+    <Compile Include="INP\PackingRecDal.cs" />
+    <Compile Include="INP\PackingRecDtlDal.cs" />
+    <Compile Include="INP\PricingDal.cs" />
+    <Compile Include="INP\ReceivingCtnDtlDal.cs" />
+    <Compile Include="INP\ReceivingDal.cs" />
+    <Compile Include="INP\RepairFailDal.cs" />
+    <Compile Include="INP\RepairHisDal.cs" />
+    <Compile Include="INP\RepairStockDal.cs" />
+    <Compile Include="INP\RequestPayDal.cs" />
+    <Compile Include="INP\RequestPayDtlDal.cs" />
+    <Compile Include="INP\ReturnDal.cs" />
+    <Compile Include="INP\ReturnDtlDal.cs" />
+    <Compile Include="INP\ScheduleDal.cs" />
+    <Compile Include="INP\ShippingDal.cs" />
+    <Compile Include="INP\ShippingDtlCtnDal.cs" />
+    <Compile Include="INP\ShippingDtlDal.cs" />
+    <Compile Include="INP\ShippingPlanDal.cs" />
+    <Compile Include="INP\SupplementDal.cs" />
+    <Compile Include="INP\SupplementDtlDal.cs" />
+    <Compile Include="INP\UnpackingDtlDal.cs" />
+    <Compile Include="INP\WipDal.cs" />
+    <Compile Include="INP\WorkOrderDal.cs" />
+    <Compile Include="INP\WorkOrderDtlDal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WHS\LocationDal.cs" />
+    <Compile Include="WHS\StockDal.cs" />
+    <Compile Include="WHS\WarehouseDal.cs" />
+    <Compile Include="WHS\WarehouseOrderDal.cs" />
+    <Compile Include="WHS\WarehouseOrderDtlDal.cs" />
+    <Compile Include="WHS\WOTypeDal.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\GENLSYS.MES.Common.csproj">
+      <Project>{1B8CCE4C-6C02-4992-86B2-E20E00F4349A}</Project>
+      <Name>GENLSYS.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GENLSYS.MES.DataContracts.csproj">
+      <Project>{DC21F5C0-82AA-44C2-85A1-62B36E940FC8}</Project>
+      <Name>GENLSYS.MES.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.Repositories\GENLSYS.MES.Repositories.csproj">
+      <Project>{0581A7AE-9628-42EC-8C85-66A70A603C2C}</Project>
+      <Name>GENLSYS.MES.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\GENLSYS.MES.Utility.csproj">
+      <Project>{0845EC90-DD90-44E1-B3B5-E573FE3F0895}</Project>
+      <Name>GENLSYS.MES.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

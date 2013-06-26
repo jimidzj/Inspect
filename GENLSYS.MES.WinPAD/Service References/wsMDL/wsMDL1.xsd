@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/wsMDL.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="tmdlreasoncode">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="frequence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncodedesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncodemodel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="severitylevel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpiqcfail" nillable="true" type="tns:ArrayOftinpiqcfail" />
+          <xs:element minOccurs="0" name="tinprepairfail" nillable="true" type="tns:ArrayOftinprepairfail" />
+          <xs:element minOccurs="0" name="tmdlreasoncategory" nillable="true" type="tns:tmdlreasoncategory" />
+          <xs:element minOccurs="0" name="tmdlreasoncategoryReference" nillable="true" type="q1:EntityReferenceOftmdlreasoncategorycl_SnyTG4" />
+          <xs:element minOccurs="0" name="tmdlreasoncodestep" nillable="true" type="tns:ArrayOftmdlreasoncodestep" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlreasoncode" nillable="true" type="tns:tmdlreasoncode" />
+  <xs:complexType name="ArrayOftinpiqcfail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpiqcfail" nillable="true" type="tns:tinpiqcfail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpiqcfail" nillable="true" type="tns:ArrayOftinpiqcfail" />
+  <xs:complexType name="tinpiqcfail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="iqcsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncomment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpiqc" nillable="true" type="tns:tinpiqc" />
+          <xs:element minOccurs="0" name="tinpiqcReference" nillable="true" type="q2:EntityReferenceOftinpiqccl_SnyTG4" />
+          <xs:element minOccurs="0" name="tmdlreasoncode" nillable="true" type="tns:tmdlreasoncode" />
+          <xs:element minOccurs="0" name="tmdlreasoncodeReference" nillable="true" type="q2:EntityReferenceOftmdlreasoncodecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpiqcfail" nillable="true" type="tns:tinpiqcfail" />
+  <xs:complexType name="tinpiqc">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bootheight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="checkrequest" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="checkresult" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="checktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="factory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iqcdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="iqcsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="returncartonqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="returntype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpiqcfail" nillable="true" type="tns:ArrayOftinpiqcfail" />
+          <xs:element minOccurs="0" name="tinpiqcreturn" nillable="true" type="tns:ArrayOftinpiqcreturn" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q3:EntityReferenceOftmdlcustomercl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpiqc" nillable="true" type="tns:tinpiqc" />
+  <xs:complexType name="ArrayOftinpiqcreturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpiqcreturn" nillable="true" type="tns:tinpiqcreturn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpiqcreturn" nillable="true" type="tns:ArrayOftinpiqcreturn" />
+  <xs:complexType name="tinpiqcreturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cartonno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iqcsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="tinpiqc" nillable="true" type="tns:tinpiqc" />
+          <xs:element minOccurs="0" name="tinpiqcReference" nillable="true" type="q4:EntityReferenceOftinpiqccl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpiqcreturn" nillable="true" type="tns:tinpiqcreturn" />
+  <xs:complexType name="tmdlcustomer">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="comment1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="comment2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="comment3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="contact1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="contact2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customertype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fax1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fax2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="gno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoicetitle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoicetoaddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="invoicetype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="manager" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="paymentcondition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shiptoaddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="short_name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tel1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpiqc" nillable="true" type="tns:ArrayOftinpiqc" />
+          <xs:element minOccurs="0" name="tinppricing" nillable="true" type="tns:ArrayOftinppricing" />
+          <xs:element minOccurs="0" name="tinpreturn" nillable="true" type="tns:ArrayOftinpreturn" />
+          <xs:element minOccurs="0" name="tinpschedule" nillable="true" type="tns:ArrayOftinpschedule" />
+          <xs:element minOccurs="0" name="tinpworkorder" nillable="true" type="tns:ArrayOftinpworkorder" />
+          <xs:element minOccurs="0" name="tmdlcontact" nillable="true" type="tns:ArrayOftmdlcontact" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+  <xs:complexType name="ArrayOftinpiqc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpiqc" nillable="true" type="tns:tinpiqc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpiqc" nillable="true" type="tns:ArrayOftinpiqc" />
+  <xs:complexType name="ArrayOftinppricing">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinppricing" nillable="true" type="tns:tinppricing" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinppricing" nillable="true" type="tns:ArrayOftinppricing" />
+  <xs:complexType name="tinppricing">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prisysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reworkratio" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="tinppricingdtl" nillable="true" type="tns:ArrayOftinppricingdtl" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q6:EntityReferenceOftmdlcustomercl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinppricing" nillable="true" type="tns:tinppricing" />
+  <xs:complexType name="ArrayOftinppricingdtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinppricingdtl" nillable="true" type="tns:tinppricingdtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinppricingdtl" nillable="true" type="tns:ArrayOftinppricingdtl" />
+  <xs:complexType name="tinppricingdtl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ebootheight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pridtlsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prisysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reworkratio" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="sbootheight" type="xs:decimal" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinppricing" nillable="true" type="tns:tinppricing" />
+          <xs:element minOccurs="0" name="tinppricingReference" nillable="true" type="q7:EntityReferenceOftinppricingcl_SnyTG4" />
+          <xs:element minOccurs="0" name="tinppricingdtldef" nillable="true" type="tns:ArrayOftinppricingdtldef" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinppricingdtl" nillable="true" type="tns:tinppricingdtl" />
+  <xs:complexType name="ArrayOftinppricingdtldef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinppricingdtldef" nillable="true" type="tns:tinppricingdtldef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinppricingdtldef" nillable="true" type="tns:ArrayOftinppricingdtldef" />
+  <xs:complexType name="tinppricingdtldef">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="effectivedate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="expireddate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="price" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pridtldefsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pridtlsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinppricingdtl" nillable="true" type="tns:tinppricingdtl" />
+          <xs:element minOccurs="0" name="tinppricingdtlReference" nillable="true" type="q8:EntityReferenceOftinppricingdtlcl_SnyTG4" />
+          <xs:element minOccurs="0" name="unit" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinppricingdtldef" nillable="true" type="tns:tinppricingdtldef" />
+  <xs:complexType name="ArrayOftinpreturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpreturn" nillable="true" type="tns:tinpreturn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpreturn" nillable="true" type="tns:ArrayOftinpreturn" />
+  <xs:complexType name="tinpreturn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="retsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="returndate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="returnno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="returnuser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpreturndtl" nillable="true" type="tns:ArrayOftinpreturndtl" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q9:EntityReferenceOftmdlcustomercl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpreturn" nillable="true" type="tns:tinpreturn" />
+  <xs:complexType name="ArrayOftinpreturndtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpreturndtl" nillable="true" type="tns:tinpreturndtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpreturndtl" nillable="true" type="tns:ArrayOftinpreturndtl" />
+  <xs:complexType name="tinpreturndtl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="retdtlsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="retsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpreturn" nillable="true" type="tns:tinpreturn" />
+          <xs:element minOccurs="0" name="tinpreturnReference" nillable="true" type="q10:EntityReferenceOftinpreturncl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpreturndtl" nillable="true" type="tns:tinpreturndtl" />
+  <xs:complexType name="ArrayOftinpschedule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpschedule" nillable="true" type="tns:tinpschedule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpschedule" nillable="true" type="tns:ArrayOftinpschedule" />
+  <xs:complexType name="tinpschedule">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q11:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="factory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="fullcheckqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q11:EntityReferenceOftmdlcustomercl_SnyTG4" />
+          <xs:element minOccurs="0" name="ttlqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="xrayqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="yearmonth" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpschedule" nillable="true" type="tns:tinpschedule" />
+  <xs:complexType name="ArrayOftinpworkorder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpworkorder" nillable="true" type="tns:tinpworkorder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpworkorder" nillable="true" type="tns:ArrayOftinpworkorder" />
+  <xs:complexType name="tinpworkorder">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q12:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="factory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpworkorderdtl" nillable="true" type="tns:ArrayOftinpworkorderdtl" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q12:EntityReferenceOftmdlcustomercl_SnyTG4" />
+          <xs:element minOccurs="0" name="workorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="workorderstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="workordersysid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpworkorder" nillable="true" type="tns:tinpworkorder" />
+  <xs:complexType name="ArrayOftinpworkorderdtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpworkorderdtl" nillable="true" type="tns:tinpworkorderdtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpworkorderdtl" nillable="true" type="tns:ArrayOftinpworkorderdtl" />
+  <xs:complexType name="tinpworkorderdtl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q13:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="completedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="completeduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="schcartonqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="schdlydate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="schpairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="schshpdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpworkorder" nillable="true" type="tns:tinpworkorder" />
+          <xs:element minOccurs="0" name="tinpworkorderReference" nillable="true" type="q13:EntityReferenceOftinpworkordercl_SnyTG4" />
+          <xs:element minOccurs="0" name="workorderlineno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="workordersysid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpworkorderdtl" nillable="true" type="tns:tinpworkorderdtl" />
+  <xs:complexType name="ArrayOftmdlcontact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlcontact" nillable="true" type="tns:tmdlcontact" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlcontact" nillable="true" type="tns:ArrayOftmdlcontact" />
+  <xs:complexType name="tmdlcontact">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q14:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="faxno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isdefault" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="telphone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+          <xs:element minOccurs="0" name="tmdlcustomerReference" nillable="true" type="q14:EntityReferenceOftmdlcustomercl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlcontact" nillable="true" type="tns:tmdlcontact" />
+  <xs:complexType name="ArrayOftinprepairfail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinprepairfail" nillable="true" type="tns:tinprepairfail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinprepairfail" nillable="true" type="tns:ArrayOftinprepairfail" />
+  <xs:complexType name="tinprepairfail">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q15:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="reasoncode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="repsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlreasoncode" nillable="true" type="tns:tmdlreasoncode" />
+          <xs:element minOccurs="0" name="tmdlreasoncodeReference" nillable="true" type="q15:EntityReferenceOftmdlreasoncodecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinprepairfail" nillable="true" type="tns:tinprepairfail" />
+  <xs:complexType name="tmdlreasoncategory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q16:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attrtplatid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncategorydesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlreasoncode" nillable="true" type="tns:ArrayOftmdlreasoncode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlreasoncategory" nillable="true" type="tns:tmdlreasoncategory" />
+  <xs:complexType name="ArrayOftmdlreasoncode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlreasoncode" nillable="true" type="tns:tmdlreasoncode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlreasoncode" nillable="true" type="tns:ArrayOftmdlreasoncode" />
+  <xs:complexType name="ArrayOftmdlreasoncodestep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlreasoncodestep" nillable="true" type="tns:tmdlreasoncodestep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlreasoncodestep" nillable="true" type="tns:ArrayOftmdlreasoncodestep" />
+  <xs:complexType name="tmdlreasoncodestep">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q17:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reasoncode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stepsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlreasoncode" nillable="true" type="tns:tmdlreasoncode" />
+          <xs:element minOccurs="0" name="tmdlreasoncodeReference" nillable="true" type="q17:EntityReferenceOftmdlreasoncodecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlreasoncodestep" nillable="true" type="tns:tmdlreasoncodestep" />
+  <xs:complexType name="ArrayOftsysattributevalue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysattributevalue" nillable="true" type="tns:tsysattributevalue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysattributevalue" nillable="true" type="tns:ArrayOftsysattributevalue" />
+  <xs:complexType name="tsysattributevalue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q18:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributetype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributevalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="seqno" type="xs:decimal" />
+          <xs:element minOccurs="0" name="usedby" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valuetype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysattributevalue" nillable="true" type="tns:tsysattributevalue" />
+  <xs:complexType name="ArrayOftmdlshift">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlshift" nillable="true" type="tns:tmdlshift" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlshift" nillable="true" type="tns:ArrayOftmdlshift" />
+  <xs:complexType name="tmdlshift">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q19:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shiftname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="starttime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="tinpcustorderhistory" nillable="true" type="tns:ArrayOftinpcustorderhistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlshift" nillable="true" type="tns:tmdlshift" />
+  <xs:complexType name="ArrayOftinpcustorderhistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpcustorderhistory" nillable="true" type="tns:tinpcustorderhistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpcustorderhistory" nillable="true" type="tns:ArrayOftinpcustorderhistory" />
+  <xs:complexType name="tinpcustorderhistory">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q20:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cartonno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cartonqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="eventgroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="eventname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="eventtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="eventuser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ohsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="refsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlshift" nillable="true" type="tns:tmdlshift" />
+          <xs:element minOccurs="0" name="tmdlshiftReference" nillable="true" type="q20:EntityReferenceOftmdlshiftcl_SnyTG4" />
+          <xs:element minOccurs="0" name="tmdlworkgroup" nillable="true" type="tns:tmdlworkgroup" />
+          <xs:element minOccurs="0" name="tmdlworkgroupReference" nillable="true" type="q20:EntityReferenceOftmdlworkgroupcl_SnyTG4" />
+          <xs:element minOccurs="0" name="workgroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpcustorderhistory" nillable="true" type="tns:tinpcustorderhistory" />
+  <xs:complexType name="tmdlworkgroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q21:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="step" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tinpcustorderhistory" nillable="true" type="tns:ArrayOftinpcustorderhistory" />
+          <xs:element minOccurs="0" name="tinprepairhis" nillable="true" type="tns:ArrayOftinprepairhis" />
+          <xs:element minOccurs="0" name="tinpreworkhis" nillable="true" type="tns:ArrayOftinpreworkhis" />
+          <xs:element minOccurs="0" name="workgroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="workgroupdesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlworkgroup" nillable="true" type="tns:tmdlworkgroup" />
+  <xs:complexType name="ArrayOftinprepairhis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinprepairhis" nillable="true" type="tns:tinprepairhis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinprepairhis" nillable="true" type="tns:ArrayOftinprepairhis" />
+  <xs:complexType name="tinprepairhis">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q22:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="checktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="claimtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="claimuser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="repsysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="reptype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="step" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlworkgroup" nillable="true" type="tns:tmdlworkgroup" />
+          <xs:element minOccurs="0" name="tmdlworkgroupReference" nillable="true" type="q22:EntityReferenceOftmdlworkgroupcl_SnyTG4" />
+          <xs:element minOccurs="0" name="workgroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinprepairhis" nillable="true" type="tns:tinprepairhis" />
+  <xs:complexType name="ArrayOftinpreworkhis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tinpreworkhis" nillable="true" type="tns:tinpreworkhis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftinpreworkhis" nillable="true" type="tns:ArrayOftinpreworkhis" />
+  <xs:complexType name="tinpreworkhis">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q23:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="claimtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="claimuser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="moveto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pairqty" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="rwksysid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rwktype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="size" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlworkgroup" nillable="true" type="tns:tmdlworkgroup" />
+          <xs:element minOccurs="0" name="tmdlworkgroupReference" nillable="true" type="q23:EntityReferenceOftmdlworkgroupcl_SnyTG4" />
+          <xs:element minOccurs="0" name="workgroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tinpreworkhis" nillable="true" type="tns:tinpreworkhis" />
+  <xs:complexType name="ArrayOftmdlworkgroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlworkgroup" nillable="true" type="tns:tmdlworkgroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlworkgroup" nillable="true" type="tns:ArrayOftmdlworkgroup" />
+  <xs:complexType name="ArrayOftmdlemployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlemployee" nillable="true" type="tns:tmdlemployee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlemployee" nillable="true" type="tns:ArrayOftmdlemployee" />
+  <xs:complexType name="tmdlemployee">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q24:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="defaultshift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="department" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="effectdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeestatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeetypeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="grade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="joindate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="probationdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="telno" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlemployeetype" nillable="true" type="tns:tmdlemployeetype" />
+          <xs:element minOccurs="0" name="tmdlemployeetypeReference" nillable="true" type="q24:EntityReferenceOftmdlemployeetypecl_SnyTG4" />
+          <xs:element minOccurs="0" name="trainer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecuser" nillable="true" type="tns:ArrayOftsecuser" />
+          <xs:element minOccurs="0" name="workgroup" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlemployee" nillable="true" type="tns:tmdlemployee" />
+  <xs:complexType name="tmdlemployeetype">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q25:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="employeetypeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeetypename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlemployee" nillable="true" type="tns:ArrayOftmdlemployee" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tmdlemployeetype" nillable="true" type="tns:tmdlemployeetype" />
+  <xs:complexType name="ArrayOftsecuser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecuser" nillable="true" type="tns:tsecuser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecuser" nillable="true" type="tns:ArrayOftsecuser" />
+  <xs:complexType name="tsecuser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q26:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aduserid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastlogontime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tmdlemployee" nillable="true" type="tns:tmdlemployee" />
+          <xs:element minOccurs="0" name="tmdlemployeeReference" nillable="true" type="q26:EntityReferenceOftmdlemployeecl_SnyTG4" />
+          <xs:element minOccurs="0" name="tsecuserrole" nillable="true" type="tns:ArrayOftsecuserrole" />
+          <xs:element minOccurs="0" name="tsyssession" nillable="true" type="tns:ArrayOftsyssession" />
+          <xs:element minOccurs="0" name="tsyssessionhis" nillable="true" type="tns:ArrayOftsyssessionhis" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="usertype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecuser" nillable="true" type="tns:tsecuser" />
+  <xs:complexType name="ArrayOftsecuserrole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecuserrole" nillable="true" type="tns:tsecuserrole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecuserrole" nillable="true" type="tns:ArrayOftsecuserrole" />
+  <xs:complexType name="tsecuserrole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q27:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecrole" nillable="true" type="tns:tsecrole" />
+          <xs:element minOccurs="0" name="tsecroleReference" nillable="true" type="q27:EntityReferenceOftsecrolecl_SnyTG4" />
+          <xs:element minOccurs="0" name="tsecuser" nillable="true" type="tns:tsecuser" />
+          <xs:element minOccurs="0" name="tsecuserReference" nillable="true" type="q27:EntityReferenceOftsecusercl_SnyTG4" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecuserrole" nillable="true" type="tns:tsecuserrole" />
+  <xs:complexType name="tsecrole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q28:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roledesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rolestatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecroleeqpgroup" nillable="true" type="tns:ArrayOftsecroleeqpgroup" />
+          <xs:element minOccurs="0" name="tsecrolefunction" nillable="true" type="tns:tsecrolefunction" />
+          <xs:element minOccurs="0" name="tsecrolefunctionReference" nillable="true" type="q28:EntityReferenceOftsecrolefunctioncl_SnyTG4" />
+          <xs:element minOccurs="0" name="tsecrolestep" nillable="true" type="tns:ArrayOftsecrolestep" />
+          <xs:element minOccurs="0" name="tsecuserrole" nillable="true" type="tns:ArrayOftsecuserrole" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrole" nillable="true" type="tns:tsecrole" />
+  <xs:complexType name="ArrayOftsecroleeqpgroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecroleeqpgroup" nillable="true" type="tns:tsecroleeqpgroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecroleeqpgroup" nillable="true" type="tns:ArrayOftsecroleeqpgroup" />
+  <xs:complexType name="tsecroleeqpgroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q29:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eqpgroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecrole" nillable="true" type="tns:tsecrole" />
+          <xs:element minOccurs="0" name="tsecroleReference" nillable="true" type="q29:EntityReferenceOftsecrolecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecroleeqpgroup" nillable="true" type="tns:tsecroleeqpgroup" />
+  <xs:complexType name="tsecrolefunction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q30:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="permis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecfunctions" nillable="true" type="tns:tsecfunctions" />
+          <xs:element minOccurs="0" name="tsecfunctionsReference" nillable="true" type="q30:EntityReferenceOftsecfunctionscl_SnyTG4" />
+          <xs:element minOccurs="0" name="tsecrole" nillable="true" type="tns:tsecrole" />
+          <xs:element minOccurs="0" name="tsecroleReference" nillable="true" type="q30:EntityReferenceOftsecrolecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrolefunction" nillable="true" type="tns:tsecrolefunction" />
+  <xs:complexType name="tsecfunctions">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q31:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consumer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcdesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="functype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcurl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="levelno" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="parentfuncid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecrolefunction" nillable="true" type="tns:ArrayOftsecrolefunction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecfunctions" nillable="true" type="tns:tsecfunctions" />
+  <xs:complexType name="ArrayOftsecrolefunction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecrolefunction" nillable="true" type="tns:tsecrolefunction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecrolefunction" nillable="true" type="tns:ArrayOftsecrolefunction" />
+  <xs:complexType name="ArrayOftsecrolestep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecrolestep" nillable="true" type="tns:tsecrolestep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecrolestep" nillable="true" type="tns:ArrayOftsecrolestep" />
+  <xs:complexType name="tsecrolestep">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q32:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="areaid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stepid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecrole" nillable="true" type="tns:tsecrole" />
+          <xs:element minOccurs="0" name="tsecroleReference" nillable="true" type="q32:EntityReferenceOftsecrolecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrolestep" nillable="true" type="tns:tsecrolestep" />
+  <xs:complexType name="ArrayOftsyssession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsyssession" nillable="true" type="tns:tsyssession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsyssession" nillable="true" type="tns:ArrayOftsyssession" />
+  <xs:complexType name="tsyssession">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q33:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iskilled" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="islocked" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="logontime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="machine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="modulename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="systemname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="terminal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecuser" nillable="true" type="tns:tsecuser" />
+          <xs:element minOccurs="0" name="tsecuserReference" nillable="true" type="q33:EntityReferenceOftsecusercl_SnyTG4" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsyssession" nillable="true" type="tns:tsyssession" />
+  <xs:complexType name="ArrayOftsyssessionhis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsyssessionhis" nillable="true" type="tns:tsyssessionhis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsyssessionhis" nillable="true" type="tns:ArrayOftsyssessionhis" />
+  <xs:complexType name="tsyssessionhis">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q34:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="logontime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="logonuser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="machine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="modulename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="systemname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="terminal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsecuser" nillable="true" type="tns:tsecuser" />
+          <xs:element minOccurs="0" name="tsecuserReference" nillable="true" type="q34:EntityReferenceOftsecusercl_SnyTG4" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsyssessionhis" nillable="true" type="tns:tsyssessionhis" />
+  <xs:complexType name="ArrayOftmdlemployeetype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlemployeetype" nillable="true" type="tns:tmdlemployeetype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlemployeetype" nillable="true" type="tns:ArrayOftmdlemployeetype" />
+  <xs:complexType name="ArrayOftmdlcustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlcustomer" nillable="true" type="tns:tmdlcustomer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlcustomer" nillable="true" type="tns:ArrayOftmdlcustomer" />
+  <xs:complexType name="ArrayOftmdlreasoncategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tmdlreasoncategory" nillable="true" type="tns:tmdlreasoncategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftmdlreasoncategory" nillable="true" type="tns:ArrayOftmdlreasoncategory" />
+</xs:schema>

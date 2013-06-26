@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A793637-0ABC-4221-AEF9-B156D7866EA6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GENLSYS.MES.Services.Inspection</RootNamespace>
+    <AssemblyName>GENLSYS.MES.Services.Inspection</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="INP\AssyBoxBll.cs" />
+    <Compile Include="INP\OtherPricingBll.cs" />
+    <Compile Include="INP\POBll.cs" />
+    <Compile Include="INP\OpenBoxBll.cs" />
+    <Compile Include="INP\CustOrderBll.cs" />
+    <Compile Include="INP\CustOrderHistoryBll.cs" />
+    <Compile Include="INP\IQCBll.cs" />
+    <Compile Include="INP\PackingRecBll.cs" />
+    <Compile Include="INP\PackingRecDtlBll.cs" />
+    <Compile Include="INP\PricingBll.cs" />
+    <Compile Include="INP\ReceivingBll.cs" />
+    <Compile Include="INP\ReceivingCtnDtlBll.cs" />
+    <Compile Include="INP\RepairFailBll.cs" />
+    <Compile Include="INP\RepairHisBll.cs" />
+    <Compile Include="INP\RepairStockBll.cs" />
+    <Compile Include="INP\RequestPayBll.cs" />
+    <Compile Include="INP\RequestPayDtlBll.cs" />
+    <Compile Include="INP\ReturnBll.cs" />
+    <Compile Include="INP\ReturnDtlBll.cs" />
+    <Compile Include="INP\ScheduleBll.cs" />
+    <Compile Include="INP\ShippingBll.cs" />
+    <Compile Include="INP\ShippingDtlBll.cs" />
+    <Compile Include="INP\ShippingDtlCtnBll.cs" />
+    <Compile Include="INP\PackingRecRetrieveBll.cs" />
+    <Compile Include="INP\ShippingPlanBll.cs" />
+    <Compile Include="INP\SupplementBll.cs" />
+    <Compile Include="INP\SupplementDtlBll.cs" />
+    <Compile Include="INP\UnpackingDtlBll.cs" />
+    <Compile Include="INP\WipBll.cs" />
+    <Compile Include="INP\WorkOrderBll.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WHS\LocationBll.cs" />
+    <Compile Include="WHS\StockBll.cs" />
+    <Compile Include="WHS\WarehouseBll.cs" />
+    <Compile Include="WHS\WarehouseOrderBll.cs" />
+    <Compile Include="WHS\WOTypeBll.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\GENLSYS.MES.Common.csproj">
+      <Project>{1B8CCE4C-6C02-4992-86B2-E20E00F4349A}</Project>
+      <Name>GENLSYS.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GENLSYS.MES.DataContracts.csproj">
+      <Project>{DC21F5C0-82AA-44C2-85A1-62B36E940FC8}</Project>
+      <Name>GENLSYS.MES.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.Repositories.Inspection\GENLSYS.MES.Repositories.Inspection.csproj">
+      <Project>{60D49FDD-D1DD-4220-8E6A-5B64DAEB7DB2}</Project>
+      <Name>GENLSYS.MES.Repositories.Inspection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.Repositories\GENLSYS.MES.Repositories.csproj">
+      <Project>{0581A7AE-9628-42EC-8C85-66A70A603C2C}</Project>
+      <Name>GENLSYS.MES.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.Services\GENLSYS.MES.Services.csproj">
+      <Project>{0708EB84-018D-4637-ACFB-BD9E2932388A}</Project>
+      <Name>GENLSYS.MES.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\GENLSYS.MES.Utility.csproj">
+      <Project>{0845EC90-DD90-44E1-B3B5-E573FE3F0895}</Project>
+      <Name>GENLSYS.MES.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

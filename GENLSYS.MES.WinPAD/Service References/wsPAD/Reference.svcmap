@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b59f52f6-65db-4f02-8286-81beb58829b4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/wsPAD.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsPAD5.xsd" MetadataType="Schema" ID="6b0e4010-64a7-4f54-8137-5414c255ac7f" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd5" />
+    <MetadataFile FileName="wsPAD.disco" MetadataType="Disco" ID="218cc2e8-9a69-423a-8748-d67c1c6fa123" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?disco" />
+    <MetadataFile FileName="wsPAD.xsd" MetadataType="Schema" ID="a7946b07-13f1-4a5d-a244-068cd92e1b42" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd0" />
+    <MetadataFile FileName="wsPAD1.xsd" MetadataType="Schema" ID="3b83a23c-0de3-4899-9c79-1e8d75670e65" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd2" />
+    <MetadataFile FileName="wsPAD.wsdl" MetadataType="Wsdl" ID="535418a3-6707-4ffb-8930-805501195deb" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?wsdl" />
+    <MetadataFile FileName="wsPAD2.xsd" MetadataType="Schema" ID="2d77fc25-7498-457d-a8ce-1309645e09f3" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd4" />
+    <MetadataFile FileName="wsPAD6.xsd" MetadataType="Schema" ID="640476a4-876e-4e8a-923a-b849ff2c821f" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd6" />
+    <MetadataFile FileName="wsPAD3.xsd" MetadataType="Schema" ID="74ac166d-ed26-488f-967b-3609c6c16538" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd1" />
+    <MetadataFile FileName="wsPAD4.xsd" MetadataType="Schema" ID="f2e572ed-d00f-4292-9535-303e179f47d0" SourceId="1" SourceUrl="http://localhost:1111/wsPAD.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AutoUpdater>
+  <URLAddress URL="http://localhost/win/"></URLAddress>
+  <UpdateInfo>
+    <UpdateTime Date="2011-07-25"></UpdateTime>
+    <Version Num="2012.06.06.1"></Version>
+  </UpdateInfo>
+  <RestartApp>
+    <ReStart Allow="Yes"></ReStart>
+    <Execute FileName="GENLSYS.MES.Win.exe"></Execute>
+  </RestartApp>
+  <AppList>
+    <AppName Name="GENLSYS.MES.Win"></AppName>
+  </AppList>
+  <UpdateFileList>
+    <File FileName="GENLSYS.MES.Win.resources.dll" SourcePath="en-US/" DestPath="en-US/"></File>
+    <File FileName="GENLSYS.MES.Win.resources.dll" SourcePath="zh-CHS/" DestPath="zh-CHS/"></File>
+    <File FileName="GENLSYS.MES.Res.en-US.resources" SourcePath="Resources/" DestPath="Resources/"></File>
+    <File FileName="GENLSYS.MES.Res.zh-CHS.resources" SourcePath="Resources/" DestPath="Resources/"></File>
+    <File FileName="Resources.Designer.cs" SourcePath="Properties/" DestPath="Properties/"></File>
+    <File FileName="Resources.resx" SourcePath="Properties/" DestPath="Properties/"></File>
+    <File FileName="client.xml" SourcePath="" DestPath=""></File>
+    <File FileName="Common.Logging.dll" SourcePath="" DestPath=""></File>
+    <File FileName="edtFTPnet.dll" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.Common.dll" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.DataContracts.dll" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.UserControls.dll" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.Utility.dll" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.Win.exe" SourcePath="" DestPath=""></File>
+    <File FileName="GENLSYS.MES.Win.exe.config" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Excel.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Shared.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.Misc.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.UltraWinDataSource.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.UltraWinEditors.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.UltraWinGrid.ExcelExport.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.UltraWinGrid.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.UltraWinTree.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="Infragistics2.Win.v10.1.dll" SourcePath="" DestPath=""></File>
+    <File FileName="log4net.dll" SourcePath="" DestPath=""></File>
+    <File FileName="log4net.xml" SourcePath="" DestPath=""></File>
+    <File FileName="Newtonsoft.Json.dll" SourcePath="" DestPath=""></File>
+    <File FileName="update.xml" SourcePath="" DestPath=""></File>
+  </UpdateFileList>
+</AutoUpdater>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GENLSYS.MES.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MES_ActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Query" />
+      <xs:enumeration value="Insert" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="Delete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MES_ActionType" nillable="true" type="tns:MES_ActionType" />
+</xs:schema>

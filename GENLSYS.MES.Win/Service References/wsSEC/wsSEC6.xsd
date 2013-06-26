@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/wsSEC.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOftsecuser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecuser" nillable="true" type="tns:tsecuser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecuser" nillable="true" type="tns:ArrayOftsecuser" />
+  <xs:complexType name="tsecuser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aduserid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="employeeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastlogontime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="usertype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecuser" nillable="true" type="tns:tsecuser" />
+  <xs:complexType name="ArrayOftsecuserrole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecuserrole" nillable="true" type="tns:tsecuserrole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecuserrole" nillable="true" type="tns:ArrayOftsecuserrole" />
+  <xs:complexType name="tsecuserrole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecuserrole" nillable="true" type="tns:tsecuserrole" />
+  <xs:complexType name="ArrayOftsecrole">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecrole" nillable="true" type="tns:tsecrole" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecrole" nillable="true" type="tns:ArrayOftsecrole" />
+  <xs:complexType name="tsecrole">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roledesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="rolestatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrole" nillable="true" type="tns:tsecrole" />
+  <xs:complexType name="ArrayOftsecrolefunction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecrolefunction" nillable="true" type="tns:tsecrolefunction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecrolefunction" nillable="true" type="tns:ArrayOftsecrolefunction" />
+  <xs:complexType name="tsecrolefunction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="permis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrolefunction" nillable="true" type="tns:tsecrolefunction" />
+  <xs:complexType name="ArrayOftsecrolestep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecrolestep" nillable="true" type="tns:tsecrolestep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecrolestep" nillable="true" type="tns:ArrayOftsecrolestep" />
+  <xs:complexType name="tsecrolestep">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="areaid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stepid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecrolestep" nillable="true" type="tns:tsecrolestep" />
+  <xs:complexType name="ArrayOftsecroleeqpgroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecroleeqpgroup" nillable="true" type="tns:tsecroleeqpgroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecroleeqpgroup" nillable="true" type="tns:ArrayOftsecroleeqpgroup" />
+  <xs:complexType name="tsecroleeqpgroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="eqpgroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecroleeqpgroup" nillable="true" type="tns:tsecroleeqpgroup" />
+  <xs:complexType name="ArrayOftsecfunctions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsecfunctions" nillable="true" type="tns:tsecfunctions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsecfunctions" nillable="true" type="tns:ArrayOftsecfunctions" />
+  <xs:complexType name="tsecfunctions">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consumer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="createdtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="createduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcdesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="functype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="funcurl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="levelno" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="parentfuncid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsecfunctions" nillable="true" type="tns:tsecfunctions" />
+</xs:schema>

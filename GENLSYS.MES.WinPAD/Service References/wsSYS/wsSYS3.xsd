@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/wsSYS.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="ArrayOftsysappinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysappinfo" nillable="true" type="tns:tsysappinfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysappinfo" nillable="true" type="tns:ArrayOftsysappinfo" />
+  <xs:complexType name="tsysappinfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="appname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="effectdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="enduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="expireddate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="licenselimit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="releasedby" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="releaseddate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="revision" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysappinfo" nillable="true" type="tns:tsysappinfo" />
+  <xs:complexType name="tsysbillcoderule">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="basevalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bcrid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bcrname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bcrstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="billformat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ffchars" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="incrementby" type="xs:decimal" />
+          <xs:element minOccurs="0" name="iscycle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="maxvalue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="minvalue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="seqvaluelength" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="startwith" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="timeformat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsysbillcode" nillable="true" type="tns:ArrayOftsysbillcode" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysbillcoderule" nillable="true" type="tns:tsysbillcoderule" />
+  <xs:complexType name="ArrayOftsysbillcode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysbillcode" nillable="true" type="tns:tsysbillcode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysbillcode" nillable="true" type="tns:ArrayOftsysbillcode" />
+  <xs:complexType name="tsysbillcode">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="basevalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="bcrid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="currentseqvalue" type="xs:decimal" />
+          <xs:element minOccurs="0" name="fullbillnotext" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isclosed" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="islocked" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lockrefid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="prevseqvalue" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="timevalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsysbillcoderule" nillable="true" type="tns:tsysbillcoderule" />
+          <xs:element minOccurs="0" name="tsysbillcoderuleReference" nillable="true" type="q3:EntityReferenceOftsysbillcoderulecl_SnyTG4" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysbillcode" nillable="true" type="tns:tsysbillcode" />
+  <xs:complexType name="tsyssession">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ipaddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="iskilled" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="islocked" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="logontime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="machine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="modulename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="systemname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="terminal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsyssession" nillable="true" type="tns:tsyssession" />
+  <xs:complexType name="ArrayOftsyssystemconfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsyssystemconfig" nillable="true" type="tns:tsyssystemconfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsyssystemconfig" nillable="true" type="tns:ArrayOftsyssystemconfig" />
+  <xs:complexType name="tsyssystemconfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="configcategory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="configdesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="configname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="configvalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsyssystemconfig" nillable="true" type="tns:tsyssystemconfig" />
+  <xs:complexType name="ArrayOftsysattributevalue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysattributevalue" nillable="true" type="tns:tsysattributevalue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysattributevalue" nillable="true" type="tns:ArrayOftsysattributevalue" />
+  <xs:complexType name="tsysattributevalue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributetype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributevalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="seqno" type="xs:decimal" />
+          <xs:element minOccurs="0" name="usedby" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="valuetype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysattributevalue" nillable="true" type="tns:tsysattributevalue" />
+  <xs:complexType name="ArrayOftsysattrtplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysattrtplate" nillable="true" type="tns:tsysattrtplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysattrtplate" nillable="true" type="tns:ArrayOftsysattrtplate" />
+  <xs:complexType name="tsysattrtplate">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attrtplatid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attrtplatname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="isdefault" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tsysattrtplatedtl" nillable="true" type="tns:ArrayOftsysattrtplatedtl" />
+          <xs:element minOccurs="0" name="usedby" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysattrtplate" nillable="true" type="tns:tsysattrtplate" />
+  <xs:complexType name="ArrayOftsysattrtplatedtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysattrtplatedtl" nillable="true" type="tns:tsysattrtplatedtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysattrtplatedtl" nillable="true" type="tns:ArrayOftsysattrtplatedtl" />
+  <xs:complexType name="tsysattrtplatedtl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributename" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attributetype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="attrtplatid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="defaultvalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="optionalvalue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="seqno" type="xs:decimal" />
+          <xs:element minOccurs="0" name="tsysattrtplate" nillable="true" type="tns:tsysattrtplate" />
+          <xs:element minOccurs="0" name="tsysattrtplateReference" nillable="true" type="q8:EntityReferenceOftsysattrtplatecl_SnyTG4" />
+          <xs:element minOccurs="0" name="valuetype" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysattrtplatedtl" nillable="true" type="tns:tsysattrtplatedtl" />
+  <xs:complexType name="ArrayOftsysstaticvalue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysstaticvalue" nillable="true" type="tns:tsysstaticvalue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysstaticvalue" nillable="true" type="tns:ArrayOftsysstaticvalue" />
+  <xs:complexType name="tsysstaticvalue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastmodifiedtime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svresourceid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svstatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svtext" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="svvalue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysstaticvalue" nillable="true" type="tns:tsysstaticvalue" />
+  <xs:complexType name="ArrayOftsysmenuconfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysmenuconfig" nillable="true" type="tns:tsysmenuconfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysmenuconfig" nillable="true" type="tns:ArrayOftsysmenuconfig" />
+  <xs:complexType name="tsysmenuconfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="funcid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastmodifiedtime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="lastmodifieduser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="levelno" type="xs:int" />
+          <xs:element minOccurs="0" name="menuicon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="menuitemdesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="menuitemid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="menuitemname" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="menuitemurl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="menutype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parentmenuitemid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="resourceid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sortno" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="tsysmenuconfig" nillable="true" type="tns:tsysmenuconfig" />
+  <xs:complexType name="ArrayOftsysbillcoderule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tsysbillcoderule" nillable="true" type="tns:tsysbillcoderule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftsysbillcoderule" nillable="true" type="tns:ArrayOftsysbillcoderule" />
+</xs:schema>

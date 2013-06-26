@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ADFBEDDD-52A2-46EB-823A-5A610A718C14}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GENLSYS.MES.WinPAD</RootNamespace>
+    <AssemblyName>GENLSYS.MES.WinPAD</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/MicroMES2.Win/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>MicroMES2</ProductName>
+    <PublisherName>Facet Technology ShangHai</PublisherName>
+    <SuiteName>MicroMES2</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>2012.10.14.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>876037B33C72ED163F3DB6B3FDBD6C140BFCBD4E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MicroMES2.Win_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo3.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Library\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Excel.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Excel.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Shared.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.Misc.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinDataSource.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinEditors.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinGrid.ExcelExport.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinTree.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\Library\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc">
+      <HintPath>..\Library\SAP.Connector.Rfc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Classes\BaseForm.cs" />
+    <Compile Include="Common\Classes\BaseWCF.cs" />
+    <Compile Include="Common\Classes\CheckEditorStringDataFilter.cs" />
+    <Compile Include="Common\Classes\ColorDataFilter.cs" />
+    <Compile Include="Common\Classes\ConfigHandler.cs" />
+    <Compile Include="Common\Classes\ConfigReader.cs" />
+    <Compile Include="Common\Classes\DropDown.cs" />
+    <Compile Include="Common\Classes\ExceptionParser.cs" />
+    <Compile Include="Common\Classes\MenuConfig.cs" />
+    <Compile Include="Common\Classes\MESMsgBox.cs" />
+    <Compile Include="Common\Classes\SizeComparer.cs" />
+    <Compile Include="Common\Classes\SoapException.cs" />
+    <Compile Include="Common\Classes\TagInfo.cs" />
+    <Compile Include="Common\Classes\TreeNodeExt.cs" />
+    <Compile Include="Common\Classes\WaferInfo.cs" />
+    <Compile Include="Common\Forms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmContext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmContext.designer.cs">
+      <DependentUpon>frmContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmMessage.designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmProcessBar.designer.cs">
+      <DependentUpon>frmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmSplash.designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\RDLCReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\RDLCReportViewer.designer.cs">
+      <DependentUpon>RDLCReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\ReportViewer.designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\SoftKeyBoard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmMoveBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMoveBox.Designer.cs">
+      <DependentUpon>frmMoveBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPackBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPackBox.Designer.cs">
+      <DependentUpon>frmPackBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenBox.Designer.cs">
+      <DependentUpon>frmOpenBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEC\frmLineCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmLineCheck.Designer.cs">
+      <DependentUpon>frmLineCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmCheckRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmCheckRevision.Designer.cs">
+      <DependentUpon>frmCheckRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmValidatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmValidatePassword.Designer.cs">
+      <DependentUpon>frmValidatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmLogon.Designer.cs">
+      <DependentUpon>frmLogon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsINP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsMDL\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsPAD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSEC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSYS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Common\Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmContext.resx">
+      <DependentUpon>frmContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmProcessBar.resx">
+      <DependentUpon>frmProcessBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\RDLCReportViewer.resx">
+      <DependentUpon>RDLCReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMoveBox.resx">
+      <DependentUpon>frmMoveBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPackBox.resx">
+      <DependentUpon>frmPackBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenBox.resx">
+      <DependentUpon>frmOpenBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <EmbeddedResource Include="Resources\GENLSYS.MES.Res.en-US.resources">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GENLSYS.MES.Res.zh-CHS.resources">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmLineCheck.resx">
+      <DependentUpon>frmLineCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmCheckRevision.resx">
+      <DependentUpon>frmCheckRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmValidatePassword.resx">
+      <DependentUpon>frmValidatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmLogon.resx">
+      <DependentUpon>frmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.tsyslabel.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.tsysprinter.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twipftprogram.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twipftreceiving.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twiplot.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpiqc.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpotherpricing.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinppricing.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceiving.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceivingctndtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceivingdtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprepairhis.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprepairstock.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprequestpay.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreturn.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpschedule.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshipping.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshippingdtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshippingplan.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpwip.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpworkorder.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlcustomer.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlemployee.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlemployeetype.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlreasoncategory.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlreasoncode.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlshift.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlworkgroup.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tsecfunctions.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tsecrole.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tsecrolestep.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tsecuser.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tsecuserrole.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.twhsorder.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.Win.Report.DataSet.clsWarehouseInDetail.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.Win.Report.DataSet.clsWarehouseInHeader.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncoderls.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhslocation.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhswarehouse.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhswotype.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlcustomer.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlemployee.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlemployeetype.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdllocation.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncategory.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncode.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlshift.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecfunctions.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecrole.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecrolestep.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecuser.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecuserrole.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysappinfo.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattributetemplate.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattributevalue.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattrtplate.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattrtplatedtl.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysbillcode.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysbillcoderule.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysdaemonschedule.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysdaemontask.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysmenuconfig.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsyssession.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysstaticvalue.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsyssystemconfig.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\build.bat" />
+    <None Include="Service References\wsINP\wsINP.wsdl" />
+    <None Include="Service References\wsINP\wsINP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL.wsdl" />
+    <None Include="Service References\wsMDL\wsMDL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD.wsdl" />
+    <None Include="Service References\wsPAD\wsPAD.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC.wsdl" />
+    <None Include="Service References\wsSEC\wsSEC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS.wsdl" />
+    <None Include="Service References\wsSYS\wsSYS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\GENLSYS.MES.Common.csproj">
+      <Project>{1B8CCE4C-6C02-4992-86B2-E20E00F4349A}</Project>
+      <Name>GENLSYS.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GENLSYS.MES.DataContracts.csproj">
+      <Project>{DC21F5C0-82AA-44C2-85A1-62B36E940FC8}</Project>
+      <Name>GENLSYS.MES.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.AutoUpdate\GENLSYS.MES.AutoUpdate.csproj">
+      <Project>{142F6E5C-54D9-4D5C-96EA-AC6EC2942474}</Project>
+      <Name>GENLSYS.MES.AutoUpdate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.UserControls\GENLSYS.MES.UserControls.csproj">
+      <Project>{EBBF2D63-F39D-4C68-BAAC-F7A911E00D2E}</Project>
+      <Name>GENLSYS.MES.UserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\GENLSYS.MES.Utility.csproj">
+      <Project>{0845EC90-DD90-44E1-B3B5-E573FE3F0895}</Project>
+      <Name>GENLSYS.MES.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\trackback.png" />
+    <None Include="Resources\shoesDel%3b.png" />
+    <None Include="Resources\shoes1.png" />
+    <None Include="Resources\shoes.png" />
+    <None Include="Service References\wsPAD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsPAD\configuration.svcinfo" />
+    <None Include="Service References\wsPAD\configuration91.svcinfo" />
+    <None Include="Service References\wsPAD\wsPAD.disco" />
+    <None Include="Resources\1.jpg" />
+    <Content Include="Resources\2.jpg" />
+    <Content Include="Resources\box.png" />
+    <None Include="Resources\box2.png" />
+    <None Include="Resources\box21.png" />
+    <None Include="Resources\box1.png" />
+    <Content Include="Resources\box_open.png" />
+    <Content Include="Resources\calculate.png" />
+    <None Include="Service References\wsINP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsINP\configuration.svcinfo" />
+    <None Include="Service References\wsINP\configuration91.svcinfo" />
+    <None Include="Service References\wsINP\wsINP.disco" />
+    <None Include="Service References\wsSEC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSEC\configuration.svcinfo" />
+    <None Include="Service References\wsSEC\configuration91.svcinfo" />
+    <None Include="Service References\wsSEC\wsSEC.disco" />
+    <None Include="Service References\wsMDL\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsMDL\configuration.svcinfo" />
+    <None Include="Service References\wsMDL\configuration91.svcinfo" />
+    <None Include="Service References\wsMDL\wsMDL.disco" />
+    <None Include="Resources\Elegance.jpg" />
+    <None Include="Resources\Dogmax.jpg" />
+    <None Include="Resources\close.gif" />
+    <None Include="Resources\cancel1.png" />
+    <None Include="Resources\cancel2.png" />
+    <None Include="Resources\cartonDel.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\delete3.png" />
+    <Content Include="Resources\english.png" />
+    <None Include="Resources\go.png" />
+    <Content Include="Resources\help.png" />
+    <None Include="Resources\help1.png" />
+    <Content Include="Resources\hexiang_logo.bmp" />
+    <None Include="Resources\inbox.png" />
+    <Content Include="Resources\key.png" />
+    <Content Include="Resources\Logo1.ico" />
+    <Content Include="Resources\Logo2.ico" />
+    <Content Include="Resources\Logo3.ico" />
+    <Content Include="Resources\ok1.png" />
+    <Content Include="Resources\okbut.png" />
+    <None Include="Resources\openbox.png" />
+    <None Include="Resources\openbox1.png" />
+    <Content Include="Resources\play.png" />
+    <None Include="Resources\play1.png" />
+    <Content Include="Resources\reporting.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\save2.png" />
+    <Content Include="Resources\schinese.png" />
+    <None Include="Resources\screen.jpg" />
+    <None Include="Resources\screen1.jpg" />
+    <Content Include="Resources\scrolldown.gif" />
+    <Content Include="Resources\scrollup.gif" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Service References\wsSYS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSYS\configuration.svcinfo" />
+    <None Include="Service References\wsSYS\configuration91.svcinfo" />
+    <None Include="Service References\wsSYS\wsSYS.disco" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\index_37.gif" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\ImageBackground.png" />
+    <None Include="Resources\deleteline.png" />
+    <None Include="Resources\addline.png" />
+    <None Include="Resources\Lock.png" />
+    <Content Include="Resources\get.png" />
+    <Content Include="Resources\GENLSYS.MES.Res.en-US.txt" />
+    <Content Include="Resources\GENLSYS.MES.Res.zh-CHS.txt" />
+    <None Include="Resources\query.png" />
+    <None Include="Resources\newversion.png" />
+    <None Include="Resources\release.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\more.png" />
+    <Content Include="Resources\modeling.png" />
+    <Content Include="Resources\ResGen.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsINP\" />
+    <WCFMetadataStorage Include="Service References\wsMDL\" />
+    <WCFMetadataStorage Include="Service References\wsPAD\" />
+    <WCFMetadataStorage Include="Service References\wsSEC\" />
+    <WCFMetadataStorage Include="Service References\wsSYS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BA6D59F-8053-4C34-A9BE-20E55294ED1B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GENLSYS.MES.Win</RootNamespace>
+    <AssemblyName>GENLSYS.MES.Win</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/Win/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>MicroMES2</ProductName>
+    <PublisherName>Facet Technology ShangHai</PublisherName>
+    <SuiteName>MicroMES2</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>2012.10.14.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>876037B33C72ED163F3DB6B3FDBD6C140BFCBD4E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MicroMES2.Win_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo3.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Library\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Excel.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Excel.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Shared.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.Misc.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinDataSource.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinEditors.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.ExcelExport.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinGrid.ExcelExport.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinGrid.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinSchedule.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics2.Win.UltraWinTabbedMdi.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinTabControl.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinToolbars.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics2.Win.UltraWinTree.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.UltraWinTree.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v10.1, Version=10.1.20101.1007, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Infragistics2.Win.v10.1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>..\Library\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Library\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=50436dca5c7f7d23">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\SAP.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="SAP.Connector.Rfc">
+      <HintPath>..\Library\SAP.Connector.Rfc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Classes\CartonNoComparer.cs" />
+    <Compile Include="Common\Classes\CheckEditorStringDataFilter.cs" />
+    <Compile Include="Common\Classes\ColorDataFilter.cs" />
+    <Compile Include="Common\Classes\ConfigHandler.cs" />
+    <Compile Include="Common\Classes\ConfigReader.cs" />
+    <Compile Include="Common\Classes\CustomMergedCellEvaluator.cs" />
+    <Compile Include="Common\Classes\DataRowComparer.cs" />
+    <Compile Include="Common\Classes\ExceptionParser.cs" />
+    <Compile Include="Common\Classes\BaseWCF.cs" />
+    <Compile Include="Common\Classes\SizeComparer.cs" />
+    <Compile Include="Common\Classes\SizeStringComparer.cs" />
+    <Compile Include="Common\Classes\WaferInfo.cs" />
+    <Compile Include="Common\Classes\WaitingForm.cs" />
+    <Compile Include="Common\Forms\frmProcessBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmProcessBar.Designer.cs">
+      <DependentUpon>frmProcessBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmContext.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmContext.Designer.cs">
+      <DependentUpon>frmContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmWaiting.Designer.cs">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\RDLCReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\RDLCReportViewer.Designer.cs">
+      <DependentUpon>RDLCReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\ReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Classes\SoapException.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Adjust\frmLineCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Adjust\frmLineCancel.Designer.cs">
+      <DependentUpon>frmLineCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Adjust\frmRepairAdjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Adjust\frmRepairAdjust.Designer.cs">
+      <DependentUpon>frmRepairAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Adjust\frmRepairAdjustList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Adjust\frmRepairAdjustList.Designer.cs">
+      <DependentUpon>frmRepairAdjustList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Adjust\frmSupplementAdjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Adjust\frmSupplementAdjust.Designer.cs">
+      <DependentUpon>frmSupplementAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Adjust\frmSupplementAdjustList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Adjust\frmSupplementAdjustList.Designer.cs">
+      <DependentUpon>frmSupplementAdjustList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\DailySchedule\frmDailySchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\DailySchedule\frmDailySchedule.Designer.cs">
+      <DependentUpon>frmDailySchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\DailySchedule\frmDSAdjust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\DailySchedule\frmDSAdjust.Designer.cs">
+      <DependentUpon>frmDSAdjust.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\History\frmCustOrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\History\frmCustOrderHistory.Designer.cs">
+      <DependentUpon>frmCustOrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\IQC\frmIQC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\IQC\frmIQC.Designer.cs">
+      <DependentUpon>frmIQC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\IQC\frmIQCList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\IQC\frmIQCList.Designer.cs">
+      <DependentUpon>frmIQCList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\OtherPricing\frmOtherPricing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\OtherPricing\frmOtherPricing.Designer.cs">
+      <DependentUpon>frmOtherPricing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\OtherPricing\frmOtherPricingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\OtherPricing\frmOtherPricingList.Designer.cs">
+      <DependentUpon>frmOtherPricingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepairRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepairRpt.Designer.cs">
+      <DependentUpon>frmRepairRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Schedule\frmDailySchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Schedule\frmDailySchedule.Designer.cs">
+      <DependentUpon>frmDailySchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmRequestPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmRequestPay.Designer.cs">
+      <DependentUpon>frmRequestPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipPlan.Designer.cs">
+      <DependentUpon>frmShipPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipPlanList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipPlanList.Designer.cs">
+      <DependentUpon>frmShipPlanList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipRpt.Designer.cs">
+      <DependentUpon>frmShipRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Supplement\frmSupplement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Supplement\frmSupplement.Designer.cs">
+      <DependentUpon>frmSupplement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Supplement\frmSupplementList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Supplement\frmSupplementList.Designer.cs">
+      <DependentUpon>frmSupplementList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Pricing\frmPricing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Pricing\frmPricing.Designer.cs">
+      <DependentUpon>frmPricing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Pricing\frmPricingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Pricing\frmPricingList.Designer.cs">
+      <DependentUpon>frmPricingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Receiving\frmReceiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Receiving\frmReceiving.Designer.cs">
+      <DependentUpon>frmReceiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Receiving\frmReceivingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Receiving\frmReceivingList.Designer.cs">
+      <DependentUpon>frmReceivingList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepair.Designer.cs">
+      <DependentUpon>frmRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepairList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Repair\frmRepairList.Designer.cs">
+      <DependentUpon>frmRepairList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Return\frmReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Return\frmReturn.Designer.cs">
+      <DependentUpon>frmReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Return\frmReturnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Return\frmReturnList.Designer.cs">
+      <DependentUpon>frmReturnList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Schedule\frmSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Schedule\frmSchedule.Designer.cs">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Schedule\frmScheduleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Schedule\frmScheduleList.Designer.cs">
+      <DependentUpon>frmScheduleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmShip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmShip.Designer.cs">
+      <DependentUpon>frmShip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Ship\frmShipList.Designer.cs">
+      <DependentUpon>frmShipList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\ToRepair\frmToRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\ToRepair\frmToRepair.Designer.cs">
+      <DependentUpon>frmToRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\ToRepair\frmToRepairList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\ToRepair\frmToRepairList.Designer.cs">
+      <DependentUpon>frmToRepairList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Unpacking\frmXUnpacking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Unpacking\frmXUnpacking.Designer.cs">
+      <DependentUpon>frmXUnpacking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Warehouse\frmWHEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Warehouse\frmWHEntry.Designer.cs">
+      <DependentUpon>frmWHEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\Warehouse\frmWHEntryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\Warehouse\frmWHEntryList.Designer.cs">
+      <DependentUpon>frmWHEntryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\WorkOrder\frmWorkOrderEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\WorkOrder\frmWorkOrderEdit.Designer.cs">
+      <DependentUpon>frmWorkOrderEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INP\WorkOrder\frmWorkOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="INP\WorkOrder\frmWorkOrderList.Designer.cs">
+      <DependentUpon>frmWorkOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerEdit.Designer.cs">
+      <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Customer\frmCustomerQuery.Designer.cs">
+      <DependentUpon>frmCustomerQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\EmployeeType\frmEmployeeTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\EmployeeType\frmEmployeeTypeEdit.Designer.cs">
+      <DependentUpon>frmEmployeeTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\EmployeeType\frmEmployeeTypeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\EmployeeType\frmEmployeeTypeList.Designer.cs">
+      <DependentUpon>frmEmployeeTypeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeEdit.Designer.cs">
+      <DependentUpon>frmEmployeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeList.Designer.cs">
+      <DependentUpon>frmEmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Employee\frmEmployeeQuery.Designer.cs">
+      <DependentUpon>frmEmployeeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Exchange\frmExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Exchange\frmExchange.Designer.cs">
+      <DependentUpon>frmExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Exchange\frmExchangeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Exchange\frmExchangeList.Designer.cs">
+      <DependentUpon>frmExchangeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Shift\frmShiftEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Shift\frmShiftEdit.Designer.cs">
+      <DependentUpon>frmShiftEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\Shift\frmShiftList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\Shift\frmShiftList.Designer.cs">
+      <DependentUpon>frmShiftList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\ReasonCategory\frmReasonCategoryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\ReasonCategory\frmReasonCategoryEdit.Designer.cs">
+      <DependentUpon>frmReasonCategoryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\ReasonCategory\frmReasonCategoryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\ReasonCategory\frmReasonCategoryList.Designer.cs">
+      <DependentUpon>frmReasonCategoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeEdit.Designer.cs">
+      <DependentUpon>frmReasonCodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeList.Designer.cs">
+      <DependentUpon>frmReasonCodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\ReasonCode\frmReasonCodeQuery.Designer.cs">
+      <DependentUpon>frmReasonCodeQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Classes\BaseForm.cs" />
+    <Compile Include="Common\Forms\frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmMessage.Designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Classes\MenuConfig.cs" />
+    <Compile Include="Common\Classes\MESMsgBox.cs" />
+    <Compile Include="Common\Classes\DropDown.cs" />
+    <Compile Include="Common\Classes\TagInfo.cs" />
+    <Compile Include="Common\Forms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Forms\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Classes\TreeNodeExt.cs" />
+    <Compile Include="frmModeling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModeling.Designer.cs">
+      <DependentUpon>frmModeling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\WorkGroup\frmWorkGroupEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\WorkGroup\frmWorkGroupEdit.Designer.cs">
+      <DependentUpon>frmWorkGroupEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDL\WorkGroup\frmWorkGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDL\WorkGroup\frmWorkGroupList.Designer.cs">
+      <DependentUpon>frmWorkGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\ExcelExport.cs" />
+    <Compile Include="SEC\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmCheckRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmCheckRevision.Designer.cs">
+      <DependentUpon>frmCheckRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmValidatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmValidatePassword.Designer.cs">
+      <DependentUpon>frmValidatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsEdit.Designer.cs">
+      <DependentUpon>frmFunctionsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsList.Designer.cs">
+      <DependentUpon>frmFunctionsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Function\frmFunctionsQuery.Designer.cs">
+      <DependentUpon>frmFunctionsQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\frmLogon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\frmLogon.Designer.cs">
+      <DependentUpon>frmLogon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleEdit.Designer.cs">
+      <DependentUpon>frmRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleList.Designer.cs">
+      <DependentUpon>frmRoleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\Role\frmRoleQuery.Designer.cs">
+      <DependentUpon>frmRoleQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\User\frmUserEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\User\frmUserEdit.Designer.cs">
+      <DependentUpon>frmUserEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\User\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\User\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SEC\User\frmUserQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SEC\User\frmUserQuery.Designer.cs">
+      <DependentUpon>frmUserQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsINP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsMDL\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsPAD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSEC\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsSYS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeAttemplateEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeAttemplateEdit.Designer.cs">
+      <DependentUpon>frmAttributeAttemplateEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeAttemplateQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeAttemplateQuery.Designer.cs">
+      <DependentUpon>frmAttributeAttemplateQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeTemplateList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\AttributeTemplate\frmAttributeTemplateList.Designer.cs">
+      <DependentUpon>frmAttributeTemplateList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\BillCodeRule\frmBillCodeRuleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\BillCodeRule\frmBillCodeRuleEdit.Designer.cs">
+      <DependentUpon>frmBillCodeRuleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\BillCodeRule\frmBillCodeRuleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\BillCodeRule\frmBillCodeRuleList.Designer.cs">
+      <DependentUpon>frmBillCodeRuleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionHisList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionHisList.Designer.cs">
+      <DependentUpon>frmSessionHisList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionHisQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionHisQuery.Designer.cs">
+      <DependentUpon>frmSessionHisQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\Session\frmSessionList.Designer.cs">
+      <DependentUpon>frmSessionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\StaticValue\frmStaticValueEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\StaticValue\frmStaticValueEdit.Designer.cs">
+      <DependentUpon>frmStaticValueEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\StaticValue\frmStaticValueList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\StaticValue\frmStaticValueList.Designer.cs">
+      <DependentUpon>frmStaticValueList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\SystemConfig\frmSystemConfigEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\SystemConfig\frmSystemConfigEdit.Designer.cs">
+      <DependentUpon>frmSystemConfigEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\SystemConfig\frmSystemConfigList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\SystemConfig\frmSystemConfigList.Designer.cs">
+      <DependentUpon>frmSystemConfigList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SYS\UpgradeAssistant\frmUpgradeAssistant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SYS\UpgradeAssistant\frmUpgradeAssistant.Designer.cs">
+      <DependentUpon>frmUpgradeAssistant.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Common\Forms\frmProcessBar.resx">
+      <DependentUpon>frmProcessBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmContext.resx">
+      <DependentUpon>frmContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\RDLCReportViewer.resx">
+      <DependentUpon>RDLCReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Adjust\frmLineCancel.resx">
+      <DependentUpon>frmLineCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Adjust\frmRepairAdjust.resx">
+      <DependentUpon>frmRepairAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Adjust\frmRepairAdjustList.resx">
+      <DependentUpon>frmRepairAdjustList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Adjust\frmSupplementAdjust.resx">
+      <DependentUpon>frmSupplementAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Adjust\frmSupplementAdjustList.resx">
+      <DependentUpon>frmSupplementAdjustList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\DailySchedule\frmDailySchedule.resx">
+      <DependentUpon>frmDailySchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\DailySchedule\frmDSAdjust.resx">
+      <DependentUpon>frmDSAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\History\frmCustOrderHistory.resx">
+      <DependentUpon>frmCustOrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\IQC\frmIQC.resx">
+      <DependentUpon>frmIQC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\IQC\frmIQCList.resx">
+      <DependentUpon>frmIQCList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\OtherPricing\frmOtherPricing.resx">
+      <DependentUpon>frmOtherPricing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\OtherPricing\frmOtherPricingList.resx">
+      <DependentUpon>frmOtherPricingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Repair\frmRepairRpt.resx">
+      <DependentUpon>frmRepairRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Schedule\frmDailySchedule.resx">
+      <DependentUpon>frmDailySchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmRequestPay.resx">
+      <DependentUpon>frmRequestPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmShipPlan.resx">
+      <DependentUpon>frmShipPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmShipPlanList.resx">
+      <DependentUpon>frmShipPlanList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmShipRpt.resx">
+      <DependentUpon>frmShipRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Unpacking\frmXUnpacking.resx">
+      <DependentUpon>frmXUnpacking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Warehouse\frmWHEntry.resx">
+      <DependentUpon>frmWHEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Warehouse\frmWHEntryList.resx">
+      <DependentUpon>frmWHEntryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Exchange\frmExchange.resx">
+      <DependentUpon>frmExchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Exchange\frmExchangeList.resx">
+      <DependentUpon>frmExchangeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rdlc\ShippingList.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Supplement\frmSupplement.resx">
+      <DependentUpon>frmSupplement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Supplement\frmSupplementList.resx">
+      <DependentUpon>frmSupplementList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Pricing\frmPricing.resx">
+      <DependentUpon>frmPricing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Pricing\frmPricingList.resx">
+      <DependentUpon>frmPricingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Receiving\frmReceiving.resx">
+      <DependentUpon>frmReceiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Receiving\frmReceivingList.resx">
+      <DependentUpon>frmReceivingList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Repair\frmRepair.resx">
+      <DependentUpon>frmRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Repair\frmRepairList.resx">
+      <DependentUpon>frmRepairList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Return\frmReturn.resx">
+      <DependentUpon>frmReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Return\frmReturnList.resx">
+      <DependentUpon>frmReturnList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Schedule\frmSchedule.resx">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Schedule\frmScheduleList.resx">
+      <DependentUpon>frmScheduleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmShip.resx">
+      <DependentUpon>frmShip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\Ship\frmShipList.resx">
+      <DependentUpon>frmShipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\ToRepair\frmToRepair.resx">
+      <DependentUpon>frmToRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\ToRepair\frmToRepairList.resx">
+      <DependentUpon>frmToRepairList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\WorkOrder\frmWorkOrderEdit.resx">
+      <DependentUpon>frmWorkOrderEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="INP\WorkOrder\frmWorkOrderList.resx">
+      <DependentUpon>frmWorkOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Customer\frmCustomerEdit.resx">
+      <DependentUpon>frmCustomerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Customer\frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Customer\frmCustomerQuery.resx">
+      <DependentUpon>frmCustomerQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\EmployeeType\frmEmployeeTypeEdit.resx">
+      <DependentUpon>frmEmployeeTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\EmployeeType\frmEmployeeTypeList.resx">
+      <DependentUpon>frmEmployeeTypeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Employee\frmEmployeeEdit.resx" />
+    <EmbeddedResource Include="MDL\Employee\frmEmployeeList.resx">
+      <DependentUpon>frmEmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Employee\frmEmployeeQuery.resx">
+      <DependentUpon>frmEmployeeQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Shift\frmShiftEdit.resx">
+      <DependentUpon>frmShiftEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\Shift\frmShiftList.resx">
+      <DependentUpon>frmShiftList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\ReasonCategory\frmReasonCategoryEdit.resx">
+      <DependentUpon>frmReasonCategoryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\ReasonCategory\frmReasonCategoryList.resx">
+      <DependentUpon>frmReasonCategoryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\ReasonCode\frmReasonCodeEdit.resx">
+      <DependentUpon>frmReasonCodeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\ReasonCode\frmReasonCodeList.resx">
+      <DependentUpon>frmReasonCodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\ReasonCode\frmReasonCodeQuery.resx">
+      <DependentUpon>frmReasonCodeQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Forms\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModeling.resx">
+      <DependentUpon>frmModeling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\WorkGroup\frmWorkGroupEdit.resx">
+      <DependentUpon>frmWorkGroupEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDL\WorkGroup\frmWorkGroupList.resx">
+      <DependentUpon>frmWorkGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <EmbeddedResource Include="Report\Rdlc\rptBilling.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rdlc\rptWarehouseOut1.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rdlc\rptWarehouseOut2.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rdlc\rptWarehouseIn2.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Rdlc\rptWarehouseIn1.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GENLSYS.MES.Res.en-US.resources">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GENLSYS.MES.Res.zh-CHS.resources">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmCheckRevision.resx">
+      <DependentUpon>frmCheckRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmValidatePassword.resx">
+      <DependentUpon>frmValidatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Function\frmFunctionsEdit.resx">
+      <DependentUpon>frmFunctionsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Function\frmFunctionsList.resx">
+      <DependentUpon>frmFunctionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Function\frmFunctionsQuery.resx">
+      <DependentUpon>frmFunctionsQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\frmLogon.resx">
+      <DependentUpon>frmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Role\frmRoleEdit.resx">
+      <DependentUpon>frmRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Role\frmRoleList.resx">
+      <DependentUpon>frmRoleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\Role\frmRoleQuery.resx">
+      <DependentUpon>frmRoleQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\User\frmUserEdit.resx">
+      <DependentUpon>frmUserEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\User\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SEC\User\frmUserQuery.resx">
+      <DependentUpon>frmUserQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\AttributeTemplate\frmAttributeAttemplateEdit.resx">
+      <DependentUpon>frmAttributeAttemplateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\AttributeTemplate\frmAttributeAttemplateQuery.resx">
+      <DependentUpon>frmAttributeAttemplateQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\AttributeTemplate\frmAttributeTemplateList.resx">
+      <DependentUpon>frmAttributeTemplateList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\BillCodeRule\frmBillCodeRuleEdit.resx">
+      <DependentUpon>frmBillCodeRuleEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\BillCodeRule\frmBillCodeRuleList.resx">
+      <DependentUpon>frmBillCodeRuleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\Session\frmSessionHisList.resx">
+      <DependentUpon>frmSessionHisList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\Session\frmSessionHisQuery.resx">
+      <DependentUpon>frmSessionHisQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\Session\frmSessionList.resx">
+      <DependentUpon>frmSessionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\StaticValue\frmStaticValueEdit.resx">
+      <DependentUpon>frmStaticValueEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\StaticValue\frmStaticValueList.resx">
+      <DependentUpon>frmStaticValueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\SystemConfig\frmSystemConfigEdit.resx">
+      <DependentUpon>frmSystemConfigEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\SystemConfig\frmSystemConfigList.resx">
+      <DependentUpon>frmSystemConfigList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SYS\UpgradeAssistant\frmUpgradeAssistant.resx">
+      <DependentUpon>frmUpgradeAssistant.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="License.lic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.tsyslabel.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.tsysprinter.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twipftprogram.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twipftreceiving.datasource" />
+    <None Include="Properties\DataSources\Copy of MicroMES2.DataContracts.twiplot.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpiqc.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpotherpricing.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinppricing.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceiving.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceivingctndtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreceivingdtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprepairhis.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprepairstock.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinprequestpay.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpreturn.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpschedule.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshipping.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshippingdtl.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpshippingplan.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpwip.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tinpworkorder.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlexchange.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.tmdlworkgroup.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.DataContracts.twhsorder.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.Win.Report.DataSet.clsWarehouseInDetail.datasource" />
+    <None Include="Properties\DataSources\GENLSYS.MES.Win.Report.DataSet.clsWarehouseInHeader.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncoderls.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhslocation.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhswarehouse.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.twhswotype.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlcustomer.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlemployee.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlemployeetype.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdllocation.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncategory.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlreasoncode.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tmdlshift.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecfunctions.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecrole.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecrolestep.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecuser.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsecuserrole.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysappinfo.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattributetemplate.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattributevalue.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattrtplate.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysattrtplatedtl.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysbillcode.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysbillcoderule.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysdaemonschedule.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysdaemontask.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysmenuconfig.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsyssession.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsysstaticvalue.datasource" />
+    <None Include="Properties\DataSources\MicroMES2.DataContracts.tsyssystemconfig.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\Template\FinalFailedRpt.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\InspectRpt.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\InspectRptJP.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\PackingList.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\RequestPayTemplate1.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\RequestPayTemplate2.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\RequestPayTemplate3.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\RequestPayTemplate4.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\WarehouseIn.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\Template\WarehouseOut.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\build.bat" />
+    <None Include="Service References\wsINP\wsINP.wsdl" />
+    <None Include="Service References\wsINP\wsINP.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsINP\wsINP2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL.wsdl" />
+    <None Include="Service References\wsMDL\wsMDL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsMDL\wsMDL8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD.wsdl" />
+    <None Include="Service References\wsPAD\wsPAD.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsPAD\wsPAD6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC.wsdl" />
+    <None Include="Service References\wsSEC\wsSEC.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSEC\wsSEC7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS.wsdl" />
+    <None Include="Service References\wsSYS\wsSYS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\wsSYS\wsSYS81.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="edtFTPnet">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinSchedule.v10.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinStatusBar.v10.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics2.Win.UltraWinToolbars.v10.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\GENLSYS.MES.Common.csproj">
+      <Project>{1B8CCE4C-6C02-4992-86B2-E20E00F4349A}</Project>
+      <Name>GENLSYS.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GENLSYS.MES.DataContracts.csproj">
+      <Project>{DC21F5C0-82AA-44C2-85A1-62B36E940FC8}</Project>
+      <Name>GENLSYS.MES.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.AutoUpdate\GENLSYS.MES.AutoUpdate.csproj">
+      <Project>{142F6E5C-54D9-4D5C-96EA-AC6EC2942474}</Project>
+      <Name>GENLSYS.MES.AutoUpdate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.UserControls\GENLSYS.MES.UserControls.csproj">
+      <Project>{EBBF2D63-F39D-4C68-BAAC-F7A911E00D2E}</Project>
+      <Name>GENLSYS.MES.UserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\GENLSYS.MES.Utility.csproj">
+      <Project>{0845EC90-DD90-44E1-B3B5-E573FE3F0895}</Project>
+      <Name>GENLSYS.MES.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="client.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="privateKey.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\calculate.png" />
+    <None Include="Service References\wsPAD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsPAD\configuration.svcinfo" />
+    <None Include="Service References\wsPAD\configuration91.svcinfo" />
+    <None Include="Service References\wsPAD\wsPAD.disco" />
+    <None Include="Service References\wsINP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsINP\configuration.svcinfo" />
+    <None Include="Service References\wsINP\configuration91.svcinfo" />
+    <None Include="Service References\wsINP\wsINP.disco" />
+    <None Include="Service References\wsSEC\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSEC\configuration.svcinfo" />
+    <None Include="Service References\wsSEC\configuration91.svcinfo" />
+    <None Include="Service References\wsSEC\wsSEC.disco" />
+    <None Include="Service References\wsMDL\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsMDL\configuration.svcinfo" />
+    <None Include="Service References\wsMDL\configuration91.svcinfo" />
+    <None Include="Service References\wsMDL\wsMDL.disco" />
+    <None Include="Resources\Elegance.jpg" />
+    <None Include="Resources\Dogmax.jpg" />
+    <Content Include="Resources\english.png" />
+    <Content Include="Resources\help.png" />
+    <Content Include="Resources\hexiang_logo.bmp" />
+    <Content Include="Resources\Logo1.ico" />
+    <Content Include="Resources\Logo2.ico" />
+    <Content Include="Resources\Logo3.ico" />
+    <Content Include="Resources\ok1.png" />
+    <Content Include="Resources\reporting.png" />
+    <None Include="Resources\save1.png" />
+    <Content Include="Resources\schinese.png" />
+    <Content Include="Resources\scrolldown.gif" />
+    <Content Include="Resources\scrollup.gif" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Service References\wsSYS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsSYS\configuration.svcinfo" />
+    <None Include="Service References\wsSYS\configuration91.svcinfo" />
+    <None Include="Service References\wsSYS\wsSYS.disco" />
+    <None Include="Resources\setting.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\index_37.gif" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\ImageBackground.png" />
+    <None Include="Resources\deleteline.png" />
+    <None Include="Resources\addline.png" />
+    <None Include="Resources\Lock.png" />
+    <Content Include="Resources\get.png" />
+    <Content Include="Resources\GENLSYS.MES.Res.en-US.txt" />
+    <Content Include="Resources\GENLSYS.MES.Res.zh-CHS.txt" />
+    <None Include="Resources\query.png" />
+    <None Include="Resources\newversion.png" />
+    <None Include="Resources\release.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\more.png" />
+    <Content Include="Resources\modeling.png" />
+    <Content Include="Resources\ResGen.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\wsINP\" />
+    <WCFMetadataStorage Include="Service References\wsMDL\" />
+    <WCFMetadataStorage Include="Service References\wsPAD\" />
+    <WCFMetadataStorage Include="Service References\wsSEC\" />
+    <WCFMetadataStorage Include="Service References\wsSYS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

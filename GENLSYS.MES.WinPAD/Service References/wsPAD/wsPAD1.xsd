@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.Common" />
+  <xs:complexType name="ContextInfo">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GENLSYS.MES.Common" name="_x003C_Action_x003E_k__BackingField" type="q1:MES_ActionType" />
+      <xs:element name="_x003C_BCRId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_BillRefId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CurrentTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_CurrentUser_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MiscValue1_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MiscValue2_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MiscValue3_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_MiscValue4_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_SessionId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Shift_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_WorkGroup_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContextInfo" nillable="true" type="tns:ContextInfo" />
+  <xs:complexType name="ArrayOfMESParameterInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MESParameterInfo" nillable="true" type="tns:MESParameterInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMESParameterInfo" nillable="true" type="tns:ArrayOfMESParameterInfo" />
+  <xs:complexType name="MESParameterInfo">
+    <xs:sequence>
+      <xs:element name="_x003C_ParamDisplayName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ParamName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ParamOldValue_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ParamType_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_ParamValue_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MESParameterInfo" nillable="true" type="tns:MESParameterInfo" />
+</xs:schema>

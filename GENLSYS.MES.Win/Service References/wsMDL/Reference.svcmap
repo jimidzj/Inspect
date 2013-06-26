@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dbabfc3f-54f5-4fd9-9fad-939fe6866b3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/wsMDL.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsMDL.xsd" MetadataType="Schema" ID="a6069646-8213-4424-b7e9-171e02b55e29" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd1" />
+    <MetadataFile FileName="wsMDL1.xsd" MetadataType="Schema" ID="2833c910-6760-460d-84ce-7aa4e2129f5f" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd4" />
+    <MetadataFile FileName="wsMDL2.xsd" MetadataType="Schema" ID="5b635c47-13c3-4b5d-ae89-74fa78cd9c1a" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd7" />
+    <MetadataFile FileName="wsMDL3.xsd" MetadataType="Schema" ID="0f64e574-f831-45ce-902b-34a77baabeae" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd6" />
+    <MetadataFile FileName="wsMDL.disco" MetadataType="Disco" ID="4d508f2a-f052-42f5-86ee-78d66766a636" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?disco" />
+    <MetadataFile FileName="wsMDL5.xsd" MetadataType="Schema" ID="50ee7916-0b66-4c1c-8b6a-9755c14f5121" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd3" />
+    <MetadataFile FileName="wsMDL.wsdl" MetadataType="Wsdl" ID="1194517b-c736-4672-995f-987d0a66a730" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?wsdl" />
+    <MetadataFile FileName="wsMDL6.xsd" MetadataType="Schema" ID="ab519fa0-8acc-404f-ac3b-9769b0c8b291" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd0" />
+    <MetadataFile FileName="wsMDL7.xsd" MetadataType="Schema" ID="6754279c-0036-4098-9ffd-673992749d7c" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd5" />
+    <MetadataFile FileName="wsMDL8.xsd" MetadataType="Schema" ID="56939049-1594-4c8c-9935-3ec4c1fc72e8" SourceId="1" SourceUrl="http://localhost:1111/wsMDL.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="66901755-ebb6-4337-bbeb-787749a0d47c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/wsINP.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsINP.disco" MetadataType="Disco" ID="15527654-76ba-45f4-8203-be7fb17bdf6f" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?disco" />
+    <MetadataFile FileName="wsINP15.xsd" MetadataType="Schema" ID="2ee89ef9-2226-4525-8ffc-7a9713650d9d" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd4" />
+    <MetadataFile FileName="wsINP1.xsd" MetadataType="Schema" ID="b00ace04-d113-4a49-80e4-aed530a87d6c" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd2" />
+    <MetadataFile FileName="wsINP11.xsd" MetadataType="Schema" ID="27f97b6b-d202-40e2-bf36-9649e207d2d0" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd5" />
+    <MetadataFile FileName="wsINP2.xsd" MetadataType="Schema" ID="918ce4d8-ad10-41eb-9e99-f8848dbcfa77" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd8" />
+    <MetadataFile FileName="wsINP13.xsd" MetadataType="Schema" ID="7be14fcd-8dfc-4bfa-91b4-c1120348b358" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd7" />
+    <MetadataFile FileName="wsINP.wsdl" MetadataType="Wsdl" ID="ef58c96e-dc50-4ad8-9820-3536a4ff8078" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?wsdl" />
+    <MetadataFile FileName="wsINP14.xsd" MetadataType="Schema" ID="b65af1a9-d9b1-439c-bbdd-21700aaccaef" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd1" />
+    <MetadataFile FileName="wsINP12.xsd" MetadataType="Schema" ID="a738f98a-1e79-4792-bac8-0c25e41b9096" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd6" />
+    <MetadataFile FileName="wsINP16.xsd" MetadataType="Schema" ID="72c037cc-3e24-40fc-8b3e-b7a567cf119c" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd3" />
+    <MetadataFile FileName="wsINP.xsd" MetadataType="Schema" ID="66d32529-0422-4bd6-97fd-d07d0f59d58a" SourceId="1" SourceUrl="http://localhost:1111/wsINP.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

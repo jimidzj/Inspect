@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0708EB84-018D-4637-ACFB-BD9E2932388A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GENLSYS.MES.Services</RootNamespace>
+    <AssemblyName>GENLSYS.MES.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Oracle.DataAccess, Version=10.2.0.100, Culture=neutral, PublicKeyToken=89b483f429c47342">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AccessController.cs" />
+    <Compile Include="Common\XMLLogBuilder.cs" />
+    <Compile Include="MDL\EmployeeTypeBll.cs" />
+    <Compile Include="MDL\ExchangeBll.cs" />
+    <Compile Include="MDL\ReasonCodeRlsBll.cs" />
+    <Compile Include="MDL\ReasonCodeStepBll.cs" />
+    <Compile Include="MDL\CustomerBll.cs" />
+    <Compile Include="MDL\EmployeeBll.cs" />
+    <Compile Include="MDL\ReasonCategoryBll.cs" />
+    <Compile Include="MDL\ReasonCodeBll.cs" />
+    <Compile Include="MDL\ShiftBll.cs" />
+    <Compile Include="Common\BaseBll.cs" />
+    <Compile Include="MDL\WorkGroupBll.cs" />
+    <Compile Include="SEC\IPControlBll.cs" />
+    <Compile Include="SEC\RoleEqpGroupBll.cs" />
+    <Compile Include="SYS\AppInfoBll.cs" />
+    <Compile Include="SYS\AttributeTemplateDetailBll.cs" />
+    <Compile Include="SYS\BillCodeBll.cs" />
+    <Compile Include="SYS\SessionBll.cs" />
+    <Compile Include="SYS\SessionHisBll.cs" />
+    <Compile Include="SYS\SystemConfigBll.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SEC\FunctionsBll.cs" />
+    <Compile Include="SEC\LogonBll.cs" />
+    <Compile Include="SEC\RoleBll.cs" />
+    <Compile Include="SEC\RoleFunctionBll.cs" />
+    <Compile Include="SEC\RoleStepBll.cs" />
+    <Compile Include="SEC\UserBll.cs" />
+    <Compile Include="SEC\UserRoleBll.cs" />
+    <Compile Include="SYS\AttributeTemplateBll.cs" />
+    <Compile Include="SYS\AttributeValueBll.cs" />
+    <Compile Include="SYS\BillCodeRuleBll.cs" />
+    <Compile Include="SYS\MenuConfigBll.cs" />
+    <Compile Include="SYS\StaticValueBll.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WIP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\GENLSYS.MES.Common.csproj">
+      <Project>{1B8CCE4C-6C02-4992-86B2-E20E00F4349A}</Project>
+      <Name>GENLSYS.MES.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataContracts\GENLSYS.MES.DataContracts.csproj">
+      <Project>{DC21F5C0-82AA-44C2-85A1-62B36E940FC8}</Project>
+      <Name>GENLSYS.MES.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GENLSYS.MES.Repositories\GENLSYS.MES.Repositories.csproj">
+      <Project>{0581A7AE-9628-42EC-8C85-66A70A603C2C}</Project>
+      <Name>GENLSYS.MES.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\GENLSYS.MES.Utility.csproj">
+      <Project>{0845EC90-DD90-44E1-B3B5-E573FE3F0895}</Project>
+      <Name>GENLSYS.MES.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

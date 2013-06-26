@@ -1,0 +1,835 @@
+﻿; ===============================================================================
+;BUTTON
+; ===============================================================================
+Button.R00001 = Save
+Button.R00002 = Cancel
+Button.R00003 = Query
+Button.R00004 = New Version
+Button.R00005 = Release
+Button.R00006 = Close
+Button.R00007 = New
+Button.R00008 = Delete
+Button.R00009 = Edit
+Button.R00010 = Close
+Button.R00011 = OK
+Button.R00012 = Select All
+Button.R00013 = Unselect All
+Button.R00014 = Search
+Button.R00015 = Setting
+Button.R00016 = Logout
+Button.R00017 = Exit
+Button.R00018 = Detail
+Button.R00019 = To Excel
+Button.R00020 = Hold
+Button.R00021 = Release
+Button.R00022 = Clear
+Button.R00023 = Add
+Button.R00024 = Remove
+Button.R00025 = Copy
+Button.R00026 = Generate
+Button.R00027 = Search Lot
+Button.R00028 = Fail detail
+Button.R00029 = Yield
+Button.R00030 = View
+Button.R00031 = Print
+Button.R00032 = Terminate
+Button.R00033 = Print Label
+Button.R00034 = Yes
+Button.R00035 = No
+Button.R00036 = ChooseStep
+Button.R00037 = Export File
+Button.R00038 = Save an Active
+Button.R00039 = Scatter
+Button.R00040 = Repack
+Button.R00041 = Sync
+Button.R00042 = Calculate
+Button.R00043 = Open
+Button.R00045 = Fail Detail
+Button.R00046 = To Repair
+Button.R00047 = Ship
+Button.R00048 = Repair
+; ===============================================================================
+; LABEL
+; ===============================================================================
+Label.R00001 = Attribute Name	
+Label.R00002 = Attribute Type	
+Label.R00003 = Value Type	
+Label.R00004 = Used By	
+Label.R00005 = Default Value	
+Label.R00006 = Attribute Template
+Label.R00007 = General
+
+Label.R00008 = Area ID	
+Label.R00009 = Area Category	
+Label.R00010 = Area Status	
+Label.R00011 = Description
+Label.R00012 = Last Modified User
+Label.R00013 = Last Modified Time
+Label.R00014 = Area
+
+Label.R00022 = Employee Id
+Label.R00023 = Employee Name
+Label.R00024 = Employee Type
+Label.R00025 = Department
+Label.R00026 = Email
+Label.R00027 = Tel No
+Label.R00028 = Mobile No
+Label.R00029 = Employee Status
+Label.R00030 = Employee
+Label.R0003001 = Default Shift
+Label.R0003002 = Grade
+Label.R0003003 = Trainer
+Label.R0003004 = Prob Ation Date
+Label.R0003005 = Effect Date
+
+Label.R00035 = Reason Category
+Label.R00036 = Description
+Label.R00037 = Reason Code
+Label.R00038 = Reason Category
+Label.R00039 = Reason Code
+
+Label.R00042 = Customer Id
+Label.R00043 = Customer Name
+Label.R00044 = Short Name
+Label.R00045 = Manager
+Label.R00046 = Address
+Label.R00047 = Ship To Address
+Label.R00048 = Invoice To Address
+Label.R00049 = Invoice Title
+Label.R00050 = Invoice Type
+Label.R00051 = Payment Condition
+Label.R00052 = Tax Type
+Label.R00053 = Currency
+Label.R00054 = GNo
+Label.R00055 = Customer Type
+Label.R00056 = Tel1
+Label.R00057 = Tel2
+Label.R00058 = Fax1
+Label.R00059 = Fax2
+Label.R00060 = Contact1
+Label.R00061 = Contact2
+Label.R00062 = Comment1
+Label.R00063 = Comment2
+Label.R00064 = Comment3
+Label.R00065 = Customer
+
+Label.R00131 = User Id
+Label.R00132 = Employee Id
+Label.R00133 = User Name
+Label.R00134 = User Type
+Label.R00135 = Password
+Label.R00136 = User Status
+Label.R00137 = Created Time
+Label.R00138 = Created User
+Label.R00139 = Last Logon Time
+Label.R00140 = User
+Label.R00141 = Selected Roles
+Label.R00142 = Available Roles
+
+Label.R00143 = Func Id
+Label.R00144 = Func Type
+Label.R00145 = Func Desc
+Label.R00146 = Consumer
+Label.R00147 = Created Time
+Label.R00148 = Created User
+Label.R00149 = Functions
+Label.R0014901 = Level No
+Label.R0014902 = Func URL
+Label.R0014903 = Parent Func Id
+
+Label.R00152 = Static Value Id
+Label.R00153 = Static Value Type
+Label.R00154 = Text
+Label.R00155 = Value
+Label.R00156 = Resource Id
+Label.R00157 = Static Value
+Label.R00158 = Static Value Status
+
+Label.R00161 = Logon
+Label.R00162 = Information
+Label.R00163 = User Id
+Label.R00164 = Pasword
+Label.R00165 = Language
+Label.R001651 = Shift
+Label.R00166 = Logon to [ Basis Information ]
+
+Label.R00167 = Role Id
+Label.R00168 = Role Status
+Label.R00169 = Role Desc
+Label.R00170 = Role
+
+Label.R00269 = Old Password
+Label.R00270 = New Password
+Label.R00271 = Confirm Password
+Label.R00272 = Change Password
+
+Label.R00332 = Reason Code Model
+Label.R00333 = Severity Level
+Label.R00334 = Frequence
+Label.R00335 = Default for Used By
+
+Label.R00380 = Employee Type Id
+Label.R00381 = Employee Type Name
+Label.R00382 = Employee Type
+
+Label.R00394 = Shift
+Label.R00395 = Shift Name
+Label.R00396 = Start Time
+Label.R00397 = End Time
+Label.R00398 = Remark
+Label.R00399 = Shift
+
+
+Label.R00400 = Session Id
+Label.R00401 = User Id
+Label.R00402 = Machine
+Label.R00403 = Terminal
+Label.R00404 = IP Address
+Label.R00405 = Logon Time
+Label.R00406 = Shift
+Label.R00407 = System Name
+Label.R00408 = Module Name
+Label.R00409 = Is Locked
+Label.R00410 = Is Killed
+Label.R00411 = From Logon Time
+Label.R00412 = To Logon Time
+Label.R00413 = Session
+Label.R00414 = Session History
+
+Label.R00478 = Config Name
+Label.R00479 = Config Desc
+Label.R00480 = Config Value
+Label.R00481 = System Config
+
+Label.R00487 = BCR Id
+Label.R00488 = Bill Format
+Label.R00489 = First Free Chars
+Label.R00490 = Bill Time Value
+Label.R00491 = Bill Time Format
+Label.R00492 = Start With
+Label.R00493 = Current Value
+Label.R00494 = Min Value
+Label.R00495 = Max Value
+Label.R00496 = Increment By
+Label.R00497 = Is Cycle
+Label.R00498 = Sequence Length
+Label.R00499 = Bill Code Rule
+Label.R00500 = BCR Name
+Label.R00501 = BCR Status
+Label.R00502 = Full Bill No Text
+
+Label.R00617 = Is Locked
+Label.R00618 = Prev Seq Value
+Label.R00619 = Lock Ref Id
+Label.R00620 = Is Closed
+
+Label.R00905 = Information
+Label.R00906 = Error
+Label.R00907 = Question
+Label.R00908 = Warning
+Label.R00909 = Exclamation
+
+Label.R00931 = Processing...
+
+
+Label.R00415 = Default Printer
+Label.R00904 = AD User ID
+Label.R00330 = Template Id
+Label.R00331 = Template Name
+Label.R00827 = Base Value
+
+Label.R00950 = Step
+
+; ===============================================================================
+; Inspection
+; ===============================================================================
+Label.R01001 = W/O Type
+Label.R01002 = W/O Type Desc
+Label.R01003 = W/O Type Flag
+Label.R01004 = W/O Type Status
+Label.R01005 = W/O Type
+
+Label.R01006 = Warehouse
+Label.R01007 = Warehouse Name
+Label.R01008 = Warehouse Flag
+Label.R01009 = Warehouse Status
+Label.R01010 = Warehouse
+
+Label.R01011 = Location
+Label.R01012 = Location Desc
+Label.R01013 = Location Flag
+Label.R01014 = Location Status
+Label.R01015 = Location
+
+Label.R01016 = Work Group
+Label.R01017 = Work Group Desc
+Label.R01018 = Work Group
+
+Label.R01019 = Work Order No
+Label.R01020 = Customer
+Label.R01021 = Factory
+Label.R01022 = Work Order Status
+Label.R01023 = Work Order
+Label.R01024 = Search Criterias
+
+Label.R01025 = Cust Order No
+Label.R01026 = Style No
+Label.R01027 = Color
+Label.R01028 = Size
+Label.R01029 = Sch Carton Qty
+Label.R01030 = Sch Pair Qty
+Label.R01031 = Sch Delivery Date
+Label.R01032 = Contract No
+Label.R01033 = Cust Order Status
+Label.R01034 = Remark
+Label.R01035 = Completed User
+Label.R01036 = Completed Time
+Label.R01037 = Line No
+
+Label.R01038 = Effective Date
+Label.R01039 = Expired Date
+Label.R01040 = Currency
+Label.R01041 = Price
+Label.R01042 = Unit
+Label.R01043 = Remark
+Label.R01044 = Pricing Management
+
+Label.R01045 = Gender
+Label.R01046 = Title
+Label.R01047 = Mobile No
+Label.R01048 = Email
+Label.R01049 = Is Default
+ 
+Label.R01050 = Receive No
+Label.R01051 = Delivery Date
+Label.R01052 = Weather
+Label.R01053 = Receive Date
+Label.R01054 = Receiver
+Label.R01055 = Warehouse
+Label.R01056 = Is Confirmed?
+Label.R01057 = Confirmed Time
+Label.R01058 = Confirmed User
+Label.R01059 = Receiving
+Label.R01060 = Basic Information
+Label.R01061 = Carton No
+
+Label.R01062 = Shoe Type
+Label.R01063 = Mark
+Label.R01064 = Boot Height
+Label.R01065 = Check Type
+Label.R01066 = Check Result
+Label.R01067 = Sample Qty
+Label.R01068 = Good Qty
+Label.R01069 = Return Type
+Label.R01070 = IQC
+
+Label.R01071 = Complement
+
+Label.R01072 = Repair
+Label.R01073 = From Step
+Label.R01074 = Repair Qty
+Label.R01075 = Success Qty
+Label.R01076 = Failed Qty
+
+Label.R01077 = Ship
+Label.R01078 = Ship No
+Label.R01079 = Tray No
+Label.R01080 = Binding Carton No
+Label.R01081 = Container No
+Label.R01082 = B/L No
+Label.R01083 = Vehicle Type
+
+Label.R02001 = W/O No
+Label.R02002 = W/O Status
+Label.R02003 = Warehouse Order
+Label.R02004 = W/O Type
+Label.R02005 = W/O Status
+
+Label.R02006 = Tray No
+Label.R02007 = Last Updated Time
+Label.R02008 = Last Updated User
+Label.R02009 = Stock List
+
+Label.R02010 = Fail
+Label.R02011 = Return Qty
+Label.R02012 = IQC Date
+
+Label.R02013 = In Stock
+Label.R02014 = Inspect Qty
+Label.R02015 = Repair Qty
+Label.R02016 = X Inspect Qty
+Label.R02017 = Out Stock
+
+Label.R02018 = Sch Ship Date
+Label.R02019 = Check Type
+Label.R02020 = Logo
+Label.R02021 = Carton Qty
+Label.R02022 = Rework Charge Ratio(%)
+Label.R02023 = Check Request
+Label.R02024 = Return Carton Qty
+Label.R02025 = Reason Comment
+Label.R02026 = Pair Qty
+Label.R02027 = Select
+Label.R02028 = Year/Month
+Label.R02029 = Full Check
+Label.R02030 = X-Ray Check
+Label.R02031 = TTL Qty
+Label.R02032 = Inspection Schedule
+Label.R02033 = Year
+Label.R02034 = Month
+Label.R02035 = To Repair
+Label.R02036 = To Repair Qty
+Label.R02037 = To Repair Reason
+Label.R02038 = Return
+Label.R02039 = Return No
+Label.R02040 = Return Time
+Label.R02041 = Return User
+Label.R02042 = Supplement No
+Label.R02043 = Return Qty
+Label.R02044 = Carton Status
+Label.R02045 = Carton Location
+
+Label.R02046 = Event Name
+Label.R02047 = Event Time
+Label.R02048 = Event User
+Label.R02049 = Cust Order History
+
+Label.R02050 = Is Mixed
+Label.R02051 = Line Type
+Label.R02052 = Line Reason
+
+Label.R02053 = To Step
+Label.R02054 = Supplement Time
+Label.R02055 = Supplement User
+
+Label.R02056 = Shipping Plan 
+Label.R02057 = Shipping Plan No
+Label.R02058 = Shipping Status
+Label.R02059 = Shipped Date
+
+Label.R02060 = Work In Prcocess
+
+Label.R02061 = Report
+Label.R02062 = Packing List
+Label.R02063 = Shipping For Saving
+Label.R02064 = Shipping For Customer
+Label.R02065 = Payment Request
+; ===============================================================================
+; MISC
+; ===============================================================================
+Label.R03001 = PC Client
+
+; ===============================================================================
+; TAB
+; ===============================================================================
+Tab.R00001 = General
+Tab.R00002 = Attribute
+Tab.R00003 = Contact
+Tab.R00004 = Flow
+Tab.R00005 = Bin
+Tab.R00006 = Roles
+Tab.R00007 = Functions
+Tab.R00008 = Steps
+Tab.R00009 = Rules
+Tab.R00010 = Equipments
+Tab.R00011 = Where used
+Tab.R00012 = System Rule
+Tab.R00013 = Components
+Tab.R00014 = General I
+Tab.R00015 = General II
+Tab.R00016 = Components
+Tab.R00017 = Current Step
+Tab.R00018 = History
+Tab.R00021 = Others
+Tab.R00022 = Value List
+Tab.R00030 = Change List
+Tab.R00034 = Address
+; ===============================================================================
+; Message
+; ===============================================================================
+;+++++Information+++++++
+Msg.R00001 = Create success.
+Msg.R00002 = Update success.
+Msg.R00003 = Delete success.
+Msg.R00004 = Are you sure to delete it?
+Msg.R00005 = Action Confirm
+Msg.R00006 = Rows
+Msg.R00007 = Are you sure to release the version?
+Msg.R00008 = Are you sure to close the version?
+Msg.R00009 = Release success.
+Msg.R00010 = Close success.
+Msg.R00016 = Change password success.
+Msg.R00017 = Are you sure to logout?
+Msg.R00018 = Confirm?
+Msg.R00026 = Hold lot[%s1] success.
+Msg.R00027 = Release lot[%s1] success.
+Msg.R00028 = Save success.
+Msg.R00030 = Please select a lot.
+Msg.R00031 = Trackout success.
+Msg.R00032 = Active lot(s) success.
+Msg.R00033 = Trackout lot success.
+Msg.R00034 = Trackin lot success.
+Msg.R00037 = Cancel trackin success.
+Msg.R00038 = Lot[%s1] have been reserved.
+Msg.R00040 = Split lot[%s1] success.
+Msg.R00041 = Please choose components to split.
+Msg.R00043 = QC trackout success.
+Msg.R00045 = Wafer trackout success.
+Msg.R00047 = Are you sure to lock it?
+Msg.R00048 = Are you sure to unlock it?
+Msg.R00049 = Are you sure to kill it?
+Msg.R00051 = Are you sure you want to exit from MES?
+Msg.R00056 = The action will clean lot(s) you created, are you sure you want to do it?
+Msg.R00057 = Lot(s) created success.
+Msg.R00058 = Are you sure to select another work order?
+Msg.R00061 = No lot selected! Please select lot(s) to active first.
+Msg.R00063 = Terminate Lot Success.
+Msg.R00064 = Change Lot Priority Success.
+Msg.R00065 = Cancel Track In Success.
+Msg.R00066 = Are you sure to release all hold?
+Msg.R00067 = Are you sure to terminate it?
+Msg.R00068 = Create TR Schedule Success.
+Msg.R00069 = Update TR Schedule Succces.
+Msg.R00070 = TR Track In Success.
+Msg.R00071 = TR Change Equipment Success.
+Msg.R00073 = Lot status is not correct.
+Msg.R00074 = Lot step is not correct.
+Msg.R00075 = Lot quantity is not correct.
+Msg.R00076 = Lot is reeled by other lot(s) at present.
+Msg.R00077 = Qty per reel is not correct.
+Msg.R00078 = Reel qty is not correct.
+Msg.R00079 = Report Complete Success.
+Msg.R00080 = No valid reel found.
+Msg.R00081 = TR Track Out Success.
+Msg.R00082 = Child Lot Quantity is not correct.
+Msg.R00083 = Child Lot Quantity cannot be larger than or be equal to parent lot quantity.
+Msg.R00084 = Merge Lot Success.
+Msg.R00085 = Auto Track In Success.
+Msg.R00086 = Auto Hold Success.
+Msg.R00087 = BuyOff Track In Success.
+Msg.R00088 = BuyOff Track Out Success.
+Msg.R00089 = Supplement Qty is not equal to Fail Qty.
+Msg.R00090 = Save Packing Visual Check Success.
+Msg.R00091 = Save Packing QC Success.
+Msg.R00092 = CANNOT DO Visual Check again.
+Msg.R00093 = CANNOT DO Packing QC again.
+Msg.R00094 = CANNOT DO Packing QC before Visual check.
+Msg.R00095 = Can not delete it.
+Msg.R00096 = Are you sure to terminate it?
+Msg.R00097 = Can not terminate it?
+Msg.R00098 = Are you sure you want to do sync?
+Msg.R00099 = Sync success!
+Msg.R00100 = Plese select one or more tester.
+Msg.R00101 = Detaping Track In Success.
+Msg.R00102 = Detaping Track Out Success.
+Msg.R00103 = Work Order Detaping Success.
+Msg.R00104 = Label file was copied to printer server successfully.
+Msg.R00105 = %s1 cannot be less than %s2.
+Msg.R00106 = %s1 cannot be larger than %s2.
+Msg.R00107 = No Detail.
+Msg.R00108 = %s1 is required.
+Msg.R00109 = Do you want to replease bin setting for this test program?
+
+Msg.R00110 = Total New value is not equals to Total Old value.
+Msg.R00111 = Adjust lot quantity success!
+Msg.R00112 = No carton rule for %s1.
+Msg.R00113 = No box rule for %s1.
+
+Msg.R00116 = No reel detail found, CANNOT allow to track out。
+
+Msg.R00117 = Please choose at least one lot to do TR.
+Msg.R00118 = Please choose at least one equipment to do TR.
+Msg.R00119 = Please choose at least one equipment.
+Msg.R00121 = No lot selected to print.
+Msg.R00122 = Max password error count(5) arrives.
+Msg.R00127 = The period is locked, action is denied.
+Msg.R00128 = Existing period, please delete it first before re-creating.
+Msg.R00129 = Create period success, you can calculate reports now。
+Msg.R00130 = Unknown period, please create the period first.
+
+Msg.R00131 = Please Dispatch first.
+
+Msg.R00138 = Test IC count should be less than %s1
+Msg.R00133 = RR should be less than %s1
+Msg.R00134 = %s1 data error
+Msg.R00135 = Damage + Missing + Bin总和 不能超过本次测试数量
+Msg.R00136 = please report test result first.
+Msg.R00151 = please Track in at Test step first
+Msg.R00152 = Change equipment success
+Msg.R00153 = Lot ID [%s1] not exist，please check query again！
+Msg.R00154 = Already the Fist row！
+Msg.R00155 = Already the Last row！
+Msg.R00156 = Please Choose the flow！
+Msg.R00157 = Please Choose the step！
+Msg.R00158 = Please Choose the Equipment to dispatch！
+Msg.R00159 = Please Choose the testprogram！
+Msg.R00160 = No select data to save！
+Msg.R00161 = Save Successfully！
+Msg.R00162 = Please select a type of process,hold or pass or...!
+Msg.R00163 = Input Incorrect.
+Msg.R00164 = Input data must be larger than 0!
+Msg.R00165 = Total quantity must equal！
+Msg.R00166 = Release success！
+Msg.R00167 = Not lot selected.
+Msg.R00168 = Lot(s) you selected does't match rule(s), do you want to continue?
+Msg.R00169 = No default TR flow defined, please set system config[SYS_DEFAULT_TR_FLOW]
+Msg.R00170 = Please select one of hold reason code!
+Msg.R00171 = Need to create material req for work order first!
+Msg.R00172 = Product's process is incorrect.
+Msg.R00173 = Fail detail's sum qty must be equal bad qty!
+Msg.R00174 = Lot is incorrect.
+Msg.R00175 = No reel selected to track in.
+Msg.R00176 = is required.
+Msg.R00177 = All new quantity are same with old quantity.
+Msg.R00178 = Duplicate Lot Id, do you want to continue?
+Msg.R00179 = Plesea select carton first.
+Msg.R00180 = Didn't find this carton no[%s1].
+Msg.R00181 = Already exist this carton no[%s1].
+Msg.R00182 = Duplicate Bin No found.
+Msg.R00183 = Sync fail!
+Msg.R00184 = No reel selected to detaping.
+Msg.R00185 = No equipment selected.
+Msg.R00186 = Create lot fail.
+Msg.R00187 = Active lot fail.
+Msg.R00189 = Application is already running.
+Msg.R00190 = Are you sure to confirm material req?
+Msg.R00191 = Are you sure to confirm material return?
+Msg.R00192 = Do you need to packing scatter?
+Msg.R00193 = Calculate done.
+Msg.R00194 = Please select a eqp to print about eqp dispatch information.
+Msg.R00196 = Product flow definition incorrect(duplicated product target)。
+Msg.R00197 = No lot(s) selected to reel.
+Msg.R00198 = Grade demotion success.
+Msg.R00200 = Grade demotion is allowed to do only after test.
+Msg.R00201 = Unknown product!
+Msg.R00202 = %s1 already exist.
+Msg.R00203 = Please Choose the EQP！
+Msg.R00204 = There are some data over the limits do you want to continue?
+Msg.R00205 = Please set directory for GU in system config.
+Msg.R00206 = File is not exist.
+Msg.R00207 = GU Track In success.
+Msg.R00208 = GU Track Out success.
+Msg.R00209 = LCL cannot be larger than UCL.
+Msg.R00210 = All key parameter(s) must be collected.
+Msg.R00211 = Laser Triming Track Out succecss.
+Msg.R00212 = Copy file error.
+Msg.R00213 = Reason is required.
+Msg.R00214 = First wafer check save success.
+Msg.R00215 = First wafer check save fail.
+Msg.R00216 = PQC save success.
+Msg.R00217 = PQC save fail.
+Msg.R00218 = Mapping Track Out success。
+Msg.R00219 = Mapping Track Out fail。
+Msg.R00220 = Mapping file is not exists or no mapping file assigned.
+Msg.R00221 = Please input lotID!
+Msg.R00222 = Cannot update TR schedule if TR schedule's proc status is Processing.
+Msg.R00224 = Lot scrapped success.
+Msg.R002241 = Cancel Lot scrapped success.
+Msg.R00225 = Are you sure to scrap the lot?
+Msg.R002251 =  Are you sure to Unscrap the lot?
+Msg.R00226 = Please select Equipment!
+Msg.R00227 = Calculate fail.
+Msg.R00228 = No Privilege.
+Msg.R00229 = No wafer selected.
+Msg.R00230 = Please input temperature and minutes!
+Msg.R00231 = %s1 must same.
+Msg.R00232 = New WorkOrder could not same as origin WorkOrder [Lot ID:%s1; Wafer ID:%s2]
+Msg.R00233 = Please move lot to detaping step first.
+Msg.R00234 = Ink track in success.
+Msg.R00235 = Ink track out success.
+Msg.R00237 = Please do [%s1] first.
+Msg.R00238 = Lot's status is not Created, you cannot change it's flow.
+Msg.R00239 = Update lot success.
+Msg.R00240 = Are you sure the last dispatch? 
+Msg.R00241 = Confirm dispatch
+Msg.R00242 = LotID[%s1]没有选择片派工，你是否继续确认此次派工？
+Msg.R00243 = Please choose wafer(s) to scrap!
+Msg.R00244 = Please choose wafer(s) to trackIn.
+Msg.R00245 = Please choose wafer(s) to trackOut.
+Msg.R00246 = Lot [%s1] don't reink，please first do packingList!
+Msg.R00247 = No wafer's die ReInk,Are you sure continue Reink TrackOut?
+Msg.R00248 = LotID [%s1] don't find assign path,don't open it.
+Msg.R00249 = Grinding Track Out Success.
+Msg.R00261 = Please select Year and Month first.
+Msg.R00262 = Please input StyleNo first.
+
+
+;+++++Modeling Error+++++++
+Msg.R00011 = [Error: -100001]The user is inactive,logon denied.
+Msg.R00012 = [Error: -100002]The user is locked, logon denied.
+Msg.R00013 = [Error: -100003]Wrong password, logon denied.
+Msg.R00014 = [Error: -100004]The user is not exists, logon denied.
+Msg.R00015 = [Error: -100005]New password is not equal to Confirm password.
+Msg.R00046 = [Error: -100006]The user already logon.
+Msg.R00050 = [Error: -100007]Duplicate [Bin No] assigned.
+
+;+++++WIP Error+++++++
+Msg.R00019 = [Error: -200001]Lot ID is not at the step you action.
+Msg.R00020 = [Error: -200002]Unknown Step.
+Msg.R00021 = [Error: -200003]Flow or rule error.
+Msg.R00022 = [Error: -200004]Rule inconsistent.Maybe the lot has been move to other rules by other people.Please check.
+Msg.R00023 = [Error: -200005]Lot's status is not Hold.
+Msg.R00024 = [Error: -200006]Lot's status is not Created.
+Msg.R00025 = [Error: -200007]Lot's status is not Active.
+Msg.R00035 = [Error: -200008]Lot status is not Created, action denied.
+Msg.R00036 = [Error: -200009]The current rule is not allowed to do TrackInCancel.
+Msg.R00039 = [Error: -200010]Two lots are not at the same step.
+Msg.R00042 = [Error: -200014]Cannot split all components to child lot.
+Msg.R00044 = [Error: -200011]Fail quantity[%s1] cannot be larger than [%s2].
+Msg.R00052 = [Error: -200012]Incorrect customer lot quantity!
+Msg.R00053 = [Error: -200013]Insufficient balance quantity to create lot.
+Msg.R00054 = [Error: -200014]No FT lot naming rule assigned.
+Msg.R00055 = [Error: -200015]You cannot get new bill no because somebody lock it.
+Msg.R00059 = [Error: -200016]Unknown Customer Lot Id.
+Msg.R00060 = [Error: -200017]Lot Qty cannot be larger than customer lot id Qty.
+Msg.R00062 = [Error: -200018]The lotis not allowed to terminated because it's status.
+Msg.R00029 = [Error: -200019]The new priority is same with current priority.
+Msg.R00114 = [Error: -200020]No capability avaiable.
+Msg.R00115 = [Error: -200021]Max capability arrives.
+Msg.R00120 = [Error: -200022]Lot Process Status is is not Waiting.Skip or Rework lot is not allowed.
+Msg.R00123 = [Error: -200023]System is locked!
+Msg.R00124 = [Error: -200024]Session is not exists now, please logon again!
+Msg.R00125 = [Error: -200025]Session is killed, please logon again!
+Msg.R00126 = [Error: -200026]Session is locked, please wait for release!
+Msg.R00132 = [Error: -200027]Your IP address is illegal, accessing is denied.
+Msg.R00188 = [Error: -200028]Max bill no arrive, cannot create new bill no.
+Msg.R00195 = [Error: -200029]Lot proc status is not Waiting.
+Msg.R00223 = [Error: -200030]Lot has be returned, action denied.
+Msg.R00236 = [Error: -200031]The quantity of child lot component is equal or larger than the quantity of parent's component.
+Msg.R00258 = [Error: -200032]Two lots aren't the same isdefect.
+Msg.R00259 = [Error: -200033]Two lots aren't the same lottype.
+Msg.R00260 = [Error: -200034]Two lots aren't the same lotproctype.
+
+; ===============================================================================
+; Inspection
+; ===============================================================================
+Msg.R01001 = No pricing setting.
+Msg.R01002 = Carton qty is incorrect, it must be larger than 0
+Msg.R01003 = Pair qty is incorrect, it must be larger than 0.
+Msg.R01004 = is duplicated
+Msg.R01005 = Price cannot be empty.
+Msg.R01006 = Currency cannot be empty.
+Msg.R01007 = Effective Date cannot be empty.
+Msg.R01008 = Expired Date cannot be larger than Effective Date.
+Msg.R01009 = Overlapping period found .
+Msg.R01010 = Check Type cannot be empty.
+Msg.R01011 = Style No cannot be empty.
+Msg.R01012 = Cust Order No/Carton No/Style No/Color/Size/CheckType cannot be empty.
+Msg.R01013 = If you change the customer, the grid data will be lost, continue?
+Msg.R01014 = [%s1] can not larger than [%s2].
+Msg.R01015 = less than one reason code.
+Msg.R01016 = [%s1] must large than zero.
+Msg.R01017 = [%s1] or [%s2] must large than zero.
+Msg.R01018 = must select one record.
+Msg.R01019 = must add a detail.
+Msg.R01020 = [%s1] is require.
+Msg.R01021 = [%s1] not exist.
+Msg.R01022 = [%s1] already exist.
+Msg.R01023 = [%s1] can not less than [%s2].
+Msg.R01024 = Carton qty error.
+; ===============================================================================
+; Menu
+; ===============================================================================
+Menu.M10 = Basic
+Menu.M100040 = Employee
+Menu.M100060 = Customer
+Menu.M100080 = Reason Category
+Menu.M100090 = Reason Code
+Menu.M100050 = Employee Type
+Menu.M100160 = Shift
+Menu.M100170 = Work Group
+
+Menu.M50 = Security
+Menu.M500030 = User
+Menu.M500020 = Role
+Menu.M500010 = Function
+
+Menu.M60 = System
+Menu.M600010 = Attribute Template
+Menu.M600020 = Static Value
+Menu.M500040 = Session
+Menu.M500050 = Session History
+Menu.M600060 = System Config
+Menu.M600030 = Bill Code Rule
+
+
+Menu.M70 = Warehousing
+Menu.M700010 = Warehouse Order Type
+Menu.M700020 = Warehouse
+Menu.M700030 = Location
+Menu.M700040 = Warehouse Order
+Menu.M700050 = Stock List
+
+Menu.M20 = Routine
+Menu.M200010 = Work Order
+Menu.M200020 = Pricing Management
+Menu.M200030 = Receiving
+Menu.M200040 = Complement
+Menu.M200050 = Inspect Unpack
+Menu.M200060 = X Unpack
+Menu.M200070 = Keep Fixing
+Menu.M200080 = Repair
+Menu.M200090 = Re-Inspect
+Menu.M200100 = Inspect Package
+Menu.M200110 = X Package
+Menu.M200120 = IQC
+Menu.M200130 = Ship
+Menu.M200140 = Return Goods
+Menu.M200150 = Inspection Schedule
+Menu.M200160 = Customer Order History
+Menu.M200170 = Shipping Plan
+ 
+; ===============================================================================
+; ContextMenu
+; ===============================================================================
+ContextMenu.M0001 = Add Detail
+ContextMenu.M0002 = Remove Detail
+ContextMenu.M0003 = Add Carton
+ContextMenu.M0004 = Remove Carton
+ContextMenu.M0005 = Up To Top
+ContextMenu.M0006 = Up
+ContextMenu.M0007 = Down
+ContextMenu.M0008 = Down To Bottom
+ContextMenu.M0009 = Add Box
+ContextMenu.M0010 = Remove Box
+ContextMenu.M0011 = Add Lot
+ContextMenu.M0012 = Remove Lot
+ContextMenu.M0013 = Add Reel
+ContextMenu.M0014 = Remove Reel
+ContextMenu.M0015 = Add Wafer
+ContextMenu.M0016 = Remove Wafer
+ContextMenu.M0017 = Add Whole Carton
+ContextMenu.M0018 = Add Scatter Carton
+ContextMenu.M0019 = Add Whole Box
+ContextMenu.M0020 = Add Scatter Box
+ContextMenu.M0021 = Change Work Order
+ContextMenu.M0022 = Change to New Work Order
+ContextMenu.M0023 = Cancel Change
+; ===============================================================================
+; form caption
+; ===============================================================================
+
+Form.F001 = Switch Equipment Status
+Form.F002 = FabView
+Form.F003 = Fab Layout Editor
+
+
+; ===============================================================================
+; Static Value
+; ===============================================================================
+Label.SV0001 = 区域
+Label.SV0002 = 设备
+
+; ===============================================================================
+; Enum
+; ===============================================================================
+Enum.SemiFinished = SemiFinished
+Enum.Finished = Finished
+Enum.Manual = Manual
+Enum.Internal = Internal
+Enum.External = External
+Enum.SampleTest = SampleTest
+Enum.WholeTest = WholeTest
+Enum.Engineering = Engineering
+Enum.Production = Production
+Enum.Borrow = Borrow

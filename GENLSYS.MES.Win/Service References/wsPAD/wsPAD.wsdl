@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="wsPAD" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.Common" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:1111/wsPAD.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IwsPAD_GetFuncByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFuncByUser" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetFuncByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFuncByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetPOListByStep_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOListByStep" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetPOListByStep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPOListByStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetColorListByPO_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorListByPO" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetColorListByPO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetColorListByPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetTypeListByPO_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeListByPO" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetTypeListByPO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeListByPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxCheckGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxCheckGroup" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxCheckGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxCheckGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxSaveCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxSaveCarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxSaveCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxSaveCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxUpdateCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxUpdateCarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_OpenBoxUpdateCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenBoxUpdateCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_lineWarehouseSave_InputMessage">
+    <wsdl:part name="parameters" element="tns:lineWarehouseSave" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_lineWarehouseSave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:lineWarehouseSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_DeleteBox_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBox" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_DeleteBox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_isBoxing_InputMessage">
+    <wsdl:part name="parameters" element="tns:isBoxing" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_isBoxing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isBoxingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetMixBox_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMixBox" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetMixBox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMixBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetOpenBox_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenBox" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetOpenBox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenBoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_PackBoxSaveCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackBoxSaveCarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_PackBoxSaveCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackBoxSaveCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_PackBoxCheckGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:PackBoxCheckGroup" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_PackBoxCheckGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PackBoxCheckGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_isShipped_InputMessage">
+    <wsdl:part name="parameters" element="tns:isShipped" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_isShipped_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isShippedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_MoveBoxCheckGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBoxCheckGroup" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_MoveBoxCheckGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBoxCheckGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_MoveBoxSaveCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBoxSaveCarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_MoveBoxSaveCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveBoxSaveCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_getWIPByPO_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWIPByPO" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_getWIPByPO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWIPByPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetSizeListByPO_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeListByPO" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetSizeListByPO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeListByPOResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_getLineWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:getLineWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_getLineWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getLineWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetCancelableCarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCancelableCarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_GetCancelableCarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCancelableCartonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelPack_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPack" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelPack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelMove_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelMove" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelMove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelMoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelOpen_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOpen" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_CancelOpen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOpenResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IwsPAD">
+    <wsdl:operation name="GetFuncByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetFuncByUser" message="tns:IwsPAD_GetFuncByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetFuncByUserResponse" message="tns:IwsPAD_GetFuncByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPOListByStep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetPOListByStep" message="tns:IwsPAD_GetPOListByStep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetPOListByStepResponse" message="tns:IwsPAD_GetPOListByStep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColorListByPO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetColorListByPO" message="tns:IwsPAD_GetColorListByPO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetColorListByPOResponse" message="tns:IwsPAD_GetColorListByPO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeListByPO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetTypeListByPO" message="tns:IwsPAD_GetTypeListByPO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetTypeListByPOResponse" message="tns:IwsPAD_GetTypeListByPO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxCheckGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxCheckGroup" message="tns:IwsPAD_OpenBoxCheckGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxCheckGroupResponse" message="tns:IwsPAD_OpenBoxCheckGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxSaveCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxSaveCarton" message="tns:IwsPAD_OpenBoxSaveCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxSaveCartonResponse" message="tns:IwsPAD_OpenBoxSaveCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxUpdateCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxUpdateCarton" message="tns:IwsPAD_OpenBoxUpdateCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/OpenBoxUpdateCartonResponse" message="tns:IwsPAD_OpenBoxUpdateCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="lineWarehouseSave">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/lineWarehouseSave" message="tns:IwsPAD_lineWarehouseSave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/lineWarehouseSaveResponse" message="tns:IwsPAD_lineWarehouseSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/DeleteBox" message="tns:IwsPAD_DeleteBox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/DeleteBoxResponse" message="tns:IwsPAD_DeleteBox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isBoxing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/isBoxing" message="tns:IwsPAD_isBoxing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/isBoxingResponse" message="tns:IwsPAD_isBoxing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMixBox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetMixBox" message="tns:IwsPAD_GetMixBox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetMixBoxResponse" message="tns:IwsPAD_GetMixBox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenBox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetOpenBox" message="tns:IwsPAD_GetOpenBox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetOpenBoxResponse" message="tns:IwsPAD_GetOpenBox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PackBoxSaveCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/PackBoxSaveCarton" message="tns:IwsPAD_PackBoxSaveCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/PackBoxSaveCartonResponse" message="tns:IwsPAD_PackBoxSaveCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PackBoxCheckGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/PackBoxCheckGroup" message="tns:IwsPAD_PackBoxCheckGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/PackBoxCheckGroupResponse" message="tns:IwsPAD_PackBoxCheckGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isShipped">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/isShipped" message="tns:IwsPAD_isShipped_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/isShippedResponse" message="tns:IwsPAD_isShipped_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveBoxCheckGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxCheckGroup" message="tns:IwsPAD_MoveBoxCheckGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxCheckGroupResponse" message="tns:IwsPAD_MoveBoxCheckGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveBoxSaveCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxSaveCarton" message="tns:IwsPAD_MoveBoxSaveCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxSaveCartonResponse" message="tns:IwsPAD_MoveBoxSaveCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWIPByPO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/getWIPByPO" message="tns:IwsPAD_getWIPByPO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/getWIPByPOResponse" message="tns:IwsPAD_getWIPByPO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeListByPO">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetSizeListByPO" message="tns:IwsPAD_GetSizeListByPO_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetSizeListByPOResponse" message="tns:IwsPAD_GetSizeListByPO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLineWarehouse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/getLineWarehouse" message="tns:IwsPAD_getLineWarehouse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/getLineWarehouseResponse" message="tns:IwsPAD_getLineWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelableCarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetCancelableCarton" message="tns:IwsPAD_GetCancelableCarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/GetCancelableCartonResponse" message="tns:IwsPAD_GetCancelableCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/CancelPack" message="tns:IwsPAD_CancelPack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/CancelPackResponse" message="tns:IwsPAD_CancelPack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelMove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/CancelMove" message="tns:IwsPAD_CancelMove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/CancelMoveResponse" message="tns:IwsPAD_CancelMove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelOpen">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/CancelOpen" message="tns:IwsPAD_CancelOpen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/CancelOpenResponse" message="tns:IwsPAD_CancelOpen_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IwsPAD" type="tns:IwsPAD">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFuncByUser">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetFuncByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPOListByStep">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetPOListByStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColorListByPO">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetColorListByPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeListByPO">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetTypeListByPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxCheckGroup">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/OpenBoxCheckGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxSaveCarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/OpenBoxSaveCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenBoxUpdateCarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/OpenBoxUpdateCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lineWarehouseSave">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/lineWarehouseSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBox">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/DeleteBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isBoxing">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/isBoxing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMixBox">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetMixBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenBox">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetOpenBox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackBoxSaveCarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/PackBoxSaveCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PackBoxCheckGroup">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/PackBoxCheckGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isShipped">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/isShipped" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveBoxCheckGroup">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/MoveBoxCheckGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveBoxSaveCarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/MoveBoxSaveCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWIPByPO">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/getWIPByPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSizeListByPO">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetSizeListByPO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLineWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/getLineWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelableCarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/GetCancelableCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPack">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/CancelPack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelMove">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/CancelMove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOpen">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/CancelOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsPAD">
+    <wsdl:port name="BasicHttpBinding_IwsPAD" binding="tns:BasicHttpBinding_IwsPAD">
+      <soap:address location="http://localhost:1111/wsPAD.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

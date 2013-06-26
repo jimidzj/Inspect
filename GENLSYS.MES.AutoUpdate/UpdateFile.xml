@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <FTPServerIP>192.168.1.3</FTPServerIP>
+  <FTPServerPort>21</FTPServerPort>
+  <FTPAccount>inspect</FTPAccount>
+  <FTPPassword>messerver</FTPPassword>
+  <MonitorRootFolder>/WIN</MonitorRootFolder>
+  <LogFilePath>.</LogFilePath>
+  <LogFileKeepDays>30</LogFileKeepDays>
+  <AppName>GENLSYS.MES.Win</AppName>
+  <Version>2012.06.06.1</Version>
+  <Execute>GENLSYS.MES.Win.exe</Execute>
+ </config>

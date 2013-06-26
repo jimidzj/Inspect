@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Work\Inspect\Deploy\WCF" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/GENLSYS.MES.WCF.pdb" publishTime="06/12/2013 18:51:08" />
+    <file relUrl="bin/GENLSYS.MES.Utility.pdb" publishTime="06/12/2013 18:51:04" />
+    <file relUrl="bin/log4net.xml" publishTime="08/05/2012 22:36:39" />
+    <file relUrl="Global.asax" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="wsWHS.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="bin/log4net.dll" publishTime="08/06/2012 19:56:05" />
+    <file relUrl="bin/GENLSYS.MES.Services.dll" publishTime="06/12/2013 18:51:07" />
+    <file relUrl="bin/SAP.Connector.xml" publishTime="08/06/2012 20:09:28" />
+    <file relUrl="bin/GENLSYS.MES.Repositories.Inspection.dll" publishTime="06/12/2013 18:51:06" />
+    <file relUrl="bin/SAP.Connector.Rfc.xml" publishTime="08/05/2012 21:58:02" />
+    <file relUrl="bin/SAP.Connector.dll" publishTime="08/06/2012 19:56:05" />
+    <file relUrl="bin/SAP.Connector.Rfc.dll" publishTime="08/06/2012 20:02:57" />
+    <file relUrl="wsINP.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="wsSEC.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="bin/GENLSYS.MES.Services.pdb" publishTime="06/12/2013 18:51:07" />
+    <file relUrl="bin/GENLSYS.MES.Common.dll" publishTime="06/12/2013 18:50:58" />
+    <file relUrl="bin/GENLSYS.MES.DataContracts.pdb" publishTime="06/12/2013 18:51:03" />
+    <file relUrl="wsMDL.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="08/05/2012 21:58:02" />
+    <file relUrl="bin/GENLSYS.MES.Repositories.dll" publishTime="06/12/2013 18:51:06" />
+    <file relUrl="wsSYS.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="bin/GENLSYS.MES.Repositories.pdb" publishTime="06/12/2013 18:51:06" />
+    <file relUrl="bin/GENLSYS.MES.Services.Inspection.pdb" publishTime="06/12/2013 18:51:07" />
+    <file relUrl="bin/edtFTPnet.dll" publishTime="08/06/2012 20:02:57" />
+    <file relUrl="Web.config" publishTime="06/12/2013 18:51:11" />
+    <file relUrl="wsPAD.svc" publishTime="08/05/2012 20:46:46" />
+    <file relUrl="bin/GENLSYS.MES.Common.pdb" publishTime="06/12/2013 18:50:58" />
+    <file relUrl="bin/GENLSYS.MES.DataContracts.dll" publishTime="06/12/2013 18:51:04" />
+    <file relUrl="bin/GENLSYS.MES.Utility.dll" publishTime="06/12/2013 18:51:05" />
+    <file relUrl="bin/GENLSYS.MES.Services.Inspection.dll" publishTime="06/12/2013 18:51:07" />
+    <file relUrl="bin/GENLSYS.MES.WCF.dll" publishTime="06/12/2013 18:51:08" />
+    <file relUrl="bin/GENLSYS.MES.Repositories.Inspection.pdb" publishTime="06/12/2013 18:51:06" />
+  </publishProfile>
+</publishData>

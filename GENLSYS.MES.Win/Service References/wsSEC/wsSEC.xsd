@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1111/wsSEC.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" />
+  <xs:import schemaLocation="http://localhost:1111/wsSEC.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
+  <xs:element name="Logout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q1:ContextInfo" />
+        <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLogonTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q2:ContextInfo" />
+        <xs:element minOccurs="0" name="sessionid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="machine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="shift" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLogonTimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q3:ContextInfo" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidatePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q4:ContextInfo" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidatePasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreaByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q5:ContextInfo" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreaByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAreaByUserIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q6:ContextInfo" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q7:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetUserListResult" nillable="true" type="q8:ArrayOftsecuser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q9:ContextInfo" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q10:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q11:ContextInfo" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q12:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleUserResult" nillable="true" type="q13:tsecuser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q14:ContextInfo" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="user" nillable="true" type="q15:tsecuser" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstUserRole" nillable="true" type="q16:ArrayOftsecuserrole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q17:ContextInfo" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="user" nillable="true" type="q18:tsecuser" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstUserRole" nillable="true" type="q19:ArrayOftsecuserrole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q20:ContextInfo" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q21:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q22:ContextInfo" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q23:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetRoleListResult" nillable="true" type="q24:ArrayOftsecrole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q25:ContextInfo" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q26:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q27:ContextInfo" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q28:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleRoleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRoleResult" nillable="true" type="q29:tsecrole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q30:ContextInfo" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="role" nillable="true" type="q31:tsecrole" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleFunctions" nillable="true" type="q32:ArrayOftsecrolefunction" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleSteps" nillable="true" type="q33:ArrayOftsecrolestep" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleEqpGroups" nillable="true" type="q34:ArrayOftsecroleeqpgroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q35:ContextInfo" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="role" nillable="true" type="q36:tsecrole" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleFunctions" nillable="true" type="q37:ArrayOftsecrolefunction" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleSteps" nillable="true" type="q38:ArrayOftsecrolestep" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstRoleEqpGroups" nillable="true" type="q39:ArrayOftsecroleeqpgroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteRole">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q40:ContextInfo" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q41:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteRoleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleFunctionRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q42:ContextInfo" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q43:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleFunctionRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleFunctionRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleFunctionRecordsByRoleId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q44:ContextInfo" />
+        <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleFunctionRecordsByRoleIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleFunctionRecordsByRoleIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q45:ContextInfo" />
+        <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFunctionsByUserIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleStepList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q46:ContextInfo" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q47:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleStepListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetRoleStepListResult" nillable="true" type="q48:ArrayOftsecrolestep" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStepsByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q49:ContextInfo" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStepsByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStepsByUserIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEqpGroupRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q50:ContextInfo" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q51:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEqpGroupRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleEqpGroupRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEqpGroupRecordsByRoleId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q52:ContextInfo" />
+        <xs:element minOccurs="0" name="roleid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoleEqpGroupRecordsByRoleIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRoleEqpGroupRecordsByRoleIdResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRoleList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q53:ContextInfo" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q54:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRoleListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetUserRoleListResult" nillable="true" type="q55:ArrayOftsecuserrole" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRoleRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q56:ContextInfo" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q57:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRoleRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUserRoleRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q58:ContextInfo" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q59:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetFunctionsListResult" nillable="true" type="q60:ArrayOftsecfunctions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q61:ContextInfo" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q62:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFunctionsRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFunctionsRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleFunctions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q63:ContextInfo" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q64:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleFunctionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleFunctionsResult" nillable="true" type="q65:tsecfunctions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertFunctions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q66:ContextInfo" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="functions" nillable="true" type="q67:tsecfunctions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoInsertFunctionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateFunctions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q68:ContextInfo" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="functions" nillable="true" type="q69:tsecfunctions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpdateFunctionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteFunctions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q70:ContextInfo" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q71:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoDeleteFunctionsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Logon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q72:ContextInfo" />
+        <xs:element minOccurs="0" name="userid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogonResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

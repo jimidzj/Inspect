@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="656b84c2-2517-4d65-bd82-150250e8a2bb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1111/wsSEC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="wsSEC.xsd" MetadataType="Schema" ID="9cf33a38-6b87-4018-8a0b-d989611397f9" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd0" />
+    <MetadataFile FileName="wsSEC1.xsd" MetadataType="Schema" ID="12d40ef8-9f8f-4dda-86fe-18a7b529930a" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd2" />
+    <MetadataFile FileName="wsSEC.disco" MetadataType="Disco" ID="fe834e3a-6d86-497d-83e1-debbf6d3811c" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?disco" />
+    <MetadataFile FileName="wsSEC2.xsd" MetadataType="Schema" ID="b2bfca24-2a96-4fd7-aa50-afd0a1dc63fc" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd7" />
+    <MetadataFile FileName="wsSEC3.xsd" MetadataType="Schema" ID="f7630179-4dd6-472a-a15b-5fe190c5f868" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd6" />
+    <MetadataFile FileName="wsSEC4.xsd" MetadataType="Schema" ID="f6714303-fabe-4a6b-8d87-90afaa1423d5" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd3" />
+    <MetadataFile FileName="wsSEC5.xsd" MetadataType="Schema" ID="8c45f82c-a8c0-4480-b4e9-8bb1f6f25f83" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd4" />
+    <MetadataFile FileName="wsSEC6.xsd" MetadataType="Schema" ID="126bad38-1f6f-4f14-8f4b-ec987458308c" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd5" />
+    <MetadataFile FileName="wsSEC.wsdl" MetadataType="Wsdl" ID="8cb58dd2-fdeb-4277-9b6c-f6b3d02e5d42" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?wsdl" />
+    <MetadataFile FileName="wsSEC7.xsd" MetadataType="Schema" ID="f62abaa7-342d-41e1-ab29-c1e016a44f98" SourceId="1" SourceUrl="http://localhost:1111/wsSEC.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
