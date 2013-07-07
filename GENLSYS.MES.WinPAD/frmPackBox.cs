@@ -41,7 +41,7 @@ namespace GENLSYS.MES.WinPAD
         private string[] BoxColumns = new string[] { "cartonNumber", "type", "color", "size", "qty", "qty2" };
         //订单内的颜色/型号/尺寸
         private string[] colour;
-        private string[] size ;// = new string[] { "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46" };
+        private string[] size;// = new string[] { "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46" };
         private string[] type;
 
         bool lineChecked = false;
@@ -118,7 +118,7 @@ namespace GENLSYS.MES.WinPAD
             this.SetQueryGridStyle(this.ultraGrid1);
             this.ultraGrid1.DisplayLayout.NewColumnLoadStyle = NewColumnLoadStyle.Show;
             this.ultraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.Vertical;
-        
+
             //构造grid数据的结构
             ds = new DataSet();
             cartonDt = GetTestData();
@@ -154,7 +154,7 @@ namespace GENLSYS.MES.WinPAD
             toolTip.IsBalloon = true;
             toolTip.SetToolTip(this.btnNewTray, "单击此处开始输入");
             toolTip.Show("单击此处开始输入", btnNewTray, 2000);
-   
+
         }
 
         #region softkey button
@@ -188,7 +188,7 @@ namespace GENLSYS.MES.WinPAD
         }
 
         private void but_quit_Click(object sender, EventArgs e)
-        {   
+        {
             int target = 0;  //本托盘箱数
             if (txtQty.Text.Trim().Length > 0)
             {
@@ -214,7 +214,7 @@ namespace GENLSYS.MES.WinPAD
                                                                           MessageBoxButtons.YesNo,
                                                          null, "输入的箱数与托盘上的箱数不符，是否继续输入。\r\n选择“是”将继续输入，“否”将停止本托盘输入");
 
-                if (result == DialogResult.No) 
+                if (result == DialogResult.No)
                 {
                     if (saved != keyin)  //不再继续输入，但有未保存的
                     {
@@ -295,7 +295,7 @@ namespace GENLSYS.MES.WinPAD
             textBox.BackColor = Color.Cyan;
             toolTip.SetToolTip(this.txtQty, "请输入本托盘箱数");
             toolTip.Show("请输入本托盘箱数", txtQty, 2000);
-  
+
 
         }
 
@@ -395,8 +395,8 @@ namespace GENLSYS.MES.WinPAD
             if (typeBut.Checked)
             {
                 textType.Text = typeBut.Text;
-                  toolTip.SetToolTip(this.panelColor, "请输选择颜色");
-                  toolTip.Show("请输选择颜色", panelColor);
+                toolTip.SetToolTip(this.panelColor, "请输选择颜色");
+                toolTip.Show("请输选择颜色", panelColor);
             }
         }
 
@@ -436,13 +436,13 @@ namespace GENLSYS.MES.WinPAD
             {
                 UltraGridColumn ultraGridColumn = new Infragistics.Win.UltraWinGrid.UltraGridColumn(col.ToUpper());
                 ultraGridColumn.Header.VisiblePosition = i++;
-                       list.Add(ultraGridColumn);
-                       ultraGridColumn.Header.Appearance.TextHAlign = HAlign.Center;
-                       
+                list.Add(ultraGridColumn);
+                ultraGridColumn.Header.Appearance.TextHAlign = HAlign.Center;
+
             }
             ultraGridBand.Columns.AddRange(list.ToArray());
             grid.DisplayLayout.BandsSerializer.Add(ultraGridBand);
-           
+
         }
 
         public void SetQueryGridStyle(Infragistics.Win.UltraWinGrid.UltraGrid grid)
@@ -451,7 +451,7 @@ namespace GENLSYS.MES.WinPAD
             {
                 col.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             }
-           
+
             grid.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
 
             grid.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Extended;
@@ -469,14 +469,14 @@ namespace GENLSYS.MES.WinPAD
             grid.DisplayLayout.Appearance.BackColor = Color.White;
             grid.DisplayLayout.Override.CellAppearance.BorderColor = System.Drawing.Color.Silver;
             grid.DisplayLayout.Override.RowAppearance.BorderColor = System.Drawing.Color.Silver;
-           // grid.DisplayLayout.Appearance.FontData.SizeInPoints = 10;
+            // grid.DisplayLayout.Appearance.FontData.SizeInPoints = 10;
             grid.DisplayLayout.Bands[0].PerformAutoResizeColumns(true, PerformAutoSizeType.VisibleRows);
             grid.DisplayLayout.Override.HeaderClickAction = HeaderClickAction.SortMulti;
 
             //Grid cell can be copy to clipboard
             grid.DisplayLayout.Override.AllowMultiCellOperations = AllowMultiCellOperation.Copy;
             grid.PerformAction(UltraGridAction.Copy);
-         
+
 
         }
 
@@ -490,7 +490,7 @@ namespace GENLSYS.MES.WinPAD
             e.Layout.Override.CellClickAction = CellClickAction.RowSelect;
             //列名
             e.Layout.Bands[0].Columns["cartonNumber"].Header.Caption = "箱号";
-           
+
             // e.Layout.Bands[0].Columns["cartonNumber"].Layout.Override.DefaultColWidth = 60;
             e.Layout.Bands[0].Columns["qty"].Header.Caption = "开箱双数";
             e.Layout.Bands[0].Columns["qty2"].Header.Caption = "封箱双数";
@@ -506,7 +506,7 @@ namespace GENLSYS.MES.WinPAD
             e.Layout.Bands[1].Columns["qty2"].Header.Caption = "封箱双数";
             e.Layout.Appearance.FontData.SizeInPoints = 12;
             e.Layout.Appearance.TextVAlign = VAlign.Middle;
-          //  grid.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+            //  grid.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
             ConditionValueAppearance cva = new ConditionValueAppearance();
             OperatorCondition oc = new OperatorCondition(ConditionOperator.Contains, "未保存");
             Infragistics.Win.Appearance apce1 = new Infragistics.Win.Appearance("apce1");
@@ -521,7 +521,7 @@ namespace GENLSYS.MES.WinPAD
             apce2.ForeColor = Color.Red;
             apce2.BackColor = Color.Yellow;
             cva2.Add(oc2, apce2);
-            e.Layout.Bands[0].Columns["valid"].ValueBasedAppearance = cva2;       
+            e.Layout.Bands[0].Columns["valid"].ValueBasedAppearance = cva2;
 
         }
 
@@ -632,7 +632,7 @@ namespace GENLSYS.MES.WinPAD
             #region ini text box
             toolTip.SetToolTip(this.textBox1, "请输入托盘编号");
             toolTip.Show("请输入托盘编号", textBox1, 2000);
-      
+
             textBox1.Enabled = true;
             textBox1.Focus();
             txtQty.Enabled = true;
@@ -646,6 +646,9 @@ namespace GENLSYS.MES.WinPAD
             textPairQty.Text = "";
 
             txtQty.Text = "";
+            ////201306 George --begin
+            this.txtOpened.Text = "0";
+            ////201306 George --end
             #endregion
 
             #region clear grid
@@ -676,7 +679,7 @@ namespace GENLSYS.MES.WinPAD
             }
             toolTip.SetToolTip(textBox2, "请输入箱号");
             toolTip.Show("请输入箱号", textBox2, 1000);
-       
+
             textBox2.Enabled = true;
             textBox2.Focus();
             textBox2.Text = "";
@@ -694,7 +697,7 @@ namespace GENLSYS.MES.WinPAD
         {
             toolTip.SetToolTip(this.panelType, "请输选择款号");
             toolTip.Show("请输选择款号", panelType, 1000);
-             lineChecked = false;
+            lineChecked = false;
         }
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
@@ -715,7 +718,7 @@ namespace GENLSYS.MES.WinPAD
             textBox.BackColor = Color.White;
             textBox = textPairQty;
             textBox.BackColor = Color.Cyan;
-       
+
         }
 
         private void textPairQty_TextChanged(object sender, EventArgs e)
@@ -738,7 +741,7 @@ namespace GENLSYS.MES.WinPAD
 
         private void butSaveRow_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length == 0 ||  textType.Text.Length == 0 || textSize.Text.Length == 0 || textPairQty.Text.Length == 0 || textColor.Text.Length == 0)
+            if (textBox2.Text.Length == 0 || textType.Text.Length == 0 || textSize.Text.Length == 0 || textPairQty.Text.Length == 0 || textColor.Text.Length == 0)
             {
                 baseForm.CreateMessageBox(Public_MessageBox.Error, System.Windows.Forms.MessageBoxButtons.OK, "输入错误", "款号，颜色，尺码，数量必须输入");
             }
@@ -753,7 +756,7 @@ namespace GENLSYS.MES.WinPAD
                     cartonDt.Columns.Add(new DataColumn("qty", typeof(System.Int32)));
                     cartonDt.Columns.Add(new DataColumn("qty2", typeof(System.Int32)));
                     cartonDt.Columns.Add(new DataColumn("valid", typeof(System.Int32)));
-                    cartonDt.Columns.Add(new DataColumn("status", typeof(System.String)));                   
+                    cartonDt.Columns.Add(new DataColumn("status", typeof(System.String)));
 
                 }
 
@@ -769,26 +772,26 @@ namespace GENLSYS.MES.WinPAD
                     boxDt.Columns.Add(new DataColumn("qty2", typeof(System.Int32)));
                 }
                 #endregion
-         
-#region check befor save
-                #region 构造当前箱
-                 DataTable checkCarton = new DataTable("box");
-                 checkCarton.TableName = "box";
-                 checkCarton.Columns.Add(new DataColumn("cartonNumber", typeof(System.String)));
-                 checkCarton.Columns.Add(new DataColumn("type", typeof(System.String)));
-                 checkCarton.Columns.Add(new DataColumn("color", typeof(System.String)));
-                 checkCarton.Columns.Add(new DataColumn("size", typeof(System.String)));
-                 checkCarton.Columns.Add(new DataColumn("qty", typeof(System.Int32)));
-                 checkCarton.Columns.Add(new DataColumn("qty2", typeof(System.Int32)));
-                 checkCarton.Columns.Add(new DataColumn("poid", typeof(System.String)));
-                 checkCarton.Columns.Add(new DataColumn("customerid", typeof(System.String)));
 
-                 DataRow dr3 = checkCarton.NewRow();
+                #region check befor save
+                #region 构造当前箱
+                DataTable checkCarton = new DataTable("box");
+                checkCarton.TableName = "box";
+                checkCarton.Columns.Add(new DataColumn("cartonNumber", typeof(System.String)));
+                checkCarton.Columns.Add(new DataColumn("type", typeof(System.String)));
+                checkCarton.Columns.Add(new DataColumn("color", typeof(System.String)));
+                checkCarton.Columns.Add(new DataColumn("size", typeof(System.String)));
+                checkCarton.Columns.Add(new DataColumn("qty", typeof(System.Int32)));
+                checkCarton.Columns.Add(new DataColumn("qty2", typeof(System.Int32)));
+                checkCarton.Columns.Add(new DataColumn("poid", typeof(System.String)));
+                checkCarton.Columns.Add(new DataColumn("customerid", typeof(System.String)));
+
+                DataRow dr3 = checkCarton.NewRow();
                 dr3["cartonNumber"] = textBox2.Text;
                 dr3["type"] = textType.Text;
                 dr3["color"] = textColor.Text;
                 dr3["size"] = textSize.Text;
-                dr3["qty"] = int.Parse(textPairQty.Text);;
+                dr3["qty"] = int.Parse(textPairQty.Text); ;
                 dr3["qty2"] = int.Parse(textPairQty.Text);
                 dr3["poid"] = poID;
                 dr3["customerid"] = customerid;
@@ -797,43 +800,43 @@ namespace GENLSYS.MES.WinPAD
 
 
                 #endregion
-             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
-             try
-             {
-                 //check 条件
-                 string checkresult = client.PackBoxCheckGroup(checkCarton);
-                 if (checkresult != "OK")
-                 {
-                     //检查条件不通过
-                     baseForm.CreateMessageBox(Public_MessageBox.Error,
-                                                  MessageBoxButtons.OK,
-                                                   null, checkresult);
-                     return;
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MESMsgBox.ShowError(ExceptionParser.Parse(ex));
-             }
-             finally
-             {
-                baseForm.ResetCursor();
-                baseForm.CloseWCF(client);
-             }
+                wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
+                try
+                {
+                    //check 条件
+                    string checkresult = client.PackBoxCheckGroup(checkCarton);
+                    if (checkresult != "OK")
+                    {
+                        //检查条件不通过
+                        baseForm.CreateMessageBox(Public_MessageBox.Error,
+                                                     MessageBoxButtons.OK,
+                                                      null, checkresult);
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MESMsgBox.ShowError(ExceptionParser.Parse(ex));
+                }
+                finally
+                {
+                    baseForm.ResetCursor();
+                    baseForm.CloseWCF(client);
+                }
 
-#endregion 
+                #endregion
                 #region 获得开箱信息
-                int openQtyGroup=0;
+                int openQtyGroup = 0;
                 int openQtyBox = 0;
-                string cartonNumber = textBox2.Text ;
-                DataSet rs=  getOpenDetail(cartonNumber);
-                if (rs != null)  
+                string cartonNumber = textBox2.Text;
+                DataSet rs = getOpenDetail(cartonNumber);
+                if (rs != null)
                 {
                     var resultGroup1 = (from p in rs.Tables[0].AsEnumerable()
-                                   where   p.Field<string>("styleno") == textType.Text
-                                   && p.Field<string>("color") == textColor.Text
-                                   && p.Field<string>("size") == textSize.Text
-                                   select p).ToList();
+                                        where p.Field<string>("styleno") == textType.Text
+                                        && p.Field<string>("color") == textColor.Text
+                                        && p.Field<string>("size") == textSize.Text
+                                        select p).ToList();
                     if (resultGroup1.Count != 0)
                     {
                         DataRow currentGroup = resultGroup1[0];
@@ -841,21 +844,21 @@ namespace GENLSYS.MES.WinPAD
                     }
 
 
-                   var openQtyOfCarton = (from p in rs.Tables[0].AsEnumerable()
-                                       //   where p.Field<string>("styleno") == textType.Text
-                                      //  && p.Field<string>("color") == textColor.Text
-                                      //  && p.Field<string>("size") == textSize.Text
-                                          select p.Field<Decimal>("pairqty")).Sum();
+                    var openQtyOfCarton = (from p in rs.Tables[0].AsEnumerable()
+                                           //   where p.Field<string>("styleno") == textType.Text
+                                           //  && p.Field<string>("color") == textColor.Text
+                                           //  && p.Field<string>("size") == textSize.Text
+                                           select p.Field<Decimal>("pairqty")).Sum();
 
-                   if (openQtyOfCarton != 0)
-                   {
-                       openQtyBox = (int)openQtyOfCarton;
-                   }
+                    if (openQtyOfCarton != 0)
+                    {
+                        openQtyBox = (int)openQtyOfCarton;
+                    }
                 }
                 #endregion
-          
+
                 #region 封箱与开箱数量不符
-                
+
                 if (openQtyBox == 0)   //没有开箱  
                 {
                     baseForm.CreateMessageBox(Public_MessageBox.Error, System.Windows.Forms.MessageBoxButtons.OK,
@@ -871,8 +874,18 @@ namespace GENLSYS.MES.WinPAD
                         if (resultDlg == DialogResult.No)
                         {
                             return;  //放弃本次输入
-                        }
+                        }  ////201306 George --begin
+                        else
+                        {
+                            frmLineCheck frm = new frmLineCheck();
+                            DialogResult res = frm.ShowDialog();
+                            if (res == System.Windows.Forms.DialogResult.Cancel)
+                            {
+                                return;
+                            }
 
+                        }
+                        ////201306 George --end
                     }
                 }
                 #endregion
@@ -902,7 +915,7 @@ namespace GENLSYS.MES.WinPAD
                     dr["qty"] = openQtyBox;
                     dr["qty2"] = 0;
                     dr["valid"] = "";
-                  
+
                     dr["status"] = "未保存";
                     cartonDt.Rows.Add(dr);
                 }
@@ -919,9 +932,9 @@ namespace GENLSYS.MES.WinPAD
 
                 }
                 #endregion
-            
+
                 #region if group exists, update qty, else insert
-                  var resultGroup = (from p in boxDt.AsEnumerable()
+                var resultGroup = (from p in boxDt.AsEnumerable()
                                    where p.Field<string>("cartonNumber") == textBox2.Text
                                    && p.Field<string>("type") == textType.Text
                                    && p.Field<string>("color") == textColor.Text
@@ -972,7 +985,7 @@ namespace GENLSYS.MES.WinPAD
                 {
                     currentCarton["valid"] = "否";
                 }
-                 
+
                 #endregion
 
                 #region bind data
@@ -1029,7 +1042,7 @@ namespace GENLSYS.MES.WinPAD
             }
         }
 
-        private void checkLineWH( )
+        private void checkLineWH()
         {
             lineChecked = true;
             if (textBox2.Text.Trim().Length > 0)
@@ -1054,12 +1067,12 @@ namespace GENLSYS.MES.WinPAD
                         dr2["type"] = rs.Tables[0].Rows[i]["styleno"];
                         dr2["color"] = rs.Tables[0].Rows[i]["color"];
                         dr2["size"] = rs.Tables[0].Rows[i]["size"];
-                        
+
                         int pair1 = int.Parse(rs.Tables[0].Rows[i]["qty1"].ToString());
                         int pair2 = int.Parse(rs.Tables[0].Rows[i]["qty2"].ToString());
                         dr2["qty"] = pair1;
                         dr2["qty2"] = pair2;
-                     
+
                         cartonpair += pair1;
                         cartonpair2 += pair2;
                         boxDt.Rows.Add(dr2);
@@ -1068,15 +1081,15 @@ namespace GENLSYS.MES.WinPAD
                     dr["qty2"] = cartonpair2;
                 }
 
- 
-              
+
+
 
             }
             else
             {
                 textBox2.Focus();
             }
-          
+
         }
 
         #region delete shoes group
@@ -1121,11 +1134,11 @@ namespace GENLSYS.MES.WinPAD
                     {
 
                         cartonDt.Rows[i]["qty2"] = int.Parse((cartonDt.Rows[i]["qty2"]).ToString()) - removeQty;
-                        if (int.Parse((cartonDt.Rows[i]["qty"]).ToString()) !=  int.Parse((cartonDt.Rows[i]["qty2"]).ToString()))
+                        if (int.Parse((cartonDt.Rows[i]["qty"]).ToString()) != int.Parse((cartonDt.Rows[i]["qty2"]).ToString()))
                         {
                             cartonDt.Rows[i]["valid"] = "否";
                         }
-                       
+
                         cartonDt.Rows[i]["status"] = "未保存";
                         break;
                     }
@@ -1139,7 +1152,7 @@ namespace GENLSYS.MES.WinPAD
         #region delete carton  --修改
         private void butDelBox_Click(object sender, System.EventArgs e)
         {
-            if ( !(ultraGrid1.Rows.Count >0 && ultraGrid1.ActiveRow.Activated) )
+            if (!(ultraGrid1.Rows.Count > 0 && ultraGrid1.ActiveRow.Activated))
             {
                 return;
             }
@@ -1150,9 +1163,11 @@ namespace GENLSYS.MES.WinPAD
                 if (status == "已保存" || status == "已保存(暂存线上)")
                 {
                     baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "已经保存到数据库，不能删除");
-                }else{
-               // bool res = this.deleteCarton(carton);
-                
+                }
+                else
+                {
+                    // bool res = this.deleteCarton(carton);
+
                     var resultGroup = (from p in boxDt.AsEnumerable()
                                        where p.Field<string>("cartonNumber") == carton
                                        select p).ToList();
@@ -1167,7 +1182,7 @@ namespace GENLSYS.MES.WinPAD
                                     select p).ToList();
                     ds.Tables["carton"].Rows.Remove(boxGroup[0]);
                 }
-           
+
             }
 
         }
@@ -1179,6 +1194,45 @@ namespace GENLSYS.MES.WinPAD
                 return;
             }
             int cartonNo = int.Parse(textBox2.Text);
+            ////201306 George   --Begin
+            if (cartonDt.Rows.Count <= 0)
+            {
+
+                //    baseForm.CreateMessageBox(Public_MessageBox.Warning ,   MessageBoxButtons.OK,         null, "没有输入数据");
+                //    return ;
+                DialogResult result = baseForm.CreateMessageBox(Public_MessageBox.Question,
+                                                                 MessageBoxButtons.YesNo,
+                                                     null, "没有输入数据,你是否要装空箱?");
+
+                if (result == DialogResult.Yes)
+                {    //空箱装，但要输入密码验证
+                    frmLineCheck frm = new frmLineCheck();
+                    DialogResult res = frm.ShowDialog();
+                    if (res == System.Windows.Forms.DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        ////装空箱
+                        if (saveCarton(cartonNo + ""))
+                        {
+                            baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK,
+                                                       null, "保存成功！");
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                }
+                else
+                {   //空箱不装，返回
+                    return;
+                }
+
+            }
+            ////201306 George   --End
             String checkresult = "";
             #region check with original info
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
@@ -1201,14 +1255,14 @@ namespace GENLSYS.MES.WinPAD
                 checkresult = client.PackBoxCheckGroup(curentCarton);
                 if (checkresult == "OK")
                 {
-                   
+
                     List<string> status = (from p in cartonDt.AsEnumerable()
-                                  where p.Field<string>("cartonNumber") == cartonNo.ToString()
-                                  select p.Field<string>("valid")).ToList<string>();
+                                           where p.Field<string>("cartonNumber") == cartonNo.ToString()
+                                           select p.Field<string>("valid")).ToList<string>();
                     if (status[0] == "否")
                     {
                         #region 不满箱
-                        string[] butText ={"直接封箱","暂时保存"};
+                        string[] butText = { "直接封箱", "暂时保存" };
                         DialogResult result = baseForm.CreateMessageBox(Public_MessageBox.Question,
                                                                            MessageBoxButtons.YesNo,
                                                           null, "本箱不满箱，是否要封箱?", butText);
@@ -1222,6 +1276,7 @@ namespace GENLSYS.MES.WinPAD
                                 if (cartonDt.Rows[i]["cartonNumber"].ToString() == textBox2.Text)
                                 {
                                     cartonDt.Rows[i]["status"] = "已保存(暂存线上)";
+
                                     break;
                                 }
                             }
@@ -1230,13 +1285,13 @@ namespace GENLSYS.MES.WinPAD
                         }
                         else
                         {
-                             
-                          frmLineCheck frm = new frmLineCheck( );
-                          DialogResult res=    frm.ShowDialog();
-                          if (res == System.Windows.Forms.DialogResult.Cancel)
-                          {
-                              return; 
-                          }
+
+                            frmLineCheck frm = new frmLineCheck();
+                            DialogResult res = frm.ShowDialog();
+                            if (res == System.Windows.Forms.DialogResult.Cancel)
+                            {
+                                return;
+                            }
                             saveCarton(curentCarton);
                             #region 修改为已经保存
                             for (int i = 0; i < cartonDt.Rows.Count; i++)
@@ -1247,7 +1302,9 @@ namespace GENLSYS.MES.WinPAD
                                     break;
                                 }
                             }
-
+                            ////201306 George --begin
+                            this.txtOpened.Text = (int.Parse(txtOpened.Text) + 1) + "";
+                            ////201306 George --end
                         }
                             #endregion
                         #endregion
@@ -1265,10 +1322,13 @@ namespace GENLSYS.MES.WinPAD
                                 break;
                             }
                         }
+                        ////201306 George --begin
+                        this.txtOpened.Text = (int.Parse(txtOpened.Text) + 1) + "";
+                        ////201306 George --end
                         #endregion
                     }
 
-                    #endregion
+                        #endregion
                 }
                 else
                 {
@@ -1276,7 +1336,7 @@ namespace GENLSYS.MES.WinPAD
                                                  MessageBoxButtons.OK,
                                                   null, checkresult);
                 }
-         
+
             }
             catch (Exception ex)
             {
@@ -1291,7 +1351,7 @@ namespace GENLSYS.MES.WinPAD
         }
 
 
-       
+
         private void butView_Click(object sender, System.EventArgs e)
         {
             if (this.textBox2.Text.Trim().Length == 0)
@@ -1316,13 +1376,13 @@ namespace GENLSYS.MES.WinPAD
                 #region WIP 不够  2012/7/14
                 for (int i = 0; i < rs.Tables[0].Rows.Count; i++)
                 {
-                     string type = rs.Tables[0].Rows[i]["type"].ToString();
-                     string color = rs.Tables[0].Rows[i]["color"].ToString();
-                     string size = rs.Tables[0].Rows[i]["size"].ToString();
-                     string qty = rs.Tables[0].Rows[i]["qty"].ToString();
-                     int wip = getWIPQty(type, color, size);
+                    string type = rs.Tables[0].Rows[i]["type"].ToString();
+                    string color = rs.Tables[0].Rows[i]["color"].ToString();
+                    string size = rs.Tables[0].Rows[i]["size"].ToString();
+                    string qty = rs.Tables[0].Rows[i]["qty"].ToString();
+                    int wip = getWIPQty(type, color, size);
 
-                     if (wip < int.Parse(qty))
+                    if (wip < int.Parse(qty))
                     {
                         baseForm.CreateMessageBox(Public_MessageBox.Error, System.Windows.Forms.MessageBoxButtons.OK,
                                                        "提示信息", "线上没有这么多制品，你输入的数量不对");
@@ -1388,7 +1448,7 @@ namespace GENLSYS.MES.WinPAD
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
             {
-                client.PackBoxSaveCarton(curentCarton,trayID, baseForm.CurrentContextInfo);
+                client.PackBoxSaveCarton(curentCarton, trayID, baseForm.CurrentContextInfo);
             }
             catch (Exception ex)
             {
@@ -1401,13 +1461,42 @@ namespace GENLSYS.MES.WinPAD
             }
         }
 
+        //201306 George --Begin
+        //save dummy carton
+        private bool saveCarton(string curentCartonNumber)
+        {
+            wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
+            try
+            {
+                bool saved = client.PackBoxSaveDummyCarton(customerid, poID, curentCartonNumber, baseForm.CurrentContextInfo);
+                if (saved)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MESMsgBox.ShowError(ExceptionParser.Parse(ex));
+                return false;
+            }
+            finally
+            {
+                baseForm.ResetCursor();
+                baseForm.CloseWCF(client);
+            }
+        }
+        //201306 George --End
         private void updateCarton(DataTable curentCarton)
         {
             string trayID = textBox1.Text;
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
             {
-                client.OpenBoxUpdateCarton(curentCarton,trayID, baseForm.CurrentContextInfo, this.customerid, textBox2.Text, poID);
+                client.OpenBoxUpdateCarton(curentCarton, trayID, baseForm.CurrentContextInfo, this.customerid, textBox2.Text, poID);
             }
             catch (Exception ex)
             {
@@ -1480,11 +1569,11 @@ namespace GENLSYS.MES.WinPAD
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
             {
-                DataSet res = client.GetOpenBox(this.customerid, this.poID, carton,"Pack",currStep, baseForm.CurrentContextInfo);
+                DataSet res = client.GetOpenBox(this.customerid, this.poID, carton, "Pack", currStep, baseForm.CurrentContextInfo);
 
                 if (res.Tables[0].Rows.Count > 0)
                 {
-                   // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
+                    // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
                     return res;
                 }
                 else
@@ -1516,7 +1605,7 @@ namespace GENLSYS.MES.WinPAD
 
                 if (res.Tables[0].Rows.Count > 0)
                 {
-                   // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
+                    // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
                     return res;
                 }
                 else
@@ -1542,7 +1631,7 @@ namespace GENLSYS.MES.WinPAD
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
             {
-                DataSet res = client.getLineWarehouse(this.customerid, this.poID, carton,baseForm.CurrentContextInfo.WorkGroup, baseForm.CurrentContextInfo);
+                DataSet res = client.getLineWarehouse(this.customerid, this.poID, carton, baseForm.CurrentContextInfo.WorkGroup, baseForm.CurrentContextInfo);
 
                 if (res.Tables[0].Rows.Count > 0)
                 {
@@ -1570,7 +1659,7 @@ namespace GENLSYS.MES.WinPAD
 
             try
             {
-                wip = client.getWIPByPO(customerid, poID, style, color, size, baseForm.CurrentContextInfo.WorkGroup, "Pack", currStep , baseForm.CurrentContextInfo);
+                wip = client.getWIPByPO(customerid, poID, style, color, size, baseForm.CurrentContextInfo.WorkGroup, "Pack", currStep, baseForm.CurrentContextInfo);
                 return wip;
             }
             catch (Exception ex)
@@ -1592,4 +1681,3 @@ namespace GENLSYS.MES.WinPAD
     }
 
 }
- 

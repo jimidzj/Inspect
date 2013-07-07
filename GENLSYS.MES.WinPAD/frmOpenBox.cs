@@ -1,5 +1,4 @@
-﻿//test git jame test pull
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -628,6 +627,9 @@ namespace GENLSYS.MES.WinPAD
             textPairQty.Text = "";
 
             txtQty.Text = "";
+            ////201306 George --begin
+            this.txtOpened.Text = "0";
+            ////201306 George --end
             #endregion
 
             #region clear grid
@@ -791,7 +793,7 @@ namespace GENLSYS.MES.WinPAD
                         return;
                     }
                     ////////////////////////////////////////////
-                    
+
                 }
                 #endregion
                 #region if group exists, update qty, else insert
@@ -910,8 +912,8 @@ namespace GENLSYS.MES.WinPAD
                 int removeQty = int.Parse(this.ultraGrid1.ActiveRow.Cells["qty"].Text);
                 //如已经保存到数据库，就不允许删除
                 var resultCarton = (from p in cartonDt.AsEnumerable()
-                                   where p.Field<string>("cartonNumber") == carton                                  
-                                   select p).ToList();
+                                    where p.Field<string>("cartonNumber") == carton
+                                    select p).ToList();
                 string status = resultCarton[0]["status"].ToString();
                 if (status == "已保存")
                 {
@@ -1306,7 +1308,7 @@ namespace GENLSYS.MES.WinPAD
 
                 if (res.Tables[0].Rows.Count > 0)
                 {
-                   // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
+                    // baseForm.CreateMessageBox(Public_MessageBox.Information, System.Windows.Forms.MessageBoxButtons.OK, "信息", "本箱套装，可按‘保存本箱’直接保存");
                     return res;
                 }
                 else
