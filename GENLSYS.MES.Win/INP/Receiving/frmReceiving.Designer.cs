@@ -655,9 +655,9 @@
             this.grdCartonDetail.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.grdCartonDetail.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.grdCartonDetail.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grdCartonDetail.Location = new System.Drawing.Point(616, 164);
+            this.grdCartonDetail.Location = new System.Drawing.Point(347, 164);
             this.grdCartonDetail.Name = "grdCartonDetail";
-            this.grdCartonDetail.Size = new System.Drawing.Size(281, 261);
+            this.grdCartonDetail.Size = new System.Drawing.Size(550, 261);
             this.grdCartonDetail.TabIndex = 39;
             this.grdCartonDetail.Tag = "rsid:|rsid:Label.R01025|rsid:Label.R01026|rsid:Label.R01061|rsid:Label.R01027|rsi" +
                 "d:Label.R01028|rsid:Label.R02026|rsid:Label.R01065|rsid:Label.R02050|rsid:Label." +
@@ -726,7 +726,7 @@
             this.grdDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdDetail.Location = new System.Drawing.Point(0, 164);
             this.grdDetail.Name = "grdDetail";
-            this.grdDetail.Size = new System.Drawing.Size(616, 261);
+            this.grdDetail.Size = new System.Drawing.Size(347, 261);
             this.grdDetail.TabIndex = 40;
             this.grdDetail.Tag = resources.GetString("grdDetail.Tag");
             this.grdDetail.Text = "ultraGrid1";

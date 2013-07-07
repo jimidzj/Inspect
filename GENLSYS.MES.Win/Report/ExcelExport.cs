@@ -131,7 +131,7 @@ namespace GENLSYS.MES.Win.Report
                     {
                         string shoeCategory = iqcq.ElementAt(0)["category"].ToString();
                         Double bootHeight = Convert.ToDouble(iqcq.ElementAt(0)["bootheight"]);
-                        setCellValue(row, 6, shoeCategory);
+                        setCellValue(row, 6, GetShoeCategory(shoeCategory, lang));
 
                         var pricingq = from p in pricingDt.AsEnumerable()
                                          where p["category"].ToString().Equals(shoeCategory)
@@ -234,7 +234,7 @@ namespace GENLSYS.MES.Win.Report
                     {
                         string shoeCategory = iqcq.ElementAt(0)["category"].ToString();
                         Double bootHeight = Convert.ToDouble(iqcq.ElementAt(0)["bootheight"]);
-                        setCellValue(row, 6, shoeCategory);
+                        setCellValue(row, 6, GetShoeCategory(shoeCategory,lang));
 
                         var pricingq = from p in pricingDt.AsEnumerable()
                                        where p["category"].ToString().Equals(shoeCategory)
@@ -2175,6 +2175,23 @@ namespace GENLSYS.MES.Win.Report
                 baseForm.CloseWCF(client);
             }
             return dt;
+        }
+
+        private string GetShoeCategory(string ShoeCategory, string lang)
+        {
+            string result=ShoeCategory;
+            if (!lang.Equals("ZH"))
+            {
+                List<tsysstaticvalue> lstStaticValue = GENLSYS.MES.Common.Parameter.CURRENT_STATIC_VALUE as List<tsysstaticvalue>;
+                var langq = from p in lstStaticValue
+                            where p.svvalue.Equals(ShoeCategory)
+                            select p;
+                if (langq.Count() > 0)
+                {
+                    result = langq.ElementAt(0).svresourceid.Equals("") ? ShoeCategory : langq.ElementAt(0).svresourceid;
+                }
+            }
+            return result;
         }
     }
 }

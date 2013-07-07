@@ -85,10 +85,11 @@ namespace GENLSYS.MES.Win.INP.Receiving
             baseForm.SetQueryGridStyle(this.grdQuery);
             DropDown.InitCMB_Customer_All(this.cboCustomer);
 
-
-            GetData(new List<MESParameterInfo>() {
+            QueryParameters = new List<MESParameterInfo>() {
                 new MESParameterInfo(){ParamName="recsysid",ParamValue=MES_DummyData.Dummy_Data_XXX_111.ToString()}
-            });
+            };
+
+            GetData(QueryParameters);
 
             this.grdQuery.DisplayLayout.Bands[0].Columns["recsysid"].Hidden = true;
             this.pQuery.BackColor = Color.FromName("Info");
@@ -109,7 +110,8 @@ namespace GENLSYS.MES.Win.INP.Receiving
         private void btnQuery_Click(object sender, EventArgs e)
         {
             List<MESParameterInfo> lstParameters = new List<MESParameterInfo>() { };
-            baseForm.BuildQueryParameters(lstParameters, this.pQuery); ;
+            baseForm.BuildQueryParameters(lstParameters, this.pQuery);
+            QueryParameters = lstParameters;
             GetData(lstParameters);
         }
 
