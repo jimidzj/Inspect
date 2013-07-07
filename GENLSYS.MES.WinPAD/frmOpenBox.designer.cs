@@ -41,7 +41,7 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
+            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand2 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -1080,7 +1080,7 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.ChildBands.AddRange(new object[] {
-            ultraDataBand1});
+            ultraDataBand2});
             // 
             // frmOpenBox
             // 
