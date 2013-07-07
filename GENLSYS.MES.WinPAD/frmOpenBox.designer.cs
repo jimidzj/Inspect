@@ -385,7 +385,6 @@
             this.butDelBox.Text = "删除箱";
             this.butDelBox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.butDelBox.UseVisualStyleBackColor = true;
-            this.butDelBox.Visible = false;
             this.butDelBox.Click += new System.EventHandler(this.butDelBox_Click);
             // 
             // txtQty
