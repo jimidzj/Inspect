@@ -125,9 +125,7 @@ namespace GENLSYS.MES.WinPAD
                 }
                 else
                 {
-                    Parameter.ApplicationExitFlag = true;
-                    System.Environment.Exit(0);
-                    //Application.Exit();
+                    ShutDown.DoExitWin(ShutDown.EWX_SHUTDOWN);
                 }
 
 

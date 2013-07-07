@@ -10,9 +10,26 @@
           <EntitySet Name="tinpiqc" EntityType="MES.Store.tinpiqc" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinpiqcfail" EntityType="MES.Store.tinpiqcfail" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinpiqcreturn" EntityType="MES.Store.tinpiqcreturn" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tinpLineWarehouse" EntityType="MES.Store.tinpLineWarehouse" store:Type="Tables" store:Schema="dbo" store:Name="tinpLineWarehouse">
+            <DefiningQuery>SELECT 
+      [tinpLineWarehouse].[customerid] AS [customerid], 
+      [tinpLineWarehouse].[custorderno] AS [custorderno], 
+      [tinpLineWarehouse].[cartonNumber] AS [cartonNumber], 
+      [tinpLineWarehouse].[styleno] AS [styleno], 
+      [tinpLineWarehouse].[color] AS [color], 
+      [tinpLineWarehouse].[size] AS [size], 
+      [tinpLineWarehouse].[pairqty] AS [pairqty], 
+      [tinpLineWarehouse].[step] AS [step], 
+      [tinpLineWarehouse].[workgroup] AS [workgroup], 
+      [tinpLineWarehouse].[checktype] AS [checktype], 
+      [tinpLineWarehouse].[lastmodifiedtime] AS [lastmodifiedtime], 
+      [tinpLineWarehouse].[lastmodifieduser] AS [lastmodifieduser]
+      FROM [dbo].[tinpLineWarehouse] AS [tinpLineWarehouse]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="tinpotherpricing" EntityType="MES.Store.tinpotherpricing" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinppackingrec" EntityType="MES.Store.tinppackingrec" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinppackingrecdtl" EntityType="MES.Store.tinppackingrecdtl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tinppackingrecretrieve" EntityType="MES.Store.tinppackingrecretrieve" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinppricing" EntityType="MES.Store.tinppricing" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinppricingdtl" EntityType="MES.Store.tinppricingdtl" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tinppricingdtldef" EntityType="MES.Store.tinppricingdtldef" store:Type="Tables" Schema="dbo" />
@@ -205,6 +222,34 @@
           <Property Name="cartonno" Type="varchar" Nullable="false" MaxLength="64" />
           <Property Name="pairqty" Type="numeric" Precision="10" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'mesdb.dbo.tinpLineWarehouse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tinpLineWarehouse">
+          <Key>
+            <PropertyRef Name="customerid" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="cartonNumber" />
+            <PropertyRef Name="styleno" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="pairqty" />
+            <PropertyRef Name="step" />
+            <PropertyRef Name="workgroup" />
+          </Key>
+          <Property Name="customerid" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="custorderno" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="cartonNumber" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="styleno" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="color" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="size" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="pairqty" Type="numeric" Nullable="false" Precision="10" />
+          <Property Name="step" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="workgroup" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="checktype" Type="varchar" MaxLength="64" />
+          <Property Name="lastmodifiedtime" Type="datetime" />
+          <Property Name="lastmodifieduser" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="tinpotherpricing">
           <Key>
             <PropertyRef Name="oprisysid" />
@@ -258,6 +303,20 @@
           <Property Name="custorderno" Type="varchar" Nullable="false" MaxLength="64" />
           <Property Name="pktype" Type="varchar" Nullable="false" MaxLength="64" />
           <Property Name="customerid" Type="varchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="tinppackingrecretrieve">
+          <Key>
+            <PropertyRef Name="retrievesysid" />
+          </Key>
+          <Property Name="retrievesysid" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="pksysid" Type="nvarchar" MaxLength="64" />
+          <Property Name="cartonno" Type="nvarchar" MaxLength="64" />
+          <Property Name="custorderno" Type="nvarchar" MaxLength="64" />
+          <Property Name="styleno" Type="nvarchar" MaxLength="64" />
+          <Property Name="color" Type="nvarchar" MaxLength="64" />
+          <Property Name="size" Type="nvarchar" MaxLength="64" />
+          <Property Name="step" Type="nvarchar" MaxLength="64" />
+          <Property Name="pairqty" Type="numeric" Precision="10" />
         </EntityType>
         <EntityType Name="tinppricing">
           <Key>
@@ -431,7 +490,7 @@
           <Property Name="itemname" Type="nvarchar" Nullable="false" MaxLength="64" />
           <Property Name="currency" Type="nvarchar" MaxLength="64" />
           <Property Name="unit" Type="nvarchar" MaxLength="64" />
-          <Property Name="price" Type="numeric" />
+          <Property Name="price" Type="numeric" Scale="2" />
           <Property Name="qty" Type="numeric" />
         </EntityType>
         <EntityType Name="tinpreturn">
@@ -1292,27 +1351,17 @@
           <EntitySet Name="tinpiqc" EntityType="MES.tinpiqc" />
           <EntitySet Name="tinpiqcfail" EntityType="MES.tinpiqcfail" />
           <EntitySet Name="tinpiqcreturn" EntityType="MES.tinpiqcreturn" />
-          <EntitySet Name="tinppackingrec" EntityType="MES.tinppackingrec" />
-          <EntitySet Name="tinppackingrecdtl" EntityType="MES.tinppackingrecdtl" />
-          <EntitySet Name="tinppricing" EntityType="MES.tinppricing" />
-          <EntitySet Name="tinppricingdtl" EntityType="MES.tinppricingdtl" />
-          <EntitySet Name="tinppricingdtldef" EntityType="MES.tinppricingdtldef" />
-          <EntitySet Name="tinpreceiving" EntityType="MES.tinpreceiving" />
-          <EntitySet Name="tinpreceivingctndtl" EntityType="MES.tinpreceivingctndtl" />
           <EntitySet Name="tinpreceivingdtl" EntityType="MES.tinpreceivingdtl" />
           <EntitySet Name="tinprepairfail" EntityType="MES.tinprepairfail" />
           <EntitySet Name="tinprepairhis" EntityType="MES.tinprepairhis" />
-          <EntitySet Name="tinprepairstock" EntityType="MES.tinprepairstock" />
           <EntitySet Name="tinpreturn" EntityType="MES.tinpreturn" />
           <EntitySet Name="tinpreturndtl" EntityType="MES.tinpreturndtl" />
           <EntitySet Name="tinpreworkhis" EntityType="MES.tinpreworkhis" />
           <EntitySet Name="tinpschedule" EntityType="MES.tinpschedule" />
           <EntitySet Name="tinpshipping" EntityType="MES.tinpshipping" />
           <EntitySet Name="tinpshippingdtl" EntityType="MES.tinpshippingdtl" />
-          <EntitySet Name="tinpshippingdtlctn" EntityType="MES.tinpshippingdtlctn" />
           <EntitySet Name="tinpsupplement" EntityType="MES.tinpsupplement" />
           <EntitySet Name="tinpsupplementdtl" EntityType="MES.tinpsupplementdtl" />
-          <EntitySet Name="tinpwip" EntityType="MES.tinpwip" />
           <EntitySet Name="tinpworkorder" EntityType="MES.tinpworkorder" />
           <EntitySet Name="tinpworkorderdtl" EntityType="MES.tinpworkorderdtl" />
           <EntitySet Name="tmdlcontact" EntityType="MES.tmdlcontact" />
@@ -1371,26 +1420,6 @@
           <AssociationSet Name="fk_tinpiqcf_reference_tmdlreas" Association="MES.fk_tinpiqcf_reference_tmdlreas">
             <End Role="tmdlreasoncode" EntitySet="tmdlreasoncode" />
             <End Role="tinpiqcfail" EntitySet="tinpiqcfail" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tinpunpa_reference_tinppack" Association="MES.fk_tinpunpa_reference_tinppack">
-            <End Role="tinppackingrec" EntitySet="tinppackingrec" />
-            <End Role="tinppackingrecdtl" EntitySet="tinppackingrecdtl" />
-          </AssociationSet>
-          <AssociationSet Name="fk_prcdtl_reference_prc" Association="MES.fk_prcdtl_reference_prc">
-            <End Role="tinppricing" EntitySet="tinppricing" />
-            <End Role="tinppricingdtl" EntitySet="tinppricingdtl" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tinppric_reference_tmdlcust" Association="MES.fk_tinppric_reference_tmdlcust">
-            <End Role="tmdlcustomer" EntitySet="tmdlcustomer" />
-            <End Role="tinppricing" EntitySet="tinppricing" />
-          </AssociationSet>
-          <AssociationSet Name="fk_prcdef_reference_prcdtl" Association="MES.fk_prcdef_reference_prcdtl">
-            <End Role="tinppricingdtl" EntitySet="tinppricingdtl" />
-            <End Role="tinppricingdtldef" EntitySet="tinppricingdtldef" />
-          </AssociationSet>
-          <AssociationSet Name="fk_recdtl_reference_recdtlctn" Association="MES.fk_recdtl_reference_recdtlctn">
-            <End Role="tinpreceivingdtl" EntitySet="tinpreceivingdtl" />
-            <End Role="tinpreceivingctndtl" EntitySet="tinpreceivingctndtl" />
           </AssociationSet>
           <AssociationSet Name="fk_tinprepa_reference_tmdlreas" Association="MES.fk_tinprepa_reference_tmdlreas">
             <End Role="tmdlreasoncode" EntitySet="tmdlreasoncode" />
@@ -1484,17 +1513,27 @@
             <End Role="tsysdaemontask" EntitySet="tsysdaemontask" />
             <End Role="tsysdaemonschedule" EntitySet="tsysdaemonschedule" />
           </AssociationSet>
-          <EntitySet Name="tinppackingrecretrieve" EntityType="MES.tinppackingrecretrieve" />
           <AssociationSet Name="fk_tsyssess_r130_tsecuser" Association="MES.fk_tsyssess_r130_tsecuser">
             <End Role="tsecuser" EntitySet="tsecuser" />
             <End Role="tsyssession" EntitySet="tsyssession" />
           </AssociationSet>
-          <EntitySet Name="tinplinewarehouseSet" EntityType="MES.tinplinewarehouse" />
           <EntitySet Name="tinpshippingplan" EntityType="MES.tinpshippingplan" />
           <EntitySet Name="tmdlexchange" EntityType="MES.tmdlexchange" />
           <EntitySet Name="tinpotherpricing" EntityType="MES.tinpotherpricing" />
           <EntitySet Name="tinprequestpay" EntityType="MES.tinprequestpay" />
           <EntitySet Name="tinprequestpaydtl" EntityType="MES.tinprequestpaydtl" />
+          <EntitySet Name="tinppackingrecretrieveSet" EntityType="MES.tinppackingrecretrieve" />
+          <EntitySet Name="tinplinewarehouseSet" EntityType="MES.tinplinewarehouse" />
+          <EntitySet Name="tinppackingrec" EntityType="MES.tinppackingrec" />
+          <EntitySet Name="tinppackingrecdtl" EntityType="MES.tinppackingrecdtl" />
+          <EntitySet Name="tinpreceiving" EntityType="MES.tinpreceiving" />
+          <EntitySet Name="tinpreceivingctndtl" EntityType="MES.tinpreceivingctndtl" />
+          <EntitySet Name="tinprepairstock" EntityType="MES.tinprepairstock" />
+          <EntitySet Name="tinpwip" EntityType="MES.tinpwip" />
+          <EntitySet Name="tinpshippingdtlctn" EntityType="MES.tinpshippingdtlctn" />
+          <EntitySet Name="tinppricing" EntityType="MES.tinppricing" />
+          <EntitySet Name="tinppricingdtl" EntityType="MES.tinppricingdtl" />
+          <EntitySet Name="tinppricingdtldef" EntityType="MES.tinppricingdtldef" />
         </EntityContainer>
         <EntityType Name="tinpcustorderhistory">
           <Key>
@@ -1568,130 +1607,6 @@
           <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
           <NavigationProperty Name="tinpiqc" Relationship="MES.fk_tinpiqcr_reference_tinpiqc" FromRole="tinpiqcreturn" ToRole="tinpiqc" />
         </EntityType>
-        <EntityType Name="tinppackingrec">
-          <Key>
-            <PropertyRef Name="pksysid" />
-          </Key>
-          <Property Type="String" Name="pksysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="workgroup" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pktype" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="actiondate" />
-          <Property Type="String" Name="factory" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="userid" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="ttlqty" Precision="10" Scale="0" />
-          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinppackingrecdtl" Relationship="MES.fk_tinpunpa_reference_tinppack" FromRole="tinppackingrec" ToRole="tinppackingrecdtl" />
-          <Property Type="String" Name="customerid" MaxLength="64" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tinppackingrecdtl">
-          <Key>
-            <PropertyRef Name="pksysid" />
-            <PropertyRef Name="cartonno" />
-            <PropertyRef Name="styleno" />
-            <PropertyRef Name="color" />
-            <PropertyRef Name="size" />
-            <PropertyRef Name="pktype" />
-            <PropertyRef Name="custorderno" />
-          </Key>
-          <Property Type="String" Name="pksysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cartonno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="styleno" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="String" Name="color" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="String" Name="size" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="confirmqty" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="difference" Precision="10" Scale="0" />
-          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="isshipped" MaxLength="64" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tinppackingrec" Relationship="MES.fk_tinpunpa_reference_tinppack" FromRole="tinppackingrecdtl" ToRole="tinppackingrec" />
-          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Type="String" Name="pktype" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Type="String" Name="customerid" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tinppricing">
-          <Key>
-            <PropertyRef Name="prisysid" />
-          </Key>
-          <Property Type="String" Name="prisysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="reworkratio" Precision="10" Scale="2" />
-          <Property Type="String" Name="remark" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="lastmodifiedtime" />
-          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinppricingdtl" Relationship="MES.fk_prcdtl_reference_prc" FromRole="tinppricing" ToRole="tinppricingdtl" />
-          <NavigationProperty Name="tmdlcustomer" Relationship="MES.fk_tinppric_reference_tmdlcust" FromRole="tinppricing" ToRole="tmdlcustomer" />
-        </EntityType>
-        <EntityType Name="tinppricingdtl">
-          <Key>
-            <PropertyRef Name="pridtlsysid" />
-          </Key>
-          <Property Type="String" Name="pridtlsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="prisysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="reworkratio" Precision="10" Scale="2" />
-          <Property Type="String" Name="remark" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="lastmodifiedtime" />
-          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinppricing" Relationship="MES.fk_prcdtl_reference_prc" FromRole="tinppricingdtl" ToRole="tinppricing" />
-          <NavigationProperty Name="tinppricingdtldef" Relationship="MES.fk_prcdef_reference_prcdtl" FromRole="tinppricingdtl" ToRole="tinppricingdtldef" />
-          <Property Type="Decimal" Name="sbootheight" Nullable="false" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="ebootheight" Nullable="false" Precision="10" Scale="2" />
-          <Property Type="String" Name="category" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="reworkprice" Precision="10" Scale="2" />
-        </EntityType>
-        <EntityType Name="tinppricingdtldef">
-          <Key>
-            <PropertyRef Name="pridtldefsysid" />
-          </Key>
-          <Property Type="String" Name="pridtldefsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="pridtlsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="effectivedate" Nullable="false" />
-          <Property Type="DateTime" Name="expireddate" />
-          <Property Type="String" Name="currency" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="6" />
-          <Property Type="String" Name="unit" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="remark" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinppricingdtl" Relationship="MES.fk_prcdef_reference_prcdtl" FromRole="tinppricingdtldef" ToRole="tinppricingdtl" />
-        </EntityType>
-        <EntityType Name="tinpreceiving">
-          <Key>
-            <PropertyRef Name="recsysid" />
-          </Key>
-          <Property Type="String" Name="recsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="recno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="deliverydate" />
-          <Property Type="String" Name="weather" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="receivedate" />
-          <Property Type="String" Name="receiver" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="lastmodifiedtime" />
-          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="factory" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tinpreceivingctndtl">
-          <Key>
-            <PropertyRef Name="recsysid" />
-            <PropertyRef Name="reclineno" />
-            <PropertyRef Name="cartonno" />
-          </Key>
-          <Property Type="String" Name="recsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="reclineno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cartonno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="styleno" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="color" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="size" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
-          <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cartonstatus" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cartonlocation" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ismixed" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinpreceivingdtl" Relationship="MES.fk_recdtl_reference_recdtlctn" FromRole="tinpreceivingctndtl" ToRole="tinpreceivingdtl" />
-          <Property Type="String" Name="customerid" Nullable="false" />
-        </EntityType>
         <EntityType Name="tinpreceivingdtl">
           <Key>
             <PropertyRef Name="recsysid" />
@@ -1712,7 +1627,6 @@
           <Property Type="String" Name="linetype" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="linereason" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tinpreceivingctndtl" Relationship="MES.fk_recdtl_reference_recdtlctn" FromRole="tinpreceivingdtl" ToRole="tinpreceivingctndtl" />
         </EntityType>
         <EntityType Name="tinprepairfail">
           <Key>
@@ -1746,31 +1660,6 @@
           <Property Type="String" Name="isfirst" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="jointtype" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="signature" MaxLength="64" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tinprepairstock">
-          <Key>
-            <PropertyRef Name="custorderno" />
-            <PropertyRef Name="styleno" />
-            <PropertyRef Name="color" />
-            <PropertyRef Name="size" />
-            <PropertyRef Name="workgroup" />
-            <PropertyRef Name="step" />
-            <PropertyRef Name="customerid" />
-            <PropertyRef Name="checktype" />
-          </Key>
-          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="ttlpairgoodqty" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="ttlbadqty" Precision="10" Scale="0" />
-          <Property Type="Decimal" Name="curpairqty" Precision="10" Scale="0" />
-          <Property Type="DateTime" Name="lastupdatetime" />
-          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="workgroup" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="String" Name="step" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="checktype" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tinpreturn">
           <Key>
@@ -1876,18 +1765,6 @@
           <Property Type="String" Name="shippingplanno" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="tinpshippingdtlctn">
-          <Key>
-            <PropertyRef Name="shippingsysid" />
-            <PropertyRef Name="custorderno" />
-            <PropertyRef Name="customerid" />
-          </Key>
-          <Property Type="String" Name="shippingsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="cartonno" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
-          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="tinpsupplement">
           <Key>
             <PropertyRef Name="suplsysid" />
@@ -1920,26 +1797,6 @@
           <Property Type="String" Name="isreinspect" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="customerid" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tinpwip">
-          <Key>
-            <PropertyRef Name="custorderno" />
-            <PropertyRef Name="styleno" />
-            <PropertyRef Name="color" />
-            <PropertyRef Name="size" />
-            <PropertyRef Name="status" />
-            <PropertyRef Name="workgroup" />
-            <PropertyRef Name="customerid" />
-          </Key>
-          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="Decimal" Name="pairqty" Nullable="false" Precision="10" Scale="0" />
-          <Property Type="String" Name="status" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="workgroup" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tinpworkorder">
           <Key>
@@ -2026,7 +1883,6 @@
           <Property Type="String" Name="lastmodifieduser" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="lastmodifiedtime" Nullable="false" />
           <NavigationProperty Name="tinpiqc" Relationship="MES.fk_tinpiqc_reference_tmdlcust" FromRole="tmdlcustomer" ToRole="tinpiqc" />
-          <NavigationProperty Name="tinppricing" Relationship="MES.fk_tinppric_reference_tmdlcust" FromRole="tmdlcustomer" ToRole="tinppricing" />
           <NavigationProperty Name="tinpreturn" Relationship="MES.fk_tinpretu_reference_tmdlcust" FromRole="tmdlcustomer" ToRole="tinpreturn" />
           <NavigationProperty Name="tinpschedule" Relationship="MES.fk_tinpsche_reference_tmdlcust" FromRole="tmdlcustomer" ToRole="tinpschedule" />
           <NavigationProperty Name="tinpworkorder" Relationship="MES.fk_tinpwork_reference_tmdlcust" FromRole="tmdlcustomer" ToRole="tinpworkorder" />
@@ -2557,68 +2413,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_tinpunpa_reference_tinppack">
-          <End Type="MES.tinppackingrec" Role="tinppackingrec" Multiplicity="1" />
-          <End Type="MES.tinppackingrecdtl" Role="tinppackingrecdtl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tinppackingrec">
-              <PropertyRef Name="pksysid" />
-            </Principal>
-            <Dependent Role="tinppackingrecdtl">
-              <PropertyRef Name="pksysid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_prcdtl_reference_prc">
-          <End Type="MES.tinppricing" Role="tinppricing" Multiplicity="1" />
-          <End Type="MES.tinppricingdtl" Role="tinppricingdtl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tinppricing">
-              <PropertyRef Name="prisysid" />
-            </Principal>
-            <Dependent Role="tinppricingdtl">
-              <PropertyRef Name="prisysid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_tinppric_reference_tmdlcust">
-          <End Type="MES.tmdlcustomer" Role="tmdlcustomer" Multiplicity="1" />
-          <End Type="MES.tinppricing" Role="tinppricing" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tmdlcustomer">
-              <PropertyRef Name="customerid" />
-            </Principal>
-            <Dependent Role="tinppricing">
-              <PropertyRef Name="customerid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_prcdef_reference_prcdtl">
-          <End Type="MES.tinppricingdtl" Role="tinppricingdtl" Multiplicity="1" />
-          <End Type="MES.tinppricingdtldef" Role="tinppricingdtldef" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tinppricingdtl">
-              <PropertyRef Name="pridtlsysid" />
-            </Principal>
-            <Dependent Role="tinppricingdtldef">
-              <PropertyRef Name="pridtlsysid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_recdtl_reference_recdtlctn">
-          <End Type="MES.tinpreceivingdtl" Role="tinpreceivingdtl" Multiplicity="1" />
-          <End Type="MES.tinpreceivingctndtl" Role="tinpreceivingctndtl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tinpreceivingdtl">
-              <PropertyRef Name="recsysid" />
-              <PropertyRef Name="reclineno" />
-            </Principal>
-            <Dependent Role="tinpreceivingctndtl">
-              <PropertyRef Name="recsysid" />
-              <PropertyRef Name="reclineno" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_tinprepa_reference_tmdlreas">
           <End Type="MES.tmdlreasoncode" Role="tmdlreasoncode" Multiplicity="1" />
           <End Type="MES.tinprepairfail" Role="tinprepairfail" Multiplicity="*" />
@@ -2895,20 +2689,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tinppackingrecretrieve">
-          <Key>
-            <PropertyRef Name="retrievesysid" />
-          </Key>
-          <Property Type="String" Name="retrievesysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="pksysid" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="cartonno" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="styleno" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="color" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="size" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="step" MaxLength="64" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
-        </EntityType>
         <Association Name="fk_tsyssess_r130_tsecuser">
           <End Type="MES.tsecuser" Role="tsecuser" Multiplicity="0..1" />
           <End Type="MES.tsyssession" Role="tsyssession" Multiplicity="*" />
@@ -2921,23 +2701,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="tinplinewarehouse">
-          <Key>
-            <PropertyRef Name="customerid" />
-          </Key>
-          <Property Type="String" Name="customerid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="custorderno" Nullable="false" />
-          <Property Type="String" Name="cartonNumber" Nullable="false" />
-          <Property Type="String" Name="styleno" Nullable="false" />
-          <Property Type="String" Name="color" Nullable="false" />
-          <Property Type="String" Name="size" Nullable="false" />
-          <Property Type="Decimal" Name="pairqty" Nullable="false" />
-          <Property Type="String" Name="step" Nullable="false" />
-          <Property Type="String" Name="workgroup" Nullable="false" />
-          <Property Type="String" Name="checktype" Nullable="false" />
-          <Property Type="DateTime" Name="lastmodifiedtime" Nullable="false" />
-          <Property Type="String" Name="lastmodifieduser" Nullable="false" />
-        </EntityType>
         <EntityType Name="tinpshippingplan">
           <Key>
             <PropertyRef Name="shippingplanno" />
@@ -3004,6 +2767,220 @@
           <Property Type="String" Name="unit" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="price" Precision="18" Scale="2" />
           <Property Type="Decimal" Name="qty" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="tinppackingrecretrieve">
+          <Key>
+            <PropertyRef Name="retrievesysid" />
+          </Key>
+          <Property Type="String" Name="retrievesysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pksysid" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cartonno" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="styleno" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="color" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="size" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="step" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="tinplinewarehouse">
+          <Key>
+            <PropertyRef Name="customerid" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="cartonNumber" />
+            <PropertyRef Name="styleno" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="pairqty" />
+            <PropertyRef Name="step" />
+            <PropertyRef Name="workgroup" />
+          </Key>
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonNumber" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pairqty" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="step" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="workgroup" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="lastmodifiedtime" />
+          <Property Type="String" Name="lastmodifieduser" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinppackingrec">
+          <Key>
+            <PropertyRef Name="pksysid" />
+          </Key>
+          <Property Type="String" Name="pksysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="workgroup" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pktype" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="actiondate" />
+          <Property Type="String" Name="factory" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="userid" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ttlqty" Precision="10" Scale="0" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinppackingrecdtl">
+          <Key>
+            <PropertyRef Name="cartonno" />
+            <PropertyRef Name="styleno" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="pktype" />
+            <PropertyRef Name="customerid" />
+          </Key>
+          <Property Type="String" Name="pksysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="confirmqty" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="difference" Precision="10" Scale="0" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="isshipped" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pktype" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinpreceiving">
+          <Key>
+            <PropertyRef Name="recsysid" />
+          </Key>
+          <Property Type="String" Name="recsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="recno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="deliverydate" />
+          <Property Type="String" Name="weather" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="receivedate" />
+          <Property Type="String" Name="receiver" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="lastmodifiedtime" />
+          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="factory" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinpreceivingctndtl">
+          <Key>
+            <PropertyRef Name="recsysid" />
+            <PropertyRef Name="reclineno" />
+            <PropertyRef Name="cartonno" />
+          </Key>
+          <Property Type="String" Name="recsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="reclineno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="styleno" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="size" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
+          <Property Type="String" Name="checktype" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonstatus" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonlocation" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ismixed" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinprepairstock">
+          <Key>
+            <PropertyRef Name="customerid" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="styleno" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="checktype" />
+            <PropertyRef Name="workgroup" />
+            <PropertyRef Name="step" />
+          </Key>
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="checktype" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ttlpairgoodqty" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="ttlbadqty" Precision="10" Scale="0" />
+          <Property Type="Decimal" Name="curpairqty" Precision="10" Scale="0" />
+          <Property Type="DateTime" Name="lastupdatetime" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="workgroup" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="step" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinpwip">
+          <Key>
+            <PropertyRef Name="customerid" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="styleno" />
+            <PropertyRef Name="color" />
+            <PropertyRef Name="size" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="workgroup" />
+            <PropertyRef Name="checktype" />
+          </Key>
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="styleno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="size" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pairqty" Nullable="false" Precision="10" Scale="0" />
+          <Property Type="String" Name="status" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="workgroup" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="checktype" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinpshippingdtlctn">
+          <Key>
+            <PropertyRef Name="shippingsysid" />
+            <PropertyRef Name="customerid" />
+            <PropertyRef Name="custorderno" />
+            <PropertyRef Name="cartonno" />
+          </Key>
+          <Property Type="String" Name="shippingsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="custorderno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="cartonno" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="pairqty" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="tinppricing">
+          <Key>
+            <PropertyRef Name="prisysid" />
+          </Key>
+          <Property Type="String" Name="prisysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="customerid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="reworkratio" Precision="10" Scale="2" />
+          <Property Type="String" Name="remark" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="lastmodifiedtime" />
+          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinppricingdtl">
+          <Key>
+            <PropertyRef Name="pridtlsysid" />
+          </Key>
+          <Property Type="String" Name="pridtlsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="prisysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="checktype" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="reworkratio" Precision="10" Scale="2" />
+          <Property Type="String" Name="remark" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="lastmodifiedtime" />
+          <Property Type="String" Name="lastmodifieduser" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="sbootheight" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="ebootheight" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="reworkprice" Precision="18" Scale="2" />
+          <Property Type="String" Name="category" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tinppricingdtldef">
+          <Key>
+            <PropertyRef Name="pridtldefsysid" />
+          </Key>
+          <Property Type="String" Name="pridtldefsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pridtlsysid" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="effectivedate" Nullable="false" />
+          <Property Type="DateTime" Name="expireddate" />
+          <Property Type="String" Name="currency" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="String" Name="unit" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="remark" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3076,115 +3053,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tinppackingrec">
-            <EntityTypeMapping TypeName="MES.tinppackingrec">
-              <MappingFragment StoreEntitySet="tinppackingrec">
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="ttlqty" ColumnName="ttlqty" />
-                <ScalarProperty Name="userid" ColumnName="userid" />
-                <ScalarProperty Name="factory" ColumnName="factory" />
-                <ScalarProperty Name="actiondate" ColumnName="actiondate" />
-                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
-                <ScalarProperty Name="pktype" ColumnName="pktype" />
-                <ScalarProperty Name="workgroup" ColumnName="workgroup" />
-                <ScalarProperty Name="pksysid" ColumnName="pksysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinppackingrecdtl">
-            <EntityTypeMapping TypeName="MES.tinppackingrecdtl">
-              <MappingFragment StoreEntitySet="tinppackingrecdtl">
-                <ScalarProperty Name="isshipped" ColumnName="isshipped" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="difference" ColumnName="difference" />
-                <ScalarProperty Name="confirmqty" ColumnName="confirmqty" />
-                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
-                <ScalarProperty Name="size" ColumnName="size" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
-                <ScalarProperty Name="pksysid" ColumnName="pksysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinppricing">
-            <EntityTypeMapping TypeName="MES.tinppricing">
-              <MappingFragment StoreEntitySet="tinppricing">
-                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
-                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="reworkratio" ColumnName="reworkratio" />
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="prisysid" ColumnName="prisysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinppricingdtl">
-            <EntityTypeMapping TypeName="MES.tinppricingdtl">
-              <MappingFragment StoreEntitySet="tinppricingdtl">
-                <ScalarProperty Name="reworkprice" ColumnName="reworkprice" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="ebootheight" ColumnName="ebootheight" />
-                <ScalarProperty Name="sbootheight" ColumnName="sbootheight" />
-                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
-                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="reworkratio" ColumnName="reworkratio" />
-                <ScalarProperty Name="checktype" ColumnName="checktype" />
-                <ScalarProperty Name="prisysid" ColumnName="prisysid" />
-                <ScalarProperty Name="pridtlsysid" ColumnName="pridtlsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinppricingdtldef">
-            <EntityTypeMapping TypeName="MES.tinppricingdtldef">
-              <MappingFragment StoreEntitySet="tinppricingdtldef">
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="unit" ColumnName="unit" />
-                <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="currency" ColumnName="currency" />
-                <ScalarProperty Name="expireddate" ColumnName="expireddate" />
-                <ScalarProperty Name="effectivedate" ColumnName="effectivedate" />
-                <ScalarProperty Name="pridtlsysid" ColumnName="pridtlsysid" />
-                <ScalarProperty Name="pridtldefsysid" ColumnName="pridtldefsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinpreceiving">
-            <EntityTypeMapping TypeName="MES.tinpreceiving">
-              <MappingFragment StoreEntitySet="tinpreceiving">
-                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
-                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="receiver" ColumnName="receiver" />
-                <ScalarProperty Name="receivedate" ColumnName="receivedate" />
-                <ScalarProperty Name="weather" ColumnName="weather" />
-                <ScalarProperty Name="deliverydate" ColumnName="deliverydate" />
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="recno" ColumnName="recno" />
-                <ScalarProperty Name="recsysid" ColumnName="recsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinpreceivingctndtl">
-            <EntityTypeMapping TypeName="MES.tinpreceivingctndtl">
-              <MappingFragment StoreEntitySet="tinpreceivingctndtl">
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="ismixed" ColumnName="ismixed" />
-                <ScalarProperty Name="cartonlocation" ColumnName="cartonlocation" />
-                <ScalarProperty Name="cartonstatus" ColumnName="cartonstatus" />
-                <ScalarProperty Name="checktype" ColumnName="checktype" />
-                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
-                <ScalarProperty Name="size" ColumnName="size" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="styleno" ColumnName="styleno" />
-                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
-                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
-                <ScalarProperty Name="reclineno" ColumnName="reclineno" />
-                <ScalarProperty Name="recsysid" ColumnName="recsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tinpreceivingdtl">
             <EntityTypeMapping TypeName="MES.tinpreceivingdtl">
               <MappingFragment StoreEntitySet="tinpreceivingdtl">
@@ -3235,23 +3103,6 @@
                 <ScalarProperty Name="custorderno" ColumnName="custorderno" />
                 <ScalarProperty Name="workgroup" ColumnName="workgroup" />
                 <ScalarProperty Name="repsysid" ColumnName="repsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinprepairstock">
-            <EntityTypeMapping TypeName="MES.tinprepairstock">
-              <MappingFragment StoreEntitySet="tinprepairstock">
-                <ScalarProperty Name="checktype" ColumnName="checktype" />
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
-                <ScalarProperty Name="curpairqty" ColumnName="curpairqty" />
-                <ScalarProperty Name="ttlbadqty" ColumnName="ttlbadqty" />
-                <ScalarProperty Name="ttlpairgoodqty" ColumnName="ttlpairgoodqty" />
-                <ScalarProperty Name="size" ColumnName="size" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="styleno" ColumnName="styleno" />
-                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3356,17 +3207,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tinpshippingdtlctn">
-            <EntityTypeMapping TypeName="MES.tinpshippingdtlctn">
-              <MappingFragment StoreEntitySet="tinpshippingdtlctn">
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
-                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
-                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
-                <ScalarProperty Name="shippingsysid" ColumnName="shippingsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tinpsupplement">
             <EntityTypeMapping TypeName="MES.tinpsupplement">
               <MappingFragment StoreEntitySet="tinpsupplement">
@@ -3399,20 +3239,6 @@
                 <ScalarProperty Name="custorderno" ColumnName="custorderno" />
                 <ScalarProperty Name="suplsysid" ColumnName="suplsysid" />
                 <ScalarProperty Name="supldtlsysid" ColumnName="supldtlsysid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tinpwip">
-            <EntityTypeMapping TypeName="MES.tinpwip">
-              <MappingFragment StoreEntitySet="tinpwip">
-                <ScalarProperty Name="checktype" ColumnName="checktype" />
-                <ScalarProperty Name="customerid" ColumnName="customerid" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
-                <ScalarProperty Name="size" ColumnName="size" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="styleno" ColumnName="styleno" />
-                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -4009,6 +3835,199 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tinppackingrecretrieveSet">
+            <EntityTypeMapping TypeName="MES.tinppackingrecretrieve">
+              <MappingFragment StoreEntitySet="tinppackingrecretrieve">
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
+                <ScalarProperty Name="pksysid" ColumnName="pksysid" />
+                <ScalarProperty Name="retrievesysid" ColumnName="retrievesysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinplinewarehouseSet">
+            <EntityTypeMapping TypeName="MES.tinplinewarehouse">
+              <MappingFragment StoreEntitySet="tinpLineWarehouse">
+                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
+                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
+                <ScalarProperty Name="checktype" ColumnName="checktype" />
+                <ScalarProperty Name="workgroup" ColumnName="workgroup" />
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="cartonNumber" ColumnName="cartonNumber" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinppackingrec">
+            <EntityTypeMapping TypeName="MES.tinppackingrec">
+              <MappingFragment StoreEntitySet="tinppackingrec">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="ttlqty" ColumnName="ttlqty" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="factory" ColumnName="factory" />
+                <ScalarProperty Name="actiondate" ColumnName="actiondate" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="pktype" ColumnName="pktype" />
+                <ScalarProperty Name="workgroup" ColumnName="workgroup" />
+                <ScalarProperty Name="pksysid" ColumnName="pksysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinppackingrecdtl">
+            <EntityTypeMapping TypeName="MES.tinppackingrecdtl">
+              <MappingFragment StoreEntitySet="tinppackingrecdtl">
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="pktype" ColumnName="pktype" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="isshipped" ColumnName="isshipped" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="difference" ColumnName="difference" />
+                <ScalarProperty Name="confirmqty" ColumnName="confirmqty" />
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
+                <ScalarProperty Name="pksysid" ColumnName="pksysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinpreceiving">
+            <EntityTypeMapping TypeName="MES.tinpreceiving">
+              <MappingFragment StoreEntitySet="tinpreceiving">
+                <ScalarProperty Name="factory" ColumnName="factory" />
+                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
+                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="receiver" ColumnName="receiver" />
+                <ScalarProperty Name="receivedate" ColumnName="receivedate" />
+                <ScalarProperty Name="weather" ColumnName="weather" />
+                <ScalarProperty Name="deliverydate" ColumnName="deliverydate" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="recno" ColumnName="recno" />
+                <ScalarProperty Name="recsysid" ColumnName="recsysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinpreceivingctndtl">
+            <EntityTypeMapping TypeName="MES.tinpreceivingctndtl">
+              <MappingFragment StoreEntitySet="tinpreceivingctndtl">
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="ismixed" ColumnName="ismixed" />
+                <ScalarProperty Name="cartonlocation" ColumnName="cartonlocation" />
+                <ScalarProperty Name="cartonstatus" ColumnName="cartonstatus" />
+                <ScalarProperty Name="checktype" ColumnName="checktype" />
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
+                <ScalarProperty Name="reclineno" ColumnName="reclineno" />
+                <ScalarProperty Name="recsysid" ColumnName="recsysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinprepairstock">
+            <EntityTypeMapping TypeName="MES.tinprepairstock">
+              <MappingFragment StoreEntitySet="tinprepairstock">
+                <ScalarProperty Name="step" ColumnName="step" />
+                <ScalarProperty Name="workgroup" ColumnName="workgroup" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="lastupdatetime" ColumnName="lastupdatetime" />
+                <ScalarProperty Name="curpairqty" ColumnName="curpairqty" />
+                <ScalarProperty Name="ttlbadqty" ColumnName="ttlbadqty" />
+                <ScalarProperty Name="ttlpairgoodqty" ColumnName="ttlpairgoodqty" />
+                <ScalarProperty Name="checktype" ColumnName="checktype" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinpwip">
+            <EntityTypeMapping TypeName="MES.tinpwip">
+              <MappingFragment StoreEntitySet="tinpwip">
+                <ScalarProperty Name="checktype" ColumnName="checktype" />
+                <ScalarProperty Name="workgroup" ColumnName="workgroup" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="styleno" ColumnName="styleno" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinpshippingdtlctn">
+            <EntityTypeMapping TypeName="MES.tinpshippingdtlctn">
+              <MappingFragment StoreEntitySet="tinpshippingdtlctn">
+                <ScalarProperty Name="pairqty" ColumnName="pairqty" />
+                <ScalarProperty Name="cartonno" ColumnName="cartonno" />
+                <ScalarProperty Name="custorderno" ColumnName="custorderno" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="shippingsysid" ColumnName="shippingsysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinppricing">
+            <EntityTypeMapping TypeName="MES.tinppricing">
+              <MappingFragment StoreEntitySet="tinppricing">
+                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
+                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="reworkratio" ColumnName="reworkratio" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="prisysid" ColumnName="prisysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinppricingdtl">
+            <EntityTypeMapping TypeName="MES.tinppricingdtl">
+              <MappingFragment StoreEntitySet="tinppricingdtl">
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="reworkprice" ColumnName="reworkprice" />
+                <ScalarProperty Name="ebootheight" ColumnName="ebootheight" />
+                <ScalarProperty Name="sbootheight" ColumnName="sbootheight" />
+                <ScalarProperty Name="lastmodifieduser" ColumnName="lastmodifieduser" />
+                <ScalarProperty Name="lastmodifiedtime" ColumnName="lastmodifiedtime" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="reworkratio" ColumnName="reworkratio" />
+                <ScalarProperty Name="checktype" ColumnName="checktype" />
+                <ScalarProperty Name="prisysid" ColumnName="prisysid" />
+                <ScalarProperty Name="pridtlsysid" ColumnName="pridtlsysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tinppricingdtldef">
+            <EntityTypeMapping TypeName="MES.tinppricingdtldef">
+              <MappingFragment StoreEntitySet="tinppricingdtldef">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="expireddate" ColumnName="expireddate" />
+                <ScalarProperty Name="effectivedate" ColumnName="effectivedate" />
+                <ScalarProperty Name="pridtlsysid" ColumnName="pridtlsysid" />
+                <ScalarProperty Name="pridtldefsysid" ColumnName="pridtldefsysid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -4029,32 +4048,22 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="MES" ZoomLevel="78" DisplayType="true">
+      <Diagram Name="MES" ZoomLevel="86" DisplayType="true">
         <EntityTypeShape EntityType="MES.tinpcustorderhistory" Width="1.5" PointX="17" PointY="14" Height="4.1515104166666674" />
         <EntityTypeShape EntityType="MES.tinpiqc" Width="1.5" PointX="3" PointY="4" Height="4.1515104166666674" />
         <EntityTypeShape EntityType="MES.tinpiqcfail" Width="1.5" PointX="5.25" PointY="5.125" Height="1.7908333333333246" />
         <EntityTypeShape EntityType="MES.tinpiqcreturn" Width="1.5" PointX="5.25" PointY="7.625" Height="1.790833333333353" />
-        <EntityTypeShape EntityType="MES.tinppackingrec" Width="1.5" PointX="19.75" PointY="16.5" Height="2.925131022135421" />
-        <EntityTypeShape EntityType="MES.tinppackingrecdtl" Width="2.125" PointX="22" PointY="16.875" Height="3.6892097981770853" />
-        <EntityTypeShape EntityType="MES.tinppricing" Width="1.5" PointX="3" PointY="11" Height="2.2966927083333246" />
-        <EntityTypeShape EntityType="MES.tinppricingdtl" Width="1.5" PointX="5.25" PointY="10.875" Height="3.4981901041666674" />
-        <EntityTypeShape EntityType="MES.tinppricingdtldef" Width="1.5" PointX="7.5" PointY="10.875" Height="2.4653124999999818" />
-        <EntityTypeShape EntityType="MES.tinpreceiving" Width="1.5" PointX="7.75" PointY="14.625" Height="3.1161507161458353" />
-        <EntityTypeShape EntityType="MES.tinpreceivingctndtl" Width="2.75" PointX="22" PointY="12.125" Height="3.8802294921874996" />
         <EntityTypeShape EntityType="MES.tinpreceivingdtl" Width="1.5" PointX="19.75" PointY="11.875" Height="4.0956022135416656" />
         <EntityTypeShape EntityType="MES.tinprepairfail" Width="1.5" PointX="5.25" PointY="29" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="MES.tinprepairhis" Width="2.125" PointX="17" PointY="19.625" Height="3.6892097981770853" />
-        <EntityTypeShape EntityType="MES.tinprepairstock" Width="1.5" PointX="9.75" PointY="15.625" Height="3.1161507161458353" />
         <EntityTypeShape EntityType="MES.tinpreturn" Width="1.5" PointX="3" PointY="14.25" Height="2.6339322916666674" />
         <EntityTypeShape EntityType="MES.tinpreturndtl" Width="1.5" PointX="5.25" PointY="14.375" Height="2.7341113281250031" />
         <EntityTypeShape EntityType="MES.tinpreworkhis" Width="1.5" PointX="16.875" PointY="24.25" Height="3.3071704101562531" />
         <EntityTypeShape EntityType="MES.tinpschedule" Width="1.5" PointX="3" PointY="17.625" Height="2.6339322916666674" />
         <EntityTypeShape EntityType="MES.tinpshipping" Width="1.5" PointX="12.75" PointY="20.625" Height="3.4770312499999818" />
         <EntityTypeShape EntityType="MES.tinpshippingdtl" Width="1.5" PointX="19.75" PointY="20.625" Height="2.6339322916666674" />
-        <EntityTypeShape EntityType="MES.tinpshippingdtlctn" Width="1.5" PointX="11.75" PointY="9.625" Height="1.6222135416666674" />
         <EntityTypeShape EntityType="MES.tinpsupplement" Width="1.75" PointX="7.75" PointY="23.625" Height="3.1161507161458353" />
         <EntityTypeShape EntityType="MES.tinpsupplementdtl" Width="1.75" PointX="9.75" PointY="23.625" Height="2.9251310221354174" />
-        <EntityTypeShape EntityType="MES.tinpwip" Width="1.75" PointX="21.75" PointY="20.625" Height="2.7341113281250031" />
         <EntityTypeShape EntityType="MES.tinpworkorder" Width="1.5" PointX="3" PointY="21.125" Height="2.9711718749999818" />
         <EntityTypeShape EntityType="MES.tinpworkorderdtl" Width="1.5" PointX="5.25" PointY="21" Height="3.1397916666666106" />
         <EntityTypeShape EntityType="MES.tmdlcontact" Width="1.5" PointX="3" PointY="24.875" Height="3.1397916666666106" />
@@ -4113,37 +4122,20 @@
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpiqcr_reference_tinpiqc" >
           <ConnectorPoint PointX="4.5" PointY="8.23016398111979" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="8.23016398111979" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="8.23016398111979" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="8.23016398111979" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="8.23016398111979" />
           <ConnectorPoint PointX="5.25" PointY="8.23016398111979" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpiqcf_reference_tmdlreas" >
-          <ConnectorPoint PointX="4.5" PointY="29.501152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="29.126152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="6.4744728731501109" />
-          <ConnectorPoint PointX="5.25" PointY="6.4744728731501109" />
-        </AssociationConnector>
-        <AssociationConnector Association="MES.fk_tinpunpa_reference_tinppack" >
-          <ConnectorPoint PointX="21.25" PointY="18.245575358072919" />
-          <ConnectorPoint PointX="22" PointY="18.245575358072919" />
-        </AssociationConnector>
-        <AssociationConnector Association="MES.fk_prcdtl_reference_prc" >
-          <ConnectorPoint PointX="4.5" PointY="12.271545817057291" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.271545817057291" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.271545817057291" />
-          <ConnectorPoint PointX="5.25" PointY="12.271545817057291" />
-        </AssociationConnector>
-        <AssociationConnector Association="MES.fk_tinppric_reference_tmdlcust" >
-          <ConnectorPoint PointX="2.25" PointY="12.585846354166662" />
-          <ConnectorPoint PointX="3" PointY="12.585846354166662" />
-        </AssociationConnector>
-        <AssociationConnector Association="MES.fk_prcdef_reference_prcdtl" >
-          <ConnectorPoint PointX="6.75" PointY="12.2420556640625" />
-          <ConnectorPoint PointX="7.5" PointY="12.2420556640625" />
-        </AssociationConnector>
-        <AssociationConnector Association="MES.fk_recdtl_reference_recdtlctn" >
-          <ConnectorPoint PointX="21.25" PointY="14.035624593098959" />
-          <ConnectorPoint PointX="22" PointY="14.035624593098959" />
+          <ConnectorPoint PointX="3.75" PointY="29.5" />
+          <ConnectorPoint PointX="3.75" PointY="28.623190104166667" />
+          <ConnectorPoint PointX="4.75" PointY="28.623190104166667" />
+          <ConnectorPoint PointX="4.75" PointY="13.161052246093732" />
+          <ConnectorPoint PointX="5.125" PointY="13.161052246093732" />
+          <ConnectorPoint PointX="5.125" PointY="9.8450325520833317" />
+          <ConnectorPoint PointX="4.75" PointY="9.8450325520833317" />
+          <ConnectorPoint PointX="4.75" PointY="6.474368995023065" />
+          <ConnectorPoint PointX="5.25" PointY="6.474368995023065" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinprepa_reference_tmdlreas" >
           <ConnectorPoint PointX="4.5" PointY="30.266845199118585" />
@@ -4158,8 +4150,8 @@
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpretu_reference_tinpretu" >
           <ConnectorPoint PointX="4.5" PointY="15.870575358072918" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="15.870575358072918" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="15.870575358072918" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="15.870575358072918" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="15.870575358072918" />
           <ConnectorPoint PointX="5.25" PointY="15.870575358072918" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpretu_reference_tmdlcust" >
@@ -4179,8 +4171,8 @@
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpwork_reference_tinpwork" >
           <ConnectorPoint PointX="4.5" PointY="22.778585205078123" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="22.778585205078123" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="22.778585205078123" />
+          <ConnectorPoint PointX="4.666666666666667" PointY="22.778585205078123" />
+          <ConnectorPoint PointX="4.833333333333333" PointY="22.778585205078123" />
           <ConnectorPoint PointX="5.25" PointY="22.778585205078123" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tinpwork_reference_tmdlcust" >
@@ -4213,10 +4205,10 @@
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tsecrole_r47_tsecfunc" >
           <ConnectorPoint PointX="13.90625" PointY="15.375" />
-          <ConnectorPoint PointX="13.90625" PointY="9.1096175130208348" />
-          <ConnectorPoint PointX="14.666666666666666" PointY="9.1096175130208348" />
-          <ConnectorPoint PointX="14.833333333333334" PointY="9.1096175130208348" />
-          <ConnectorPoint PointX="15" PointY="9.1096175130208348" />
+          <ConnectorPoint PointX="13.90625" PointY="9.1654575170898376" />
+          <ConnectorPoint PointX="14.666666666666666" PointY="9.1654575170898376" />
+          <ConnectorPoint PointX="14.833333333333334" PointY="9.1654575170898376" />
+          <ConnectorPoint PointX="15" PointY="9.1654575170898376" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tsecrole_r185_tsecrole" >
           <ConnectorPoint PointX="11.25" PointY="7.8329166666666765" />
@@ -4247,8 +4239,8 @@
           <ConnectorPoint PointX="15" PointY="4.4731245930989578" />
         </AssociationConnector>
         <AssociationConnector Association="MES.fk_tsyssess_r131_tsecuser" >
-          <ConnectorPoint PointX="14.25" PointY="3.1740620465494791" />
-          <ConnectorPoint PointX="14.75" PointY="3.1740620465494791" />
+          <ConnectorPoint PointX="14.25" PointY="3.1428095465494854" />
+          <ConnectorPoint PointX="14.75" PointY="3.1428095465494854" />
           <ConnectorPoint PointX="14.75" PointY="11.75" />
           <ConnectorPoint PointX="16.5" PointY="11.75" />
           <ConnectorPoint PointX="16.5" PointY="27" />
@@ -4267,18 +4259,28 @@
           <ConnectorPoint PointX="19.25" PointY="4.1076562499999909" />
           <ConnectorPoint PointX="20" PointY="4.1076562499999909" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="MES.tinppackingrecretrieve" Width="2.875" PointX="5.375" PointY="0.75" Height="2.7341113281249818" />
         <AssociationConnector Association="MES.fk_tsyssess_r130_tsecuser" >
           <ConnectorPoint PointX="14.25" PointY="1.8749995" />
           <ConnectorPoint PointX="25.5" PointY="1.8749995" />
           <ConnectorPoint PointX="25.5" PointY="2.625" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="MES.tinplinewarehouse" Width="1.5" PointX="6.8298028292273187" PointY="31.306997283970471" />
         <EntityTypeShape EntityType="MES.tinpshippingplan" Width="1.5" PointX="25.375" PointY="13.75" Height="3.3071704101562318" />
         <EntityTypeShape EntityType="MES.tmdlexchange" Width="1.5" PointX="0.75" PointY="0.75" Height="2.3520719401041674" />
         <EntityTypeShape EntityType="MES.tinpotherpricing" Width="1.5" PointX="26.375" PointY="18.75" Height="2.9251310221354174" />
         <EntityTypeShape EntityType="MES.tinprequestpay" Width="1.5" PointX="19.375" PointY="26.75" Height="1.5879931640624818" />
         <EntityTypeShape EntityType="MES.tinprequestpaydtl" Width="1.5" PointX="26.375" PointY="22.75" Height="2.1610522460937318" />
+        <EntityTypeShape EntityType="MES.tinppackingrecretrieve" Width="1.5" PointX="26.375" PointY="25.75" Height="2.7341113281249818" />
+        <EntityTypeShape EntityType="MES.tinplinewarehouse" Width="2.75" PointX="5.375" PointY="0.75" Height="3.3071704101562318" />
+        <EntityTypeShape EntityType="MES.tinppackingrec" Width="1.5" PointX="27.375" PointY="0.75" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="MES.tinppackingrecdtl" Width="1.5" PointX="27.375" PointY="4.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="MES.tinpreceiving" Width="1.5" PointX="7.375" PointY="27.75" Height="3.1161507161458246" />
+        <EntityTypeShape EntityType="MES.tinpreceivingctndtl" Width="1.5" PointX="22.375" PointY="13.75" Height="3.6892097981770746" />
+        <EntityTypeShape EntityType="MES.tinprepairstock" Width="1.5" PointX="7.375" PointY="14.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="MES.tinpwip" Width="1.5" PointX="9.375" PointY="15.75" Height="2.7341113281249818" />
+        <EntityTypeShape EntityType="MES.tinpshippingdtlctn" Width="1.5" PointX="19.375" PointY="16.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="MES.tinppricing" Width="1.5" PointX="3.375" PointY="10.75" Height="2.1610522460937318" />
+        <EntityTypeShape EntityType="MES.tinppricingdtl" Width="1.5" PointX="27.375" PointY="9.75" Height="3.1161507161458246" />
+        <EntityTypeShape EntityType="MES.tinppricingdtldef" Width="1.5" PointX="5.375" PointY="10.75" Height="2.5430916341145746" />
       </Diagram>
     </Diagrams>
   </Designer>

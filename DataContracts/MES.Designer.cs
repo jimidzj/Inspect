@@ -24,11 +24,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("MES", "fk_tinpiqcf_reference_tinpiqc", "tinpiqc", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinpiqc), "tinpiqcfail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinpiqcfail), true)]
 [assembly: EdmRelationshipAttribute("MES", "fk_tinpiqcr_reference_tinpiqc", "tinpiqc", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinpiqc), "tinpiqcreturn", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinpiqcreturn), true)]
 [assembly: EdmRelationshipAttribute("MES", "fk_tinpiqcf_reference_tmdlreas", "tmdlreasoncode", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tmdlreasoncode), "tinpiqcfail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinpiqcfail), true)]
-[assembly: EdmRelationshipAttribute("MES", "fk_tinpunpa_reference_tinppack", "tinppackingrec", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinppackingrec), "tinppackingrecdtl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinppackingrecdtl), true)]
-[assembly: EdmRelationshipAttribute("MES", "fk_prcdtl_reference_prc", "tinppricing", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinppricing), "tinppricingdtl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinppricingdtl), true)]
-[assembly: EdmRelationshipAttribute("MES", "fk_tinppric_reference_tmdlcust", "tmdlcustomer", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tmdlcustomer), "tinppricing", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinppricing), true)]
-[assembly: EdmRelationshipAttribute("MES", "fk_prcdef_reference_prcdtl", "tinppricingdtl", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinppricingdtl), "tinppricingdtldef", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinppricingdtldef), true)]
-[assembly: EdmRelationshipAttribute("MES", "fk_recdtl_reference_recdtlctn", "tinpreceivingdtl", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinpreceivingdtl), "tinpreceivingctndtl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinpreceivingctndtl), true)]
 [assembly: EdmRelationshipAttribute("MES", "fk_tinprepa_reference_tmdlreas", "tmdlreasoncode", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tmdlreasoncode), "tinprepairfail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinprepairfail), true)]
 [assembly: EdmRelationshipAttribute("MES", "fk_tinprepa_reference_tmdlwork", "tmdlworkgroup", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(GENLSYS.MES.DataContracts.tmdlworkgroup), "tinprepairhis", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinprepairhis), true)]
 [assembly: EdmRelationshipAttribute("MES", "fk_tinpretu_reference_tinpretu", "tinpreturn", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(GENLSYS.MES.DataContracts.tinpreturn), "tinpreturndtl", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(GENLSYS.MES.DataContracts.tinpreturndtl), true)]
@@ -171,118 +166,6 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tinppackingrec> tinppackingrec
-        {
-            get
-            {
-                if ((_tinppackingrec == null))
-                {
-                    _tinppackingrec = base.CreateObjectSet<tinppackingrec>("tinppackingrec");
-                }
-                return _tinppackingrec;
-            }
-        }
-        private ObjectSet<tinppackingrec> _tinppackingrec;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinppackingrecdtl> tinppackingrecdtl
-        {
-            get
-            {
-                if ((_tinppackingrecdtl == null))
-                {
-                    _tinppackingrecdtl = base.CreateObjectSet<tinppackingrecdtl>("tinppackingrecdtl");
-                }
-                return _tinppackingrecdtl;
-            }
-        }
-        private ObjectSet<tinppackingrecdtl> _tinppackingrecdtl;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinppricing> tinppricing
-        {
-            get
-            {
-                if ((_tinppricing == null))
-                {
-                    _tinppricing = base.CreateObjectSet<tinppricing>("tinppricing");
-                }
-                return _tinppricing;
-            }
-        }
-        private ObjectSet<tinppricing> _tinppricing;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinppricingdtl> tinppricingdtl
-        {
-            get
-            {
-                if ((_tinppricingdtl == null))
-                {
-                    _tinppricingdtl = base.CreateObjectSet<tinppricingdtl>("tinppricingdtl");
-                }
-                return _tinppricingdtl;
-            }
-        }
-        private ObjectSet<tinppricingdtl> _tinppricingdtl;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinppricingdtldef> tinppricingdtldef
-        {
-            get
-            {
-                if ((_tinppricingdtldef == null))
-                {
-                    _tinppricingdtldef = base.CreateObjectSet<tinppricingdtldef>("tinppricingdtldef");
-                }
-                return _tinppricingdtldef;
-            }
-        }
-        private ObjectSet<tinppricingdtldef> _tinppricingdtldef;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinpreceiving> tinpreceiving
-        {
-            get
-            {
-                if ((_tinpreceiving == null))
-                {
-                    _tinpreceiving = base.CreateObjectSet<tinpreceiving>("tinpreceiving");
-                }
-                return _tinpreceiving;
-            }
-        }
-        private ObjectSet<tinpreceiving> _tinpreceiving;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinpreceivingctndtl> tinpreceivingctndtl
-        {
-            get
-            {
-                if ((_tinpreceivingctndtl == null))
-                {
-                    _tinpreceivingctndtl = base.CreateObjectSet<tinpreceivingctndtl>("tinpreceivingctndtl");
-                }
-                return _tinpreceivingctndtl;
-            }
-        }
-        private ObjectSet<tinpreceivingctndtl> _tinpreceivingctndtl;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tinpreceivingdtl> tinpreceivingdtl
         {
             get
@@ -327,22 +210,6 @@ namespace GENLSYS.MES.DataContracts
             }
         }
         private ObjectSet<tinprepairhis> _tinprepairhis;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinprepairstock> tinprepairstock
-        {
-            get
-            {
-                if ((_tinprepairstock == null))
-                {
-                    _tinprepairstock = base.CreateObjectSet<tinprepairstock>("tinprepairstock");
-                }
-                return _tinprepairstock;
-            }
-        }
-        private ObjectSet<tinprepairstock> _tinprepairstock;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -443,22 +310,6 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tinpshippingdtlctn> tinpshippingdtlctn
-        {
-            get
-            {
-                if ((_tinpshippingdtlctn == null))
-                {
-                    _tinpshippingdtlctn = base.CreateObjectSet<tinpshippingdtlctn>("tinpshippingdtlctn");
-                }
-                return _tinpshippingdtlctn;
-            }
-        }
-        private ObjectSet<tinpshippingdtlctn> _tinpshippingdtlctn;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tinpsupplement> tinpsupplement
         {
             get
@@ -487,22 +338,6 @@ namespace GENLSYS.MES.DataContracts
             }
         }
         private ObjectSet<tinpsupplementdtl> _tinpsupplementdtl;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinpwip> tinpwip
-        {
-            get
-            {
-                if ((_tinpwip == null))
-                {
-                    _tinpwip = base.CreateObjectSet<tinpwip>("tinpwip");
-                }
-                return _tinpwip;
-            }
-        }
-        private ObjectSet<tinpwip> _tinpwip;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1067,38 +902,6 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tinppackingrecretrieve> tinppackingrecretrieve
-        {
-            get
-            {
-                if ((_tinppackingrecretrieve == null))
-                {
-                    _tinppackingrecretrieve = base.CreateObjectSet<tinppackingrecretrieve>("tinppackingrecretrieve");
-                }
-                return _tinppackingrecretrieve;
-            }
-        }
-        private ObjectSet<tinppackingrecretrieve> _tinppackingrecretrieve;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<tinplinewarehouse> tinplinewarehouseSet
-        {
-            get
-            {
-                if ((_tinplinewarehouseSet == null))
-                {
-                    _tinplinewarehouseSet = base.CreateObjectSet<tinplinewarehouse>("tinplinewarehouseSet");
-                }
-                return _tinplinewarehouseSet;
-            }
-        }
-        private ObjectSet<tinplinewarehouse> _tinplinewarehouseSet;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<tinpshippingplan> tinpshippingplan
         {
             get
@@ -1175,6 +978,198 @@ namespace GENLSYS.MES.DataContracts
             }
         }
         private ObjectSet<tinprequestpaydtl> _tinprequestpaydtl;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppackingrecretrieve> tinppackingrecretrieveSet
+        {
+            get
+            {
+                if ((_tinppackingrecretrieveSet == null))
+                {
+                    _tinppackingrecretrieveSet = base.CreateObjectSet<tinppackingrecretrieve>("tinppackingrecretrieveSet");
+                }
+                return _tinppackingrecretrieveSet;
+            }
+        }
+        private ObjectSet<tinppackingrecretrieve> _tinppackingrecretrieveSet;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinplinewarehouse> tinplinewarehouseSet
+        {
+            get
+            {
+                if ((_tinplinewarehouseSet == null))
+                {
+                    _tinplinewarehouseSet = base.CreateObjectSet<tinplinewarehouse>("tinplinewarehouseSet");
+                }
+                return _tinplinewarehouseSet;
+            }
+        }
+        private ObjectSet<tinplinewarehouse> _tinplinewarehouseSet;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppackingrec> tinppackingrec
+        {
+            get
+            {
+                if ((_tinppackingrec == null))
+                {
+                    _tinppackingrec = base.CreateObjectSet<tinppackingrec>("tinppackingrec");
+                }
+                return _tinppackingrec;
+            }
+        }
+        private ObjectSet<tinppackingrec> _tinppackingrec;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppackingrecdtl> tinppackingrecdtl
+        {
+            get
+            {
+                if ((_tinppackingrecdtl == null))
+                {
+                    _tinppackingrecdtl = base.CreateObjectSet<tinppackingrecdtl>("tinppackingrecdtl");
+                }
+                return _tinppackingrecdtl;
+            }
+        }
+        private ObjectSet<tinppackingrecdtl> _tinppackingrecdtl;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinpreceiving> tinpreceiving
+        {
+            get
+            {
+                if ((_tinpreceiving == null))
+                {
+                    _tinpreceiving = base.CreateObjectSet<tinpreceiving>("tinpreceiving");
+                }
+                return _tinpreceiving;
+            }
+        }
+        private ObjectSet<tinpreceiving> _tinpreceiving;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinpreceivingctndtl> tinpreceivingctndtl
+        {
+            get
+            {
+                if ((_tinpreceivingctndtl == null))
+                {
+                    _tinpreceivingctndtl = base.CreateObjectSet<tinpreceivingctndtl>("tinpreceivingctndtl");
+                }
+                return _tinpreceivingctndtl;
+            }
+        }
+        private ObjectSet<tinpreceivingctndtl> _tinpreceivingctndtl;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinprepairstock> tinprepairstock
+        {
+            get
+            {
+                if ((_tinprepairstock == null))
+                {
+                    _tinprepairstock = base.CreateObjectSet<tinprepairstock>("tinprepairstock");
+                }
+                return _tinprepairstock;
+            }
+        }
+        private ObjectSet<tinprepairstock> _tinprepairstock;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinpwip> tinpwip
+        {
+            get
+            {
+                if ((_tinpwip == null))
+                {
+                    _tinpwip = base.CreateObjectSet<tinpwip>("tinpwip");
+                }
+                return _tinpwip;
+            }
+        }
+        private ObjectSet<tinpwip> _tinpwip;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinpshippingdtlctn> tinpshippingdtlctn
+        {
+            get
+            {
+                if ((_tinpshippingdtlctn == null))
+                {
+                    _tinpshippingdtlctn = base.CreateObjectSet<tinpshippingdtlctn>("tinpshippingdtlctn");
+                }
+                return _tinpshippingdtlctn;
+            }
+        }
+        private ObjectSet<tinpshippingdtlctn> _tinpshippingdtlctn;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppricing> tinppricing
+        {
+            get
+            {
+                if ((_tinppricing == null))
+                {
+                    _tinppricing = base.CreateObjectSet<tinppricing>("tinppricing");
+                }
+                return _tinppricing;
+            }
+        }
+        private ObjectSet<tinppricing> _tinppricing;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppricingdtl> tinppricingdtl
+        {
+            get
+            {
+                if ((_tinppricingdtl == null))
+                {
+                    _tinppricingdtl = base.CreateObjectSet<tinppricingdtl>("tinppricingdtl");
+                }
+                return _tinppricingdtl;
+            }
+        }
+        private ObjectSet<tinppricingdtl> _tinppricingdtl;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<tinppricingdtldef> tinppricingdtldef
+        {
+            get
+            {
+                if ((_tinppricingdtldef == null))
+                {
+                    _tinppricingdtldef = base.CreateObjectSet<tinppricingdtldef>("tinppricingdtldef");
+                }
+                return _tinppricingdtldef;
+            }
+        }
+        private ObjectSet<tinppricingdtldef> _tinppricingdtldef;
 
         #endregion
         #region AddTo Methods
@@ -1212,62 +1207,6 @@ namespace GENLSYS.MES.DataContracts
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tinppackingrec EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppackingrec(tinppackingrec tinppackingrec)
-        {
-            base.AddObject("tinppackingrec", tinppackingrec);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinppackingrecdtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppackingrecdtl(tinppackingrecdtl tinppackingrecdtl)
-        {
-            base.AddObject("tinppackingrecdtl", tinppackingrecdtl);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinppricing EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppricing(tinppricing tinppricing)
-        {
-            base.AddObject("tinppricing", tinppricing);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinppricingdtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppricingdtl(tinppricingdtl tinppricingdtl)
-        {
-            base.AddObject("tinppricingdtl", tinppricingdtl);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinppricingdtldef EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppricingdtldef(tinppricingdtldef tinppricingdtldef)
-        {
-            base.AddObject("tinppricingdtldef", tinppricingdtldef);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinpreceiving EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinpreceiving(tinpreceiving tinpreceiving)
-        {
-            base.AddObject("tinpreceiving", tinpreceiving);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinpreceivingctndtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinpreceivingctndtl(tinpreceivingctndtl tinpreceivingctndtl)
-        {
-            base.AddObject("tinpreceivingctndtl", tinpreceivingctndtl);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tinpreceivingdtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotinpreceivingdtl(tinpreceivingdtl tinpreceivingdtl)
@@ -1289,14 +1228,6 @@ namespace GENLSYS.MES.DataContracts
         public void AddTotinprepairhis(tinprepairhis tinprepairhis)
         {
             base.AddObject("tinprepairhis", tinprepairhis);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinprepairstock EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinprepairstock(tinprepairstock tinprepairstock)
-        {
-            base.AddObject("tinprepairstock", tinprepairstock);
         }
     
         /// <summary>
@@ -1348,14 +1279,6 @@ namespace GENLSYS.MES.DataContracts
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tinpshippingdtlctn EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinpshippingdtlctn(tinpshippingdtlctn tinpshippingdtlctn)
-        {
-            base.AddObject("tinpshippingdtlctn", tinpshippingdtlctn);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tinpsupplement EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotinpsupplement(tinpsupplement tinpsupplement)
@@ -1369,14 +1292,6 @@ namespace GENLSYS.MES.DataContracts
         public void AddTotinpsupplementdtl(tinpsupplementdtl tinpsupplementdtl)
         {
             base.AddObject("tinpsupplementdtl", tinpsupplementdtl);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinpwip EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinpwip(tinpwip tinpwip)
-        {
-            base.AddObject("tinpwip", tinpwip);
         }
     
         /// <summary>
@@ -1660,22 +1575,6 @@ namespace GENLSYS.MES.DataContracts
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tinppackingrecretrieve EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinppackingrecretrieve(tinppackingrecretrieve tinppackingrecretrieve)
-        {
-            base.AddObject("tinppackingrecretrieve", tinppackingrecretrieve);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the tinplinewarehouseSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddTotinplinewarehouseSet(tinplinewarehouse tinplinewarehouse)
-        {
-            base.AddObject("tinplinewarehouseSet", tinplinewarehouse);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the tinpshippingplan EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTotinpshippingplan(tinpshippingplan tinpshippingplan)
@@ -1713,6 +1612,102 @@ namespace GENLSYS.MES.DataContracts
         public void AddTotinprequestpaydtl(tinprequestpaydtl tinprequestpaydtl)
         {
             base.AddObject("tinprequestpaydtl", tinprequestpaydtl);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppackingrecretrieveSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppackingrecretrieveSet(tinppackingrecretrieve tinppackingrecretrieve)
+        {
+            base.AddObject("tinppackingrecretrieveSet", tinppackingrecretrieve);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinplinewarehouseSet EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinplinewarehouseSet(tinplinewarehouse tinplinewarehouse)
+        {
+            base.AddObject("tinplinewarehouseSet", tinplinewarehouse);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppackingrec EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppackingrec(tinppackingrec tinppackingrec)
+        {
+            base.AddObject("tinppackingrec", tinppackingrec);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppackingrecdtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppackingrecdtl(tinppackingrecdtl tinppackingrecdtl)
+        {
+            base.AddObject("tinppackingrecdtl", tinppackingrecdtl);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinpreceiving EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinpreceiving(tinpreceiving tinpreceiving)
+        {
+            base.AddObject("tinpreceiving", tinpreceiving);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinpreceivingctndtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinpreceivingctndtl(tinpreceivingctndtl tinpreceivingctndtl)
+        {
+            base.AddObject("tinpreceivingctndtl", tinpreceivingctndtl);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinprepairstock EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinprepairstock(tinprepairstock tinprepairstock)
+        {
+            base.AddObject("tinprepairstock", tinprepairstock);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinpwip EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinpwip(tinpwip tinpwip)
+        {
+            base.AddObject("tinpwip", tinpwip);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinpshippingdtlctn EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinpshippingdtlctn(tinpshippingdtlctn tinpshippingdtlctn)
+        {
+            base.AddObject("tinpshippingdtlctn", tinpshippingdtlctn);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppricing EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppricing(tinppricing tinppricing)
+        {
+            base.AddObject("tinppricing", tinppricing);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppricingdtl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppricingdtl(tinppricingdtl tinppricingdtl)
+        {
+            base.AddObject("tinppricingdtl", tinppricingdtl);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the tinppricingdtldef EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTotinppricingdtldef(tinppricingdtldef tinppricingdtldef)
+        {
+            base.AddObject("tinppricingdtldef", tinppricingdtldef);
         }
 
         #endregion
@@ -3158,10 +3153,7 @@ namespace GENLSYS.MES.DataContracts
         /// <param name="pairqty">Initial value of the pairqty property.</param>
         /// <param name="step">Initial value of the step property.</param>
         /// <param name="workgroup">Initial value of the workgroup property.</param>
-        /// <param name="checktype">Initial value of the checktype property.</param>
-        /// <param name="lastmodifiedtime">Initial value of the lastmodifiedtime property.</param>
-        /// <param name="lastmodifieduser">Initial value of the lastmodifieduser property.</param>
-        public static tinplinewarehouse Createtinplinewarehouse(global::System.String customerid, global::System.String custorderno, global::System.String cartonNumber, global::System.String styleno, global::System.String color, global::System.String size, global::System.Decimal pairqty, global::System.String step, global::System.String workgroup, global::System.String checktype, global::System.DateTime lastmodifiedtime, global::System.String lastmodifieduser)
+        public static tinplinewarehouse Createtinplinewarehouse(global::System.String customerid, global::System.String custorderno, global::System.String cartonNumber, global::System.String styleno, global::System.String color, global::System.String size, global::System.Decimal pairqty, global::System.String step, global::System.String workgroup)
         {
             tinplinewarehouse tinplinewarehouse = new tinplinewarehouse();
             tinplinewarehouse.customerid = customerid;
@@ -3173,9 +3165,6 @@ namespace GENLSYS.MES.DataContracts
             tinplinewarehouse.pairqty = pairqty;
             tinplinewarehouse.step = step;
             tinplinewarehouse.workgroup = workgroup;
-            tinplinewarehouse.checktype = checktype;
-            tinplinewarehouse.lastmodifiedtime = lastmodifiedtime;
-            tinplinewarehouse.lastmodifieduser = lastmodifieduser;
             return tinplinewarehouse;
         }
 
@@ -3212,7 +3201,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String custorderno
         {
@@ -3222,11 +3211,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OncustordernoChanging(value);
-                ReportPropertyChanging("custorderno");
-                _custorderno = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("custorderno");
-                OncustordernoChanged();
+                if (_custorderno != value)
+                {
+                    OncustordernoChanging(value);
+                    ReportPropertyChanging("custorderno");
+                    _custorderno = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("custorderno");
+                    OncustordernoChanged();
+                }
             }
         }
         private global::System.String _custorderno;
@@ -3236,7 +3228,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String cartonNumber
         {
@@ -3246,11 +3238,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OncartonNumberChanging(value);
-                ReportPropertyChanging("cartonNumber");
-                _cartonNumber = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("cartonNumber");
-                OncartonNumberChanged();
+                if (_cartonNumber != value)
+                {
+                    OncartonNumberChanging(value);
+                    ReportPropertyChanging("cartonNumber");
+                    _cartonNumber = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("cartonNumber");
+                    OncartonNumberChanged();
+                }
             }
         }
         private global::System.String _cartonNumber;
@@ -3260,7 +3255,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String styleno
         {
@@ -3270,11 +3265,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnstylenoChanging(value);
-                ReportPropertyChanging("styleno");
-                _styleno = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("styleno");
-                OnstylenoChanged();
+                if (_styleno != value)
+                {
+                    OnstylenoChanging(value);
+                    ReportPropertyChanging("styleno");
+                    _styleno = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("styleno");
+                    OnstylenoChanged();
+                }
             }
         }
         private global::System.String _styleno;
@@ -3284,7 +3282,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String color
         {
@@ -3294,11 +3292,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OncolorChanging(value);
-                ReportPropertyChanging("color");
-                _color = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("color");
-                OncolorChanged();
+                if (_color != value)
+                {
+                    OncolorChanging(value);
+                    ReportPropertyChanging("color");
+                    _color = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("color");
+                    OncolorChanged();
+                }
             }
         }
         private global::System.String _color;
@@ -3308,7 +3309,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String size
         {
@@ -3318,11 +3319,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnsizeChanging(value);
-                ReportPropertyChanging("size");
-                _size = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("size");
-                OnsizeChanged();
+                if (_size != value)
+                {
+                    OnsizeChanging(value);
+                    ReportPropertyChanging("size");
+                    _size = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("size");
+                    OnsizeChanged();
+                }
             }
         }
         private global::System.String _size;
@@ -3332,7 +3336,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Decimal pairqty
         {
@@ -3342,11 +3346,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnpairqtyChanging(value);
-                ReportPropertyChanging("pairqty");
-                _pairqty = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("pairqty");
-                OnpairqtyChanged();
+                if (_pairqty != value)
+                {
+                    OnpairqtyChanging(value);
+                    ReportPropertyChanging("pairqty");
+                    _pairqty = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("pairqty");
+                    OnpairqtyChanged();
+                }
             }
         }
         private global::System.Decimal _pairqty;
@@ -3356,7 +3363,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String step
         {
@@ -3366,11 +3373,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnstepChanging(value);
-                ReportPropertyChanging("step");
-                _step = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("step");
-                OnstepChanged();
+                if (_step != value)
+                {
+                    OnstepChanging(value);
+                    ReportPropertyChanging("step");
+                    _step = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("step");
+                    OnstepChanged();
+                }
             }
         }
         private global::System.String _step;
@@ -3380,7 +3390,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String workgroup
         {
@@ -3390,11 +3400,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnworkgroupChanging(value);
-                ReportPropertyChanging("workgroup");
-                _workgroup = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("workgroup");
-                OnworkgroupChanged();
+                if (_workgroup != value)
+                {
+                    OnworkgroupChanging(value);
+                    ReportPropertyChanging("workgroup");
+                    _workgroup = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("workgroup");
+                    OnworkgroupChanged();
+                }
             }
         }
         private global::System.String _workgroup;
@@ -3404,7 +3417,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String checktype
         {
@@ -3416,7 +3429,7 @@ namespace GENLSYS.MES.DataContracts
             {
                 OnchecktypeChanging(value);
                 ReportPropertyChanging("checktype");
-                _checktype = StructuralObject.SetValidValue(value, false);
+                _checktype = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("checktype");
                 OnchecktypeChanged();
             }
@@ -3428,9 +3441,9 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime lastmodifiedtime
+        public Nullable<global::System.DateTime> lastmodifiedtime
         {
             get
             {
@@ -3445,14 +3458,14 @@ namespace GENLSYS.MES.DataContracts
                 OnlastmodifiedtimeChanged();
             }
         }
-        private global::System.DateTime _lastmodifiedtime;
-        partial void OnlastmodifiedtimeChanging(global::System.DateTime value);
+        private Nullable<global::System.DateTime> _lastmodifiedtime;
+        partial void OnlastmodifiedtimeChanging(Nullable<global::System.DateTime> value);
         partial void OnlastmodifiedtimeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String lastmodifieduser
         {
@@ -3464,7 +3477,7 @@ namespace GENLSYS.MES.DataContracts
             {
                 OnlastmodifieduserChanging(value);
                 ReportPropertyChanging("lastmodifieduser");
-                _lastmodifieduser = StructuralObject.SetValidValue(value, false);
+                _lastmodifieduser = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("lastmodifieduser");
                 OnlastmodifieduserChanged();
             }
@@ -3852,6 +3865,30 @@ namespace GENLSYS.MES.DataContracts
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public global::System.String customerid
+        {
+            get
+            {
+                return _customerid;
+            }
+            set
+            {
+                OncustomeridChanging(value);
+                ReportPropertyChanging("customerid");
+                _customerid = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("customerid");
+                OncustomeridChanged();
+            }
+        }
+        private global::System.String _customerid;
+        partial void OncustomeridChanging(global::System.String value);
+        partial void OncustomeridChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String custorderno
         {
             get
@@ -3990,58 +4027,9 @@ namespace GENLSYS.MES.DataContracts
         private global::System.String _remark;
         partial void OnremarkChanging(global::System.String value);
         partial void OnremarkChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String customerid
-        {
-            get
-            {
-                return _customerid;
-            }
-            set
-            {
-                OncustomeridChanging(value);
-                ReportPropertyChanging("customerid");
-                _customerid = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("customerid");
-                OncustomeridChanged();
-            }
-        }
-        private global::System.String _customerid;
-        partial void OncustomeridChanging(global::System.String value);
-        partial void OncustomeridChanged();
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_tinpunpa_reference_tinppack", "tinppackingrecdtl")]
-        public EntityCollection<tinppackingrecdtl> tinppackingrecdtl
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tinppackingrecdtl>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrecdtl");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinppackingrecdtl>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrecdtl", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -4085,7 +4073,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String pksysid
         {
@@ -4095,14 +4083,11 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                if (_pksysid != value)
-                {
-                    OnpksysidChanging(value);
-                    ReportPropertyChanging("pksysid");
-                    _pksysid = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("pksysid");
-                    OnpksysidChanged();
-                }
+                OnpksysidChanging(value);
+                ReportPropertyChanging("pksysid");
+                _pksysid = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("pksysid");
+                OnpksysidChanged();
             }
         }
         private global::System.String _pksysid;
@@ -4394,7 +4379,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String customerid
         {
@@ -4404,11 +4389,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OncustomeridChanging(value);
-                ReportPropertyChanging("customerid");
-                _customerid = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("customerid");
-                OncustomeridChanged();
+                if (_customerid != value)
+                {
+                    OncustomeridChanging(value);
+                    ReportPropertyChanging("customerid");
+                    _customerid = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("customerid");
+                    OncustomeridChanged();
+                }
             }
         }
         private global::System.String _customerid;
@@ -4417,47 +4405,6 @@ namespace GENLSYS.MES.DataContracts
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_tinpunpa_reference_tinppack", "tinppackingrec")]
-        public tinppackingrec tinppackingrec
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppackingrec>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrec").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppackingrec>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrec").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tinppackingrec> tinppackingrecReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppackingrec>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrec");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tinppackingrec>("MES.fk_tinpunpa_reference_tinppack", "tinppackingrec", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -4882,69 +4829,6 @@ namespace GENLSYS.MES.DataContracts
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_prcdtl_reference_prc", "tinppricingdtl")]
-        public EntityCollection<tinppricingdtl> tinppricingdtl
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tinppricingdtl>("MES.fk_prcdtl_reference_prc", "tinppricingdtl");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinppricingdtl>("MES.fk_prcdtl_reference_prc", "tinppricingdtl", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_tinppric_reference_tmdlcust", "tmdlcustomer")]
-        public tmdlcustomer tmdlcustomer
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tmdlcustomer>("MES.fk_tinppric_reference_tmdlcust", "tmdlcustomer").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tmdlcustomer>("MES.fk_tinppric_reference_tmdlcust", "tmdlcustomer").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tmdlcustomer> tmdlcustomerReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tmdlcustomer>("MES.fk_tinppric_reference_tmdlcust", "tmdlcustomer");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tmdlcustomer>("MES.fk_tinppric_reference_tmdlcust", "tmdlcustomer", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -4962,17 +4846,17 @@ namespace GENLSYS.MES.DataContracts
         /// </summary>
         /// <param name="pridtlsysid">Initial value of the pridtlsysid property.</param>
         /// <param name="prisysid">Initial value of the prisysid property.</param>
+        /// <param name="checktype">Initial value of the checktype property.</param>
         /// <param name="sbootheight">Initial value of the sbootheight property.</param>
         /// <param name="ebootheight">Initial value of the ebootheight property.</param>
-        /// <param name="category">Initial value of the category property.</param>
-        public static tinppricingdtl Createtinppricingdtl(global::System.String pridtlsysid, global::System.String prisysid, global::System.Decimal sbootheight, global::System.Decimal ebootheight, global::System.String category)
+        public static tinppricingdtl Createtinppricingdtl(global::System.String pridtlsysid, global::System.String prisysid, global::System.String checktype, global::System.Decimal sbootheight, global::System.Decimal ebootheight)
         {
             tinppricingdtl tinppricingdtl = new tinppricingdtl();
             tinppricingdtl.pridtlsysid = pridtlsysid;
             tinppricingdtl.prisysid = prisysid;
+            tinppricingdtl.checktype = checktype;
             tinppricingdtl.sbootheight = sbootheight;
             tinppricingdtl.ebootheight = ebootheight;
-            tinppricingdtl.category = category;
             return tinppricingdtl;
         }
 
@@ -5033,7 +4917,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String checktype
         {
@@ -5045,7 +4929,7 @@ namespace GENLSYS.MES.DataContracts
             {
                 OnchecktypeChanging(value);
                 ReportPropertyChanging("checktype");
-                _checktype = StructuralObject.SetValidValue(value, true);
+                _checktype = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("checktype");
                 OnchecktypeChanged();
             }
@@ -5201,30 +5085,6 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String category
-        {
-            get
-            {
-                return _category;
-            }
-            set
-            {
-                OncategoryChanging(value);
-                ReportPropertyChanging("category");
-                _category = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("category");
-                OncategoryChanged();
-            }
-        }
-        private global::System.String _category;
-        partial void OncategoryChanging(global::System.String value);
-        partial void OncategoryChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public Nullable<global::System.Decimal> reworkprice
@@ -5245,72 +5105,33 @@ namespace GENLSYS.MES.DataContracts
         private Nullable<global::System.Decimal> _reworkprice;
         partial void OnreworkpriceChanging(Nullable<global::System.Decimal> value);
         partial void OnreworkpriceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String category
+        {
+            get
+            {
+                return _category;
+            }
+            set
+            {
+                OncategoryChanging(value);
+                ReportPropertyChanging("category");
+                _category = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("category");
+                OncategoryChanged();
+            }
+        }
+        private global::System.String _category;
+        partial void OncategoryChanging(global::System.String value);
+        partial void OncategoryChanged();
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_prcdtl_reference_prc", "tinppricing")]
-        public tinppricing tinppricing
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricing>("MES.fk_prcdtl_reference_prc", "tinppricing").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricing>("MES.fk_prcdtl_reference_prc", "tinppricing").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tinppricing> tinppricingReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricing>("MES.fk_prcdtl_reference_prc", "tinppricing");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tinppricing>("MES.fk_prcdtl_reference_prc", "tinppricing", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_prcdef_reference_prcdtl", "tinppricingdtldef")]
-        public EntityCollection<tinppricingdtldef> tinppricingdtldef
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tinppricingdtldef>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtldef");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinppricingdtldef>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtldef", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -5542,47 +5363,6 @@ namespace GENLSYS.MES.DataContracts
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_prcdef_reference_prcdtl", "tinppricingdtl")]
-        public tinppricingdtl tinppricingdtl
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricingdtl>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtl").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricingdtl>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtl").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tinppricingdtl> tinppricingdtlReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinppricingdtl>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtl");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tinppricingdtl>("MES.fk_prcdef_reference_prcdtl", "tinppricingdtl", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -5900,14 +5680,12 @@ namespace GENLSYS.MES.DataContracts
         /// <param name="recsysid">Initial value of the recsysid property.</param>
         /// <param name="reclineno">Initial value of the reclineno property.</param>
         /// <param name="cartonno">Initial value of the cartonno property.</param>
-        /// <param name="customerid">Initial value of the customerid property.</param>
-        public static tinpreceivingctndtl Createtinpreceivingctndtl(global::System.String recsysid, global::System.String reclineno, global::System.String cartonno, global::System.String customerid)
+        public static tinpreceivingctndtl Createtinpreceivingctndtl(global::System.String recsysid, global::System.String reclineno, global::System.String cartonno)
         {
             tinpreceivingctndtl tinpreceivingctndtl = new tinpreceivingctndtl();
             tinpreceivingctndtl.recsysid = recsysid;
             tinpreceivingctndtl.reclineno = reclineno;
             tinpreceivingctndtl.cartonno = cartonno;
-            tinpreceivingctndtl.customerid = customerid;
             return tinpreceivingctndtl;
         }
 
@@ -6238,7 +6016,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String customerid
         {
@@ -6250,7 +6028,7 @@ namespace GENLSYS.MES.DataContracts
             {
                 OncustomeridChanging(value);
                 ReportPropertyChanging("customerid");
-                _customerid = StructuralObject.SetValidValue(value, false);
+                _customerid = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("customerid");
                 OncustomeridChanged();
             }
@@ -6261,47 +6039,6 @@ namespace GENLSYS.MES.DataContracts
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_recdtl_reference_recdtlctn", "tinpreceivingdtl")]
-        public tinpreceivingdtl tinpreceivingdtl
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinpreceivingdtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingdtl").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinpreceivingdtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingdtl").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<tinpreceivingdtl> tinpreceivingdtlReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<tinpreceivingdtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingdtl");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tinpreceivingdtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingdtl", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -6706,31 +6443,6 @@ namespace GENLSYS.MES.DataContracts
 
         #endregion
     
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_recdtl_reference_recdtlctn", "tinpreceivingctndtl")]
-        public EntityCollection<tinpreceivingctndtl> tinpreceivingctndtl
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tinpreceivingctndtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingctndtl");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinpreceivingctndtl>("MES.fk_recdtl_reference_recdtlctn", "tinpreceivingctndtl", value);
-                }
-            }
-        }
-
-        #endregion
     }
     
     /// <summary>
@@ -7383,30 +7095,57 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// Create a new tinprepairstock object.
         /// </summary>
+        /// <param name="customerid">Initial value of the customerid property.</param>
         /// <param name="custorderno">Initial value of the custorderno property.</param>
         /// <param name="styleno">Initial value of the styleno property.</param>
         /// <param name="color">Initial value of the color property.</param>
         /// <param name="size">Initial value of the size property.</param>
+        /// <param name="checktype">Initial value of the checktype property.</param>
         /// <param name="workgroup">Initial value of the workgroup property.</param>
         /// <param name="step">Initial value of the step property.</param>
-        /// <param name="customerid">Initial value of the customerid property.</param>
-        /// <param name="checktype">Initial value of the checktype property.</param>
-        public static tinprepairstock Createtinprepairstock(global::System.String custorderno, global::System.String styleno, global::System.String color, global::System.String size, global::System.String workgroup, global::System.String step, global::System.String customerid, global::System.String checktype)
+        public static tinprepairstock Createtinprepairstock(global::System.String customerid, global::System.String custorderno, global::System.String styleno, global::System.String color, global::System.String size, global::System.String checktype, global::System.String workgroup, global::System.String step)
         {
             tinprepairstock tinprepairstock = new tinprepairstock();
+            tinprepairstock.customerid = customerid;
             tinprepairstock.custorderno = custorderno;
             tinprepairstock.styleno = styleno;
             tinprepairstock.color = color;
             tinprepairstock.size = size;
+            tinprepairstock.checktype = checktype;
             tinprepairstock.workgroup = workgroup;
             tinprepairstock.step = step;
-            tinprepairstock.customerid = customerid;
-            tinprepairstock.checktype = checktype;
             return tinprepairstock;
         }
 
         #endregion
         #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String customerid
+        {
+            get
+            {
+                return _customerid;
+            }
+            set
+            {
+                if (_customerid != value)
+                {
+                    OncustomeridChanging(value);
+                    ReportPropertyChanging("customerid");
+                    _customerid = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("customerid");
+                    OncustomeridChanged();
+                }
+            }
+        }
+        private global::System.String _customerid;
+        partial void OncustomeridChanging(global::System.String value);
+        partial void OncustomeridChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -7515,6 +7254,33 @@ namespace GENLSYS.MES.DataContracts
         private global::System.String _size;
         partial void OnsizeChanging(global::System.String value);
         partial void OnsizeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String checktype
+        {
+            get
+            {
+                return _checktype;
+            }
+            set
+            {
+                if (_checktype != value)
+                {
+                    OnchecktypeChanging(value);
+                    ReportPropertyChanging("checktype");
+                    _checktype = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("checktype");
+                    OnchecktypeChanged();
+                }
+            }
+        }
+        private global::System.String _checktype;
+        partial void OnchecktypeChanging(global::System.String value);
+        partial void OnchecktypeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -7689,60 +7455,6 @@ namespace GENLSYS.MES.DataContracts
         private global::System.String _step;
         partial void OnstepChanging(global::System.String value);
         partial void OnstepChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String customerid
-        {
-            get
-            {
-                return _customerid;
-            }
-            set
-            {
-                if (_customerid != value)
-                {
-                    OncustomeridChanging(value);
-                    ReportPropertyChanging("customerid");
-                    _customerid = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("customerid");
-                    OncustomeridChanged();
-                }
-            }
-        }
-        private global::System.String _customerid;
-        partial void OncustomeridChanging(global::System.String value);
-        partial void OncustomeridChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String checktype
-        {
-            get
-            {
-                return _checktype;
-            }
-            set
-            {
-                if (_checktype != value)
-                {
-                    OnchecktypeChanging(value);
-                    ReportPropertyChanging("checktype");
-                    _checktype = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("checktype");
-                    OnchecktypeChanged();
-                }
-            }
-        }
-        private global::System.String _checktype;
-        partial void OnchecktypeChanging(global::System.String value);
-        partial void OnchecktypeChanged();
 
         #endregion
     
@@ -10041,14 +9753,16 @@ namespace GENLSYS.MES.DataContracts
         /// Create a new tinpshippingdtlctn object.
         /// </summary>
         /// <param name="shippingsysid">Initial value of the shippingsysid property.</param>
-        /// <param name="custorderno">Initial value of the custorderno property.</param>
         /// <param name="customerid">Initial value of the customerid property.</param>
-        public static tinpshippingdtlctn Createtinpshippingdtlctn(global::System.String shippingsysid, global::System.String custorderno, global::System.String customerid)
+        /// <param name="custorderno">Initial value of the custorderno property.</param>
+        /// <param name="cartonno">Initial value of the cartonno property.</param>
+        public static tinpshippingdtlctn Createtinpshippingdtlctn(global::System.String shippingsysid, global::System.String customerid, global::System.String custorderno, global::System.String cartonno)
         {
             tinpshippingdtlctn tinpshippingdtlctn = new tinpshippingdtlctn();
             tinpshippingdtlctn.shippingsysid = shippingsysid;
-            tinpshippingdtlctn.custorderno = custorderno;
             tinpshippingdtlctn.customerid = customerid;
+            tinpshippingdtlctn.custorderno = custorderno;
+            tinpshippingdtlctn.cartonno = cartonno;
             return tinpshippingdtlctn;
         }
 
@@ -10087,6 +9801,33 @@ namespace GENLSYS.MES.DataContracts
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.String customerid
+        {
+            get
+            {
+                return _customerid;
+            }
+            set
+            {
+                if (_customerid != value)
+                {
+                    OncustomeridChanging(value);
+                    ReportPropertyChanging("customerid");
+                    _customerid = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("customerid");
+                    OncustomeridChanged();
+                }
+            }
+        }
+        private global::System.String _customerid;
+        partial void OncustomeridChanging(global::System.String value);
+        partial void OncustomeridChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String custorderno
         {
             get
@@ -10112,7 +9853,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String cartonno
         {
@@ -10122,11 +9863,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OncartonnoChanging(value);
-                ReportPropertyChanging("cartonno");
-                _cartonno = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("cartonno");
-                OncartonnoChanged();
+                if (_cartonno != value)
+                {
+                    OncartonnoChanging(value);
+                    ReportPropertyChanging("cartonno");
+                    _cartonno = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("cartonno");
+                    OncartonnoChanged();
+                }
             }
         }
         private global::System.String _cartonno;
@@ -10156,33 +9900,6 @@ namespace GENLSYS.MES.DataContracts
         private Nullable<global::System.Decimal> _pairqty;
         partial void OnpairqtyChanging(Nullable<global::System.Decimal> value);
         partial void OnpairqtyChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String customerid
-        {
-            get
-            {
-                return _customerid;
-            }
-            set
-            {
-                if (_customerid != value)
-                {
-                    OncustomeridChanging(value);
-                    ReportPropertyChanging("customerid");
-                    _customerid = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("customerid");
-                    OncustomeridChanged();
-                }
-            }
-        }
-        private global::System.String _customerid;
-        partial void OncustomeridChanging(global::System.String value);
-        partial void OncustomeridChanged();
 
         #endregion
     
@@ -11162,6 +10879,7 @@ namespace GENLSYS.MES.DataContracts
         /// <summary>
         /// Create a new tinpwip object.
         /// </summary>
+        /// <param name="customerid">Initial value of the customerid property.</param>
         /// <param name="custorderno">Initial value of the custorderno property.</param>
         /// <param name="styleno">Initial value of the styleno property.</param>
         /// <param name="color">Initial value of the color property.</param>
@@ -11169,10 +10887,11 @@ namespace GENLSYS.MES.DataContracts
         /// <param name="pairqty">Initial value of the pairqty property.</param>
         /// <param name="status">Initial value of the status property.</param>
         /// <param name="workgroup">Initial value of the workgroup property.</param>
-        /// <param name="customerid">Initial value of the customerid property.</param>
-        public static tinpwip Createtinpwip(global::System.String custorderno, global::System.String styleno, global::System.String color, global::System.String size, global::System.Decimal pairqty, global::System.String status, global::System.String workgroup, global::System.String customerid)
+        /// <param name="checktype">Initial value of the checktype property.</param>
+        public static tinpwip Createtinpwip(global::System.String customerid, global::System.String custorderno, global::System.String styleno, global::System.String color, global::System.String size, global::System.Decimal pairqty, global::System.String status, global::System.String workgroup, global::System.String checktype)
         {
             tinpwip tinpwip = new tinpwip();
+            tinpwip.customerid = customerid;
             tinpwip.custorderno = custorderno;
             tinpwip.styleno = styleno;
             tinpwip.color = color;
@@ -11180,12 +10899,39 @@ namespace GENLSYS.MES.DataContracts
             tinpwip.pairqty = pairqty;
             tinpwip.status = status;
             tinpwip.workgroup = workgroup;
-            tinpwip.customerid = customerid;
+            tinpwip.checktype = checktype;
             return tinpwip;
         }
 
         #endregion
         #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String customerid
+        {
+            get
+            {
+                return _customerid;
+            }
+            set
+            {
+                if (_customerid != value)
+                {
+                    OncustomeridChanging(value);
+                    ReportPropertyChanging("customerid");
+                    _customerid = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("customerid");
+                    OncustomeridChanged();
+                }
+            }
+        }
+        private global::System.String _customerid;
+        partial void OncustomeridChanging(global::System.String value);
+        partial void OncustomeridChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -11378,33 +11124,6 @@ namespace GENLSYS.MES.DataContracts
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String customerid
-        {
-            get
-            {
-                return _customerid;
-            }
-            set
-            {
-                if (_customerid != value)
-                {
-                    OncustomeridChanging(value);
-                    ReportPropertyChanging("customerid");
-                    _customerid = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("customerid");
-                    OncustomeridChanged();
-                }
-            }
-        }
-        private global::System.String _customerid;
-        partial void OncustomeridChanging(global::System.String value);
-        partial void OncustomeridChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public global::System.String checktype
         {
             get
@@ -11413,11 +11132,14 @@ namespace GENLSYS.MES.DataContracts
             }
             set
             {
-                OnchecktypeChanging(value);
-                ReportPropertyChanging("checktype");
-                _checktype = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("checktype");
-                OnchecktypeChanged();
+                if (_checktype != value)
+                {
+                    OnchecktypeChanging(value);
+                    ReportPropertyChanging("checktype");
+                    _checktype = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("checktype");
+                    OnchecktypeChanged();
+                }
             }
         }
         private global::System.String _checktype;
@@ -13153,28 +12875,6 @@ namespace GENLSYS.MES.DataContracts
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinpiqc>("MES.fk_tinpiqc_reference_tmdlcust", "tinpiqc", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MES", "fk_tinppric_reference_tmdlcust", "tinppricing")]
-        public EntityCollection<tinppricing> tinppricing
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tinppricing>("MES.fk_tinppric_reference_tmdlcust", "tinppricing");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tinppricing>("MES.fk_tinppric_reference_tmdlcust", "tinppricing", value);
                 }
             }
         }
