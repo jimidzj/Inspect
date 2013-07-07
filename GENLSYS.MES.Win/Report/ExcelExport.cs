@@ -2188,7 +2188,7 @@ namespace GENLSYS.MES.Win.Report
                             select p;
                 if (langq.Count() > 0)
                 {
-                    result = langq.ElementAt(0).svresourceid;
+                    result = langq.ElementAt(0).svresourceid.Equals("") ? ShoeCategory : langq.ElementAt(0).svresourceid;
                 }
             }
             return result;
