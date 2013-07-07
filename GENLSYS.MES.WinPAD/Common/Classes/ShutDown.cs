@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace GENLSYS.MES.WinPAD.Common.Classes
 {
-    //shut down
+    //shut down   
     public class ShutDown
     {
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
