@@ -125,16 +125,6 @@
             Infragistics.Win.Appearance appearance82 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance83 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance84 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab6 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab9 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab10 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.Appearance appearance109 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance110 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance111 = new Infragistics.Win.Appearance();
@@ -159,6 +149,16 @@
             Infragistics.Win.Appearance appearance46 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance47 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance48 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab6 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab9 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.UltraWinTabControl.UltraTab ultraTab10 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.grdQuery = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -178,6 +178,10 @@
             this.grdUnshipping = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.grdShipping = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.ultraTabPageControl9 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+            this.grdHaveNotMoving = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.ultraTabPageControl10 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+            this.grdHaveNotPacking = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.txtStyleNo = new System.Windows.Forms.TextBox();
@@ -190,10 +194,6 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.uTabQuery = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-            this.ultraTabPageControl9 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.ultraTabPageControl10 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-            this.grdHaveNotMoving = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.grdHaveNotPacking = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ucStatusBar1 = new GENLSYS.MES.UserControls.ucStatusBar();
             this.ultraTabPageControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQuery)).BeginInit();
@@ -212,20 +212,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdUnshipping)).BeginInit();
             this.ultraTabPageControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdShipping)).BeginInit();
+            this.ultraTabPageControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotMoving)).BeginInit();
+            this.ultraTabPageControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotPacking)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pQuery.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uTabQuery)).BeginInit();
             this.uTabQuery.SuspendLayout();
-            this.ultraTabPageControl9.SuspendLayout();
-            this.ultraTabPageControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotMoving)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotPacking)).BeginInit();
             this.SuspendLayout();
             // 
             // ultraTabPageControl1
             // 
             this.ultraTabPageControl1.Controls.Add(this.grdQuery);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 23);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(882, 356);
             // 
@@ -828,6 +828,152 @@
             this.grdShipping.Text = "ultraGrid1";
             this.grdShipping.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdShipping_InitializeLayout);
             // 
+            // ultraTabPageControl9
+            // 
+            this.ultraTabPageControl9.Controls.Add(this.grdHaveNotMoving);
+            this.ultraTabPageControl9.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl9.Name = "ultraTabPageControl9";
+            this.ultraTabPageControl9.Size = new System.Drawing.Size(882, 356);
+            // 
+            // grdHaveNotMoving
+            // 
+            this.grdHaveNotMoving.ContextMenuStrip = this.contextMenuStrip;
+            appearance109.BackColor = System.Drawing.SystemColors.Window;
+            appearance109.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.grdHaveNotMoving.DisplayLayout.Appearance = appearance109;
+            this.grdHaveNotMoving.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdHaveNotMoving.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            appearance110.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            appearance110.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance110.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance110.BorderColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotMoving.DisplayLayout.GroupByBox.Appearance = appearance110;
+            appearance111.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.grdHaveNotMoving.DisplayLayout.GroupByBox.BandLabelAppearance = appearance111;
+            this.grdHaveNotMoving.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance112.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            appearance112.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance112.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance112.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.grdHaveNotMoving.DisplayLayout.GroupByBox.PromptAppearance = appearance112;
+            this.grdHaveNotMoving.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdHaveNotMoving.DisplayLayout.MaxRowScrollRegions = 1;
+            appearance113.BackColor = System.Drawing.SystemColors.Window;
+            appearance113.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.grdHaveNotMoving.DisplayLayout.Override.ActiveCellAppearance = appearance113;
+            appearance114.BackColor = System.Drawing.SystemColors.Highlight;
+            appearance114.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grdHaveNotMoving.DisplayLayout.Override.ActiveRowAppearance = appearance114;
+            this.grdHaveNotMoving.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+            this.grdHaveNotMoving.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+            appearance115.BackColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotMoving.DisplayLayout.Override.CardAreaAppearance = appearance115;
+            appearance116.BorderColor = System.Drawing.Color.Silver;
+            appearance116.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+            this.grdHaveNotMoving.DisplayLayout.Override.CellAppearance = appearance116;
+            this.grdHaveNotMoving.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+            this.grdHaveNotMoving.DisplayLayout.Override.CellPadding = 0;
+            appearance117.BackColor = System.Drawing.SystemColors.Control;
+            appearance117.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance117.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance117.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance117.BorderColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotMoving.DisplayLayout.Override.GroupByRowAppearance = appearance117;
+            appearance118.TextHAlignAsString = "Left";
+            this.grdHaveNotMoving.DisplayLayout.Override.HeaderAppearance = appearance118;
+            this.grdHaveNotMoving.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            this.grdHaveNotMoving.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+            appearance119.BackColor = System.Drawing.SystemColors.Window;
+            appearance119.BorderColor = System.Drawing.Color.Silver;
+            this.grdHaveNotMoving.DisplayLayout.Override.RowAppearance = appearance119;
+            this.grdHaveNotMoving.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+            appearance120.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.grdHaveNotMoving.DisplayLayout.Override.TemplateAddRowAppearance = appearance120;
+            this.grdHaveNotMoving.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdHaveNotMoving.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdHaveNotMoving.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdHaveNotMoving.Location = new System.Drawing.Point(0, 0);
+            this.grdHaveNotMoving.Name = "grdHaveNotMoving";
+            this.grdHaveNotMoving.Size = new System.Drawing.Size(882, 356);
+            this.grdHaveNotMoving.TabIndex = 26;
+            this.grdHaveNotMoving.Tag = "rsid:|rsid:Label.R01020|rsid:Label.R01025|rsid:Label.R01061|rsid:Label.R02026|rsi" +
+                "d:Label.R02206";
+            this.grdHaveNotMoving.Text = "ultraGrid1";
+            this.grdHaveNotMoving.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdHaveNotMoving_InitializeLayout);
+            // 
+            // ultraTabPageControl10
+            // 
+            this.ultraTabPageControl10.Controls.Add(this.grdHaveNotPacking);
+            this.ultraTabPageControl10.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl10.Name = "ultraTabPageControl10";
+            this.ultraTabPageControl10.Size = new System.Drawing.Size(882, 356);
+            // 
+            // grdHaveNotPacking
+            // 
+            this.grdHaveNotPacking.ContextMenuStrip = this.contextMenuStrip;
+            appearance37.BackColor = System.Drawing.SystemColors.Window;
+            appearance37.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            this.grdHaveNotPacking.DisplayLayout.Appearance = appearance37;
+            this.grdHaveNotPacking.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            this.grdHaveNotPacking.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            appearance38.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            appearance38.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance38.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance38.BorderColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotPacking.DisplayLayout.GroupByBox.Appearance = appearance38;
+            appearance39.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.grdHaveNotPacking.DisplayLayout.GroupByBox.BandLabelAppearance = appearance39;
+            this.grdHaveNotPacking.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance40.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            appearance40.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance40.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance40.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.grdHaveNotPacking.DisplayLayout.GroupByBox.PromptAppearance = appearance40;
+            this.grdHaveNotPacking.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdHaveNotPacking.DisplayLayout.MaxRowScrollRegions = 1;
+            appearance41.BackColor = System.Drawing.SystemColors.Window;
+            appearance41.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.grdHaveNotPacking.DisplayLayout.Override.ActiveCellAppearance = appearance41;
+            appearance42.BackColor = System.Drawing.SystemColors.Highlight;
+            appearance42.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grdHaveNotPacking.DisplayLayout.Override.ActiveRowAppearance = appearance42;
+            this.grdHaveNotPacking.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+            this.grdHaveNotPacking.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+            appearance43.BackColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotPacking.DisplayLayout.Override.CardAreaAppearance = appearance43;
+            appearance44.BorderColor = System.Drawing.Color.Silver;
+            appearance44.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+            this.grdHaveNotPacking.DisplayLayout.Override.CellAppearance = appearance44;
+            this.grdHaveNotPacking.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+            this.grdHaveNotPacking.DisplayLayout.Override.CellPadding = 0;
+            appearance45.BackColor = System.Drawing.SystemColors.Control;
+            appearance45.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance45.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance45.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance45.BorderColor = System.Drawing.SystemColors.Window;
+            this.grdHaveNotPacking.DisplayLayout.Override.GroupByRowAppearance = appearance45;
+            appearance46.TextHAlignAsString = "Left";
+            this.grdHaveNotPacking.DisplayLayout.Override.HeaderAppearance = appearance46;
+            this.grdHaveNotPacking.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            this.grdHaveNotPacking.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+            appearance47.BackColor = System.Drawing.SystemColors.Window;
+            appearance47.BorderColor = System.Drawing.Color.Silver;
+            this.grdHaveNotPacking.DisplayLayout.Override.RowAppearance = appearance47;
+            this.grdHaveNotPacking.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+            appearance48.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.grdHaveNotPacking.DisplayLayout.Override.TemplateAddRowAppearance = appearance48;
+            this.grdHaveNotPacking.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdHaveNotPacking.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdHaveNotPacking.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdHaveNotPacking.Location = new System.Drawing.Point(0, 0);
+            this.grdHaveNotPacking.Name = "grdHaveNotPacking";
+            this.grdHaveNotPacking.Size = new System.Drawing.Size(882, 356);
+            this.grdHaveNotPacking.TabIndex = 27;
+            this.grdHaveNotPacking.Tag = "rsid:|rsid:Label.R01020|rsid:Label.R01025|rsid:Label.R01061|rsid:Label.R02026|rsi" +
+                "d:Label.R02206";
+            this.grdHaveNotPacking.Text = "ultraGrid1";
+            this.grdHaveNotPacking.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdHaveNotPacking_InitializeLayout);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboCustomer);
@@ -928,7 +1074,7 @@
             // timer
             // 
             this.timer.Enabled = true;
-            this.timer.Interval = 10000;
+            this.timer.Interval = 180000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // uTabQuery
@@ -999,152 +1145,6 @@
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
             this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(882, 356);
             // 
-            // ultraTabPageControl9
-            // 
-            this.ultraTabPageControl9.Controls.Add(this.grdHaveNotMoving);
-            this.ultraTabPageControl9.Location = new System.Drawing.Point(-10000, -10000);
-            this.ultraTabPageControl9.Name = "ultraTabPageControl9";
-            this.ultraTabPageControl9.Size = new System.Drawing.Size(882, 356);
-            // 
-            // ultraTabPageControl10
-            // 
-            this.ultraTabPageControl10.Controls.Add(this.grdHaveNotPacking);
-            this.ultraTabPageControl10.Location = new System.Drawing.Point(1, 23);
-            this.ultraTabPageControl10.Name = "ultraTabPageControl10";
-            this.ultraTabPageControl10.Size = new System.Drawing.Size(882, 356);
-            // 
-            // grdHaveNotMoving
-            // 
-            this.grdHaveNotMoving.ContextMenuStrip = this.contextMenuStrip;
-            appearance109.BackColor = System.Drawing.SystemColors.Window;
-            appearance109.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-            this.grdHaveNotMoving.DisplayLayout.Appearance = appearance109;
-            this.grdHaveNotMoving.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            this.grdHaveNotMoving.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance110.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            appearance110.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance110.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance110.BorderColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotMoving.DisplayLayout.GroupByBox.Appearance = appearance110;
-            appearance111.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdHaveNotMoving.DisplayLayout.GroupByBox.BandLabelAppearance = appearance111;
-            this.grdHaveNotMoving.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance112.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance112.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance112.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance112.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdHaveNotMoving.DisplayLayout.GroupByBox.PromptAppearance = appearance112;
-            this.grdHaveNotMoving.DisplayLayout.MaxColScrollRegions = 1;
-            this.grdHaveNotMoving.DisplayLayout.MaxRowScrollRegions = 1;
-            appearance113.BackColor = System.Drawing.SystemColors.Window;
-            appearance113.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.grdHaveNotMoving.DisplayLayout.Override.ActiveCellAppearance = appearance113;
-            appearance114.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance114.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grdHaveNotMoving.DisplayLayout.Override.ActiveRowAppearance = appearance114;
-            this.grdHaveNotMoving.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-            this.grdHaveNotMoving.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance115.BackColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotMoving.DisplayLayout.Override.CardAreaAppearance = appearance115;
-            appearance116.BorderColor = System.Drawing.Color.Silver;
-            appearance116.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-            this.grdHaveNotMoving.DisplayLayout.Override.CellAppearance = appearance116;
-            this.grdHaveNotMoving.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-            this.grdHaveNotMoving.DisplayLayout.Override.CellPadding = 0;
-            appearance117.BackColor = System.Drawing.SystemColors.Control;
-            appearance117.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance117.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance117.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance117.BorderColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotMoving.DisplayLayout.Override.GroupByRowAppearance = appearance117;
-            appearance118.TextHAlignAsString = "Left";
-            this.grdHaveNotMoving.DisplayLayout.Override.HeaderAppearance = appearance118;
-            this.grdHaveNotMoving.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            this.grdHaveNotMoving.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance119.BackColor = System.Drawing.SystemColors.Window;
-            appearance119.BorderColor = System.Drawing.Color.Silver;
-            this.grdHaveNotMoving.DisplayLayout.Override.RowAppearance = appearance119;
-            this.grdHaveNotMoving.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
-            appearance120.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.grdHaveNotMoving.DisplayLayout.Override.TemplateAddRowAppearance = appearance120;
-            this.grdHaveNotMoving.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.grdHaveNotMoving.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.grdHaveNotMoving.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdHaveNotMoving.Location = new System.Drawing.Point(0, 0);
-            this.grdHaveNotMoving.Name = "grdHaveNotMoving";
-            this.grdHaveNotMoving.Size = new System.Drawing.Size(882, 356);
-            this.grdHaveNotMoving.TabIndex = 26;
-            this.grdHaveNotMoving.Tag = "rsid:|rsid:Label.R01020|rsid:Label.R01025|rsid:Label.R01061|rsid:Label.R02026|rsi" +
-                "d:Label.R02206";
-            this.grdHaveNotMoving.Text = "ultraGrid1";
-            this.grdHaveNotMoving.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdHaveNotMoving_InitializeLayout);
-            // 
-            // grdHaveNotPacking
-            // 
-            this.grdHaveNotPacking.ContextMenuStrip = this.contextMenuStrip;
-            appearance37.BackColor = System.Drawing.SystemColors.Window;
-            appearance37.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-            this.grdHaveNotPacking.DisplayLayout.Appearance = appearance37;
-            this.grdHaveNotPacking.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            this.grdHaveNotPacking.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance38.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            appearance38.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance38.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance38.BorderColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotPacking.DisplayLayout.GroupByBox.Appearance = appearance38;
-            appearance39.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdHaveNotPacking.DisplayLayout.GroupByBox.BandLabelAppearance = appearance39;
-            this.grdHaveNotPacking.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance40.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance40.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance40.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance40.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdHaveNotPacking.DisplayLayout.GroupByBox.PromptAppearance = appearance40;
-            this.grdHaveNotPacking.DisplayLayout.MaxColScrollRegions = 1;
-            this.grdHaveNotPacking.DisplayLayout.MaxRowScrollRegions = 1;
-            appearance41.BackColor = System.Drawing.SystemColors.Window;
-            appearance41.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.grdHaveNotPacking.DisplayLayout.Override.ActiveCellAppearance = appearance41;
-            appearance42.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance42.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grdHaveNotPacking.DisplayLayout.Override.ActiveRowAppearance = appearance42;
-            this.grdHaveNotPacking.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-            this.grdHaveNotPacking.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance43.BackColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotPacking.DisplayLayout.Override.CardAreaAppearance = appearance43;
-            appearance44.BorderColor = System.Drawing.Color.Silver;
-            appearance44.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-            this.grdHaveNotPacking.DisplayLayout.Override.CellAppearance = appearance44;
-            this.grdHaveNotPacking.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-            this.grdHaveNotPacking.DisplayLayout.Override.CellPadding = 0;
-            appearance45.BackColor = System.Drawing.SystemColors.Control;
-            appearance45.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance45.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance45.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance45.BorderColor = System.Drawing.SystemColors.Window;
-            this.grdHaveNotPacking.DisplayLayout.Override.GroupByRowAppearance = appearance45;
-            appearance46.TextHAlignAsString = "Left";
-            this.grdHaveNotPacking.DisplayLayout.Override.HeaderAppearance = appearance46;
-            this.grdHaveNotPacking.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            this.grdHaveNotPacking.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance47.BackColor = System.Drawing.SystemColors.Window;
-            appearance47.BorderColor = System.Drawing.Color.Silver;
-            this.grdHaveNotPacking.DisplayLayout.Override.RowAppearance = appearance47;
-            this.grdHaveNotPacking.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
-            appearance48.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.grdHaveNotPacking.DisplayLayout.Override.TemplateAddRowAppearance = appearance48;
-            this.grdHaveNotPacking.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.grdHaveNotPacking.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.grdHaveNotPacking.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdHaveNotPacking.Location = new System.Drawing.Point(0, 0);
-            this.grdHaveNotPacking.Name = "grdHaveNotPacking";
-            this.grdHaveNotPacking.Size = new System.Drawing.Size(882, 356);
-            this.grdHaveNotPacking.TabIndex = 27;
-            this.grdHaveNotPacking.Tag = "rsid:|rsid:Label.R01020|rsid:Label.R01025|rsid:Label.R01061|rsid:Label.R02026|rsi" +
-                "d:Label.R02206";
-            this.grdHaveNotPacking.Text = "ultraGrid1";
-            this.grdHaveNotPacking.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdHaveNotPacking_InitializeLayout);
-            // 
             // ucStatusBar1
             // 
             this.ucStatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1182,15 +1182,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdUnshipping)).EndInit();
             this.ultraTabPageControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdShipping)).EndInit();
+            this.ultraTabPageControl9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotMoving)).EndInit();
+            this.ultraTabPageControl10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotPacking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pQuery.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uTabQuery)).EndInit();
             this.uTabQuery.ResumeLayout(false);
-            this.ultraTabPageControl9.ResumeLayout(false);
-            this.ultraTabPageControl10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotMoving)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdHaveNotPacking)).EndInit();
             this.ResumeLayout(false);
 
         }

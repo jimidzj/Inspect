@@ -41,7 +41,7 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand3 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
+            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,6 +51,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtOpened = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelSize = new System.Windows.Forms.Panel();
             this.but_quit = new System.Windows.Forms.Button();
@@ -123,8 +125,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
-            this.txtOpened = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
@@ -251,6 +251,28 @@
             this.panel2.Size = new System.Drawing.Size(1026, 750);
             this.panel2.TabIndex = 13;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(267, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 23);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "托盘号:";
+            // 
+            // txtOpened
+            // 
+            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOpened.Location = new System.Drawing.Point(423, 51);
+            this.txtOpened.Multiline = true;
+            this.txtOpened.Name = "txtOpened";
+            this.txtOpened.Size = new System.Drawing.Size(35, 26);
+            this.txtOpened.TabIndex = 81;
+            this.txtOpened.Text = "0";
+            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -354,6 +376,7 @@
             // 
             // butDelBox
             // 
+            this.butDelBox.Enabled = false;
             this.butDelBox.Image = global::GENLSYS.MES.WinPAD.Properties.Resources.delete2;
             this.butDelBox.Location = new System.Drawing.Point(892, 11);
             this.butDelBox.Name = "butDelBox";
@@ -362,6 +385,7 @@
             this.butDelBox.Text = "删除箱";
             this.butDelBox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.butDelBox.UseVisualStyleBackColor = true;
+            this.butDelBox.Visible = false;
             this.butDelBox.Click += new System.EventHandler(this.butDelBox_Click);
             // 
             // txtQty
@@ -1056,29 +1080,7 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.ChildBands.AddRange(new object[] {
-            ultraDataBand3});
-            // 
-            // txtOpened
-            // 
-            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtOpened.Location = new System.Drawing.Point(423, 51);
-            this.txtOpened.Multiline = true;
-            this.txtOpened.Name = "txtOpened";
-            this.txtOpened.Size = new System.Drawing.Size(35, 26);
-            this.txtOpened.TabIndex = 81;
-            this.txtOpened.Text = "0";
-            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(267, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 23);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "托盘号:";
+            ultraDataBand1});
             // 
             // frmOpenBox
             // 
