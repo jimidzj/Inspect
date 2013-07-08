@@ -86,6 +86,12 @@ namespace GENLSYS.MES.WinPAD.wsPAD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsPAD/CancelOpen", ReplyAction="http://tempuri.org/IwsPAD/CancelOpenResponse")]
         bool CancelOpen(string customer, string cartonno, string poid, string user, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsPAD/PackBoxSaveDummyCarton", ReplyAction="http://tempuri.org/IwsPAD/PackBoxSaveDummyCartonResponse")]
+        bool PackBoxSaveDummyCarton(string _customerid, string _poid, string _cartonNumber, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsPAD/MoveBoxSaveDummyCarton", ReplyAction="http://tempuri.org/IwsPAD/MoveBoxSaveDummyCartonResponse")]
+        bool MoveBoxSaveDummyCarton(string _customerid, string _poid, string _cartonNumber, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +215,14 @@ namespace GENLSYS.MES.WinPAD.wsPAD {
         
         public bool CancelOpen(string customer, string cartonno, string poid, string user, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo) {
             return base.Channel.CancelOpen(customer, cartonno, poid, user, contextInfo);
+        }
+        
+        public bool PackBoxSaveDummyCarton(string _customerid, string _poid, string _cartonNumber, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo) {
+            return base.Channel.PackBoxSaveDummyCarton(_customerid, _poid, _cartonNumber, contextInfo);
+        }
+        
+        public bool MoveBoxSaveDummyCarton(string _customerid, string _poid, string _cartonNumber, GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo) {
+            return base.Channel.MoveBoxSaveDummyCarton(_customerid, _poid, _cartonNumber, contextInfo);
         }
     }
 }

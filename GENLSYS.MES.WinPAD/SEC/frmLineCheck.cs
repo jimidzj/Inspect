@@ -26,10 +26,10 @@ namespace GENLSYS.MES.WinPAD.SEC
     {
         private BaseForm baseForm;
         private int errorCount = 0;
-     
+
         #region Construct
-        public frmLineCheck(      )
-        { 
+        public frmLineCheck()
+        {
             InitializeComponent();
             baseForm = new BaseForm();
         }
@@ -44,6 +44,15 @@ namespace GENLSYS.MES.WinPAD.SEC
             {
                 baseForm.SetFace(this, false);
                 cmbUser.Height = 40;
+                ////201306 George --begin
+                if (Parameter.CURRENT_LOTSYSID == string.Empty || Parameter.CURRENT_LOTSYSID.Trim().Length == 0)
+                {
+                }
+                else
+                {
+                    this.cmbUser.Text = Parameter.CURRENT_LOTSYSID;
+                }
+                ////201306 George --end
             }
             catch (Exception ex)
             {
@@ -53,7 +62,7 @@ namespace GENLSYS.MES.WinPAD.SEC
             {
             }
         }
-     
+
 
         private void cmbUser_KeyDown(object sender, KeyEventArgs e)
         {
@@ -68,107 +77,110 @@ namespace GENLSYS.MES.WinPAD.SEC
 
         private void cmbUser_Enter(object sender, EventArgs e)
         {
-             vkForm.showKeyboard();
+            vkForm.showKeyboard();
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-           vkForm.showKeyboard();
+            vkForm.showKeyboard();
         }
-      
+
         #endregion
 
         #region Methods
-        
 
-       
-          public void ClearPassword()
+
+
+        public void ClearPassword()
         {
             this.txtPassword.Text = string.Empty;
         }
         #endregion
 
-          private void btnOK_Click(object sender, EventArgs e)
-          {
-              bool res = ValidateLineAdmin();
-              if (res)
-              {
-                  this.DialogResult = DialogResult.OK;
-              }
-              else
-              {
-                  this.DialogResult = DialogResult.Cancel;
-              }
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            ////201306 George --begin
+            Parameter.CURRENT_LOTSYSID = this.cmbUser.Text.ToString();
+            ////201306 George --end
+            bool res = ValidateLineAdmin();
+            if (res)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
 
-              this.Dispose();
-          }
-
-
-          private bool ValidateLineAdmin()
-          {
-              wsSEC.IwsSECClient client = new wsSEC.IwsSECClient();
-              wsMDL.IwsMDLClient clientMDL = new wsMDL.IwsMDLClient();
-
-              try
-              {
-               bool res = false;   
-               res = client.ValidateLineAdmin(baseForm.CurrentContextInfo, this.cmbUser.Text, UtilSecurity.EncryptPassword(txtPassword.Text));
-               return res;
-              }
-              catch (Exception ex)
-              {
-                  switch (ExceptionParser.Parse(ex))
-                  {
-                      case "-300001":
-                          errorCount++;
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00011"));
-                          break;
-                      case "-300002":
-                          errorCount++;
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00012"));
-                          break;
-                      case "-300003":
-                          errorCount++;
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00013"));
-                          break;
-                      case "-300004":
-                          errorCount++;
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00014"));
-                          break;
-                      case "-300005":
-                          errorCount++;
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("没有权限"));
-                          break;
-                      default:
-                          baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, ExceptionParser.Parse(ex));
-                          break;
-                  }
+            this.Dispose();
+        }
 
 
-                  if (errorCount >= 5)
-                  {
-                      baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00122"));
-                      this.Dispose();
-                  }
-                  this.DialogResult = DialogResult.Cancel;
-                  return false;
-              }
-              finally
-              {
-                  baseForm.ResetCursor();
-                  if (client.State == System.ServiceModel.CommunicationState.Opened)
-                      baseForm.CloseWCF(client);
-              }
-          }
+        private bool ValidateLineAdmin()
+        {
+            wsSEC.IwsSECClient client = new wsSEC.IwsSECClient();
+            wsMDL.IwsMDLClient clientMDL = new wsMDL.IwsMDLClient();
 
-          private void btnCancel_Click(object sender, EventArgs e)
-          {
-              this.DialogResult = DialogResult.Cancel;
-              this.Dispose();
-     
-          }
+            try
+            {
+                bool res = false;
+                res = client.ValidateLineAdmin(baseForm.CurrentContextInfo, this.cmbUser.Text, UtilSecurity.EncryptPassword(txtPassword.Text));
+                return res;
+            }
+            catch (Exception ex)
+            {
+                switch (ExceptionParser.Parse(ex))
+                {
+                    case "-300001":
+                        errorCount++;
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00011"));
+                        break;
+                    case "-300002":
+                        errorCount++;
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00012"));
+                        break;
+                    case "-300003":
+                        errorCount++;
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00013"));
+                        break;
+                    case "-300004":
+                        errorCount++;
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00014"));
+                        break;
+                    case "-300005":
+                        errorCount++;
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("没有权限"));
+                        break;
+                    default:
+                        baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, ExceptionParser.Parse(ex));
+                        break;
+                }
 
-             
+
+                if (errorCount >= 5)
+                {
+                    baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00122"));
+                    this.Dispose();
+                }
+                this.DialogResult = DialogResult.Cancel;
+                return false;
+            }
+            finally
+            {
+                baseForm.ResetCursor();
+                if (client.State == System.ServiceModel.CommunicationState.Opened)
+                    baseForm.CloseWCF(client);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Dispose();
+
+        }
+
+
 
     }
 }

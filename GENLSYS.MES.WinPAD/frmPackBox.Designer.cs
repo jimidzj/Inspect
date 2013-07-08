@@ -1,4 +1,4 @@
-﻿namespace  GENLSYS.MES.WinPAD
+﻿namespace GENLSYS.MES.WinPAD
 {
     partial class frmPackBox
     {
@@ -43,7 +43,7 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
+            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand2 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -125,6 +125,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
+            this.txtOpened = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBoxSize.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
@@ -215,6 +216,7 @@
             // panel2
             // 
             this.panel2.BackgroundImage = global::GENLSYS.MES.WinPAD.Properties.Resources._1;
+            this.panel2.Controls.Add(this.txtOpened);
             this.panel2.Controls.Add(this.but_quit);
             this.panel2.Controls.Add(this.lblPO);
             this.panel2.Controls.Add(this.lblCustomer);
@@ -346,10 +348,10 @@
             // 
             this.txtQty.Enabled = false;
             this.txtQty.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtQty.Location = new System.Drawing.Point(414, 30);
+            this.txtQty.Location = new System.Drawing.Point(431, 30);
             this.txtQty.Multiline = true;
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(72, 24);
+            this.txtQty.Size = new System.Drawing.Size(39, 24);
             this.txtQty.TabIndex = 59;
             this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
             this.txtQty.Enter += new System.EventHandler(this.txtQty_Enter);
@@ -603,7 +605,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(115, 23);
             this.label12.TabIndex = 42;
-            this.label12.Text = "共有";
+            this.label12.Text = "共";
             // 
             // btnNewTray
             // 
@@ -1037,7 +1039,6 @@
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            
             // 
             // textBox1
             // 
@@ -1055,7 +1056,19 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.ChildBands.AddRange(new object[] {
-            ultraDataBand1});
+            ultraDataBand2});
+            // 
+            // txtOpened
+            // 
+            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOpened.Location = new System.Drawing.Point(431, 57);
+            this.txtOpened.Multiline = true;
+            this.txtOpened.Name = "txtOpened";
+            this.txtOpened.Size = new System.Drawing.Size(39, 26);
+            this.txtOpened.TabIndex = 82;
+            this.txtOpened.Text = "0";
+            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmPackBox
             // 
@@ -1171,6 +1184,7 @@
         private System.Windows.Forms.Panel panelSize;
         private System.Windows.Forms.Panel panelColor;
         private System.Windows.Forms.Panel panelType;
+        private System.Windows.Forms.TextBox txtOpened;
     }
 }
 

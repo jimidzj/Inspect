@@ -553,4 +553,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="PackBoxSaveDummyCarton">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_customerid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_poid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_cartonNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q27:ContextInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackBoxSaveDummyCartonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PackBoxSaveDummyCartonResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveBoxSaveDummyCarton">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_customerid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_poid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="_cartonNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q28:ContextInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MoveBoxSaveDummyCartonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MoveBoxSaveDummyCartonResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

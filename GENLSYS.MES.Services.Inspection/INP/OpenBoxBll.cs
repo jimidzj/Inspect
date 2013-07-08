@@ -85,11 +85,18 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
                     List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
                     string checktype = ctlDtl[0].checktype;
+                    string wipstatus = "I";
+                    ////201306 George --Begin
+                    if (checktype == "X")
+                    {
+                        wipstatus = "X";
+                    }
+                    ////201306 George --End
                     //insert wip
                     WipDal wip = new WipDal(dbInstance);
-                    wip.SaveOrUpdate(obj.customerid , obj.custorderno, obj.styleno, obj.color, obj.size, "I",workGroup, (int)qty, checktype);
+                    wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, wipstatus, workGroup, (int)qty, checktype);
                     //update carton.location of receiving  
-                    localDal.UpdateCartonLocation(obj.customerid,custorderno, obj.cartonno, user, MES_CartonLocation.WIP.ToString());
+                    localDal.UpdateCartonLocation(obj.customerid, custorderno, obj.cartonno, user, MES_CartonLocation.WIP.ToString());
                 }
                 //insert opening box summary table
                 tinppackingrec headObj = new tinppackingrec();
@@ -128,7 +135,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
         public void openBoxUpdate(DataTable dt, string trayID, string user, string workGroup, string customer, string cartonno, string poid)
         {
             OpenBoxDeleteBox(customer, cartonno, poid, user, workGroup);
-            openBoxSave(dt,trayID, user, workGroup);
+            openBoxSave(dt, trayID, user, workGroup);
             return;
         }
         /** check before save*/
@@ -238,13 +245,13 @@ namespace GENLSYS.MES.Services.Inspection.INP
                 string custorderno = "";
                 int dtl = dt.Rows.Count;
 
-              
+
 
                 //delete old carton if exists
                 //delete line warehouse, if exists
-                string customerid= dt.Rows[0]["customerid"].ToString();
+                string customerid = dt.Rows[0]["customerid"].ToString();
                 custorderno = dt.Rows[0]["poid"].ToString();
-                string cartonno=   dt.Rows[0]["cartonNumber"].ToString();
+                string cartonno = dt.Rows[0]["cartonNumber"].ToString();
 
                 //get checktype from receiving
                 List<MESParameterInfo> lstParam = new List<MESParameterInfo>()
@@ -257,7 +264,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
                 List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
                 string checktype = ctlDtl[0].checktype;
-                  
+
                 List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
                           new MESParameterInfo(){ParamName="custorderno",ParamValue=custorderno},
                           new MESParameterInfo(){ParamName="cartonNumber",ParamValue= cartonno},
@@ -267,7 +274,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
                 for (int i = 0; i < dtl; i++)
                 {
-                      //
+                    //
                     tinplinewarehouse obj = new tinplinewarehouse();
                     obj.customerid = dt.Rows[i]["customerid"].ToString();
                     custorderno = dt.Rows[i]["poid"].ToString();
@@ -395,14 +402,14 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
         #endregion
 
-        public bool OpenBoxDeleteBox(string customer, string cartonno, string poid, string user,string workgroup)
+        public bool OpenBoxDeleteBox(string customer, string cartonno, string poid, string user, string workgroup)
         {
             bool res = false;
             try
             {
                 dbInstance.BeginTransaction();
                 OpenBoxDal dal = new OpenBoxDal(dbInstance);
-                 //get detail record of opening  box  --tinppackingrecdtl
+                //get detail record of opening  box  --tinppackingrecdtl
                 List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
                         new MESParameterInfo(){ParamName="custorderno",ParamValue=poid},
                         new MESParameterInfo(){ParamName="cartonno",ParamValue=cartonno},
@@ -429,7 +436,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                     baseDal.DoDelete<tinppackingrec>(lstParam2);
 
                     //update carton-location of receiving 
-                    localDal.UpdateCartonLocation(customer,poid, cartonno, user, MES_CartonLocation.Warehouse.ToString());
+                    localDal.UpdateCartonLocation(customer, poid, cartonno, user, MES_CartonLocation.Warehouse.ToString());
                 }
                 dbInstance.Commit();
                 return true;
@@ -482,7 +489,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
             try
             {
                 dbInstance.BeginTransaction();
-                DataSet ctlDtl = localDal.GetMixDetail( customer,custorderno, cartonno);
+                DataSet ctlDtl = localDal.GetMixDetail(customer, custorderno, cartonno);
                 dbInstance.Commit();
                 return ctlDtl;
             }
@@ -547,7 +554,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
             }
         }
         /**删除未装箱信息*/
-        public bool DeleteBox(string customer, string cartonno, string poid, string user,string workgroup)
+        public bool DeleteBox(string customer, string cartonno, string poid, string user, string workgroup)
         {
             bool res = false;
             try
@@ -602,7 +609,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                         baseDal.DoDelete<tinppackingrec>(lstParam2);
 
                         //update carton-location of receiving 
-                        localDal.UpdateCartonLocation(customer,poid, cartonno, user, MES_CartonLocation.Warehouse.ToString());
+                        localDal.UpdateCartonLocation(customer, poid, cartonno, user, MES_CartonLocation.Warehouse.ToString());
                     }
 
                     dbInstance.Commit();

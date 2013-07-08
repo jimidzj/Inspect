@@ -73,7 +73,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                         new MESParameterInfo(){ParamName="pktype",ParamValue="Packing"} 
                     };
                 List<tinppackingrecdtl> ctlDtl = baseDal.GetSelectedObjects<tinppackingrecdtl>(lstParam);
-                #region  已经封箱 
+                #region  已经封箱
                 if (ctlDtl.Count > 0)
                 {
                     if (ctlDtl[0].isshipped == "Y")
@@ -86,8 +86,8 @@ namespace GENLSYS.MES.Services.Inspection.INP
                     }
 
                 }
-                       # endregion   
-                   #region   没有封箱记录 
+                # endregion
+                #region   没有封箱记录
                 else
                 {
                     List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
@@ -126,7 +126,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                                 return "没有经过检品装箱";
                             }
                         }
-                        #endregion 
+                        #endregion
                         #region   I类型 或 X 类型；有开箱，没有封箱记录
                         else
                         {
@@ -135,15 +135,15 @@ namespace GENLSYS.MES.Services.Inspection.INP
                         }
                         #endregion
                     }
-                      # endregion
-                      #region  没有开箱记录
+                    # endregion
+                    #region  没有开箱记录
                     else
                     {
                         return "没有开箱记录";
                     }
-                        # endregion
+                    # endregion
                 }
-                        # endregion
+                # endregion
             }
             catch (Exception ex)
             {
@@ -245,7 +245,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
 
         //封箱保存
-        public bool AssyBoxSave(DataTable dt,string trayID, string user, string workGroup)
+        public bool AssyBoxSave(DataTable dt, string trayID, string user, string workGroup)
         {
             String recid = GENLSYS.MES.Common.Function.GetGUID();
             String pktype = MES_PackingType.Packing.ToString();
@@ -260,9 +260,9 @@ namespace GENLSYS.MES.Services.Inspection.INP
             dbInstance.BeginTransaction();
             try
             {  //delete line warehouse if exists
-                  customerid = dt.Rows[0]["customerid"].ToString();
-                  custorderno = dt.Rows[0]["poid"].ToString();
-                  cartonno = dt.Rows[0]["cartonNumber"].ToString();
+                customerid = dt.Rows[0]["customerid"].ToString();
+                custorderno = dt.Rows[0]["poid"].ToString();
+                cartonno = dt.Rows[0]["cartonNumber"].ToString();
 
                 List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
                           new MESParameterInfo(){ParamName="custorderno",ParamValue=custorderno},
@@ -299,32 +299,32 @@ namespace GENLSYS.MES.Services.Inspection.INP
                     localDal.DoInsert<tinppackingrecdtl>(obj);
                     //get checktype from receiving
 
-                      List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
+                    List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
                               new MESParameterInfo(){ParamName="custorderno",ParamValue=custorderno},
                                  new MESParameterInfo(){ParamName="cartonno",ParamValue=obj.cartonno},
                                  new MESParameterInfo(){ParamName="customerid",ParamValue=obj.customerid}
                       };
-                
-                      List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
-                      string checktype=  ctlDtl[0].checktype; 
+
+                    List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
+                    string checktype = ctlDtl[0].checktype;
                     WipDal wip = new WipDal(dbInstance);
                     //wip
                     if (checktype == "IX")
                     {
                         wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "X", "Line0", -1 * (int)qty, checktype);
                     }
-                     if (checktype == "I")
-	                {
-		                  wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "I", workGroup, -1 * (int)qty, checktype);
-                    
-	                }
+                    if (checktype == "I")
+                    {
+                        wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "I", workGroup, -1 * (int)qty, checktype);
 
-                      if (checktype == "X")
-	                {
-		                  wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "X", workGroup, -1 * (int)qty, checktype);
-                    
-	                }
-                     
+                    }
+
+                    if (checktype == "X")
+                    {
+                        wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "X", workGroup, -1 * (int)qty, checktype);
+
+                    }
+
 
 
                     Repositories.Inspection.INP.PackingRecRetrieveDal recRetrieveDal = new Repositories.Inspection.INP.PackingRecRetrieveDal(this.dbInstance);
@@ -353,13 +353,88 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
         }
 
+        ////201306 George --begin
+        //空箱封箱保存
+        public bool AssyBoxSaveDummy(string _customerid, string _poid, string _cartonNumber, string user, string workGroup)
+        {
+            String recid = GENLSYS.MES.Common.Function.GetGUID();
+            String pktype = MES_PackingType.Packing.ToString();
+            DateTime actiondate = System.DateTime.Now;
+            String factory = "";
+            String userid = user;
+            decimal? ttlqty = 0;
+            string custorderno = "";
+            String cartonno = "";
+            String customerid = "";
+
+            dbInstance.BeginTransaction();
+            try
+            {
+                customerid = _customerid;
+                custorderno = _poid;
+                cartonno = _cartonNumber;
+                //delete line warehouse if exists
+                List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
+                          new MESParameterInfo(){ParamName="custorderno",ParamValue=custorderno},
+                          new MESParameterInfo(){ParamName="cartonNumber",ParamValue= cartonno},
+                          new MESParameterInfo(){ParamName="customerid",ParamValue= customerid}
+                     };
+                baseDal.DoDelete<tinplinewarehouse>(lstParam2);
+
+                //insert 
+                tinppackingrecdtl obj = new tinppackingrecdtl();
+                obj.custorderno = custorderno;
+                obj.cartonno = cartonno;
+                obj.color = "$";
+                obj.pairqty = 0;
+                obj.pksysid = recid;
+                obj.size = "$";
+                obj.styleno = "$";
+
+                obj.confirmqty = 0;
+                obj.difference = 0;
+                obj.isshipped = "N";
+                obj.remark = "封箱";
+                obj.pktype = pktype;
+                obj.customerid = customerid;
+                localDal.DoInsert<tinppackingrecdtl>(obj);
+
+                //wip  no change
+
+                //  Repositories.Inspection.INP.PackingRecRetrieveDal recRetrieveDal = new Repositories.Inspection.INP.PackingRecRetrieveDal(this.dbInstance);
+                //  recRetrieveDal.InsertRetrieve(recid, obj.cartonno, obj.custorderno, obj.styleno, obj.color, obj.size);
+
+
+                tinppackingrec headObj = new tinppackingrec();
+                headObj.custorderno = custorderno;
+                headObj.pksysid = recid;
+                headObj.pktype = pktype;
+                headObj.ttlqty = ttlqty;
+                headObj.userid = user;
+                headObj.workgroup = workGroup;
+                headObj.customerid = customerid;
+                headObj.remark = "Dummy";
+                headObj.actiondate = System.DateTime.Now;
+                localDal.DoInsert<tinppackingrec>(headObj);
+                dbInstance.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                dbInstance.Rollback();
+                return false;
+            }
+
+        }
+        ////200306 George --end
+
         //获得开箱明细
         public DataSet getOpenDetail(string customerid, string custorderno, string cartonno, string action, string currStep)
         {
             try
             {
                 dbInstance.BeginTransaction();
-                DataSet ctlDtl = localDal.getOpenDetail(customerid, custorderno, cartonno,action, currStep);
+                DataSet ctlDtl = localDal.getOpenDetail(customerid, custorderno, cartonno, action, currStep);
 
                 dbInstance.Commit();
                 return ctlDtl;
@@ -375,8 +450,8 @@ namespace GENLSYS.MES.Services.Inspection.INP
             }
         }
 
-        
-     //获得开箱明细
+
+        //获得开箱明细
         public int getWIPByPO(string customerid, string custorderno, string styleno, string color, string size, string workgroup, string action, string currStep)
         {
             try
@@ -425,7 +500,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
 
         //装箱保存
-        public bool MoveBoxSave(DataTable dt, string trayID , string user, string workGroup , string oldWorkGroup)
+        public bool MoveBoxSave(DataTable dt, string trayID, string user, string workGroup, string oldWorkGroup)
         {
             String recid = GENLSYS.MES.Common.Function.GetGUID();
             String pktype = MES_PackingType.Moving.ToString();
@@ -468,20 +543,20 @@ namespace GENLSYS.MES.Services.Inspection.INP
                     localDal.DoInsert<tinppackingrecdtl>(obj);
                     //get checktype from receiving
 
-                      List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
+                    List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
                               new MESParameterInfo(){ParamName="custorderno",ParamValue=custorderno},
                                  new MESParameterInfo(){ParamName="cartonno",ParamValue=obj.cartonno},
                                  new MESParameterInfo(){ParamName="customerid",ParamValue=obj.customerid}
                       };
-                
-                      List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
-                      string checktype=  ctlDtl[0].checktype; 
+
+                    List<tinpreceivingctndtl> ctlDtl = baseDal.GetSelectedObjects<tinpreceivingctndtl>(lstParam);
+                    string checktype = ctlDtl[0].checktype;
                     WipDal wip = new WipDal(dbInstance);
                     wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "I", oldWorkGroup, -1 * (int)qty, checktype);
                     wip.SaveOrUpdate(obj.customerid, obj.custorderno, obj.styleno, obj.color, obj.size, "X", workGroup, (int)qty, checktype);  //workGroup是固定值Line0，从UI传过来
 
-                  //  Repositories.Inspection.INP.PackingRecRetrieveDal recRetrieveDal = new Repositories.Inspection.INP.PackingRecRetrieveDal(this.dbInstance);
-                 //   recRetrieveDal.InsertRetrieve(recid, obj.cartonno, obj.custorderno, obj.styleno, obj.color, obj.size);
+                    //  Repositories.Inspection.INP.PackingRecRetrieveDal recRetrieveDal = new Repositories.Inspection.INP.PackingRecRetrieveDal(this.dbInstance);
+                    //   recRetrieveDal.InsertRetrieve(recid, obj.cartonno, obj.custorderno, obj.styleno, obj.color, obj.size);
                 }
 
                 tinppackingrec headObj = new tinppackingrec();
@@ -506,7 +581,71 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
         }
 
-      
+        ////201306 George --Begin
+        //空箱装箱保存
+        public bool MoveBoxSaveDummy(string _customerid, string _poid, string _cartonNumber, string user, string workGroup)
+        {
+            String recid = GENLSYS.MES.Common.Function.GetGUID();
+            String pktype = MES_PackingType.Moving.ToString();
+            DateTime actiondate = System.DateTime.Now;
+            String factory = "";
+            String userid = user;
+            decimal? ttlqty = 0;
+            string custorderno = "";
+            String cartonno = "";
+            String customerid = "";
+
+            dbInstance.BeginTransaction();
+            try
+            {
+                tinppackingrecdtl obj = new tinppackingrecdtl();
+
+                customerid = _customerid;
+                custorderno = _poid;
+                cartonno = _cartonNumber;
+
+                obj.custorderno = custorderno;
+                obj.cartonno = cartonno;
+                obj.color = "$";
+                obj.pairqty = 0;
+                obj.pksysid = recid;
+                obj.size = "$";
+                obj.styleno = "$";
+                obj.pksysid = recid;
+                obj.confirmqty = 0;
+                obj.difference = 0;
+                obj.isshipped = "N";
+                obj.remark = "装箱";
+                obj.pktype = pktype;
+                obj.customerid = customerid;
+                localDal.DoInsert<tinppackingrecdtl>(obj);
+                //WIP no change
+                //  Repositories.Inspection.INP.PackingRecRetrieveDal recRetrieveDal = new Repositories.Inspection.INP.PackingRecRetrieveDal(this.dbInstance);
+                //   recRetrieveDal.InsertRetrieve(recid, obj.cartonno, obj.custorderno, obj.styleno, obj.color, obj.size);
+
+                tinppackingrec headObj = new tinppackingrec();
+                headObj.custorderno = custorderno;
+                headObj.pksysid = recid;
+                headObj.pktype = pktype;
+                headObj.ttlqty = ttlqty;
+                headObj.userid = user;
+                headObj.workgroup = workGroup;
+                headObj.actiondate = System.DateTime.Now;
+                headObj.remark = "Dummy";
+                headObj.customerid = customerid;
+                localDal.DoInsert<tinppackingrec>(headObj);
+                dbInstance.Commit();
+                return true;
+            }
+            catch (Exception e)
+            {
+                dbInstance.Rollback();
+                return false;
+            }
+
+        }
+        ////201306 George --End
+
         //获得line warehouse 信息
         public DataSet getLineWarehouse(string customerid, string custorderno, string cartonno, string workgroup)
         {
@@ -534,70 +673,70 @@ namespace GENLSYS.MES.Services.Inspection.INP
         public bool CancelMove(string customer, string cartonno, string poid, string user)
         {
             try
-            {               
-                     dbInstance.BeginTransaction();
-                    OpenBoxDal dal = new OpenBoxDal(dbInstance);
-                    //get checktype from receiving
-                    List<MESParameterInfo> param = new List<MESParameterInfo>() { 
+            {
+                dbInstance.BeginTransaction();
+                OpenBoxDal dal = new OpenBoxDal(dbInstance);
+                //get checktype from receiving
+                List<MESParameterInfo> param = new List<MESParameterInfo>() { 
                          new MESParameterInfo(){ParamName="custorderno",ParamValue=poid },
                          new MESParameterInfo(){ParamName="cartonno",ParamValue= cartonno} ,
                          new MESParameterInfo(){ParamName="customerid",ParamValue= customer} 
                     };
 
-                    List<tinpreceivingctndtl> rs = baseDal.GetSelectedObjects<tinpreceivingctndtl>(param);
-                    string checktype = rs[0].checktype;
+                List<tinpreceivingctndtl> rs = baseDal.GetSelectedObjects<tinpreceivingctndtl>(param);
+                string checktype = rs[0].checktype;
 
-                    //get detail record of Opening  box  --tinppackingrecdtl
-                    List<MESParameterInfo> lstParam0 = new List<MESParameterInfo>() { 
+                //get detail record of Opening  box  --tinppackingrecdtl
+                List<MESParameterInfo> lstParam0 = new List<MESParameterInfo>() { 
                         new MESParameterInfo(){ParamName="custorderno",ParamValue=poid},
                         new MESParameterInfo(){ParamName="cartonno",ParamValue=cartonno},
                          new MESParameterInfo(){ParamName="pktype",ParamValue=MES_PackingType.Unpacking.ToString()},
                          new MESParameterInfo(){ParamName="customerid",ParamValue= customer} 
                     };
-                    List<tinppackingrecdtl> ctlDtl0 = baseDal.GetSelectedObjects<tinppackingrecdtl>(lstParam0);
-                    string sysid = ctlDtl0[0].pksysid;
+                List<tinppackingrecdtl> ctlDtl0 = baseDal.GetSelectedObjects<tinppackingrecdtl>(lstParam0);
+                string sysid = ctlDtl0[0].pksysid;
 
-                     List<MESParameterInfo> lstParam1 = new List<MESParameterInfo>() { 
+                List<MESParameterInfo> lstParam1 = new List<MESParameterInfo>() { 
                          new MESParameterInfo(){ParamName="pksysid",ParamValue=sysid} 
                     };
-                     List<tinppackingrec> ctlDtl1 = baseDal.GetSelectedObjects<tinppackingrec>(lstParam1);
-                     string oldWorkGroup = ctlDtl1[0].workgroup;
+                List<tinppackingrec> ctlDtl1 = baseDal.GetSelectedObjects<tinppackingrec>(lstParam1);
+                string oldWorkGroup = ctlDtl1[0].workgroup;
 
 
-                    //get detail record of Moving  box  --tinppackingrecdtl
-                    List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
+                //get detail record of Moving  box  --tinppackingrecdtl
+                List<MESParameterInfo> lstParam = new List<MESParameterInfo>() { 
                         new MESParameterInfo(){ParamName="custorderno",ParamValue=poid},
                         new MESParameterInfo(){ParamName="cartonno",ParamValue=cartonno},
                          new MESParameterInfo(){ParamName="pktype",ParamValue=MES_PackingType.Moving.ToString()},
                          new MESParameterInfo(){ParamName="customerid",ParamValue= customer} 
                     };
-                    List<tinppackingrecdtl> ctlDtl = baseDal.GetSelectedObjects<tinppackingrecdtl>(lstParam);
-                    //sum qty
+                List<tinppackingrecdtl> ctlDtl = baseDal.GetSelectedObjects<tinppackingrecdtl>(lstParam);
+                //sum qty
 
-                    for (int i = 0; i < ctlDtl.Count; i++)
-                    {
-                        //process wip-------把X线上Line0的WIP扣除--------
-                        WipDal wip = new WipDal(dbInstance);
-                        wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "X", "Line0", -1 * (int)ctlDtl[i].pairqty, checktype);
+                for (int i = 0; i < ctlDtl.Count; i++)
+                {
+                    //process wip-------把X线上Line0的WIP扣除--------
+                    WipDal wip = new WipDal(dbInstance);
+                    wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "X", "Line0", -1 * (int)ctlDtl[i].pairqty, checktype);
 
-                        wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, (int)ctlDtl[i].pairqty, checktype);
-                 
-                    }
-                    //delete Moving detail
-                    baseDal.DoDelete<tinppackingrecdtl>(lstParam);
-                    //delete moving header
-                    if (ctlDtl.Count > 0)
-                    {
-                        string sysid2 = ctlDtl[0].pksysid;
-                        List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
+                    wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, (int)ctlDtl[i].pairqty, checktype);
+
+                }
+                //delete Moving detail
+                baseDal.DoDelete<tinppackingrecdtl>(lstParam);
+                //delete moving header
+                if (ctlDtl.Count > 0)
+                {
+                    string sysid2 = ctlDtl[0].pksysid;
+                    List<MESParameterInfo> lstParam2 = new List<MESParameterInfo>() { 
                         new MESParameterInfo(){ParamName="pksysid",ParamValue=sysid2}  };
-                        baseDal.DoDelete<tinppackingrec>(lstParam2);
-                     }
+                    baseDal.DoDelete<tinppackingrec>(lstParam2);
+                }
 
-                    dbInstance.Commit();
-                    return true;
-                   
-             
+                dbInstance.Commit();
+                return true;
+
+
             }
             catch (Exception ex)
             {
@@ -627,7 +766,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
 
                 List<tinpreceivingctndtl> rs = baseDal.GetSelectedObjects<tinpreceivingctndtl>(param);
                 string checktype = rs[0].checktype;
- 
+
                 //get detail record of Opening  box  --tinppackingrecdtl
                 List<MESParameterInfo> lstParam0 = new List<MESParameterInfo>() { 
                         new MESParameterInfo(){ParamName="custorderno",ParamValue=poid},
@@ -668,7 +807,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                         wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, (int)ctlDtl[i].pairqty, checktype);
                     }
 
-           }
+                }
                 //delete Moving detail
                 baseDal.DoDelete<tinppackingrecdtl>(lstParam);
                 //delete moving header
@@ -681,7 +820,7 @@ namespace GENLSYS.MES.Services.Inspection.INP
                 }
 
                 ////////////////delete   tinppackingrecretrieve//////////////////2012-6-30//////
-                  List<MESParameterInfo> param5 = new List<MESParameterInfo>() { 
+                List<MESParameterInfo> param5 = new List<MESParameterInfo>() { 
                          new MESParameterInfo(){ParamName="custorderno",ParamValue=poid },
                          new MESParameterInfo(){ParamName="cartonno",ParamValue= cartonno} ,
                          new MESParameterInfo(){ParamName="customerid",ParamValue= customer} 
@@ -717,6 +856,6 @@ namespace GENLSYS.MES.Services.Inspection.INP
             }
         }
 
-    
+
     }
 }

@@ -19,7 +19,7 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
         {
         }
 
-        public DataSet GetWaitingOrderByStep(string funcid, string user,string workgroup , List<MESParameterInfo> lstParameters) 
+        public DataSet GetWaitingOrderByStep(string funcid, string user, string workgroup, List<MESParameterInfo> lstParameters)
         {
             try
             {
@@ -45,33 +45,144 @@ GROUP BY a.CUSTORDERNO,CUSTOMERNAME,b.customerid  , a.checktype ,styleno,c.facto
                 if (funcid == "fai02") //检品封箱
                 {
                     sSql = @"  select a.CUSTORDERNO poid , CUSTOMERNAME customer  ,d.customerid ,   '' factory,SUM(PAIRQTY) poqty ,(case a.CHECKTYPE when 'I' then '检品' when 'X' then 'X线' else '检品+X线' end) AS checktype   ,    ''status ,styleno
-from tinpwip a,   tmdlcustomer d  
-where
-   status='I'  
-AND a.CUSTOMERID = d.CUSTOMERID
-AND ( A.CHECKTYPE='I'  )" ;
+                         from tinpwip a,   tmdlcustomer d  
+                        where  status='I'  
+                         AND a.CUSTOMERID = d.CUSTOMERID
+                         AND ( A.CHECKTYPE='I'  )";
                     sSql = sSql + "and workgroup='" + workgroup + "'";
-sSql = sSql+ " group by  a.custorderno,   customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                    sSql = sSql + " group by  a.custorderno,   customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                    //201306 George -Begin
+                    sSql = sSql + "   union  ";
+                    sSql = sSql + " SELECT distinct t1.custorderno poid , d.CUSTOMERNAME customer  ,d.customerid ,   '' factory , 0  poqty , '' checktype   ,    ''status , '' styleno  ";
+                    sSql = sSql + "  FROM (  ";
+                    sSql = sSql + "      SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno  ,a.workgroup  ";
+                    sSql = sSql + "      FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "      where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "        and B.pktype = 'Unpacking'   ";
+                    //sSql = sSql + "        and workgroup='" + workgroup + "'  ";
+                    sSql = sSql + "      ) T1 ,  tmdlcustomer d   ";
+                    sSql = sSql + " where  ";
+                    sSql = sSql + "    T1.CUSTOMERID = d.CUSTOMERID  ";
+                    sSql = sSql + "    and  not exists (  ";
+                    sSql = sSql + "       SELECT 1 FROM (  ";
+                    sSql = sSql + "          SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno   ";
+                    sSql = sSql + "          FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "          where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "            and (B.pktype = 'Moving'  or B.pktype = 'Packing' )  ";
+                    sSql = sSql + "     ) T2  ";
+                    sSql = sSql + "  where t1.customerid = t2.customerid  ";
+                    sSql = sSql + "    and t1.cartonno = t2.cartonno  ";
+                    sSql = sSql + "    and t1.custorderno = t2.custorderno     ";
+                    sSql = sSql + " )   ";
+                    sSql = sSql + "  and not exists(  ";
+                    sSql = sSql + "         select 1 from (  ";
+                    sSql = sSql + "                   select a.customerid, a.CUSTORDERNO    , SUM(PAIRQTY) poqty     ";
+                    sSql = sSql + "                   from tinpwip a   ";
+                    sSql = sSql + "                   where  status='I'    ";
+                    sSql = sSql + "                   AND   ( A.CHECKTYPE='I'  )  ";
+                    //sSql = sSql + "                   and workgroup='" + workgroup + "'  ";
+                    sSql = sSql + "                   group by  a.customerid,a.custorderno   ";
+                    sSql = sSql + "                   having   SUM(PAIRQTY) >= 1  ";
+                    sSql = sSql + "                 ) T3 ";
+                    sSql = sSql + "     where t1.customerid =   t3.customerid   ";
+                    sSql = sSql + "     and  t1.custorderno =   t3.custorderno  ";
+                    sSql = sSql + " )  ";
+
+                    //201306 George -End
                 }
                 if (funcid == "fai03") //检品装箱  moving
                 {
-                    sSql = @"    select a.CUSTORDERNO poid , CUSTOMERNAME customer ,d.customerid ,  ''   factory
-,SUM(PAIRQTY) poqty ,(case a.CHECKTYPE when 'I' then '检品' when 'X' then 'X线' else '检品+X线' end) AS checktype   ,    ''status  ,styleno
-from tinpwip a,    tmdlcustomer d    
-where  status='I'  
-AND a.CUSTOMERID = d.CUSTOMERID
-AND A.CHECKTYPE='IX'  ";
-  sSql = sSql + "and workgroup='" +workgroup +"'";
-  sSql = sSql + " group by  a.custorderno,   customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                    sSql = @" select a.CUSTORDERNO poid , CUSTOMERNAME customer ,d.customerid ,  ''   factory
+                                ,SUM(PAIRQTY) poqty ,(case a.CHECKTYPE when 'I' then '检品' when 'X' then 'X线' else '检品+X线' end) AS checktype   ,    ''status  ,styleno
+                            from tinpwip a,    tmdlcustomer d    
+                             where  status='I'  
+                               AND a.CUSTOMERID = d.CUSTOMERID
+                               AND A.CHECKTYPE='IX'  ";
+                    sSql = sSql + "and workgroup='" + workgroup + "'";
+                    sSql = sSql + " group by  a.custorderno,   customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                    //201306 George -Begin
+                    sSql = sSql + "   union  ";
+                    sSql = sSql + " SELECT distinct t1.custorderno poid , d.CUSTOMERNAME customer  ,d.customerid , '' factory , 0  poqty , '' checktype   ,    ''status , '' styleno  ";
+                    sSql = sSql + "  FROM (  ";
+                    sSql = sSql + "       SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno  ,a.workgroup  ";
+                    sSql = sSql + "         FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "        where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "          and B.pktype = 'Unpacking'   ";
+                    //      sSql = sSql + "          and workgroup='" + workgroup + "'  ";
+                    sSql = sSql + "       ) T1 ,  tmdlcustomer d   ";
+                    sSql = sSql + " where  ";
+                    sSql = sSql + "       T1.CUSTOMERID = d.CUSTOMERID  ";
+                    sSql = sSql + "       and  not exists (  ";
+                    sSql = sSql + "           SELECT 1 FROM (  ";
+                    sSql = sSql + "                  SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno   ";
+                    sSql = sSql + "                    FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "                    where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "                     and (B.pktype = 'Moving'  or B.pktype = 'Packing' )  ";
+                    sSql = sSql + "   ) T2  ";
+                    sSql = sSql + "  where t1.customerid = t2.customerid  ";
+                    sSql = sSql + "    and t1.cartonno = t2.cartonno  ";
+                    sSql = sSql + "    and t1.custorderno = t2.custorderno     ";
+                    sSql = sSql + " )   ";
+                    sSql = sSql + "  and not exists(  ";
+                    sSql = sSql + "     select 1 from (  ";
+                    sSql = sSql + "         select a.customerid, a.CUSTORDERNO    , SUM(PAIRQTY) poqty     ";
+                    sSql = sSql + "            from tinpwip a   ";
+                    sSql = sSql + "            where  status='I'    ";
+                    sSql = sSql + "              AND   ( A.CHECKTYPE='IX'  )  ";
+                    //     sSql = sSql + "               and workgroup='" +workgroup +"'  ";
+                    sSql = sSql + "         group by  a.customerid,a.custorderno   ";
+                    sSql = sSql + "          having   SUM(PAIRQTY) >= 1  ";
+                    sSql = sSql + "    ) T3 ";
+                    sSql = sSql + "    where t1.customerid =   t3.customerid   ";
+                    sSql = sSql + "     and  t1.custorderno =   t3.custorderno  ";
+                    sSql = sSql + " )  ";
+
+                    //201306 George -End
                 }
                 if (funcid == "fax01")  //X线封箱
                 {
                     sSql = @"     select a.CUSTORDERNO poid , CUSTOMERNAME customer ,   d.customerid , '' factory ,SUM(a.PAIRQTY) poqty ,(case a.CHECKTYPE when 'I' then '检品' when 'X' then 'X线' else '检品+X线' end) AS checktype   ,   ''status ,styleno
-from tinpwip a  , tmdlcustomer d  
-where
-  status='X'  
-AND a.CUSTOMERID = d.CUSTOMERID
-group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                       from tinpwip a  , tmdlcustomer d  
+                       where  status='X'  
+                        AND a.CUSTOMERID = d.CUSTOMERID
+                      group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
+                    //201306 George -Begin
+                    sSql = sSql + "   union  ";
+                    sSql = sSql + " SELECT distinct t1.custorderno poid , d.CUSTOMERNAME customer  ,d.customerid ,   '' factory , 0  poqty , '' checktype   ,    ''status , '' styleno  ";
+                    sSql = sSql + "  FROM (  ";
+                    sSql = sSql + "    SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno  ,a.workgroup  ";
+                    sSql = sSql + "    FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "    where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "      and   (B.pktype = 'Moving'  or B.pktype = 'Unpacking' )  ";
+                    //     sSql = sSql + "      and workgroup='" + workgroup + "'  ";
+                    sSql = sSql + "    ) T1 ,  tmdlcustomer d   ";
+                    sSql = sSql + " where  ";
+                    sSql = sSql + "    T1.CUSTOMERID = d.CUSTOMERID  ";
+                    sSql = sSql + "    and  not exists (  ";
+                    sSql = sSql + "        SELECT 1 FROM (  ";
+                    sSql = sSql + "            SELECT distinct  a.customerid  ,a.custorderno   ,b.cartonno   ";
+                    sSql = sSql + "              FROM tinppackingrec  a , tinppackingrecdtl  b    ";
+                    sSql = sSql + "             where a.pksysid = b.pksysid  ";
+                    sSql = sSql + "              and ( B.pktype = 'Packing' )  ";
+                    sSql = sSql + "       ) T2  ";
+                    sSql = sSql + "  where t1.customerid = t2.customerid  ";
+                    sSql = sSql + "    and t1.cartonno = t2.cartonno  ";
+                    sSql = sSql + "    and t1.custorderno = t2.custorderno     ";
+                    sSql = sSql + " )   ";
+                    sSql = sSql + "  and not exists(  ";
+                    sSql = sSql + "    select 1 from (  ";
+                    sSql = sSql + "       select a.customerid, a.CUSTORDERNO    , SUM(PAIRQTY) poqty     ";
+                    sSql = sSql + "        from tinpwip a   ";
+                    sSql = sSql + "        where ( status='I' or   status='X')   ";
+                    //    sSql = sSql + "         and workgroup='" + workgroup + "'  ";
+                    sSql = sSql + "          group by  a.customerid,a.custorderno   ";
+                    sSql = sSql + "           having   SUM(PAIRQTY) >= 1  ";
+                    sSql = sSql + "    ) T3 ";
+                    sSql = sSql + "    where t1.customerid =   t3.customerid   ";
+                    sSql = sSql + "     and  t1.custorderno =   t3.custorderno  ";
+                    sSql = sSql + " )  ";
+
+                    //201306 George -End
                 }
 
                 /*  List<SqlParameter> lstParameters = new List<SqlParameter>();
@@ -86,7 +197,7 @@ group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
                 {
                     if (item.ParamName == "customerid")
                     {
-                        sSql =sSql + " and  customerid='"  + item.ParamValue + "'";
+                        sSql = sSql + " and  customerid='" + item.ParamValue + "'";
                         break;
                     }
                     if (item.ParamName == "styleno")
@@ -100,7 +211,7 @@ group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
                         sSql = sSql + " and  poid like '%" + item.ParamValue + "%'";
                         break;
                     }
-            
+
                 }
 
                 DataSet ds = SqlHelper.ExecuteQuery(sSql);
@@ -192,90 +303,90 @@ group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
         }
 
 
-        public DataSet GetCancelableCarton( string user,  List<MESParameterInfo> lstParameters)
+        public DataSet GetCancelableCarton(string user, List<MESParameterInfo> lstParameters)
         {
             try
             {
-                String poid="";
-                String customer="";
-                String action="";
-                String carton="";
+                String poid = "";
+                String customer = "";
+                String action = "";
+                String carton = "";
                 foreach (MESParameterInfo item in lstParameters)
                 {
                     if (item.ParamName == "customerid")
-	               {
-                       customer = item.ParamValue;
-                      // break;
-	               }
+                    {
+                        customer = item.ParamValue;
+                        // break;
+                    }
                     if (item.ParamName == "custorderno")
                     {
                         poid = item.ParamValue;
-                      //  break;
+                        //  break;
                     }
                     if (item.ParamName == "cartonno")
                     {
                         carton = item.ParamValue;
-                      //  break;
+                        //  break;
                     }
                     if (item.ParamName == "action")
                     {
                         action = item.ParamValue;
-                      //  break;
-                    }  
+                        //  break;
+                    }
                 }
-               string   sSql = "";
-               if (action == "检品开箱")
+                string sSql = "";
+                if (action == "检品开箱")
                 {
-                  sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消开箱' AS status ";
-                  sSql = sSql + " FROM         tinppackingrecdtl AS a INNER JOIN  ";
-                  sSql = sSql + "     tmdlcustomer AS d ON a.customerid = d.customerid AND a.pktype = 'Unpacking' AND not EXISTS  ";
-                  sSql = sSql + "         (SELECT DISTINCT cartonno  ";
-                  sSql = sSql + "            FROM          tinppackingrecdtl  c";
-                  sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' or pktype = 'Moving')) ";
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消开箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a INNER JOIN  ";
+                    sSql = sSql + "     tmdlcustomer AS d ON a.customerid = d.customerid AND a.pktype = 'Unpacking' AND not EXISTS  ";
+                    sSql = sSql + "         (SELECT DISTINCT cartonno  ";
+                    sSql = sSql + "            FROM          tinppackingrecdtl  c";
+                    sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' or pktype = 'Moving')) ";
                 }
 
-               if (action == "检品装箱")
-               {
-                   sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消装箱' AS status ";
-                   sSql = sSql + " FROM         tinppackingrecdtl AS a INNER JOIN  ";
-                   sSql = sSql + "     tmdlcustomer AS d ON a.customerid = d.customerid AND a.pktype = 'Moving' AND not EXISTS  ";
-                   sSql = sSql + "         (SELECT DISTINCT cartonno  ";
-                   sSql = sSql + "            FROM          tinppackingrecdtl  c";
-                   sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' )) ";
-               }
-               if (action == "检品封箱")
-               {
-                   sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
-                   sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='I' ";
-               }
-               if (action == "X线开箱")
-               {
-                   sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消开箱' AS status ";
-                   sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer  d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.customerid = d.customerid AND a.pktype = 'Unpacking' and c.checktype='X' AND not EXISTS  ";
-                   sSql = sSql + "         (SELECT DISTINCT cartonno  ";
-                   sSql = sSql + "            FROM          tinppackingrecdtl  c";
-                   sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' or pktype = 'Moving')) ";
-               }
-               if (action == "X线封箱")
-               {
-                   sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
-                   sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='IX' ";
-               }
+                if (action == "检品装箱")
+                {
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消装箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a INNER JOIN  ";
+                    sSql = sSql + "     tmdlcustomer AS d ON a.customerid = d.customerid AND a.pktype = 'Moving' AND not EXISTS  ";
+                    sSql = sSql + "         (SELECT DISTINCT cartonno  ";
+                    sSql = sSql + "            FROM          tinppackingrecdtl  c";
+                    sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' )) ";
+                }
+                if (action == "检品封箱")
+                {
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='I' ";
+                }
+                if (action == "X线开箱")
+                {
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消开箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer  d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.customerid = d.customerid AND a.pktype = 'Unpacking' and c.checktype='X' AND not EXISTS  ";
+                    sSql = sSql + "         (SELECT DISTINCT cartonno  ";
+                    sSql = sSql + "            FROM          tinppackingrecdtl  c";
+                    sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' or pktype = 'Moving')) ";
+                }
+                if (action == "X线封箱")
+                {
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='IX' ";
+                }
 
                 if (customer != null && customer != string.Empty)
-	            {
-		           sSql = sSql + " and  ( d.customerid = '"+customer+"')";
-	             }
-                 if (carton != null && carton != string.Empty)
-	            {
-		           sSql = sSql + "  AND (a.cartonno LIKE '"+carton+"%')";
-	             }
-                 if (poid != null && poid != string.Empty)
-	            {
-		           sSql = sSql + " and a.custorderno = '"+poid+"'";
-	             }
+                {
+                    sSql = sSql + " and  ( d.customerid = '" + customer + "')";
+                }
+                if (carton != null && carton != string.Empty)
+                {
+                    sSql = sSql + "  AND (a.cartonno LIKE '" + carton + "%')";
+                }
+                if (poid != null && poid != string.Empty)
+                {
+                    sSql = sSql + " and a.custorderno = '" + poid + "'";
+                }
 
-               
+
                 DataSet ds = SqlHelper.ExecuteQuery(sSql);
 
                 return ds;
