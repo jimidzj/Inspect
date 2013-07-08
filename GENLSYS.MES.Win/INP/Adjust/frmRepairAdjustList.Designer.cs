@@ -30,16 +30,16 @@
         {
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRepairAdjustList));
             this.grdQuery = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.pQuery = new System.Windows.Forms.Panel();
@@ -55,8 +55,14 @@
             this.btnQuery = new System.Windows.Forms.Button();
             this.txtCustOrderNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtFromDate = new System.Windows.Forms.DateTimePicker();
+            this.dtToDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.ucStatusBar1 = new GENLSYS.MES.UserControls.ucStatusBar();
             this.ucToolbar1 = new GENLSYS.MES.UserControls.ucToolbar();
+            this.cmbRepairType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdQuery)).BeginInit();
             this.pQuery.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -74,54 +80,54 @@
             appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             appearance2.BorderColor = System.Drawing.SystemColors.Window;
             this.grdQuery.DisplayLayout.GroupByBox.Appearance = appearance2;
-            appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdQuery.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
-            this.grdQuery.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance3.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
             appearance3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.grdQuery.DisplayLayout.GroupByBox.PromptAppearance = appearance3;
+            this.grdQuery.DisplayLayout.GroupByBox.BandLabelAppearance = appearance3;
+            this.grdQuery.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            appearance4.BackColor2 = System.Drawing.SystemColors.Control;
+            appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.grdQuery.DisplayLayout.GroupByBox.PromptAppearance = appearance4;
             this.grdQuery.DisplayLayout.MaxColScrollRegions = 1;
             this.grdQuery.DisplayLayout.MaxRowScrollRegions = 1;
-            appearance9.BackColor = System.Drawing.SystemColors.Window;
-            appearance9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.grdQuery.DisplayLayout.Override.ActiveCellAppearance = appearance9;
-            appearance5.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.grdQuery.DisplayLayout.Override.ActiveRowAppearance = appearance5;
+            appearance5.BackColor = System.Drawing.SystemColors.Window;
+            appearance5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.grdQuery.DisplayLayout.Override.ActiveCellAppearance = appearance5;
+            appearance6.BackColor = System.Drawing.SystemColors.Highlight;
+            appearance6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grdQuery.DisplayLayout.Override.ActiveRowAppearance = appearance6;
             this.grdQuery.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
             this.grdQuery.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance12.BackColor = System.Drawing.SystemColors.Window;
-            this.grdQuery.DisplayLayout.Override.CardAreaAppearance = appearance12;
+            appearance7.BackColor = System.Drawing.SystemColors.Window;
+            this.grdQuery.DisplayLayout.Override.CardAreaAppearance = appearance7;
             appearance8.BorderColor = System.Drawing.Color.Silver;
             appearance8.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
             this.grdQuery.DisplayLayout.Override.CellAppearance = appearance8;
             this.grdQuery.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
             this.grdQuery.DisplayLayout.Override.CellPadding = 0;
-            appearance6.BackColor = System.Drawing.SystemColors.Control;
-            appearance6.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance6.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance6.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance6.BorderColor = System.Drawing.SystemColors.Window;
-            this.grdQuery.DisplayLayout.Override.GroupByRowAppearance = appearance6;
-            appearance7.TextHAlignAsString = "Left";
-            this.grdQuery.DisplayLayout.Override.HeaderAppearance = appearance7;
+            appearance9.BackColor = System.Drawing.SystemColors.Control;
+            appearance9.BackColor2 = System.Drawing.SystemColors.ControlDark;
+            appearance9.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+            appearance9.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+            appearance9.BorderColor = System.Drawing.SystemColors.Window;
+            this.grdQuery.DisplayLayout.Override.GroupByRowAppearance = appearance9;
+            appearance10.TextHAlignAsString = "Left";
+            this.grdQuery.DisplayLayout.Override.HeaderAppearance = appearance10;
             this.grdQuery.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
             this.grdQuery.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance10.BackColor = System.Drawing.SystemColors.Window;
-            appearance10.BorderColor = System.Drawing.Color.Silver;
-            this.grdQuery.DisplayLayout.Override.RowAppearance = appearance10;
+            appearance11.BackColor = System.Drawing.SystemColors.Window;
+            appearance11.BorderColor = System.Drawing.Color.Silver;
+            this.grdQuery.DisplayLayout.Override.RowAppearance = appearance11;
             this.grdQuery.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
             this.grdQuery.DisplayLayout.Override.SummaryDisplayArea = Infragistics.Win.UltraWinGrid.SummaryDisplayAreas.None;
-            appearance11.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.grdQuery.DisplayLayout.Override.TemplateAddRowAppearance = appearance11;
+            appearance12.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.grdQuery.DisplayLayout.Override.TemplateAddRowAppearance = appearance12;
             this.grdQuery.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
             this.grdQuery.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.grdQuery.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdQuery.Location = new System.Drawing.Point(0, 108);
             this.grdQuery.Name = "grdQuery";
-            this.grdQuery.Size = new System.Drawing.Size(804, 367);
+            this.grdQuery.Size = new System.Drawing.Size(1044, 367);
             this.grdQuery.TabIndex = 22;
             this.grdQuery.Tag = resources.GetString("grdQuery.Tag");
             this.grdQuery.Text = "ultraGrid1";
@@ -136,12 +142,18 @@
             this.pQuery.Dock = System.Windows.Forms.DockStyle.Top;
             this.pQuery.Location = new System.Drawing.Point(0, 26);
             this.pQuery.Name = "pQuery";
-            this.pQuery.Size = new System.Drawing.Size(804, 82);
+            this.pQuery.Size = new System.Drawing.Size(1044, 82);
             this.pQuery.TabIndex = 21;
             this.pQuery.Visible = false;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbRepairType);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.dtToDate);
+            this.groupBox1.Controls.Add(this.dtFromDate);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtCustomer);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtSize);
@@ -156,7 +168,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 82);
+            this.groupBox1.Size = new System.Drawing.Size(1044, 82);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "rsid:Label.R01024";
@@ -238,7 +250,7 @@
             // 
             this.btnQuery.Image = global::GENLSYS.MES.Win.Properties.Resources.query;
             this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuery.Location = new System.Drawing.Point(718, 49);
+            this.btnQuery.Location = new System.Drawing.Point(957, 47);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 23);
             this.btnQuery.TabIndex = 8;
@@ -266,12 +278,62 @@
             this.label1.Tag = "rsid:Label.R01025";
             this.label1.Text = "Cust Order No:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(482, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 12);
+            this.label6.TabIndex = 17;
+            this.label6.Tag = "rsid:Label.R010766";
+            this.label6.Text = "From Date:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(705, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 18;
+            this.label7.Tag = "rsid:Label.R010767";
+            this.label7.Text = "To Date:";
+            // 
+            // dtFromDate
+            // 
+            this.dtFromDate.CustomFormat = "yyyy-MM-dd";
+            this.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFromDate.Location = new System.Drawing.Point(547, 20);
+            this.dtFromDate.Name = "dtFromDate";
+            this.dtFromDate.Size = new System.Drawing.Size(137, 21);
+            this.dtFromDate.TabIndex = 19;
+            this.dtFromDate.Tag = "rsid:Label.R010766,dbty:date";
+            // 
+            // dtToDate
+            // 
+            this.dtToDate.CustomFormat = "yyyy-MM-dd";
+            this.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtToDate.Location = new System.Drawing.Point(788, 19);
+            this.dtToDate.Name = "dtToDate";
+            this.dtToDate.Size = new System.Drawing.Size(137, 21);
+            this.dtToDate.TabIndex = 20;
+            this.dtToDate.Tag = "rsid:Label.R010767,dbty:date";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(705, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 12);
+            this.label8.TabIndex = 21;
+            this.label8.Tag = "rsid:Label.R02067";
+            this.label8.Text = "Repair Type:";
+            // 
             // ucStatusBar1
             // 
             this.ucStatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ucStatusBar1.Location = new System.Drawing.Point(0, 475);
             this.ucStatusBar1.Name = "ucStatusBar1";
-            this.ucStatusBar1.Size = new System.Drawing.Size(804, 22);
+            this.ucStatusBar1.Size = new System.Drawing.Size(1044, 22);
             this.ucStatusBar1.TabIndex = 4;
             // 
             // ucToolbar1
@@ -280,18 +342,31 @@
             this.ucToolbar1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ucToolbar1.Location = new System.Drawing.Point(0, 0);
             this.ucToolbar1.Name = "ucToolbar1";
-            this.ucToolbar1.Size = new System.Drawing.Size(804, 26);
+            this.ucToolbar1.Size = new System.Drawing.Size(1044, 26);
             this.ucToolbar1.TabIndex = 3;
             this.ucToolbar1.ExportEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExportEventHandler(this.ucToolbar1_ExportEventHandler);
             this.ucToolbar1.ExitEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExitEventHandler(this.ucToolbar1_ExitEventHandler);
             this.ucToolbar1.QueryEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarQueryEventHandler(this.ucToolbar1_QueryEventHandler);
             this.ucToolbar1.AdjustEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarAdjustEventHandler(this.ucToolbar1_AdjustEventHandler);
             // 
+            // cmbRepairType
+            // 
+            this.cmbRepairType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRepairType.FormattingEnabled = true;
+            this.cmbRepairType.Items.AddRange(new object[] {
+            "检品",
+            "X线"});
+            this.cmbRepairType.Location = new System.Drawing.Point(788, 47);
+            this.cmbRepairType.Name = "cmbRepairType";
+            this.cmbRepairType.Size = new System.Drawing.Size(137, 20);
+            this.cmbRepairType.TabIndex = 41;
+            this.cmbRepairType.Tag = "rsid:Label.Label.R02067,dbfd:reptype,dbty:string";
+            // 
             // frmRepairAdjustList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 497);
+            this.ClientSize = new System.Drawing.Size(1044, 497);
             this.Controls.Add(this.grdQuery);
             this.Controls.Add(this.pQuery);
             this.Controls.Add(this.ucStatusBar1);
@@ -326,5 +401,11 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.TextBox txtCustOrderNo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtFromDate;
+        private System.Windows.Forms.DateTimePicker dtToDate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbRepairType;
     }
 }

@@ -43,6 +43,11 @@ namespace GENLSYS.MES.Win.INP.Adjust
             this.ucToolbar1.SetEditVisible(false);
             //this.ucToolbar1.SetExportVisible(false);
 
+            this.dtFromDate.Value = Function.GetCurrentTime();
+            this.dtToDate.Value = Function.GetCurrentTime();
+            DropDown.InitCMB_StaticValue(this.cmbRepairType, MES_StaticValue_Type.RepairType,true);
+            this.cmbRepairType.SelectedIndex = 0;
+
             this.pQuery.BackColor = Color.FromName("Info");
         }
 
@@ -148,8 +153,27 @@ namespace GENLSYS.MES.Win.INP.Adjust
             baseForm.BuildQueryParameters(lstParameters, this.pQuery); ;
             foreach (MESParameterInfo param in lstParameters)
             {
-                param.ParamValue = "%" + param.ParamValue + "%";
+                if (param.ParamName.Equals("reptype"))
+                {
+                    param.ParamValue = param.ParamValue + "%";
+                }
+                else
+                {
+                    param.ParamValue = "%" + param.ParamValue + "%";
+                }
             }
+            lstParameters.Add(new MESParameterInfo()
+            {
+                ParamName = "fromdate",
+                ParamValue = dtFromDate.Value.ToString("yyyy-MM-dd")+" 00:00:00",
+                ParamType = "date"
+            });
+            lstParameters.Add(new MESParameterInfo()
+            {
+                ParamName = "todate",
+                ParamValue = dtToDate.Value.ToString("yyyy-MM-dd") + " 23:59:59",
+                ParamType = "date"
+            });
             GetData(lstParameters);
         }
         private void GetData(List<MESParameterInfo> lstParameters)
