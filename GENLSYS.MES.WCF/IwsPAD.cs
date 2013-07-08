@@ -117,5 +117,8 @@ namespace GENLSYS.MES.WCF
         [OperationContract]
         bool MoveBoxSaveDummyCarton(string _customerid, string _poid, string _cartonNumber, ContextInfo contextInfo);
 
+        [OperationContract]
+        int canSaveEnptycarton(string customerid, string custorderno, string cartonNum, string action, string currStep, string user, ContextInfo contextInfo);
+
     }
 }

@@ -179,6 +179,136 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
                 throw ex;
             }
         }
+
+        /**是否可以空箱*/
+        public int canSaveEnptycarton(string customerid, string custorderno, string cartonNum, string action, string currStep)
+        {
+            try
+            {
+                string sSql1 = " ";
+                string sSql2 = " ";
+                string sSql3 = " ";
+                if (action == "Moving")
+                {   //no wip
+                    sSql1 = @"  select  isnull( SUM(PAIRQTY),0) qty    
+                                  from  tinpwip a 
+                                 where  status='I'    AND  A.CHECKTYPE='IX'  
+                                   and  (customerid = '#customerid') AND (custorderno = '#custorderno') ";
+                    sSql1 = sSql1.Replace("#customerid", customerid).Replace("#custorderno", custorderno);
+                    //no moving and packing
+                    sSql2 = @"  SELECT  isnull(SUM(1),0) boxQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and (pktype = 'Packing' or pktype = 'Moving' ) ";
+                    sSql2 = sSql2.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+                    //opened
+                    sSql3 = @"  SELECT  isnull(SUM(1),0) openQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and  pktype = 'Unpacking'   ";
+                    sSql3 = sSql3.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+           
+                }
+                if (action == "Packing")
+                {
+                    if (currStep == "I")
+                    {   //no wip
+                        sSql1 = @"  select  isnull( SUM(PAIRQTY),0) qty   
+                                      from  tinpwip a 
+                                     where  status='I'   AND  A.CHECKTYPE='I'  
+                                       and  (customerid = '#customerid') AND (custorderno = '#custorderno') ";
+                        sSql1 = sSql1.Replace("#customerid", customerid).Replace("#custorderno", custorderno);
+                        //no packing
+                        sSql2 = @"  SELECT  isnull(SUM(1),0) boxQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and (pktype = 'Packing'  ) ";
+                        sSql2 = sSql2.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+
+                        //opened
+                        sSql3 = @"  SELECT  isnull(SUM(1),0) openQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and  pktype = 'Unpacking'   ";
+                        sSql3 = sSql3.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+           
+                    }
+                    if (currStep == "X")
+                    {
+                        sSql1 = @"  select isnull( SUM(PAIRQTY),0) qty   
+                                      from  tinpwip a 
+                                     where  status='X'   AND ( A.CHECKTYPE='X' or A.CHECKTYPE='IX' )  
+                                       and  (customerid = '#customerid') AND (custorderno = '#custorderno') ";
+                        sSql1 = sSql1.Replace("#customerid", customerid).Replace("#custorderno", custorderno);
+                        sSql2 = @"  SELECT  isnull(SUM(1),0) boxQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and (pktype = 'Packing'  ) ";
+                        sSql2 = sSql2.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+
+                        sSql3 = @"  SELECT  isnull(SUM(1),0) openQty
+                             FROM  tinppackingrecdtl 
+                            where customerid =  '#customerid'
+                              and custorderno =  '#custorderno'
+                              and cartonno =  '#cartonno'
+                              and   pktype = 'Unpacking'   ";
+                        sSql3 = sSql3.Replace("#customerid", customerid).Replace("#custorderno", custorderno).Replace("#cartonno", cartonNum);
+           
+                    
+                    }
+
+                }
+                DataSet ds1 = SqlHelper.ExecuteQuery(sSql1);
+                int remainQTY = int.Parse(ds1.Tables[0].Rows[0]["qty"].ToString());
+
+                DataSet ds2 = SqlHelper.ExecuteQuery(sSql2);
+                int saveBoxQty = int.Parse(ds2.Tables[0].Rows[0]["boxQty"].ToString());
+
+                DataSet ds3 = SqlHelper.ExecuteQuery(sSql3);
+                int openQty = int.Parse(ds3.Tables[0].Rows[0]["openQty"].ToString());
+
+                if (remainQTY > 0)
+                {
+                    return 1; //线上还有WIP，不能空箱
+                }
+                else
+                { //wip=0
+                    if (openQty == 0)
+                    {
+                        return 3;
+                    }
+                    else
+                    {
+                        if (saveBoxQty > 0)
+                        {
+                            return 2;//已经装箱或封箱
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+                throw ex;
+            }
+        }
+
     }
 
 

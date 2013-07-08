@@ -167,6 +167,12 @@
   <wsdl:message name="IwsPAD_MoveBoxSaveDummyCarton_OutputMessage">
     <wsdl:part name="parameters" element="tns:MoveBoxSaveDummyCartonResponse" />
   </wsdl:message>
+  <wsdl:message name="IwsPAD_canSaveEnptycarton_InputMessage">
+    <wsdl:part name="parameters" element="tns:canSaveEnptycarton" />
+  </wsdl:message>
+  <wsdl:message name="IwsPAD_canSaveEnptycarton_OutputMessage">
+    <wsdl:part name="parameters" element="tns:canSaveEnptycartonResponse" />
+  </wsdl:message>
   <wsdl:portType name="IwsPAD">
     <wsdl:operation name="GetFuncByUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/GetFuncByUser" message="tns:IwsPAD_GetFuncByUser_InputMessage" />
@@ -271,6 +277,10 @@
     <wsdl:operation name="MoveBoxSaveDummyCarton">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxSaveDummyCarton" message="tns:IwsPAD_MoveBoxSaveDummyCarton_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/MoveBoxSaveDummyCartonResponse" message="tns:IwsPAD_MoveBoxSaveDummyCarton_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="canSaveEnptycarton">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsPAD/canSaveEnptycarton" message="tns:IwsPAD_canSaveEnptycarton_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsPAD/canSaveEnptycartonResponse" message="tns:IwsPAD_canSaveEnptycarton_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwsPAD" type="tns:IwsPAD">
@@ -502,6 +512,15 @@
     </wsdl:operation>
     <wsdl:operation name="MoveBoxSaveDummyCarton">
       <soap:operation soapAction="http://tempuri.org/IwsPAD/MoveBoxSaveDummyCarton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="canSaveEnptycarton">
+      <soap:operation soapAction="http://tempuri.org/IwsPAD/canSaveEnptycarton" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

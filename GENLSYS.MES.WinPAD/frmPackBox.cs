@@ -1217,8 +1217,10 @@ namespace GENLSYS.MES.WinPAD
                         ////装空箱
                         if (saveCarton(cartonNo + ""))
                         {
+                            this.txtOpened.Text = (int.Parse(txtOpened.Text) + 1) + "";
                             baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK,
                                                        null, "保存成功！");
+                            return;
                         }
                         else
                         {
@@ -1468,13 +1470,37 @@ namespace GENLSYS.MES.WinPAD
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
             {
-                bool saved = client.PackBoxSaveDummyCarton(customerid, poID, curentCartonNumber, baseForm.CurrentContextInfo);
-                if (saved)
+                //check 
+                int checkResult = client.canSaveEnptycarton(customerid, poID, curentCartonNumber, "Packing", currStep, "", baseForm.CurrentContextInfo);
+                if (checkResult == 0)
                 {
-                    return true;
+                    bool saved = client.PackBoxSaveDummyCarton(customerid, poID, curentCartonNumber, baseForm.CurrentContextInfo);
+                    if (saved)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
+                    if (checkResult == 1)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "组上还有鞋子，不能装空箱");
+
+                    }
+                    if (checkResult == 2)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "该箱已经装箱或封箱");
+
+                    }
+                    if (checkResult == 3)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", " 如果是检品+X线，请检查该箱是否已经装箱；如果仅X线，请检查是否开箱。）");
+
+                    }
                     return false;
                 }
             }

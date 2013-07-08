@@ -857,5 +857,29 @@ namespace GENLSYS.MES.Services.Inspection.INP
         }
 
 
+        //是否可以存空箱
+        public int canSaveEnptycarton(string customerid, string custorderno, string cartonNum, string action, string currStep)
+        {
+            try
+            {
+                dbInstance.BeginTransaction();
+                AssyBoxDal dal = new AssyBoxDal(dbInstance);
+                int re = dal.canSaveEnptycarton(customerid, custorderno, cartonNum, action, currStep);
+                dbInstance.Commit();
+                return re;
+
+
+            }
+            catch (Exception ex)
+            {
+                dbInstance.Rollback();
+                return -1;
+                throw ex;
+            }
+            finally
+            {
+                dbInstance.CloseConnection();
+            }
+        }
     }
 }
