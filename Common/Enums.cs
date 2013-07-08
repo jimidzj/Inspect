@@ -428,7 +428,8 @@ namespace GENLSYS.MES.Common
         Factory,
         LineAction,
         RequestPayTemplate,
-        JointType
+        JointType,
+        RepairType
     }
 
     public enum MES_ReasonCategory

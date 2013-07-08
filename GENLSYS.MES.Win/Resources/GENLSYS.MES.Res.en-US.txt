@@ -351,6 +351,8 @@ Label.R010762 = Joint Type
 Label.R010763 = Signature
 Label.R010764 = Print Failed
 Label.R010765 = Inspect again Qty
+Label.R010766 = From Time
+Label.R010767 = To Time
 
 Label.R01077 = Ship
 Label.R01078 = Ship No
