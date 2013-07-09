@@ -151,6 +151,7 @@
             this.txtType.Size = new System.Drawing.Size(108, 21);
             this.txtType.TabIndex = 80;
             this.txtType.Tag = "rsid:Label.R01019,maxl:64,dbfd:styleno,dbty:string";
+            this.txtType.Enter += new System.EventHandler(this.txtType_Enter);
             // 
             // label4
             // 
@@ -213,6 +214,7 @@
             this.txtCustOrderNo.Size = new System.Drawing.Size(108, 21);
             this.txtCustOrderNo.TabIndex = 74;
             this.txtCustOrderNo.Tag = "rsid:Label.R01019,maxl:64,dbfd:custorderno,dbty:string";
+            this.txtCustOrderNo.Enter += new System.EventHandler(this.txtCustOrderNo_Enter);
             // 
             // label2
             // 
