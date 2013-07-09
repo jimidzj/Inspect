@@ -28,7 +28,7 @@ namespace GENLSYS.MES.Win.INP.ToRepair
             InitializeComponent();
             baseForm = new BaseForm();
             baseForm.CreateUltraGridColumns(this.grdDetail, new string[] {"categoryindex", "reasoncode", "reasoncategorydesc", "ck", "reasoncodedesc", "pairqty", "remark" });
-            baseForm.CreateUltraComboColumns(this.ucmbCustOrderNo, new string[] { "customerid", "custorderno", "styleno", "color", "size", "checktype", "pairqty" });
+            baseForm.CreateUltraComboColumns(this.ucmbCustOrderNo, new string[] { "customerid", "custorderno", "styleno", "color", "size", "checktype", "leftqty" });
         }
         #endregion
 
@@ -145,7 +145,7 @@ namespace GENLSYS.MES.Win.INP.ToRepair
                 this.txtStyleNo.Text = this.ucmbCustOrderNo.SelectedRow.Cells["styleno"].Value.ToString();
                 this.txtColor.Text = this.ucmbCustOrderNo.SelectedRow.Cells["color"].Value.ToString();
                 this.txtSize.Text = this.ucmbCustOrderNo.SelectedRow.Cells["size"].Value.ToString();
-                this.txtPairQty.Text = this.ucmbCustOrderNo.SelectedRow.Cells["pairqty"].Value.ToString();
+                this.txtPairQty.Text = this.ucmbCustOrderNo.SelectedRow.Cells["leftqty"].Value.ToString();
                 this.numRepairQty.Enabled = true;
             }
             else
@@ -312,7 +312,8 @@ namespace GENLSYS.MES.Win.INP.ToRepair
                     ParamValue = workgroup,
                     ParamType = "string"
                 });
-                DataSet ds = client.GetWipRecords(baseForm.CurrentContextInfo, lstParameters.ToArray<MESParameterInfo>());
+                DataSet ds = client.GetLeftWipRecords(baseForm.CurrentContextInfo, lstParameters.ToArray<MESParameterInfo>());
+                ds.Tables[0].DefaultView.Sort = "custorderno asc";
                 this.ucmbCustOrderNo.SetDataBinding(ds.Tables[0], "");
             }
             catch (Exception ex)

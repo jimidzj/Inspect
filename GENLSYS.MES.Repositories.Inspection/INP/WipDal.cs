@@ -40,6 +40,29 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
             }
         }
 
+        public DataSet GetLeftWipRecords(List<MESParameterInfo> lstParameters)
+        {
+            try
+            {
+                string sSql = @"select * from (select a.*,b.customername, (a.pairqty- ISNULL(c.pairqty,0)) as leftqty  from tinpwip a inner join tmdlcustomer b
+                                on a.customerid=b.customerid 
+                                left join (select customerid,custorderno,styleno,color,size,workgroup,step ,SUM(pairqty) as pairqty from  tinpLineWarehouse group by customerid,custorderno,styleno,color,size,workgroup,step ) c 
+                                on a.customerid=c.customerid and a.custorderno=c.custorderno
+                                and a.styleno=c.styleno and a.color=c.color and a.size=c.size and a.workgroup=c.workgroup and a.status=c.step) rt
+                                where 1=1 ";
+
+                SQLSet sqlSet = BuildSelectSQL(sSql, lstParameters, false, 0);
+
+                DataSet ds = SqlHelper.ExecuteQuery(sqlSet.SQLStatement, sqlSet.Parameters.ToArray<SqlParameter>());
+
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
           
         public   DataSet GetGoodWIP(String po, String style, String size , String color  )
         {

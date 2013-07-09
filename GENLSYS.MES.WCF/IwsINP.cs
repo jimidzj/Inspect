@@ -31,6 +31,9 @@ namespace GENLSYS.MES.WCF
         
         [OperationContract]
         tinpwip GetSingleWip(ContextInfo contextInfo, List<MESParameterInfo> lstParameters);
+
+        [OperationContract]
+        DataSet GetLeftWipRecords(ContextInfo contextInfo, List<MESParameterInfo> lstParameters);
         #endregion
 
 

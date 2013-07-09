@@ -15,6 +15,9 @@ namespace GENLSYS.MES.Win.wsINP {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="wsINP.IwsINP")]
     public interface IwsINP {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetShippingSumRecords", ReplyAction="http://tempuri.org/IwsINP/GetShippingSumRecordsResponse")]
+        System.Data.DataSet GetShippingSumRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetShippingSumDtlRecords", ReplyAction="http://tempuri.org/IwsINP/GetShippingSumDtlRecordsResponse")]
         System.Data.DataSet GetShippingSumDtlRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
         
@@ -95,6 +98,9 @@ namespace GENLSYS.MES.Win.wsINP {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetRequestPayDtlRecords", ReplyAction="http://tempuri.org/IwsINP/GetRequestPayDtlRecordsResponse")]
         System.Data.DataSet GetRequestPayDtlRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetSingleRepairHis", ReplyAction="http://tempuri.org/IwsINP/GetSingleRepairHisResponse")]
+        GENLSYS.MES.DataContracts.tinprepairhis GetSingleRepairHis(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/DoRepaireAdjust", ReplyAction="http://tempuri.org/IwsINP/DoRepaireAdjustResponse")]
         void DoRepaireAdjust(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string repsysid, string reasoncode, int qty);
@@ -177,8 +183,8 @@ namespace GENLSYS.MES.Win.wsINP {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetSingleShippingPlan", ReplyAction="http://tempuri.org/IwsINP/GetSingleShippingPlanResponse")]
         GENLSYS.MES.DataContracts.tinpshippingplan GetSingleShippingPlan(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetShippingSumRecords", ReplyAction="http://tempuri.org/IwsINP/GetShippingSumRecordsResponse")]
-        System.Data.DataSet GetShippingSumRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetReceivingDetail_Print", ReplyAction="http://tempuri.org/IwsINP/GetReceivingDetail_PrintResponse")]
+        System.Data.DataSet GetReceivingDetail_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetReceivingSumCtnDtlRecords", ReplyAction="http://tempuri.org/IwsINP/GetReceivingSumCtnDtlRecordsResponse")]
         System.Data.DataSet GetReceivingSumCtnDtlRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
@@ -261,9 +267,6 @@ namespace GENLSYS.MES.Win.wsINP {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetRepairHisRecords", ReplyAction="http://tempuri.org/IwsINP/GetRepairHisRecordsResponse")]
         System.Data.DataSet GetRepairHisRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetSingleRepairHis", ReplyAction="http://tempuri.org/IwsINP/GetSingleRepairHisResponse")]
-        GENLSYS.MES.DataContracts.tinprepairhis GetSingleRepairHis(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/DoWork", ReplyAction="http://tempuri.org/IwsINP/DoWorkResponse")]
         void DoWork();
         
@@ -278,6 +281,9 @@ namespace GENLSYS.MES.Win.wsINP {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetSingleWip", ReplyAction="http://tempuri.org/IwsINP/GetSingleWipResponse")]
         GENLSYS.MES.DataContracts.tinpwip GetSingleWip(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetLeftWipRecords", ReplyAction="http://tempuri.org/IwsINP/GetLeftWipRecordsResponse")]
+        System.Data.DataSet GetLeftWipRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetWorkOrderList", ReplyAction="http://tempuri.org/IwsINP/GetWorkOrderListResponse")]
         GENLSYS.MES.DataContracts.tinpworkorder[] GetWorkOrderList(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters);
@@ -344,9 +350,6 @@ namespace GENLSYS.MES.Win.wsINP {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetReceivingHeader_Print", ReplyAction="http://tempuri.org/IwsINP/GetReceivingHeader_PrintResponse")]
         System.Data.DataSet GetReceivingHeader_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IwsINP/GetReceivingDetail_Print", ReplyAction="http://tempuri.org/IwsINP/GetReceivingDetail_PrintResponse")]
-        System.Data.DataSet GetReceivingDetail_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -374,6 +377,10 @@ namespace GENLSYS.MES.Win.wsINP {
         
         public IwsINPClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public System.Data.DataSet GetShippingSumRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
+            return base.Channel.GetShippingSumRecords(contextInfo, lstParameters);
         }
         
         public System.Data.DataSet GetShippingSumDtlRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
@@ -484,6 +491,10 @@ namespace GENLSYS.MES.Win.wsINP {
             return base.Channel.GetRequestPayDtlRecords(contextInfo, lstParameters);
         }
         
+        public GENLSYS.MES.DataContracts.tinprepairhis GetSingleRepairHis(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
+            return base.Channel.GetSingleRepairHis(contextInfo, lstParameters);
+        }
+        
         public void DoRepaireAdjust(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string repsysid, string reasoncode, int qty) {
             base.Channel.DoRepaireAdjust(contextInfo, repsysid, reasoncode, qty);
         }
@@ -592,8 +603,8 @@ namespace GENLSYS.MES.Win.wsINP {
             return base.Channel.GetSingleShippingPlan(contextInfo, lstParameters);
         }
         
-        public System.Data.DataSet GetShippingSumRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
-            return base.Channel.GetShippingSumRecords(contextInfo, lstParameters);
+        public System.Data.DataSet GetReceivingDetail_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno) {
+            return base.Channel.GetReceivingDetail_Print(contextInfo, recno);
         }
         
         public System.Data.DataSet GetReceivingSumCtnDtlRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
@@ -704,10 +715,6 @@ namespace GENLSYS.MES.Win.wsINP {
             return base.Channel.GetRepairHisRecords(contextInfo, lstParameters);
         }
         
-        public GENLSYS.MES.DataContracts.tinprepairhis GetSingleRepairHis(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
-            return base.Channel.GetSingleRepairHis(contextInfo, lstParameters);
-        }
-        
         public void DoWork() {
             base.Channel.DoWork();
         }
@@ -726,6 +733,10 @@ namespace GENLSYS.MES.Win.wsINP {
         
         public GENLSYS.MES.DataContracts.tinpwip GetSingleWip(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
             return base.Channel.GetSingleWip(contextInfo, lstParameters);
+        }
+        
+        public System.Data.DataSet GetLeftWipRecords(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
+            return base.Channel.GetLeftWipRecords(contextInfo, lstParameters);
         }
         
         public GENLSYS.MES.DataContracts.tinpworkorder[] GetWorkOrderList(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, GENLSYS.MES.DataContracts.Common.MESParameterInfo[] lstParameters) {
@@ -814,10 +825,6 @@ namespace GENLSYS.MES.Win.wsINP {
         
         public System.Data.DataSet GetReceivingHeader_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno) {
             return base.Channel.GetReceivingHeader_Print(contextInfo, recno);
-        }
-        
-        public System.Data.DataSet GetReceivingDetail_Print(GENLSYS.MES.DataContracts.Common.ContextInfo contextInfo, string recno) {
-            return base.Channel.GetReceivingDetail_Print(contextInfo, recno);
         }
     }
 }

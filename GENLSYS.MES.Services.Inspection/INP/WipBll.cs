@@ -21,6 +21,9 @@ namespace GENLSYS.MES.Services.Inspection.INP
             baseDal = localDal;            
         }
 
-
+        public DataSet GetLeftWipRecords(List<MESParameterInfo> lstParameters)
+        {
+            return localDal.GetLeftWipRecords(lstParameters);
+        }
     }
 }
