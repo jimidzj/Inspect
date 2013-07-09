@@ -96,6 +96,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetShippingSumRecords_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetShippingSumRecords_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetShippingSumDtlRecords_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -1104,6 +1142,44 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetRequestPayDtlRecords_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetSingleRepairHis_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetSingleRepairHis_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -2148,7 +2224,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetShippingSumRecords_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetReceivingDetail_Print_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -2167,7 +2243,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetShippingSumRecords_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetReceivingDetail_Print_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -3212,44 +3288,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetSingleRepairHis_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetSingleRepairHis_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_DoWork_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -3422,6 +3460,44 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetSingleWip_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetLeftWipRecords_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetLeftWipRecords_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -4276,44 +4352,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetReceivingDetail_Print_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IwsINP_GetReceivingDetail_Print_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:1111/wsINP.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -4327,6 +4365,12 @@
       <xsd:import schemaLocation="http://localhost:1111/wsINP.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IwsINP_GetShippingSumRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingSumRecords" />
+  </wsdl:message>
+  <wsdl:message name="IwsINP_GetShippingSumRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShippingSumRecordsResponse" />
+  </wsdl:message>
   <wsdl:message name="IwsINP_GetShippingSumDtlRecords_InputMessage">
     <wsdl:part name="parameters" element="tns:GetShippingSumDtlRecords" />
   </wsdl:message>
@@ -4488,6 +4532,12 @@
   </wsdl:message>
   <wsdl:message name="IwsINP_GetRequestPayDtlRecords_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRequestPayDtlRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsINP_GetSingleRepairHis_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleRepairHis" />
+  </wsdl:message>
+  <wsdl:message name="IwsINP_GetSingleRepairHis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleRepairHisResponse" />
   </wsdl:message>
   <wsdl:message name="IwsINP_DoRepaireAdjust_InputMessage">
     <wsdl:part name="parameters" element="tns:DoRepaireAdjust" />
@@ -4651,11 +4701,11 @@
   <wsdl:message name="IwsINP_GetSingleShippingPlan_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSingleShippingPlanResponse" />
   </wsdl:message>
-  <wsdl:message name="IwsINP_GetShippingSumRecords_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetShippingSumRecords" />
+  <wsdl:message name="IwsINP_GetReceivingDetail_Print_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceivingDetail_Print" />
   </wsdl:message>
-  <wsdl:message name="IwsINP_GetShippingSumRecords_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetShippingSumRecordsResponse" />
+  <wsdl:message name="IwsINP_GetReceivingDetail_Print_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReceivingDetail_PrintResponse" />
   </wsdl:message>
   <wsdl:message name="IwsINP_GetReceivingSumCtnDtlRecords_InputMessage">
     <wsdl:part name="parameters" element="tns:GetReceivingSumCtnDtlRecords" />
@@ -4819,12 +4869,6 @@
   <wsdl:message name="IwsINP_GetRepairHisRecords_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRepairHisRecordsResponse" />
   </wsdl:message>
-  <wsdl:message name="IwsINP_GetSingleRepairHis_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSingleRepairHis" />
-  </wsdl:message>
-  <wsdl:message name="IwsINP_GetSingleRepairHis_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSingleRepairHisResponse" />
-  </wsdl:message>
   <wsdl:message name="IwsINP_DoWork_InputMessage">
     <wsdl:part name="parameters" element="tns:DoWork" />
   </wsdl:message>
@@ -4854,6 +4898,12 @@
   </wsdl:message>
   <wsdl:message name="IwsINP_GetSingleWip_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSingleWipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsINP_GetLeftWipRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftWipRecords" />
+  </wsdl:message>
+  <wsdl:message name="IwsINP_GetLeftWipRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeftWipRecordsResponse" />
   </wsdl:message>
   <wsdl:message name="IwsINP_GetWorkOrderList_InputMessage">
     <wsdl:part name="parameters" element="tns:GetWorkOrderList" />
@@ -4987,13 +5037,11 @@
   <wsdl:message name="IwsINP_GetReceivingHeader_Print_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetReceivingHeader_PrintResponse" />
   </wsdl:message>
-  <wsdl:message name="IwsINP_GetReceivingDetail_Print_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetReceivingDetail_Print" />
-  </wsdl:message>
-  <wsdl:message name="IwsINP_GetReceivingDetail_Print_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetReceivingDetail_PrintResponse" />
-  </wsdl:message>
   <wsdl:portType name="IwsINP">
+    <wsdl:operation name="GetShippingSumRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumRecords" message="tns:IwsINP_GetShippingSumRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumRecordsResponse" message="tns:IwsINP_GetShippingSumRecords_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetShippingSumDtlRecords">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumDtlRecords" message="tns:IwsINP_GetShippingSumDtlRecords_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumDtlRecordsResponse" message="tns:IwsINP_GetShippingSumDtlRecords_OutputMessage" />
@@ -5101,6 +5149,10 @@
     <wsdl:operation name="GetRequestPayDtlRecords">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetRequestPayDtlRecords" message="tns:IwsINP_GetRequestPayDtlRecords_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetRequestPayDtlRecordsResponse" message="tns:IwsINP_GetRequestPayDtlRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleRepairHis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetSingleRepairHis" message="tns:IwsINP_GetSingleRepairHis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetSingleRepairHisResponse" message="tns:IwsINP_GetSingleRepairHis_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DoRepaireAdjust">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/DoRepaireAdjust" message="tns:IwsINP_DoRepaireAdjust_InputMessage" />
@@ -5210,9 +5262,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetSingleShippingPlan" message="tns:IwsINP_GetSingleShippingPlan_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetSingleShippingPlanResponse" message="tns:IwsINP_GetSingleShippingPlan_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetShippingSumRecords">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumRecords" message="tns:IwsINP_GetShippingSumRecords_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetShippingSumRecordsResponse" message="tns:IwsINP_GetShippingSumRecords_OutputMessage" />
+    <wsdl:operation name="GetReceivingDetail_Print">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetReceivingDetail_Print" message="tns:IwsINP_GetReceivingDetail_Print_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetReceivingDetail_PrintResponse" message="tns:IwsINP_GetReceivingDetail_Print_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetReceivingSumCtnDtlRecords">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetReceivingSumCtnDtlRecords" message="tns:IwsINP_GetReceivingSumCtnDtlRecords_InputMessage" />
@@ -5322,10 +5374,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetRepairHisRecords" message="tns:IwsINP_GetRepairHisRecords_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetRepairHisRecordsResponse" message="tns:IwsINP_GetRepairHisRecords_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetSingleRepairHis">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetSingleRepairHis" message="tns:IwsINP_GetSingleRepairHis_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetSingleRepairHisResponse" message="tns:IwsINP_GetSingleRepairHis_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/DoWork" message="tns:IwsINP_DoWork_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/DoWorkResponse" message="tns:IwsINP_DoWork_OutputMessage" />
@@ -5345,6 +5393,10 @@
     <wsdl:operation name="GetSingleWip">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetSingleWip" message="tns:IwsINP_GetSingleWip_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetSingleWipResponse" message="tns:IwsINP_GetSingleWip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftWipRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetLeftWipRecords" message="tns:IwsINP_GetLeftWipRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetLeftWipRecordsResponse" message="tns:IwsINP_GetLeftWipRecords_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetWorkOrderList">
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetWorkOrderList" message="tns:IwsINP_GetWorkOrderList_InputMessage" />
@@ -5434,14 +5486,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetReceivingHeader_Print" message="tns:IwsINP_GetReceivingHeader_Print_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetReceivingHeader_PrintResponse" message="tns:IwsINP_GetReceivingHeader_Print_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetReceivingDetail_Print">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwsINP/GetReceivingDetail_Print" message="tns:IwsINP_GetReceivingDetail_Print_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwsINP/GetReceivingDetail_PrintResponse" message="tns:IwsINP_GetReceivingDetail_Print_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IwsINP" type="tns:IwsINP">
     <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetShippingSumRecords">
+      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetShippingSumRecords" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetShippingSumRecords_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetShippingSumRecords_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetShippingSumDtlRecords">
       <soap12:operation soapAction="http://tempuri.org/IwsINP/GetShippingSumDtlRecords" style="document" />
       <wsdl:input>
@@ -5736,6 +5795,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetRequestPayDtlRecords_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleRepairHis">
+      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetSingleRepairHis" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetSingleRepairHis_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetSingleRepairHis_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -6036,14 +6106,14 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetShippingSumRecords">
-      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetShippingSumRecords" style="document" />
+    <wsdl:operation name="GetReceivingDetail_Print">
+      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetReceivingDetail_Print" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetShippingSumRecords_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetReceivingDetail_Print_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetShippingSumRecords_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetReceivingDetail_Print_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -6344,17 +6414,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetSingleRepairHis">
-      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetSingleRepairHis" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetSingleRepairHis_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetSingleRepairHis_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="DoWork">
       <soap12:operation soapAction="http://tempuri.org/IwsINP/DoWork" style="document" />
       <wsdl:input>
@@ -6407,6 +6466,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetSingleWip_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeftWipRecords">
+      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetLeftWipRecords" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetLeftWipRecords_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetLeftWipRecords_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -6649,17 +6719,6 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetReceivingHeader_Print_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetReceivingDetail_Print">
-      <soap12:operation soapAction="http://tempuri.org/IwsINP/GetReceivingDetail_Print" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetReceivingDetail_Print_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IwsINP_GetReceivingDetail_Print_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

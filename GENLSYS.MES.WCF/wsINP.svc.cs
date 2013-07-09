@@ -63,6 +63,16 @@ namespace GENLSYS.MES.WCF
             GC.Collect();
             return rs;
         }
+
+        public DataSet GetLeftWipRecords(ContextInfo contextInfo, List<MESParameterInfo> lstParameters)
+        {
+            contextInfo.Action = MES_ActionType.Query;
+            WipBll bll = new WipBll(contextInfo);
+            bll.CallAccessControl();
+            DataSet rs = bll.GetLeftWipRecords(lstParameters);
+            GC.Collect();
+            return rs;
+        }
         #endregion
 
         #region Work Order

@@ -3,11 +3,38 @@
   <xs:import schemaLocation="http://localhost:1111/wsINP.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" />
   <xs:import schemaLocation="http://localhost:1111/wsINP.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="http://localhost:1111/wsINP.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-  <xs:element name="GetShippingSumDtlRecords">
+  <xs:element name="GetShippingSumRecords">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q1:ContextInfo" />
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q2:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShippingSumRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetShippingSumRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetShippingSumDtlRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q3:ContextInfo" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q4:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -33,8 +60,8 @@
   <xs:element name="GetUnShippingSumRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q3:ContextInfo" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q4:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q5:ContextInfo" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q6:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,8 +87,8 @@
   <xs:element name="GetUnShippingSumDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q5:ContextInfo" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q6:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q7:ContextInfo" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q8:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -87,7 +114,7 @@
   <xs:element name="HasShipByPlanNo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q7:ContextInfo" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q9:ContextInfo" />
         <xs:element minOccurs="0" name="shippingplanno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -102,7 +129,7 @@
   <xs:element name="GetPackingCartonRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q8:ContextInfo" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q10:ContextInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -128,7 +155,7 @@
   <xs:element name="GetPackingCartonSummaryRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q9:ContextInfo" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q11:ContextInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -154,8 +181,8 @@
   <xs:element name="DoXUnpacking">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q10:ContextInfo" />
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstunpacking" nillable="true" type="q11:ArrayOfArrayOfstring" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q12:ContextInfo" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstunpacking" nillable="true" type="q13:ArrayOfArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -167,8 +194,8 @@
   <xs:element name="GetPackingRecDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q12:ContextInfo" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q13:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q14:ContextInfo" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q15:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -194,8 +221,8 @@
   <xs:element name="GetPackingDtlSumRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q14:ContextInfo" />
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q15:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q16:ContextInfo" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q17:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -221,8 +248,8 @@
   <xs:element name="GetPackingDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q16:ContextInfo" />
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q17:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q18:ContextInfo" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q19:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -248,8 +275,8 @@
   <xs:element name="GetHaveNotMovingDtlSumRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q18:ContextInfo" />
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q19:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q20:ContextInfo" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q21:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -275,8 +302,8 @@
   <xs:element name="GetHaveNotMovingDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q20:ContextInfo" />
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q21:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q22:ContextInfo" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q23:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -302,8 +329,8 @@
   <xs:element name="GetHaveNotPackingDtlSumRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q22:ContextInfo" />
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q23:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q24:ContextInfo" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q25:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -329,8 +356,8 @@
   <xs:element name="GetHaveNotPackingDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q24:ContextInfo" />
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q25:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q26:ContextInfo" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q27:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -356,8 +383,8 @@
   <xs:element name="GetLineWarehouseSumRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q26:ContextInfo" />
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q27:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q28:ContextInfo" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q29:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -383,8 +410,8 @@
   <xs:element name="GetLineWarehouseSumDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q28:ContextInfo" />
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q29:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q30:ContextInfo" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q31:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -410,8 +437,8 @@
   <xs:element name="GetPackingRecRetrieveRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q30:ContextInfo" />
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q31:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q32:ContextInfo" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q33:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,23 +464,23 @@
   <xs:element name="GetOtherPricingList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q32:ContextInfo" />
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q33:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q34:ContextInfo" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q35:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetOtherPricingListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetOtherPricingListResult" nillable="true" type="q34:ArrayOftinpotherpricing" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetOtherPricingListResult" nillable="true" type="q36:ArrayOftinpotherpricing" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetOtherPricingRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q35:ContextInfo" />
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q36:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q37:ContextInfo" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q38:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -479,23 +506,23 @@
   <xs:element name="GetSingleOtherPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q37:ContextInfo" />
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q38:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q39:ContextInfo" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q40:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleOtherPricingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleOtherPricingResult" nillable="true" type="q39:tinpotherpricing" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleOtherPricingResult" nillable="true" type="q41:tinpotherpricing" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoInsertOtherPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q40:ContextInfo" />
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="otherpricing" nillable="true" type="q41:tinpotherpricing" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q42:ContextInfo" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="otherpricing" nillable="true" type="q43:tinpotherpricing" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -507,8 +534,8 @@
   <xs:element name="DoUpdateOtherPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q42:ContextInfo" />
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="otherpricing" nillable="true" type="q43:tinpotherpricing" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q44:ContextInfo" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="otherpricing" nillable="true" type="q45:tinpotherpricing" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -520,8 +547,8 @@
   <xs:element name="DoDeleteOtherPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q44:ContextInfo" />
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q45:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q46:ContextInfo" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q47:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -533,7 +560,7 @@
   <xs:element name="GetValidOtherPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q46:ContextInfo" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q48:ContextInfo" />
         <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="dt" type="xs:dateTime" />
       </xs:sequence>
@@ -561,9 +588,9 @@
   <xs:element name="DoInsertRequestPay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q47:ContextInfo" />
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="requestPay" nillable="true" type="q48:tinprequestpay" />
-        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q49:ArrayOftinprequestpaydtl" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q49:ContextInfo" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="requestPay" nillable="true" type="q50:tinprequestpay" />
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q51:ArrayOftinprequestpaydtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -575,23 +602,23 @@
   <xs:element name="GetSingleRequestPay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q50:ContextInfo" />
-        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q51:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q52:ContextInfo" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q53:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleRequestPayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRequestPayResult" nillable="true" type="q52:tinprequestpay" />
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRequestPayResult" nillable="true" type="q54:tinprequestpay" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetRequestPayDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q53:ContextInfo" />
-        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q54:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q55:ContextInfo" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q56:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -614,10 +641,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSingleRepairHis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q57:ContextInfo" />
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q58:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSingleRepairHisResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRepairHisResult" nillable="true" type="q59:tinprepairhis" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="DoRepaireAdjust">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q55:ContextInfo" />
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q60:ContextInfo" />
         <xs:element minOccurs="0" name="repsysid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="reasoncode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="qty" type="xs:int" />
@@ -632,7 +674,7 @@
   <xs:element name="GetLeftRepairSuccessQty">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q56:ContextInfo" />
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q61:ContextInfo" />
         <xs:element minOccurs="0" name="custorderno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="color" nillable="true" type="xs:string" />
@@ -651,8 +693,8 @@
   <xs:element name="GetRepairInfoForInspectRpt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q57:ContextInfo" />
-        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q58:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q62:ContextInfo" />
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q63:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -678,8 +720,8 @@
   <xs:element name="GetRepairFailForInspectRpt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q59:ContextInfo" />
-        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q60:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q64:ContextInfo" />
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q65:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -705,8 +747,8 @@
   <xs:element name="GetShippedForInspectRpt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q61:ContextInfo" />
-        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q62:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q66:ContextInfo" />
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q67:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -732,8 +774,8 @@
   <xs:element name="GetHeaderInfoForInspectRpt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q63:ContextInfo" />
-        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q64:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q68:ContextInfo" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q69:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -759,9 +801,9 @@
   <xs:element name="DoReturn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q65:ContextInfo" />
-        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="inpreturn" nillable="true" type="q66:tinpreturn" />
-        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreturndtl" nillable="true" type="q67:ArrayOftinpreturndtl" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q70:ContextInfo" />
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="inpreturn" nillable="true" type="q71:tinpreturn" />
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreturndtl" nillable="true" type="q72:ArrayOftinpreturndtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -773,8 +815,8 @@
   <xs:element name="GetReturnDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q68:ContextInfo" />
-        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q69:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q73:ContextInfo" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q74:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -800,24 +842,24 @@
   <xs:element name="GetSingleReturn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q70:ContextInfo" />
-        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q71:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q75:ContextInfo" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q76:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleReturnResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleReturnResult" nillable="true" type="q72:tinpreturn" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleReturnResult" nillable="true" type="q77:tinpreturn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoSupplement">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q73:ContextInfo" />
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="supplement" nillable="true" type="q74:tinpsupplement" />
-        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstsupplementdtl" nillable="true" type="q75:ArrayOftinpsupplementdtl" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q78:ContextInfo" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="supplement" nillable="true" type="q79:tinpsupplement" />
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstsupplementdtl" nillable="true" type="q80:ArrayOftinpsupplementdtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -829,8 +871,8 @@
   <xs:element name="GetSupplementDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q76:ContextInfo" />
-        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q77:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q81:ContextInfo" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q82:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -856,7 +898,7 @@
   <xs:element name="DoSupplementAdjust">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q78:ContextInfo" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q83:ContextInfo" />
         <xs:element minOccurs="0" name="supldtlsysid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="qty" type="xs:int" />
         <xs:element minOccurs="0" name="isreinspect" nillable="true" type="xs:string" />
@@ -871,23 +913,23 @@
   <xs:element name="GetSingleShipping">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q79:ContextInfo" />
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q80:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q84:ContextInfo" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q85:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleShippingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingResult" nillable="true" type="q81:tinpshipping" />
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingResult" nillable="true" type="q86:tinpshipping" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetShippingRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q82:ContextInfo" />
-        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q83:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q87:ContextInfo" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q88:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -913,23 +955,23 @@
   <xs:element name="GetSingleShippingDtl">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q84:ContextInfo" />
-        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q85:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q89:ContextInfo" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q90:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleShippingDtlResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingDtlResult" nillable="true" type="q86:tinpshippingdtl" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingDtlResult" nillable="true" type="q91:tinpshippingdtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetShippingDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q87:ContextInfo" />
-        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q88:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q92:ContextInfo" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q93:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -955,7 +997,7 @@
   <xs:element name="GetShippingPlanNoRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q89:ContextInfo" />
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q94:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -982,7 +1024,7 @@
   <xs:element name="DoDeleteShipping">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q90:ContextInfo" />
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q95:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -995,7 +1037,7 @@
   <xs:element name="GetShippingDtlForReport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q91:ContextInfo" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q96:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1022,7 +1064,7 @@
   <xs:element name="GetShippingOrigDtlForReport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q92:ContextInfo" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q97:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1049,7 +1091,7 @@
   <xs:element name="GetShippingDtlForWarehouseOut">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q93:ContextInfo" />
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q98:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1076,7 +1118,7 @@
   <xs:element name="GetBillForBillingReport">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q94:ContextInfo" />
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q99:ContextInfo" />
         <xs:element minOccurs="0" name="shippingsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1103,8 +1145,8 @@
   <xs:element name="GetShippingDtlCtnRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q95:ContextInfo" />
-        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q96:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q100:ContextInfo" />
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q101:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1130,8 +1172,8 @@
   <xs:element name="GetShippingPlanRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q97:ContextInfo" />
-        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q98:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q102:ContextInfo" />
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q103:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1157,9 +1199,9 @@
   <xs:element name="DoShipPlan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q99:ContextInfo" />
-        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstshippingdtl" nillable="true" type="q100:ArrayOftinpshippingdtl" />
-        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shippingplan" nillable="true" type="q101:tinpshippingplan" />
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q104:ContextInfo" />
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstshippingdtl" nillable="true" type="q105:ArrayOftinpshippingdtl" />
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shippingplan" nillable="true" type="q106:tinpshippingplan" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1171,10 +1213,10 @@
   <xs:element name="DoShipping">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q102:ContextInfo" />
-        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shipping" nillable="true" type="q103:tinpshipping" />
-        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstshippingdtlctn" nillable="true" type="q104:ArrayOftinpshippingdtlctn" />
-        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shippingplan" nillable="true" type="q105:tinpshippingplan" />
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q107:ContextInfo" />
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shipping" nillable="true" type="q108:tinpshipping" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstshippingdtlctn" nillable="true" type="q109:ArrayOftinpshippingdtlctn" />
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="shippingplan" nillable="true" type="q110:tinpshippingplan" />
         <xs:element minOccurs="0" name="isDoShipping" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
@@ -1187,30 +1229,30 @@
   <xs:element name="GetSingleShippingPlan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q106:ContextInfo" />
-        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q107:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q111:ContextInfo" />
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q112:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleShippingPlanResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingPlanResult" nillable="true" type="q108:tinpshippingplan" />
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleShippingPlanResult" nillable="true" type="q113:tinpshippingplan" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetShippingSumRecords">
+  <xs:element name="GetReceivingDetail_Print">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q109:ContextInfo" />
-        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q110:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q114:ContextInfo" />
+        <xs:element minOccurs="0" name="recno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetShippingSumRecordsResponse">
+  <xs:element name="GetReceivingDetail_PrintResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetShippingSumRecordsResult" nillable="true">
+        <xs:element minOccurs="0" name="GetReceivingDetail_PrintResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -1229,8 +1271,8 @@
   <xs:element name="GetReceivingSumCtnDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q111:ContextInfo" />
-        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q112:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q115:ContextInfo" />
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q116:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1256,8 +1298,8 @@
   <xs:element name="GetReceivingCtnDtlRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q113:ContextInfo" />
-        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q114:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q117:ContextInfo" />
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q118:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1283,7 +1325,7 @@
   <xs:element name="UpdateCartonQty">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q115:ContextInfo" />
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q119:ContextInfo" />
         <xs:element minOccurs="0" name="recsysid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="cartonno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="oldstyleno" nillable="true" type="xs:string" />
@@ -1304,7 +1346,7 @@
   <xs:element name="DeleteSingleCarton">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q116:ContextInfo" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q120:ContextInfo" />
         <xs:element minOccurs="0" name="recsysid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="cartonno" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="oldstyleno" nillable="true" type="xs:string" />
@@ -1321,7 +1363,7 @@
   <xs:element name="CheckReceivingUsed">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q117:ContextInfo" />
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q121:ContextInfo" />
         <xs:element minOccurs="0" name="recsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1336,23 +1378,23 @@
   <xs:element name="GetIQCList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q118:ContextInfo" />
-        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q119:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q122:ContextInfo" />
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q123:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIQCListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetIQCListResult" nillable="true" type="q120:ArrayOftinpiqc" />
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetIQCListResult" nillable="true" type="q124:ArrayOftinpiqc" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetIQCRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q121:ContextInfo" />
-        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q122:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q125:ContextInfo" />
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q126:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1378,25 +1420,25 @@
   <xs:element name="GetSingleIQC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q123:ContextInfo" />
-        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q124:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q127:ContextInfo" />
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q128:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleIQCResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleIQCResult" nillable="true" type="q125:tinpiqc" />
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleIQCResult" nillable="true" type="q129:tinpiqc" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoInsertIQC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q126:ContextInfo" />
-        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="iqc" nillable="true" type="q127:tinpiqc" />
-        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstFail" nillable="true" type="q128:ArrayOftinpiqcfail" />
-        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstReturn" nillable="true" type="q129:ArrayOftinpiqcreturn" />
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q130:ContextInfo" />
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="iqc" nillable="true" type="q131:tinpiqc" />
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstFail" nillable="true" type="q132:ArrayOftinpiqcfail" />
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstReturn" nillable="true" type="q133:ArrayOftinpiqcreturn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1408,10 +1450,10 @@
   <xs:element name="DoUpdateIQC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q130:ContextInfo" />
-        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="iqc" nillable="true" type="q131:tinpiqc" />
-        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstFail" nillable="true" type="q132:ArrayOftinpiqcfail" />
-        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstReturn" nillable="true" type="q133:ArrayOftinpiqcreturn" />
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q134:ContextInfo" />
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="iqc" nillable="true" type="q135:tinpiqc" />
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstFail" nillable="true" type="q136:ArrayOftinpiqcfail" />
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstReturn" nillable="true" type="q137:ArrayOftinpiqcreturn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1423,8 +1465,8 @@
   <xs:element name="DoDeleteIQC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q134:ContextInfo" />
-        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q135:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q138:ContextInfo" />
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q139:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1436,7 +1478,7 @@
   <xs:element name="GetIQCFail">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q136:ContextInfo" />
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q140:ContextInfo" />
         <xs:element minOccurs="0" name="iqcsysid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1463,7 +1505,7 @@
   <xs:element name="GetIQCReturn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q137:ContextInfo" />
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q141:ContextInfo" />
         <xs:element minOccurs="0" name="iqcsysid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="styleno" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1491,7 +1533,7 @@
   <xs:element name="GetValidIQC">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q138:ContextInfo" />
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q142:ContextInfo" />
         <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1518,23 +1560,23 @@
   <xs:element name="GetScheduleList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q139:ContextInfo" />
-        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q140:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q143:ContextInfo" />
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q144:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetScheduleListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetScheduleListResult" nillable="true" type="q141:ArrayOftinpschedule" />
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetScheduleListResult" nillable="true" type="q145:ArrayOftinpschedule" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetScheduleRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q142:ContextInfo" />
-        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q143:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q146:ContextInfo" />
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q147:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1560,8 +1602,8 @@
   <xs:element name="DoDeleteSchedule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q144:ContextInfo" />
-        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q145:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q148:ContextInfo" />
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q149:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1573,9 +1615,9 @@
   <xs:element name="DoInsertSchedule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q146:ContextInfo" />
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q150:ContextInfo" />
         <xs:element minOccurs="0" name="yearmonth" nillable="true" type="xs:string" />
-        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstSchedule" nillable="true" type="q147:ArrayOftinpschedule" />
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstSchedule" nillable="true" type="q151:ArrayOftinpschedule" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1587,9 +1629,9 @@
   <xs:element name="DoUpdateSchedule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q148:ContextInfo" />
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q152:ContextInfo" />
         <xs:element minOccurs="0" name="yearmonth" nillable="true" type="xs:string" />
-        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstSchedule" nillable="true" type="q149:ArrayOftinpschedule" />
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstSchedule" nillable="true" type="q153:ArrayOftinpschedule" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1601,7 +1643,7 @@
   <xs:element name="GetDailySchedule">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q150:ContextInfo" />
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q154:ContextInfo" />
         <xs:element minOccurs="0" name="startdate" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="enddate" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1629,8 +1671,8 @@
   <xs:element name="GetCustOrderHistoryRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q151:ContextInfo" />
-        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q152:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q155:ContextInfo" />
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q156:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1656,8 +1698,8 @@
   <xs:element name="GetRepairFailRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q153:ContextInfo" />
-        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q154:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q157:ContextInfo" />
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q158:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1683,8 +1725,8 @@
   <xs:element name="GetRepairStockRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q155:ContextInfo" />
-        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q156:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q159:ContextInfo" />
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q160:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1710,24 +1752,24 @@
   <xs:element name="GetSingleRepairStock">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q157:ContextInfo" />
-        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q158:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q161:ContextInfo" />
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q162:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleRepairStockResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRepairStockResult" nillable="true" type="q159:tinprepairstock" />
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRepairStockResult" nillable="true" type="q163:tinprepairstock" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoInsertRepair">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q160:ContextInfo" />
-        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="repairhis" nillable="true" type="q161:tinprepairhis" />
-        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreasoncode" nillable="true" type="q162:ArrayOftinprepairfail" />
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q164:ContextInfo" />
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="repairhis" nillable="true" type="q165:tinprepairhis" />
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreasoncode" nillable="true" type="q166:ArrayOftinprepairfail" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1739,9 +1781,9 @@
   <xs:element name="DoRepairBack">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q163:ContextInfo" />
-        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="repairstock" nillable="true" type="q164:tinprepairstock" />
-        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreasoncode" nillable="true" type="q165:ArrayOftinprepairfail" />
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q167:ContextInfo" />
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="repairstock" nillable="true" type="q168:tinprepairstock" />
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstreasoncode" nillable="true" type="q169:ArrayOftinprepairfail" />
         <xs:element minOccurs="0" name="jointtype" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="signature" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1755,8 +1797,8 @@
   <xs:element name="GetRepairHisRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q166:ContextInfo" />
-        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q167:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q170:ContextInfo" />
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q171:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1779,21 +1821,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSingleRepairHis">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q168:ContextInfo" />
-        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q169:ArrayOfMESParameterInfo" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSingleRepairHisResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleRepairHisResult" nillable="true" type="q170:tinprepairhis" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="DoWork">
     <xs:complexType>
       <xs:sequence />
@@ -1807,8 +1834,8 @@
   <xs:element name="GetCustOrderRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q171:ContextInfo" />
-        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q172:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q172:ContextInfo" />
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q173:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1834,23 +1861,23 @@
   <xs:element name="GetWipList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q173:ContextInfo" />
-        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q174:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q174:ContextInfo" />
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q175:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWipListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetWipListResult" nillable="true" type="q175:ArrayOftinpwip" />
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetWipListResult" nillable="true" type="q176:ArrayOftinpwip" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWipRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q176:ContextInfo" />
-        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q177:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q177:ContextInfo" />
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q178:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1876,38 +1903,65 @@
   <xs:element name="GetSingleWip">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q178:ContextInfo" />
-        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q179:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q179:ContextInfo" />
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q180:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleWipResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleWipResult" nillable="true" type="q180:tinpwip" />
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleWipResult" nillable="true" type="q181:tinpwip" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeftWipRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q182:ContextInfo" />
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q183:ArrayOfMESParameterInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLeftWipRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLeftWipRecordsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWorkOrderList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q181:ContextInfo" />
-        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q182:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q184:ContextInfo" />
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q185:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWorkOrderListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetWorkOrderListResult" nillable="true" type="q183:ArrayOftinpworkorder" />
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetWorkOrderListResult" nillable="true" type="q186:ArrayOftinpworkorder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetWorkOrderRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q184:ContextInfo" />
-        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q185:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q187:ContextInfo" />
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q188:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1933,24 +1987,24 @@
   <xs:element name="GetSingleWorkOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q186:ContextInfo" />
-        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q187:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q189:ContextInfo" />
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q190:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleWorkOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleWorkOrderResult" nillable="true" type="q188:tinpworkorder" />
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleWorkOrderResult" nillable="true" type="q191:tinpworkorder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoInsertWorkOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q189:ContextInfo" />
-        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="workorder" nillable="true" type="q190:tinpworkorder" />
-        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q191:ArrayOftinpworkorderdtl" />
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q192:ContextInfo" />
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="workorder" nillable="true" type="q193:tinpworkorder" />
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q194:ArrayOftinpworkorderdtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1962,9 +2016,9 @@
   <xs:element name="DoUpdateWorkOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q192:ContextInfo" />
-        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="workorder" nillable="true" type="q193:tinpworkorder" />
-        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q194:ArrayOftinpworkorderdtl" />
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q195:ContextInfo" />
+        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="workorder" nillable="true" type="q196:tinpworkorder" />
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q197:ArrayOftinpworkorderdtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1976,8 +2030,8 @@
   <xs:element name="DoDeleteWorkOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q195:ContextInfo" />
-        <xs:element xmlns:q196="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q196:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q198:ContextInfo" />
+        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q199:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1989,8 +2043,8 @@
   <xs:element name="GetWorkOrderDetailRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q197:ContextInfo" />
-        <xs:element xmlns:q198="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q198:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q200:ContextInfo" />
+        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q201:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2016,8 +2070,8 @@
   <xs:element name="GetCustOrderForReceiving">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q199="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q199:ContextInfo" />
-        <xs:element xmlns:q200="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q200:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q202:ContextInfo" />
+        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q203:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2043,23 +2097,23 @@
   <xs:element name="GetSinglePricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q201="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q201:ContextInfo" />
-        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q202:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q204:ContextInfo" />
+        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q205:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSinglePricingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q203="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSinglePricingResult" nillable="true" type="q203:tinppricing" />
+        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSinglePricingResult" nillable="true" type="q206:tinppricing" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetPricingRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q204:ContextInfo" />
-        <xs:element xmlns:q205="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q205:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q207:ContextInfo" />
+        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q208:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2085,10 +2139,10 @@
   <xs:element name="DoInsertPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q206="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q206:ContextInfo" />
-        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="prc" nillable="true" type="q207:tinppricing" />
-        <xs:element xmlns:q208="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstPrcDtl" nillable="true" type="q208:ArrayOftinppricingdtl" />
-        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDef" nillable="true" type="q209:ArrayOftinppricingdtldef" />
+        <xs:element xmlns:q209="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q209:ContextInfo" />
+        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="prc" nillable="true" type="q210:tinppricing" />
+        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstPrcDtl" nillable="true" type="q211:ArrayOftinppricingdtl" />
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDef" nillable="true" type="q212:ArrayOftinppricingdtldef" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2100,10 +2154,10 @@
   <xs:element name="DoUpdatePricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q210="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q210:ContextInfo" />
-        <xs:element xmlns:q211="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="prc" nillable="true" type="q211:tinppricing" />
-        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstPrcDtl" nillable="true" type="q212:ArrayOftinppricingdtl" />
-        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDef" nillable="true" type="q213:ArrayOftinppricingdtldef" />
+        <xs:element xmlns:q213="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q213:ContextInfo" />
+        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="prc" nillable="true" type="q214:tinppricing" />
+        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstPrcDtl" nillable="true" type="q215:ArrayOftinppricingdtl" />
+        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDef" nillable="true" type="q216:ArrayOftinppricingdtldef" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2115,7 +2169,7 @@
   <xs:element name="GetValidPricing">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q214="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q214:ContextInfo" />
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q217:ContextInfo" />
         <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="dt" type="xs:dateTime" />
       </xs:sequence>
@@ -2143,23 +2197,23 @@
   <xs:element name="GetReceivingList">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q215="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q215:ContextInfo" />
-        <xs:element xmlns:q216="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q216:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q218:ContextInfo" />
+        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q219:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetReceivingListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetReceivingListResult" nillable="true" type="q217:ArrayOftinpreceiving" />
+        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetReceivingListResult" nillable="true" type="q220:ArrayOftinpreceiving" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetReceivingRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q218="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q218:ContextInfo" />
-        <xs:element xmlns:q219="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q219:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q221:ContextInfo" />
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q222:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2185,24 +2239,24 @@
   <xs:element name="GetSingleReceiving">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q220="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q220:ContextInfo" />
-        <xs:element xmlns:q221="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q221:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q223:ContextInfo" />
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q224:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetSingleReceivingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleReceivingResult" nillable="true" type="q222:tinpreceiving" />
+        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="GetSingleReceivingResult" nillable="true" type="q225:tinpreceiving" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DoInsertReceiving">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q223="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q223:ContextInfo" />
-        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="rec" nillable="true" type="q224:tinpreceiving" />
-        <xs:element xmlns:q225="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q225:ArrayOftinpreceivingdtl" />
+        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q226:ContextInfo" />
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="rec" nillable="true" type="q227:tinpreceiving" />
+        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtl" nillable="true" type="q228:ArrayOftinpreceivingdtl" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2214,11 +2268,11 @@
   <xs:element name="DoUpdateReceiving">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q226="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q226:ContextInfo" />
-        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="rec" nillable="true" type="q227:tinpreceiving" />
-        <xs:element xmlns:q228="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtlNew" nillable="true" type="q228:ArrayOftinpreceivingdtl" />
-        <xs:element xmlns:q229="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtlUpdated" nillable="true" type="q229:ArrayOftinpreceivingdtl" />
-        <xs:element xmlns:q230="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstDeleted" nillable="true" type="q230:ArrayOfstring" />
+        <xs:element xmlns:q229="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q229:ContextInfo" />
+        <xs:element xmlns:q230="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="rec" nillable="true" type="q230:tinpreceiving" />
+        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtlNew" nillable="true" type="q231:ArrayOftinpreceivingdtl" />
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" minOccurs="0" name="lstDtlUpdated" nillable="true" type="q232:ArrayOftinpreceivingdtl" />
+        <xs:element xmlns:q233="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstDeleted" nillable="true" type="q233:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2230,8 +2284,8 @@
   <xs:element name="DoDeleteReceiving">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q231="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q231:ContextInfo" />
-        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q232:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q234="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q234:ContextInfo" />
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q235:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2243,8 +2297,8 @@
   <xs:element name="GetReceivingDetailRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q233="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q233:ContextInfo" />
-        <xs:element xmlns:q234="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q234:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q236="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q236:ContextInfo" />
+        <xs:element xmlns:q237="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q237:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2270,8 +2324,8 @@
   <xs:element name="GetReceivingCartonDetailRecords">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q235:ContextInfo" />
-        <xs:element xmlns:q236="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q236:ArrayOfMESParameterInfo" />
+        <xs:element xmlns:q238="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q238:ContextInfo" />
+        <xs:element xmlns:q239="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="lstParameters" nillable="true" type="q239:ArrayOfMESParameterInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2297,7 +2351,7 @@
   <xs:element name="GetReceivingHeader_Print">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q237="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q237:ContextInfo" />
+        <xs:element xmlns:q240="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q240:ContextInfo" />
         <xs:element minOccurs="0" name="recno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -2306,33 +2360,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetReceivingHeader_PrintResult" nillable="true">
-          <xs:complexType>
-            <xs:annotation>
-              <xs:appinfo>
-                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-              </xs:appinfo>
-            </xs:annotation>
-            <xs:sequence>
-              <xs:element ref="xs:schema" />
-              <xs:any />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetReceivingDetail_Print">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q238="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts.Common" minOccurs="0" name="contextInfo" nillable="true" type="q238:ContextInfo" />
-        <xs:element minOccurs="0" name="recno" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetReceivingDetail_PrintResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetReceivingDetail_PrintResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>

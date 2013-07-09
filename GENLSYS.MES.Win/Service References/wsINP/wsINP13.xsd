@@ -18,6 +18,50 @@
     <xs:attribute ref="ser:Ref" />
   </xs:complexType>
   <xs:element name="StructuralObject" nillable="true" type="tns:StructuralObject" />
+  <xs:complexType name="EntityReferenceOftmdlshiftcl_SnyTG4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="tmdlshift" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOftmdlshiftcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftmdlshiftcl_SnyTG4" />
+  <xs:complexType name="EntityReference">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RelatedEnd">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="EntityKey" nillable="true" type="q2:EntityKey" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReference" nillable="true" type="tns:EntityReference" />
+  <xs:complexType name="RelatedEnd">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RelatedEnd" nillable="true" type="tns:RelatedEnd" />
+  <xs:complexType name="EntityReferenceOftmdlworkgroupcl_SnyTG4">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="tmdlworkgroup" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityReference">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityReferenceOftmdlworkgroupcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftmdlworkgroupcl_SnyTG4" />
   <xs:complexType name="EntityReferenceOftinpreturncl_SnyTG4">
     <xs:annotation>
       <xs:appinfo>
@@ -33,20 +77,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EntityReferenceOftinpreturncl_SnyTG4" nillable="true" type="tns:EntityReferenceOftinpreturncl_SnyTG4" />
-  <xs:complexType name="EntityReference">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:RelatedEnd">
-        <xs:sequence>
-          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="EntityKey" nillable="true" type="q2:EntityKey" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReference" nillable="true" type="tns:EntityReference" />
-  <xs:complexType name="RelatedEnd">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:element name="RelatedEnd" nillable="true" type="tns:RelatedEnd" />
   <xs:complexType name="EntityReferenceOftinpiqccl_SnyTG4">
     <xs:annotation>
       <xs:appinfo>
@@ -107,36 +137,6 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EntityReferenceOftmdlcustomercl_SnyTG4" nillable="true" type="tns:EntityReferenceOftmdlcustomercl_SnyTG4" />
-  <xs:complexType name="EntityReferenceOftinppricingcl_SnyTG4">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="tinppricing" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:EntityReference">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReferenceOftinppricingcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftinppricingcl_SnyTG4" />
-  <xs:complexType name="EntityReferenceOftinppricingdtlcl_SnyTG4">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="tinppricingdtl" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:EntityReference">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReferenceOftinppricingdtlcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftinppricingdtlcl_SnyTG4" />
   <xs:complexType name="EntityReferenceOftinpworkordercl_SnyTG4">
     <xs:annotation>
       <xs:appinfo>
@@ -152,49 +152,4 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="EntityReferenceOftinpworkordercl_SnyTG4" nillable="true" type="tns:EntityReferenceOftinpworkordercl_SnyTG4" />
-  <xs:complexType name="EntityReferenceOftmdlshiftcl_SnyTG4">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="tmdlshift" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:EntityReference">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReferenceOftmdlshiftcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftmdlshiftcl_SnyTG4" />
-  <xs:complexType name="EntityReferenceOftmdlworkgroupcl_SnyTG4">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="tmdlworkgroup" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:EntityReference">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReferenceOftmdlworkgroupcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftmdlworkgroupcl_SnyTG4" />
-  <xs:complexType name="EntityReferenceOftinpreceivingdtlcl_SnyTG4">
-    <xs:annotation>
-      <xs:appinfo>
-        <GenericType Name="EntityReferenceOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="tinpreceivingdtl" Namespace="http://schemas.datacontract.org/2004/07/GENLSYS.MES.DataContracts" />
-        </GenericType>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:EntityReference">
-        <xs:sequence />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="EntityReferenceOftinpreceivingdtlcl_SnyTG4" nillable="true" type="tns:EntityReferenceOftinpreceivingdtlcl_SnyTG4" />
 </xs:schema>
