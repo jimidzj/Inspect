@@ -444,6 +444,19 @@ namespace GENLSYS.MES.WCF
             GC.Collect();
             return res;
         }
+
+        //是否可以存空箱
+        public int canSaveEnptycarton(string customerid, string custorderno, string cartonNum, string action, string currStep, string user, ContextInfo contextInfo)
+        {
+
+            contextInfo.Action = MES_ActionType.Query;
+            GENLSYS.MES.Services.Inspection.INP.AssyBoxBll bll = new GENLSYS.MES.Services.Inspection.INP.AssyBoxBll(contextInfo);
+            bll.CallAccessControl();
+            int res = bll.canSaveEnptycarton(customerid, custorderno, cartonNum, action, currStep);
+            GC.Collect();
+            return res;
+        }
+
     }
 
 

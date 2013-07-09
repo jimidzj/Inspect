@@ -750,7 +750,7 @@ namespace GENLSYS.MES.WinPAD
                             {
                                 return;
                             }
-
+                             
                         }
                         ////201306 George --end
 
@@ -1037,6 +1037,7 @@ namespace GENLSYS.MES.WinPAD
                         ////装空箱
                         if (saveCarton(cartonNo + ""))
                         {
+
                             baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, "", "保存成功！");
                             return;
                         }
@@ -1252,14 +1253,39 @@ namespace GENLSYS.MES.WinPAD
         {
             wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();
             try
-            {
-                bool saved = client.MoveBoxSaveDummyCarton(customerid, poID, curentCartonNumber, baseForm.CurrentContextInfo);
-                if (saved)
+            {  //check 
+                int checkResult = client.canSaveEnptycarton(customerid, poID, curentCartonNumber, "Moving", "I", "", baseForm.CurrentContextInfo);
+                if (checkResult == 0)
                 {
-                    return true;
+
+
+                    bool saved = client.MoveBoxSaveDummyCarton(customerid, poID, curentCartonNumber, baseForm.CurrentContextInfo);
+                    if (saved)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
+                    if (checkResult == 1)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "组上还有鞋子，不能装空箱");
+
+                    }
+                    if (checkResult == 2)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "该箱已经装箱或封箱");
+
+                    }
+                    if (checkResult == 3)
+                    {
+                        baseForm.CreateMessageBox(Public_MessageBox.Warning, System.Windows.Forms.MessageBoxButtons.OK, "警告信息", "该箱没有开箱");
+
+                    }
                     return false;
                 }
 

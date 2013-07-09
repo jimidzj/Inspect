@@ -145,6 +145,7 @@ GROUP BY a.CUSTORDERNO,CUSTOMERNAME,b.customerid  , a.checktype ,styleno,c.facto
                        from tinpwip a  , tmdlcustomer d  
                        where  status='X'  
                         AND a.CUSTOMERID = d.CUSTOMERID
+                        and  a.PAIRQTY > 0
                       group by  a.custorderno, customername ,d.customerid,A.CHECKTYPE ,styleno ";
                     //201306 George -Begin
                     sSql = sSql + "   union  ";
