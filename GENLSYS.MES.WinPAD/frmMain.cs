@@ -49,7 +49,6 @@ namespace GENLSYS.MES.WinPAD
         private void SetCombobox()
         {
             DropDown.InitCMB_Customer_All(this.cboCustomer);
-
             DropDown.InitCMB_StaticValue(this.cboFactory, MES_StaticValue_Type.Factory);
         //    DropDown.InitCMB_StaticValue(this.cboFactory, MES_StaticValue_Type.QCCheckType);
           //  DropDown.InitCMB_StaticValue(this.cboReturnType, MES_StaticValue_Type.QCReturnType);
@@ -57,6 +56,8 @@ namespace GENLSYS.MES.WinPAD
         private void btnQuery_Click(object sender, EventArgs e)
         {
             RefreshGrid();
+            GENLSYS.MES.WinPAD.Common.Forms.vkForm.hideKeyboard();
+           
         }
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -192,6 +193,18 @@ namespace GENLSYS.MES.WinPAD
                 e.Layout.Bands[0].Summaries.Add("Sumqty", SummaryType.Sum, e.Layout.Bands[0].Columns["poqty"], SummaryPosition.UseSummaryPositionColumn);
             }
   
+        }
+
+        private void txtCustOrderNo_Enter(object sender, EventArgs e)
+        {
+            GENLSYS.MES.WinPAD.Common.Forms.vkForm.showKeyboard();
+            txtCustOrderNo.Focus();
+        }
+
+        private void txtType_Enter(object sender, EventArgs e)
+        {
+            GENLSYS.MES.WinPAD.Common.Forms.vkForm.showKeyboard();
+            txtType.Focus();
         }
 
        

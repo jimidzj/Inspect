@@ -199,18 +199,18 @@ GROUP BY a.CUSTORDERNO,CUSTOMERNAME,b.customerid  , a.checktype ,styleno,c.facto
                     if (item.ParamName == "customerid")
                     {
                         sSql = sSql + " and  customerid='" + item.ParamValue + "'";
-                        break;
+                        continue;
                     }
                     if (item.ParamName == "styleno")
                     {
 
                         sSql = sSql + " and  styleno like '%" + item.ParamValue + "%'";
-                        break;
+                        continue;
                     }
                     if (item.ParamName == "custorderno")
                     {
                         sSql = sSql + " and  poid like '%" + item.ParamValue + "%'";
-                        break;
+                        continue;
                     }
 
                 }
