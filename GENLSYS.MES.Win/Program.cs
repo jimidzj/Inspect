@@ -69,7 +69,7 @@ namespace GENLSYS.MES.Win
 
             PrepareBeforeRun();
 
-            if (!CheckInstance()) return;
+           if (!CheckInstance()) return;
          
             Application.Run(new frmLogon());
         }
