@@ -36,6 +36,7 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
             baseForm.SetFace(this);
             baseForm.SetQueryGridStyle(this.grdQuery);
             GetData(new List<MESParameterInfo>() { });
+            DropDown.InitCMB_Enums(this.cmbType, typeof(Public_StaticValueType),true);
         }
         private void grdQuery_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
         {
@@ -60,7 +61,7 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
             f.UpdateMode = GENLSYS.MES.Common.Public_UpdateMode.Update;
             f.PrimaryKeys = lstParameters;
             f.ShowDialog();
-            GetData(QueryParameters);
+            RefreshGrid();
         }
 
         private void ucToolbar1_ExitEventHandler(object sender, EventArgs e)
@@ -78,15 +79,20 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
             frmStaticValueEdit f = new frmStaticValueEdit();
             f.UpdateMode = GENLSYS.MES.Common.Public_UpdateMode.Insert;
             f.ShowDialog();
-            GetData(QueryParameters);
+            RefreshGrid();
         }
 
         private void ucToolbar1_QueryEventHandler(object sender, EventArgs e)
         {
-            List<MESParameterInfo> lstParameters = new List<MESParameterInfo>();
-            GetData(lstParameters);
+            if (pQuery.Visible == false)
+                pQuery.Visible = true;
+            else
+                pQuery.Visible = false;            
         }
-
+        private void btnQuery_Click(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
         private void grdQuery_AfterRowActivate(object sender, EventArgs e)
         {
             if (this.grdQuery.ActiveRow != null)
@@ -98,9 +104,20 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
                 this.ucToolbar1.SetToolbarWithoutSelection();
             }
         }
+
         #endregion
 
         #region Methods
+        private void RefreshGrid()
+        {
+            List<MESParameterInfo> lstParameters = new List<MESParameterInfo>() { };
+            baseForm.BuildQueryParameters(lstParameters, this.pQuery); ;
+            foreach (MESParameterInfo param in lstParameters)
+            {
+                param.ParamValue = "%" + param.ParamValue + "%";
+            }
+            GetData(lstParameters);
+        }
         private void GetData(List<MESParameterInfo> lstParameters)
         {
             wsSYS.IwsSYSClient client = new wsSYS.IwsSYSClient();
@@ -162,7 +179,7 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
 
                 baseForm.CreateMessageBox(Public_MessageBox.Information, MessageBoxButtons.OK, null, UtilCulture.GetString("Msg.R00003"));
 
-                GetData(QueryParameters);
+                RefreshGrid();
             }
             catch (Exception ex)
             {
@@ -176,6 +193,8 @@ namespace GENLSYS.MES.Win.SYS.StaticValue
             }
         }
         #endregion
+
+        
 
         
 

@@ -40,11 +40,90 @@
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            this.grdQuery = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ucToolbar1 = new GENLSYS.MES.UserControls.ucToolbar();
             this.ucStatusBar1 = new GENLSYS.MES.UserControls.ucStatusBar();
+            this.pQuery = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnQuery = new System.Windows.Forms.Button();
+            this.grdQuery = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.pQuery.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQuery)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ucToolbar1
+            // 
+            this.ucToolbar1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.ucToolbar1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ucToolbar1.Location = new System.Drawing.Point(0, 0);
+            this.ucToolbar1.Name = "ucToolbar1";
+            this.ucToolbar1.Size = new System.Drawing.Size(791, 26);
+            this.ucToolbar1.TabIndex = 1;
+            this.ucToolbar1.NewEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarNewEventHandler(this.ucToolbar1_NewEventHandler);
+            this.ucToolbar1.DeleteEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarDeleteEventHandler(this.ucToolbar1_DeleteEventHandler);
+            this.ucToolbar1.EditEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarEditEventHandler(this.ucToolbar1_EditEventHandler);
+            this.ucToolbar1.ExportEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExportEventHandler(this.ucToolbar1_ExportEventHandler);
+            this.ucToolbar1.ExitEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExitEventHandler(this.ucToolbar1_ExitEventHandler);
+            this.ucToolbar1.QueryEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarQueryEventHandler(this.ucToolbar1_QueryEventHandler);
+            // 
+            // ucStatusBar1
+            // 
+            this.ucStatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ucStatusBar1.Location = new System.Drawing.Point(0, 442);
+            this.ucStatusBar1.Name = "ucStatusBar1";
+            this.ucStatusBar1.Size = new System.Drawing.Size(791, 22);
+            this.ucStatusBar1.TabIndex = 0;
+            // 
+            // pQuery
+            // 
+            this.pQuery.BackColor = System.Drawing.SystemColors.Info;
+            this.pQuery.Controls.Add(this.groupBox1);
+            this.pQuery.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pQuery.Location = new System.Drawing.Point(0, 26);
+            this.pQuery.Name = "pQuery";
+            this.pQuery.Size = new System.Drawing.Size(791, 55);
+            this.pQuery.TabIndex = 22;
+            this.pQuery.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbType);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.btnQuery);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(791, 55);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "rsid:Label.R01024";
+            this.groupBox1.Text = "查询条件";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(113, 12);
+            this.label5.TabIndex = 15;
+            this.label5.Tag = "rsid:Label.R00153";
+            this.label5.Text = "Static Value Type:";
+            // 
+            // btnQuery
+            // 
+            this.btnQuery.Image = global::GENLSYS.MES.Win.Properties.Resources.query;
+            this.btnQuery.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuery.Location = new System.Drawing.Point(363, 18);
+            this.btnQuery.Name = "btnQuery";
+            this.btnQuery.Size = new System.Drawing.Size(75, 23);
+            this.btnQuery.TabIndex = 8;
+            this.btnQuery.Tag = "rsid:Button.R00003";
+            this.btnQuery.Text = "Query";
+            this.btnQuery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // grdQuery
             // 
@@ -103,51 +182,40 @@
             this.grdQuery.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.grdQuery.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.grdQuery.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdQuery.Location = new System.Drawing.Point(0, 26);
+            this.grdQuery.Location = new System.Drawing.Point(0, 81);
             this.grdQuery.Name = "grdQuery";
-            this.grdQuery.Size = new System.Drawing.Size(621, 315);
-            this.grdQuery.TabIndex = 2;
+            this.grdQuery.Size = new System.Drawing.Size(791, 361);
+            this.grdQuery.TabIndex = 23;
             this.grdQuery.Tag = "rsid:Label.R00152|rsid:Label.R00153|rsid:Label.R00154|rsid:Label.R00156|rsid:Labe" +
                 "l.R00155|rsid:Label.R00158|rsid:Label.R00013|rsid:Label.R00012";
             this.grdQuery.Text = "ultraGrid1";
-            this.grdQuery.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdQuery_InitializeLayout);
-            this.grdQuery.AfterRowActivate += new System.EventHandler(this.grdQuery_AfterRowActivate);
             // 
-            // ucToolbar1
+            // cmbType
             // 
-            this.ucToolbar1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ucToolbar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ucToolbar1.Location = new System.Drawing.Point(0, 0);
-            this.ucToolbar1.Name = "ucToolbar1";
-            this.ucToolbar1.Size = new System.Drawing.Size(621, 26);
-            this.ucToolbar1.TabIndex = 1;
-            this.ucToolbar1.NewEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarNewEventHandler(this.ucToolbar1_NewEventHandler);
-            this.ucToolbar1.DeleteEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarDeleteEventHandler(this.ucToolbar1_DeleteEventHandler);
-            this.ucToolbar1.EditEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarEditEventHandler(this.ucToolbar1_EditEventHandler);
-            this.ucToolbar1.ExportEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExportEventHandler(this.ucToolbar1_ExportEventHandler);
-            this.ucToolbar1.ExitEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarExitEventHandler(this.ucToolbar1_ExitEventHandler);
-            this.ucToolbar1.QueryEventHandler += new GENLSYS.MES.UserControls.ucToolbar.ucToolbarQueryEventHandler(this.ucToolbar1_QueryEventHandler);
-            // 
-            // ucStatusBar1
-            // 
-            this.ucStatusBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ucStatusBar1.Location = new System.Drawing.Point(0, 341);
-            this.ucStatusBar1.Name = "ucStatusBar1";
-            this.ucStatusBar1.Size = new System.Drawing.Size(621, 22);
-            this.ucStatusBar1.TabIndex = 0;
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Location = new System.Drawing.Point(131, 20);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(217, 20);
+            this.cmbType.TabIndex = 43;
+            this.cmbType.Tag = "rsid:Label.R00153,dbfd:svtype,dbty:string";
             // 
             // frmStaticValueList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 363);
+            this.ClientSize = new System.Drawing.Size(791, 464);
             this.Controls.Add(this.grdQuery);
+            this.Controls.Add(this.pQuery);
             this.Controls.Add(this.ucToolbar1);
             this.Controls.Add(this.ucStatusBar1);
             this.Name = "frmStaticValueList";
             this.Tag = "rsid:Label.R00157";
             this.Text = "frmStaticValueList";
             this.Load += new System.EventHandler(this.frmStaticValueList_Load);
+            this.pQuery.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQuery)).EndInit();
             this.ResumeLayout(false);
 
@@ -157,6 +225,11 @@
 
         private UserControls.ucStatusBar ucStatusBar1;
         private UserControls.ucToolbar ucToolbar1;
+        private System.Windows.Forms.Panel pQuery;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnQuery;
         private Infragistics.Win.UltraWinGrid.UltraGrid grdQuery;
+        private System.Windows.Forms.ComboBox cmbType;
     }
 }
