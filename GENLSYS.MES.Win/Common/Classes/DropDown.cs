@@ -292,6 +292,43 @@ namespace GENLSYS.MES.Win.Common.Classes
             }
         }
 
+        public static void InitCMB_Enums(ComboBox cmd, Type myenum,bool hasEmpty)
+        {
+            cmd.Items.Clear();
+            cmd.DisplayMember = "DisplayField";
+            cmd.ValueMember = "ValueField";
+
+            if (hasEmpty)
+            {
+                cmd.Items.Add(new ValueInfo()
+                {
+                    DisplayField = "",
+                    ValueField = ""
+                });
+            }
+
+            foreach (object item in Enum.GetValues(myenum))
+            {
+                string resource = UtilCulture.GetString("Enum." + item.ToString());
+                if (resource == null || resource.Equals("---"))
+                {
+                    cmd.Items.Add(new ValueInfo()
+                    {
+                        DisplayField = item.ToString(),
+                        ValueField = item.ToString()
+                    });
+                }
+                else
+                {
+                    cmd.Items.Add(new ValueInfo()
+                    {
+                        DisplayField = resource,
+                        ValueField = item.ToString()
+                    });
+                }
+            }
+        }
+
         public static void InitCMB_Enums_NoResource(ComboBox cmd, Type myenum)
         {
             cmd.Items.Clear();

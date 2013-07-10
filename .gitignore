@@ -27,3 +27,6 @@ _ReSharper*/
 *.vssscc
 $tf*/
 *.suo
+
+#ignore thumbnails created by windows
+#Ignore files build by Visual Studio
