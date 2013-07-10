@@ -102,7 +102,11 @@ namespace GENLSYS.MES.Win.INP.Adjust
              string cartonno = this.grdQuery.Rows[i].Cells["cartonno"].Value.ToString().Trim();
              string action = cmbAction.Text;
              string msg = "你是否要取消" + customer + "的" + poid + "订单的第" + cartonno + "箱的" + action + "?";
-             baseForm.CreateMessageBox(Public_MessageBox.Question , MessageBoxButtons.YesNo , "请确认", msg);
+            System.Windows.Forms.DialogResult res=   baseForm.CreateMessageBox(Public_MessageBox.Question , MessageBoxButtons.YesNo , "请确认", msg);
+            if (res == System.Windows.Forms.DialogResult.No)
+            {
+                return;
+            }
             // frmOpenBox openWin = new frmOpenBox(poid, customerid, customerName);
             //  openWin.Show();
              wsPAD.IwsPADClient client = new wsPAD.IwsPADClient();

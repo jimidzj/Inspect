@@ -133,7 +133,7 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
          try
          {
              string sSql1 = "  select count(*) count  from    tinppackingrecdtl "
-                          + " where  customerid='" + customer + "' and custorderno='" + custorderno + "' and cartonno='" + cartonno + "' and ( pktype='Boxing' or  pktype='Packing') ";
+                          + " where  customerid='" + customer + "' and custorderno='" + custorderno + "' and cartonno='" + cartonno + "' and ( pktype='Moving' or  pktype='Packing') ";
              DataSet ds1 = SqlHelper.ExecuteQuery(sSql1);
              if (int.Parse(ds1.Tables[0].Rows[0]["count"].ToString()) > 0)
              {

@@ -686,7 +686,19 @@ namespace GENLSYS.MES.Services.Inspection.INP
                     {
                         //process wip---------------
                         WipDal wip = new WipDal(dbInstance);
-                        wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, -1 * (int)ctlDtl[i].pairqty, checktype);
+                        if (checktype == "X")
+                        {
+                            wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "X", oldWorkGroup, -1 * (int)ctlDtl[i].pairqty, checktype);
+                        }
+                        if (checktype == "IX")
+                        {
+                            wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, -1 * (int)ctlDtl[i].pairqty, checktype);
+                        }
+                        if (checktype == "I")
+                        {
+                            wip.SaveOrUpdate(customer, ctlDtl[i].custorderno, ctlDtl[i].styleno, ctlDtl[i].color, ctlDtl[i].size, "I", oldWorkGroup, -1 * (int)ctlDtl[i].pairqty, checktype);
+                        }
+                    
                     }
                     //delete opening detail
                     baseDal.DoDelete<tinppackingrecdtl>(lstParam);
