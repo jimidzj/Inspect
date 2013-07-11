@@ -385,11 +385,11 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
                 }
 
                 string sSql = @"select * from (
-                                select a.customerid,a.custorderno,a.cartonNumber as cartonno,a.checktype, sum(a.pairqty) as  pairqty 
-                                from tinpLineWarehouse a ,tmdlcustomer b,("+subSql+@") c
+                                select a.customerid,b.customername, a.custorderno,a.cartonNumber as cartonno,a.checktype, sum(a.pairqty) as  pairqty 
+                                from tinpLineWarehouse a ,tmdlcustomer b,(" + subSql+ @") c
                                 where a.customerid=b.customerid and a.customerid=c.customerid 
                                 and a.custorderno=c.custorderno and a.cartonNumber=c.cartonNumber
-                                group by a.customerid,a.custorderno,a.cartonNumber,a.checktype
+                                group by a.customerid,b.customername, a.custorderno,a.cartonNumber,a.checktype
                                 ) rt
                                 where 1=1";
 
@@ -428,8 +428,8 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
                 }
 
                 string sSql = @"select * from (
-                                select a.customerid,a.custorderno,a.cartonNumber as cartonno,a.checktype, a.pairqty,a.styleno,a.size,a.color
-                                from tinpLineWarehouse a ,tmdlcustomer b,("+subSql+@") c
+                                select a.customerid,b.customername, a.custorderno,a.cartonNumber as cartonno,a.checktype, a.pairqty,a.styleno,a.size,a.color
+                                from tinpLineWarehouse a ,tmdlcustomer b,(" + subSql+@") c
                                 where a.customerid=b.customerid and a.customerid=c.customerid 
                                 and a.custorderno=c.custorderno and a.cartonNumber=c.cartonNumber
                                 ) rt

@@ -626,7 +626,7 @@ namespace GENLSYS.MES.Win
             foreach (UltraGridColumn col in e.Layout.Bands[0].Columns)
             {
                 col.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
-                if (!packingColumns.Contains(col.Key))
+                if (!haveNotMovingColumns.Contains(col.Key))
                 {
                     col.Hidden = true;
                 }
@@ -638,14 +638,14 @@ namespace GENLSYS.MES.Win
                 foreach (UltraGridColumn col in e.Layout.Bands[1].Columns)
                 {
                     col.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
-                    if (!subPackingColumns.Contains(col.Key))
+                    if (!subHaveNotMovingColumns.Contains(col.Key))
                     {
                         col.Hidden = true;
                     }
                 }
-                for (int i = 0; i < subPackingColumns.Count(); i++)
+                for (int i = 0; i < subHaveNotMovingColumns.Count(); i++)
                 {
-                    e.Layout.Bands[1].Columns[subPackingColumns[i]].Header.VisiblePosition = i;
+                    e.Layout.Bands[1].Columns[subHaveNotMovingColumns[i]].Header.VisiblePosition = i;
                 }
 
                 e.Layout.Bands[1].Columns["styleno"].Header.Caption = UtilCulture.GetString("Label.R01026");
@@ -693,7 +693,7 @@ namespace GENLSYS.MES.Win
             foreach (UltraGridColumn col in e.Layout.Bands[0].Columns)
             {
                 col.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
-                if (!packingColumns.Contains(col.Key))
+                if (!haveNotPackingColumns.Contains(col.Key))
                 {
                     col.Hidden = true;
                 }
@@ -705,14 +705,14 @@ namespace GENLSYS.MES.Win
                 foreach (UltraGridColumn col in e.Layout.Bands[1].Columns)
                 {
                     col.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
-                    if (!subPackingColumns.Contains(col.Key))
+                    if (!subHaveNotPackingColumns.Contains(col.Key))
                     {
                         col.Hidden = true;
                     }
                 }
-                for (int i = 0; i < subPackingColumns.Count(); i++)
+                for (int i = 0; i < subHaveNotPackingColumns.Count(); i++)
                 {
-                    e.Layout.Bands[1].Columns[subPackingColumns[i]].Header.VisiblePosition = i;
+                    e.Layout.Bands[1].Columns[subHaveNotPackingColumns[i]].Header.VisiblePosition = i;
                 }
 
                 e.Layout.Bands[1].Columns["styleno"].Header.Caption = UtilCulture.GetString("Label.R01026");
