@@ -567,7 +567,9 @@ namespace GENLSYS.MES.WinPAD
             textSize.Text = "";
             textType.Text = "";
             textPairQty.Text = "";
-
+            ////201306 George --begin
+            this.txtOpened.Text = "0";
+            ////201306 George --end
 
             #endregion
 
@@ -1039,6 +1041,7 @@ namespace GENLSYS.MES.WinPAD
                         {
 
                             baseForm.CreateMessageBox(Public_MessageBox.Error, MessageBoxButtons.OK, "", "保存成功！");
+                            this.txtOpened.Text = (int.Parse(txtOpened.Text) + 1) + "";
                             return;
                         }
                         else
@@ -1106,6 +1109,7 @@ namespace GENLSYS.MES.WinPAD
                 if (checkresult == "OK")
                 {
                     saveCarton(curentCarton);
+                    this.txtOpened.Text = (int.Parse(txtOpened.Text) + 1) + "";
                     #region 修改为已经保存
                     for (int i = 0; i < cartonDt.Rows.Count; i++)
                     {

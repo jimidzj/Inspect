@@ -43,7 +43,7 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
+            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand3 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -123,6 +123,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
+            this.txtOpened = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBoxSize.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
@@ -213,6 +216,9 @@
             // panel2
             // 
             this.panel2.BackgroundImage = global::GENLSYS.MES.WinPAD.Properties.Resources._1;
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.txtOpened);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.but_quit);
             this.panel2.Controls.Add(this.lblPO);
@@ -346,6 +352,7 @@
             this.butDelBox.Text = "删除箱";
             this.butDelBox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.butDelBox.UseVisualStyleBackColor = true;
+            this.butDelBox.Visible = false;
             this.butDelBox.Click += new System.EventHandler(this.butDelBox_Click);
             // 
             // groupBoxSize
@@ -1029,7 +1036,39 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.ChildBands.AddRange(new object[] {
-            ultraDataBand1});
+            ultraDataBand3});
+            // 
+            // txtOpened
+            // 
+            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOpened.Location = new System.Drawing.Point(435, 56);
+            this.txtOpened.Multiline = true;
+            this.txtOpened.Name = "txtOpened";
+            this.txtOpened.Size = new System.Drawing.Size(35, 26);
+            this.txtOpened.TabIndex = 82;
+            this.txtOpened.Text = "0";
+            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(401, 59);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 23);
+            this.label12.TabIndex = 83;
+            this.label12.Text = "第";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(476, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 23);
+            this.label13.TabIndex = 84;
+            this.label13.Text = "箱";
             // 
             // frmMoveBox
             // 
@@ -1143,6 +1182,9 @@
         private System.Windows.Forms.Panel panelColor;
         private System.Windows.Forms.Panel panelType;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtOpened;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }
 

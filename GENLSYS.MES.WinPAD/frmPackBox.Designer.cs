@@ -43,7 +43,7 @@
             Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand2 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
+            Infragistics.Win.UltraWinDataSource.UltraDataBand ultraDataBand1 = new Infragistics.Win.UltraWinDataSource.UltraDataBand("箱号");
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtOpened = new System.Windows.Forms.TextBox();
             this.but_quit = new System.Windows.Forms.Button();
             this.lblPO = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
@@ -125,7 +126,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.ultraDataSource1 = new Infragistics.Win.UltraWinDataSource.UltraDataSource(this.components);
-            this.txtOpened = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBoxSize.SuspendLayout();
             this.groupBoxColor.SuspendLayout();
@@ -251,6 +251,18 @@
             this.panel2.Size = new System.Drawing.Size(1026, 750);
             this.panel2.TabIndex = 13;
             // 
+            // txtOpened
+            // 
+            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtOpened.Location = new System.Drawing.Point(431, 57);
+            this.txtOpened.Multiline = true;
+            this.txtOpened.Name = "txtOpened";
+            this.txtOpened.Size = new System.Drawing.Size(39, 26);
+            this.txtOpened.TabIndex = 82;
+            this.txtOpened.Text = "0";
+            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // but_quit
             // 
             this.but_quit.BackColor = System.Drawing.Color.Transparent;
@@ -342,6 +354,7 @@
             this.butDelBox.Text = "删除箱";
             this.butDelBox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.butDelBox.UseVisualStyleBackColor = true;
+            this.butDelBox.Visible = false;
             this.butDelBox.Click += new System.EventHandler(this.butDelBox_Click);
             // 
             // txtQty
@@ -1056,19 +1069,7 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.ChildBands.AddRange(new object[] {
-            ultraDataBand2});
-            // 
-            // txtOpened
-            // 
-            this.txtOpened.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtOpened.Font = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtOpened.Location = new System.Drawing.Point(431, 57);
-            this.txtOpened.Multiline = true;
-            this.txtOpened.Name = "txtOpened";
-            this.txtOpened.Size = new System.Drawing.Size(39, 26);
-            this.txtOpened.TabIndex = 82;
-            this.txtOpened.Text = "0";
-            this.txtOpened.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ultraDataBand1});
             // 
             // frmPackBox
             // 
