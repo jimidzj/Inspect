@@ -355,7 +355,7 @@ GROUP BY a.CUSTORDERNO,CUSTOMERNAME,b.customerid  , a.checktype ,styleno,c.facto
                     sSql = sSql + "            FROM          tinppackingrecdtl  c";
                     sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' )) ";
                 }
-                if (action == "检品封箱")
+                if (action == "只检品封箱")
                 {
                     sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
                     sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='I' ";
@@ -368,12 +368,28 @@ GROUP BY a.CUSTORDERNO,CUSTOMERNAME,b.customerid  , a.checktype ,styleno,c.facto
                     sSql = sSql + "            FROM          tinppackingrecdtl  c";
                     sSql = sSql + "            WHERE       (a.customerid = customerid) AND (a.custorderno = custorderno)and a.cartonno = cartonno  and  (pktype = 'Packing' or pktype = 'Moving')) ";
                 }
-                if (action == "X线封箱")
+                if (action == "全检封箱")
                 {
                     sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
                     sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='IX' ";
+                    sSql = sSql + @"   and not exists (
+                                     select 1 from  tinpshippingdtlctn t
+                                       where  t.customerid = a.customerid
+                                           and t.custorderno = a.custorderno
+                                          and t.cartonno = a.cartonno ) ";
+     
+           
                 }
-
+                if (action == "只X线封箱")
+                {
+                    sSql = sSql + "  SELECT DISTINCT a.customerid, d.customername customer, a.custorderno poid, a.cartonno, '取消封箱' AS status ";
+                    sSql = sSql + " FROM         tinppackingrecdtl AS a ,  tmdlcustomer AS d ,tinpreceivingctndtl c where a.customerid = d.customerid AND c.customerid = a.customerid and c.custorderno = a.custorderno and c.cartonno = a.cartonno and  a.pktype = 'Packing' and c.checktype='X' ";
+                    sSql = sSql + @"   and not exists (
+                                     select 1 from  tinpshippingdtlctn t
+                                       where  t.customerid = a.customerid
+                                           and t.custorderno = a.custorderno
+                                          and t.cartonno = a.cartonno ) ";
+                }
                 if (customer != null && customer != string.Empty)
                 {
                     sSql = sSql + " and  ( d.customerid = '" + customer + "')";

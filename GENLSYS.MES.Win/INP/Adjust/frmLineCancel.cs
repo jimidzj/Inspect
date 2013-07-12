@@ -125,7 +125,7 @@ namespace GENLSYS.MES.Win.INP.Adjust
                     ds = client.CancelMove(customerid, cartonno, poid, baseForm.CurrentContextInfo.CurrentUser, baseForm.CurrentContextInfo);
 
                 }
-                if (action == "检品封箱")
+                if (action == "只检品封箱")
                 {
                     ds = client.CancelPack(customerid, cartonno, poid, baseForm.CurrentContextInfo.CurrentUser, baseForm.CurrentContextInfo);
 
@@ -135,12 +135,16 @@ namespace GENLSYS.MES.Win.INP.Adjust
                     ds = client.CancelOpen(customerid, cartonno, poid, baseForm.CurrentContextInfo.CurrentUser, baseForm.CurrentContextInfo);
 
                 }
-                if (action == "X线封箱")
+                if (action == "全检封箱")
                 {
                     ds = client.CancelPack(customerid, cartonno, poid, baseForm.CurrentContextInfo.CurrentUser, baseForm.CurrentContextInfo);
 
                 }
-             
+                if (action == "只X线封箱")
+                {
+                    ds = client.CancelPack(customerid, cartonno, poid, baseForm.CurrentContextInfo.CurrentUser, baseForm.CurrentContextInfo);
+
+                }
                 if (ds)
                 {
                     baseForm.CreateMessageBox(Public_MessageBox.Information, MessageBoxButtons.OK, "消息提示", "成功取消");
