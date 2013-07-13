@@ -225,7 +225,7 @@
             // ultraTabPageControl1
             // 
             this.ultraTabPageControl1.Controls.Add(this.grdQuery);
-            this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+            this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 23);
             this.ultraTabPageControl1.Name = "ultraTabPageControl1";
             this.ultraTabPageControl1.Size = new System.Drawing.Size(882, 356);
             // 
@@ -758,7 +758,7 @@
             // ultraTabPageControl6
             // 
             this.ultraTabPageControl6.Controls.Add(this.grdShipping);
-            this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 23);
+            this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
             this.ultraTabPageControl6.Name = "ultraTabPageControl6";
             this.ultraTabPageControl6.Size = new System.Drawing.Size(882, 356);
             // 
@@ -1035,6 +1035,7 @@
             // 
             // txtCustOrderNo
             // 
+            this.txtCustOrderNo.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtCustOrderNo.Location = new System.Drawing.Point(339, 22);
             this.txtCustOrderNo.Name = "txtCustOrderNo";
             this.txtCustOrderNo.Size = new System.Drawing.Size(137, 21);
