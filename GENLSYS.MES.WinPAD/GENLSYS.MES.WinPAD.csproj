@@ -188,6 +188,7 @@
     <Compile Include="Common\Classes\ExceptionParser.cs" />
     <Compile Include="Common\Classes\MenuConfig.cs" />
     <Compile Include="Common\Classes\MESMsgBox.cs" />
+    <Compile Include="Common\Classes\SetAppBarAutoDisplay.cs" />
     <Compile Include="Common\Classes\ShutDown.cs" />
     <Compile Include="Common\Classes\SizeComparer.cs" />
     <Compile Include="Common\Classes\SoapException.cs" />

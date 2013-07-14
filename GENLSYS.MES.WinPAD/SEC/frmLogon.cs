@@ -163,8 +163,21 @@ namespace GENLSYS.MES.WinPAD.SEC
         }
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            Parameter.ApplicationExitFlag = true;
-            this.Close();
+           // Parameter.ApplicationExitFlag = true;
+           // this.Close();
+            DialogResult result = baseForm.CreateMessageBox(Public_MessageBox.Question,
+                                          MessageBoxButtons.YesNo,
+                                          null, "选择是“是”将关闭系统，“否”将取消操作");
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                ShutDown.DoExitWin(ShutDown.EWX_SHUTDOWN);
+            }
+
         }
 
         private void btnOK_Click_1(object sender, EventArgs e)

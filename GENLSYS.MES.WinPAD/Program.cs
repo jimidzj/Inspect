@@ -45,7 +45,10 @@ namespace GENLSYS.MES.WinPAD
 
                 } 
             #endif
-            PrepareBeforeRun();                     
+            PrepareBeforeRun();
+            //201307  George --Begin
+            AppBarAutoDisplay.SetAppBarAutoDisplay(true);
+            //201307  George --end
             Application.Run(new frmLogon());
             
         }

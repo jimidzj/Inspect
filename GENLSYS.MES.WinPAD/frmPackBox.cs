@@ -1287,13 +1287,14 @@ namespace GENLSYS.MES.WinPAD
                         }
                         else
                         {
-
-                            frmLineCheck frm = new frmLineCheck();
-                            DialogResult res = frm.ShowDialog();
-                            if (res == System.Windows.Forms.DialogResult.Cancel)
-                            {
-                                return;
-                            }
+                            ////201307  George --Begin
+                        //    frmLineCheck frm = new frmLineCheck();
+                        //    DialogResult res = frm.ShowDialog();
+                        //    if (res == System.Windows.Forms.DialogResult.Cancel)
+                        //    {
+                        //        return;
+                        //    }
+                            ////201307  George --End
                             saveCarton(curentCarton);
                             #region 修改为已经保存
                             for (int i = 0; i < cartonDt.Rows.Count; i++)
