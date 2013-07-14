@@ -44,10 +44,10 @@
             this.ucStatusBar1 = new GENLSYS.MES.UserControls.ucStatusBar();
             this.pQuery = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnQuery = new System.Windows.Forms.Button();
             this.grdQuery = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.cmbType = new System.Windows.Forms.ComboBox();
             this.pQuery.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdQuery)).BeginInit();
@@ -100,6 +100,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "rsid:Label.R01024";
             this.groupBox1.Text = "查询条件";
+            // 
+            // cmbType
+            // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Location = new System.Drawing.Point(131, 20);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(217, 20);
+            this.cmbType.TabIndex = 43;
+            this.cmbType.Tag = "rsid:Label.R00153,dbfd:svtype,dbty:string";
             // 
             // label5
             // 
@@ -189,16 +199,7 @@
             this.grdQuery.Tag = "rsid:Label.R00152|rsid:Label.R00153|rsid:Label.R00154|rsid:Label.R00156|rsid:Labe" +
                 "l.R00155|rsid:Label.R00158|rsid:Label.R00013|rsid:Label.R00012";
             this.grdQuery.Text = "ultraGrid1";
-            // 
-            // cmbType
-            // 
-            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(131, 20);
-            this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(217, 20);
-            this.cmbType.TabIndex = 43;
-            this.cmbType.Tag = "rsid:Label.R00153,dbfd:svtype,dbty:string";
+            this.grdQuery.AfterRowActivate += new System.EventHandler(this.grdQuery_AfterRowActivate);
             // 
             // frmStaticValueList
             // 
