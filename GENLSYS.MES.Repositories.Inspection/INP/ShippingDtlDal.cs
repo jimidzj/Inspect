@@ -46,9 +46,9 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
         {
             try
             {
-                string sSql = @"select * from (select a.*,b.customername
-                                from tinpshippingdtl a,tmdlcustomer b
-                                where a.customerid=b.customerid) rt
+                string sSql = @"select * from (select a.*,b.customername,c.loadingdate
+                                from tinpshippingdtl a,tmdlcustomer b,tinpshippingplan c
+                                where a.customerid=b.customerid and a.shippingplanno=c.shippingplanno) rt
                                 where shippingstatus<>'" + MES_ShippingStatus.Shipped.ToString() + "'";
 
                 SQLSet sqlSet = BuildSelectSQL(sSql, lstParameters, false, 0);

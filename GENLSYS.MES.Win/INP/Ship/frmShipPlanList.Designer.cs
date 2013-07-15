@@ -216,7 +216,7 @@
             this.grdQuery.Size = new System.Drawing.Size(731, 332);
             this.grdQuery.TabIndex = 21;
             this.grdQuery.Tag = "rsid:|rsid:Label.R02057|rsid:Label.R01025|rsid:Label.R01020|rsid:Label.R02021|rsi" +
-                "d:Label.R00137|rsid:Label.R00138";
+                "d:Label.R01086|rsid:Label.R00137|rsid:Label.R00138";
             this.grdQuery.Text = "ultraGrid1";
             this.grdQuery.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdQuery_InitializeLayout);
             this.grdQuery.AfterRowActivate += new System.EventHandler(this.grdQuery_AfterRowActivate);

@@ -26,7 +26,7 @@ namespace GENLSYS.MES.Win.INP.Ship
             InitializeComponent();
             QueryParameters = new List<MESParameterInfo>();
             baseForm = new BaseForm();
-            baseForm.CreateUltraGridColumns(this.grdQuery, new string[] { "shippingsysid", "shippingplanno", "custorderno", "customername", "ttlcantonqty", "createdtime", "createduser" });
+            baseForm.CreateUltraGridColumns(this.grdQuery, new string[] { "shippingsysid", "shippingplanno", "custorderno", "customername", "ttlcantonqty", "loadingdate", "createdtime", "createduser" });
         }
         #endregion
 
@@ -88,7 +88,10 @@ namespace GENLSYS.MES.Win.INP.Ship
         private void grdQuery_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
         {
             e.Layout.Bands[0].Columns["shippingsysid"].Hidden = true;
+            e.Layout.Bands[0].Columns["createdtime"].Width = 150;
             e.Layout.Bands[0].Columns["createdtime"].Format = "yyyy-MM-dd HH:mm:ss";
+            e.Layout.Bands[0].Columns["loadingdate"].Width = 100;
+            e.Layout.Bands[0].Columns["loadingdate"].Format = "yyyy-MM-dd";
 
             e.Layout.Override.SummaryDisplayArea = SummaryDisplayAreas.Default;
             e.Layout.Bands[0].Override.SummaryFooterCaptionVisible = DefaultableBoolean.False;
