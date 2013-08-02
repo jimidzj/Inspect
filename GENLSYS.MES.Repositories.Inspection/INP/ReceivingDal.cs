@@ -22,7 +22,7 @@ namespace GENLSYS.MES.Repositories.Inspection.INP
             try
             {
                 string sSql = @"select * from tinpreceivingctndtl a,tinppackingrecdtl b
-                                where a.customerid=b.customerid and a.cartonno=b.cartonno
+                                where a.customerid=b.customerid and a.custorderno=b.custorderno and a.cartonno=b.cartonno
                                 and a.color=b.color and a.size=b.size and a.styleno=b.styleno
                                 and a.recsysid='" + recsysid + @"'";
 
