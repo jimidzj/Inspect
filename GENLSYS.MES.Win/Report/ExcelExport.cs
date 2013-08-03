@@ -479,6 +479,8 @@ namespace GENLSYS.MES.Win.Report
                             ((Range)workSheet.Cells[7, i + 11]).Borders.LineStyle = 1;
                             ((Range)workSheet.Cells[8, i + 11]).Borders.LineStyle = 1;
                         }
+                        workSheet.get_Range(IndexToColumn(11) + "3", IndexToColumn(11 + rcNum1 - 5) + "3").MergeCells = true;
+                        workSheet.get_Range(IndexToColumn(11) + "4", IndexToColumn(11 + rcNum1 - 5) + "4").MergeCells = true;
                     }
                     else
                     {
@@ -901,8 +903,8 @@ namespace GENLSYS.MES.Win.Report
                     #endregion
 
                     #region Bottom
-                    setCellValue(rownum + 10, rcNum1 + rcNum2 + rcNum3 + rcNum4 + 10, string.Join(",", managerList.ToArray<string>()));
-                    setCellValue(rownum + 10, rcNum1 + rcNum2 + rcNum3 + rcNum4 + 12, string.Join(",", responderList.ToArray<string>()));
+                    setCellValue(rownum + 10, rcNum1 + rcNum2 + rcNum3 + rcNum4 + 10, string.Join("\n", managerList.ToArray<string>()));
+                    setCellValue(rownum + 10, rcNum1 + rcNum2 + rcNum3 + rcNum4 + 12, string.Join("\n", responderList.ToArray<string>()));
                     #endregion
                 }
                 #endregion
@@ -1320,8 +1322,8 @@ namespace GENLSYS.MES.Win.Report
 
                     #region Bottom
                     setCellValue(xrownum + 9, 2, string.Join(",", signatureList.ToArray<string>()));
-                    setCellValue(xrownum + 10, 7 + xrcNum1 + xrcNum2 + xrcNum3 + 4, string.Join(",", xresponderList.ToArray<string>()));
-                    setCellValue(xrownum + 10, 7 + xrcNum1 + xrcNum2 + xrcNum3 + 6, string.Join(",", managerList.ToArray<string>()));
+                    setCellValue(xrownum + 10, 7 + xrcNum1 + xrcNum2 + xrcNum3 + 4, string.Join("\n", xresponderList.ToArray<string>()));
+                    setCellValue(xrownum + 10, 7 + xrcNum1 + xrcNum2 + xrcNum3 + 6, string.Join("\n", managerList.ToArray<string>()));
                     
                     workSheet.get_Range(IndexToColumn(xrcNum1 + xrcNum2 + 7) + Convert.ToString(xrownum + 10), IndexToColumn(xrcNum1 + xrcNum2 + xrcNum3 + 5) + Convert.ToString(xrownum + 10)).MergeCells = true;
                     workSheet.get_Range(IndexToColumn(xrcNum1 + xrcNum2 + 7) + Convert.ToString(xrownum + 11), IndexToColumn(xrcNum1 + xrcNum2 + xrcNum3 + 5) + Convert.ToString(xrownum + 11)).MergeCells = true;
@@ -1774,12 +1776,14 @@ namespace GENLSYS.MES.Win.Report
                         workSheet.get_Range(IndexToColumn(beforeCol + 3) + sameStyleNoRow, IndexToColumn(beforeCol + 3) + (beforeRow + 9 + sumq.Count())).Borders.get_Item(Microsoft.Office.Interop.Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
                     }
                     //((Range)workSheet.Rows[beforeRow + 10 + sumq.Count(), Type.Missing]).Insert(Microsoft.Office.Interop.Excel.XlInsertShiftDirection.xlShiftDown, Type.Missing);
-                    workSheet.get_Range("B" + (beforeRow + 10 + sumq.Count()), IndexToColumn(beforeCol + 1) + (beforeRow + 10 + sumq.Count())).MergeCells = true;
+                    //workSheet.get_Range("B" + (beforeRow + 10 + sumq.Count()), IndexToColumn(beforeCol + 1) + (beforeRow + 10 + sumq.Count())).MergeCells = true;
+                    ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), 1]).Borders.LineStyle = 1;
                     workSheet.get_Range("B" + (beforeRow + 10 + sumq.Count()), IndexToColumn(beforeCol + 1) + (beforeRow + 10 + sumq.Count())).Borders.LineStyle = 1;
                     ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), beforeCol + 2]).Borders.LineStyle = 1;
                     ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), beforeCol + 3]).Borders.LineStyle = 1;
                     ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), beforeCol + 2]).Formula = "=" + IndexToColumn(beforeCol + 2) + (beforeRow + 1);
                     ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), beforeCol + 3]).Formula = "=SUM(" + IndexToColumn(beforeCol + 3) + (beforeRow + 10) + ":" + IndexToColumn(beforeCol + 3) + (beforeRow + 9 + sumq.Count()) + ")";
+                    ((Range)workSheet.Cells[beforeRow + 10 + sumq.Count(), beforeCol + 3]).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
                 }
 
