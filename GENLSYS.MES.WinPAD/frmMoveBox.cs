@@ -1087,13 +1087,13 @@ namespace GENLSYS.MES.WinPAD
                     {
                         return;
                     }
-                    frmLineCheck frm = new frmLineCheck();
-                    DialogResult res = frm.ShowDialog();
+                    //frmLineCheck frm = new frmLineCheck();
+                    //DialogResult res = frm.ShowDialog();
 
-                    if (res == System.Windows.Forms.DialogResult.Cancel)
-                    {
-                        return;
-                    }
+                    //if (res == System.Windows.Forms.DialogResult.Cancel)
+                    //{
+                    //    return;
+                    //}
                 }
                 curentCarton.TableName = "curentCarton";
                 curentCarton.Columns.Add(new DataColumn("poid", typeof(System.String)));
