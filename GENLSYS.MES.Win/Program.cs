@@ -29,7 +29,7 @@ namespace GENLSYS.MES.Win
             Application.SetCompatibleTextRenderingDefault(false);
 
             //if (!CheckSmartClient(args)) return;
-            //auto update
+            //auto update 
             #if DEBUG
             //RSALicense rsaLicense = new RSALicense();
             //rsaLicense.privateKeyPath = Application.StartupPath + @"\privateKey.xml";
