@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtRepType = new System.Windows.Forms.TextBox();
+            this.txtReasonCode = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbToStep = new System.Windows.Forms.ComboBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -50,8 +51,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtReasonCode = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.cmbRepairType = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPairQty)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,9 +59,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbRepairType);
             this.groupBox1.Controls.Add(this.txtReasonCode);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtRepType);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.cmbToStep);
             this.groupBox1.Controls.Add(this.txtCustomer);
@@ -86,14 +86,24 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 
-            // txtRepType
+            // txtReasonCode
             // 
-            this.txtRepType.Enabled = false;
-            this.txtRepType.Location = new System.Drawing.Point(419, 100);
-            this.txtRepType.Name = "txtRepType";
-            this.txtRepType.Size = new System.Drawing.Size(121, 21);
-            this.txtRepType.TabIndex = 31;
-            this.txtRepType.Tag = "rsid:Label.R02067,isrq:N,maxl:64,updt:Y,dbfd:reptype";
+            this.txtReasonCode.Enabled = false;
+            this.txtReasonCode.Location = new System.Drawing.Point(145, 125);
+            this.txtReasonCode.Name = "txtReasonCode";
+            this.txtReasonCode.Size = new System.Drawing.Size(394, 21);
+            this.txtReasonCode.TabIndex = 35;
+            this.txtReasonCode.Tag = "rsid:Label.R02037,isrq:N,maxl:64,updt:Y,dbfd:reasoncode";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 12);
+            this.label11.TabIndex = 34;
+            this.label11.Tag = "rsid:Label.R02037";
+            this.label11.Text = "ReasonCode:";
             // 
             // label7
             // 
@@ -296,24 +306,15 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // txtReasonCode
+            // cmbRepairType
             // 
-            this.txtReasonCode.Enabled = false;
-            this.txtReasonCode.Location = new System.Drawing.Point(145, 125);
-            this.txtReasonCode.Name = "txtReasonCode";
-            this.txtReasonCode.Size = new System.Drawing.Size(394, 21);
-            this.txtReasonCode.TabIndex = 35;
-            this.txtReasonCode.Tag = "rsid:Label.R02037,isrq:N,maxl:64,updt:Y,dbfd:reasoncode";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 12);
-            this.label11.TabIndex = 34;
-            this.label11.Tag = "rsid:Label.R02037";
-            this.label11.Text = "ReasonCode:";
+            this.cmbRepairType.Enabled = false;
+            this.cmbRepairType.FormattingEnabled = true;
+            this.cmbRepairType.Location = new System.Drawing.Point(418, 99);
+            this.cmbRepairType.Name = "cmbRepairType";
+            this.cmbRepairType.Size = new System.Drawing.Size(121, 20);
+            this.cmbRepairType.TabIndex = 36;
+            this.cmbRepairType.Tag = "rsid:Label.R02067,isrq:Y,maxl:64,updt:Y,dbfd:workgroup";
             // 
             // frmRepairAdjust
             // 
@@ -338,7 +339,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtRepType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbToStep;
         private System.Windows.Forms.TextBox txtCustomer;
@@ -361,5 +361,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtReasonCode;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbRepairType;
     }
 }

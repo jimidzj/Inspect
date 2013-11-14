@@ -39,6 +39,7 @@ namespace GENLSYS.MES.Win.INP.Adjust
             baseForm.SetFace(this);
             
             DropDown.InitCMB_StaticValue(this.cmbToStep, MES_StaticValue_Type.Step);
+            DropDown.InitCMB_StaticValue(this.cmbRepairType, MES_StaticValue_Type.RepairType);
             DropDown.InitCMB_WorkGroup(this.cmbWorkGroup);
 
             this.txtCustOrderNo.Text = RepairHis.custorderno;
@@ -46,8 +47,8 @@ namespace GENLSYS.MES.Win.INP.Adjust
             this.txtStyleNo.Text = RepairHis.styleno;
             this.txtColor.Text = RepairHis.color;
             this.txtSize.Text = RepairHis.size;
-            this.txtRepType.Text = RepairHis.reptype;
             DropDown.SelectCMBValue(this.cmbToStep,RepairHis.step);
+            DropDown.SelectCMBValue(this.cmbRepairType, RepairHis.reptype);
             DropDown.SelectCMBValue(this.cmbWorkGroup, RepairHis.workgroup);
             
 

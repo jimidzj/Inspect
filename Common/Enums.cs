@@ -114,7 +114,8 @@ namespace GENLSYS.MES.Common
         ShoeSize,
         ShoeCategory,
         LineAction,
-        JointType
+        JointType,
+        RepairType
     }
     #endregion
 

@@ -327,6 +327,7 @@ namespace GENLSYS.MES.Win.Common.Classes
                     });
                 }
             }
+            
         }
 
         public static void InitCMB_Enums_NoResource(ComboBox cmd, Type myenum)

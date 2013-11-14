@@ -142,6 +142,7 @@
             this.cmbType.Location = new System.Drawing.Point(177, 13);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(217, 20);
+            this.cmbType.Sorted = true;
             this.cmbType.TabIndex = 42;
             this.cmbType.Tag = "rsid:Label.R00153,isrq:Y,updt:Y,dbfd:svtype";
             // 

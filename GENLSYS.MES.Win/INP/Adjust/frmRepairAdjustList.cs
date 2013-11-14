@@ -123,6 +123,13 @@ namespace GENLSYS.MES.Win.INP.Adjust
                 e.Layout.Bands[0].Columns["reasoncode"].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList;
                 e.Layout.Bands[0].Columns["reasoncode"].ValueList = e.Layout.ValueLists["vlreasoncode"];
             }
+            if (!e.Layout.ValueLists.Exists("vlreptype"))
+            {
+                e.Layout.ValueLists.Add("vlreptype");
+                e.Layout.ValueLists["vlreptype"].ValueListItems.AddRange(DropDown.GetValueList_StaticValue(MES_StaticValue_Type.RepairType));
+                e.Layout.Bands[0].Columns["reptype"].Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList;
+                e.Layout.Bands[0].Columns["reptype"].ValueList = e.Layout.ValueLists["vlreptype"];
+            }
         }
 
         private void grdQuery_InitializeRow(object sender, Infragistics.Win.UltraWinGrid.InitializeRowEventArgs e)
