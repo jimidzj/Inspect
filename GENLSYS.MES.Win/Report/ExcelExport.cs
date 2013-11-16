@@ -342,11 +342,11 @@ namespace GENLSYS.MES.Win.Report
                 SetCurrencyFormat((Range)workSheet.Cells[7,6], currency, false);
 
                 if (checkType.Equals("I")){
-                    setCellValue(10,3,"検品検査");
+                    setCellValue(10, 3, lang.Equals("ZH") ? "检品" : "一次検品");
                 }else if (checkType.Equals("X")){
-                     setCellValue(10,3,"X線検査");
+                    setCellValue(10, 3, lang.Equals("ZH") ? "X线" : "Ｘ線");
                 }else{
-                    setCellValue(10, 3, "検品、X線検査");
+                    setCellValue(10, 3, lang.Equals("ZH") ? "检品+X线" : "一次検品、Ｘ線");
                 }
                 ((Range)workSheet.Cells[7, 6]).Formula = "=J" + (startRow + rownum);                
 
@@ -441,8 +441,6 @@ namespace GENLSYS.MES.Win.Report
                 List<System.Data.DataRow> lstInfo = infoDt.AsEnumerable().ToList<System.Data.DataRow>();
                 lstInfo.Sort(new GENLSYS.MES.Win.Common.Classes.DataRowComparer());
                 #endregion
-
-
 
                 #region 检品
                 if (checktypeList.Contains("I"))
